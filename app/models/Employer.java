@@ -20,7 +20,7 @@ public class Employer extends Model {
 	@Lob
 	public String description;
 	
-	@Embedded
+	@OneToOne
 	public ContactInfo contactInfo;
 	
 	@OneToMany(mappedBy="owner", cascade=CascadeType.ALL)

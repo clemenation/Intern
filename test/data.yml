@@ -27,11 +27,21 @@ Resume(secondResume):
     postedAt: 2012-04-04
     owner: steve
     
+City(hanoi):
+    name: Hanoi    
+    
+Address(tomAddress):
+    address: BK
+    city: hanoi    
+    
+ContactInfo(tomContactInfo):
+    contactEmail: tom@gmail.com
+    address: tomAddress
+    
 Employer(tom):
     email: tom@gmail.com
     password: password
     company: abc Corp
     industry: Software
     description: We do things
-    contactInfo: 
-        contactEmail: tom@gmail.com
+    contactInfo: tomContactInfo

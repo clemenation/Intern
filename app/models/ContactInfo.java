@@ -5,12 +5,15 @@ import javax.persistence.*;
 
 import play.db.jpa.*;
 
-@Embeddable
-public class ContactInfo {
+@Entity
+public class ContactInfo extends Model {
 	
 	public String contactEmail;
 	public String mobile;
 	public String phone;
+	
+	@OneToOne
+	public Address address;
 	
 	public ContactInfo(String email) {
 		this.contactEmail = email;
@@ -18,9 +21,11 @@ public class ContactInfo {
 	
 	public ContactInfo(String email,
 			String mobile,
-			String phone) {
+			String phone,
+			Address address) {
 		this.contactEmail = email;
 		this.mobile = mobile;
 		this.phone = phone;
+		this.address = address;
 	}
 }

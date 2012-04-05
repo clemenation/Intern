@@ -20,7 +20,6 @@ public class JobSeeker extends Model {
 	public String fullName;
 	public Date birthday;
 	
-	@Embedded
 	public ContactInfo contactInfo;
 	
 	@OneToMany(mappedBy="owner", cascade=CascadeType.ALL)
