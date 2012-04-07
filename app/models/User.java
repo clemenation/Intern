@@ -8,6 +8,9 @@ import play.db.jpa.*;
 @MappedSuperclass
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class User extends Model {
+	
+	// Properties
+	
 	public String email;
 	public String password;
 	
@@ -15,4 +18,5 @@ public abstract class User extends Model {
 	
 	@OneToOne
 	public ContactInfo contactInfo;
+	
 }

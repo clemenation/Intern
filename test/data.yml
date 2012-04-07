@@ -12,10 +12,12 @@ JobSeeker(steve):
     aboutMe: I'm Jobs
     fullName: Steve Jobs
     college: Bates
+    userType: Job Seeker
     
 JobSeeker(bob):
     email: bob@gmail.com
     password: secret
+    userType: Job Seeker
     
 Resume(firstResume):
     name: My First Resume
@@ -45,4 +47,4 @@ Employer(tom):
     industry: Software
     description: We do things
     contactInfo: tomContactInfo
-    userType: employer
+    userType: Employer

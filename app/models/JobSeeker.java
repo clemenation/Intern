@@ -8,6 +8,8 @@ import play.db.jpa.*;
 @Entity
 public class JobSeeker extends User {
 		
+	
+	
 	// Variables
 	
 	@Lob
@@ -19,6 +21,8 @@ public class JobSeeker extends User {
 	
 	@OneToMany(mappedBy="owner", cascade=CascadeType.ALL)
 	public List<Resume> resumes;
+	
+	
 	
 	// Constructors
 	
@@ -53,7 +57,7 @@ public class JobSeeker extends User {
 	}
 	
 	public JobSeeker removeResume(int index) {
-		// The Resume.deleteResume(Resume) will do the remove from list job
+		// The Resume.deleteResume(Resume) will do the remove from list work
 		Resume.deleteResume(this.resumes.get(index));
 		this.save();
 		
@@ -67,6 +71,5 @@ public class JobSeeker extends User {
 	public static JobSeeker connect(String email, String password) {
 		return find("byEmailAndPassword", email, password).first();
 	}
-	
 	
 }

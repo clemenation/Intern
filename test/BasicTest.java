@@ -19,6 +19,12 @@ public class BasicTest extends UnitTest {
 		assertEquals(2, Resume.count());
 		assertEquals(1, Employer.count());
 		assertEquals(0, Job.count());
+
+		// Try to connect as user
+		User user = JobSeeker.connect("bob@gmail.com", "secret");
+		assertNotNull(user);
+		assertEquals(user.email, "bob@gmail.com");
+		assertEquals(user.userType, "Job Seeker");
 		
 		// Try to connect as job seekers
 		JobSeeker bob = JobSeeker.connect("bob@gmail.com", "secret");
@@ -62,7 +68,7 @@ public class BasicTest extends UnitTest {
 		
 		Employer tom = Employer.find("byEmail", "tom@gmail.com").first();
 		assertNotNull(tom);
-		assertEquals(tom.userType, "employer");
+		assertEquals(tom.userType, "Employer");
 		assertEquals(tom.contactInfo.address.address, "BK");
 		assertEquals(tom.contactInfo.address.city.name, "Hanoi");
 		assertEquals(tom.contactInfo.contactEmail, "tom@gmail.com");		

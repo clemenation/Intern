@@ -9,6 +9,8 @@ import play.db.jpa.*;
 @Entity
 public class Employer extends User {
 
+	
+	
 	// Variables
 	
 	public String companyName;
@@ -19,6 +21,8 @@ public class Employer extends User {
 	
 	@OneToMany(mappedBy="owner", cascade=CascadeType.ALL)
 	public List<Job> jobs;	
+	
+	
 	
 	// Constructors
 	
@@ -53,8 +57,7 @@ public class Employer extends User {
 	}
 	
 	
-	
-	
+		
 	// Static methods
 	
 	public static Employer connect(String email, String password) {
