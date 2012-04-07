@@ -8,6 +8,10 @@ import play.db.jpa.*;
 @Entity
 public class Resume extends Model {
 	
+	
+	
+	// Properties
+	
 	public String name;
 	public Date postedAt;
 	public int workExperience;
@@ -29,6 +33,10 @@ public class Resume extends Model {
 	@ManyToMany
 	public List<Language> languages;
 	
+	
+	
+	// Constructors
+	
 	public Resume(JobSeeker owner, String name) {
 		this.owner = owner;
 		this.name = name;
@@ -46,13 +54,7 @@ public class Resume extends Model {
 	
 	
 	
-	// Static methods
-	public static void deleteResume(Resume resume) {
-		if (resume == null) return;
-		
-		resume.owner.resumes.remove(resume);
-		resume.delete();
-	}
+
 	
 	// Method
 	/*

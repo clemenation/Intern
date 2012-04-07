@@ -15,11 +15,20 @@ public class District extends Model {
 	@ManyToOne
 	public City city;
 	
-	
+
 	
 	// Constructors
 	public District(City c, String n) {
 		this.city = c;
 		this.name = n;
+	}
+	
+	
+	
+	// Static methods
+	
+	public static void deleteDistrict(District district) {
+		district.city.districts.remove(district);
+		district.delete();
 	}
 }

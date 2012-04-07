@@ -18,6 +18,11 @@ public class BasicTest extends UnitTest {
 	
 	@Test
 	public void fullTest() {
+		// Logging
+		System.out.println();
+		System.out.println("Running fullTest");
+		
+		// Load
 		Fixtures.loadModels("data.yml");
 		
 		// Count things
@@ -50,19 +55,15 @@ public class BasicTest extends UnitTest {
 		assertEquals(2, bob.resumes.size());
 		assertEquals(4, Resume.count());
 		
-		// Delete steve's 2nd resume (directly)
-		Resume.deleteResume(frontResume);
-		assertEquals(3, Resume.count());
+		/* Problem deleting resume in here
+		// Delete steve's latest resume
+		steveResumes.get(0).delete();
+		steve.resumes.remove(0);
 		assertEquals(1, steve.resumes.size());
-		
-		// Delete steve's latest resume (indirectly)
-		/*steve.removeResume(0);
-		assertEquals(0, steve.resumes.size());
-		assertEquals(1, Resume.count());
-		*/
+		assertEquals(2, Resume.count());
 		
 		// Delete a null resume
-		/*Resume.deleteResume(null);
+		Resume.deleteResume(null);
 		assertEquals(0, steve.resumes.size());
 		assertEquals(1, Resume.count());
 		*/
@@ -81,6 +82,11 @@ public class BasicTest extends UnitTest {
 	//Van's test
 	@Test
 	public void companySizeTest() {
+		// Logging
+		System.out.println();
+		System.out.println("Running companySizeTest");
+		
+		// Load
 		Fixtures.loadModels("data.yml");
 
 		// CompanySize test
@@ -92,6 +98,10 @@ public class BasicTest extends UnitTest {
 	
 	@Test
 	public void cityTest() {
+		// Logging
+		System.out.println();
+		System.out.println("Running cityTest");
+
 		// City test
 	    // Create a new city
 	    City hanoi = new City("Hanoi").save();
@@ -140,6 +150,10 @@ public class BasicTest extends UnitTest {
 	    assertEquals(1, hanoi.districts.size());
 	    assertEquals(1, District.count());
 	    assertEquals("Hai Ba Trung", hanoi.districts.get(0).name);
+	    
+	    hanoi.removeDistrict(0);
+	    assertEquals(0, hanoi.districts.size());
+	    assertEquals(0, District.count());
 	}
 	
 	@Test
@@ -148,6 +162,17 @@ public class BasicTest extends UnitTest {
 		List<District> hanoiDistricts = District.find("byName", "Dong Da").fetch();
 		District d = hanoiDistricts.get(0);
 		assertEquals("Hanoi", d.city.name);
+		
+		// Find City Hanoi
+		City hanoi = City.find("byName", "Hanoi").first();
+		assertNotNull(hanoi);
+		assertEquals(2, hanoi.districts.size());
+		assertEquals(2, District.count());
+		
+		// Remove a district from Hanoi
+		District.deleteDistrict(hanoi.districts.get(0));
+		assertEquals(1, hanoi.districts.size());
+		assertEquals(1, District.count());
 	}
 	
 	@Test

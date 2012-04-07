@@ -43,8 +43,8 @@ public class City extends Model {
 	public City removeDistrict(District district) {
 		try {
 			this.districts.remove(district);
+			System.out.println("District " + district.name + " removed from city " + this.name);	// Logging
 			district.delete();
-			System.out.println("District " + name + " removed from city " + this.name);	// Logging
 		} catch(IllegalArgumentException exception) {
 			// If the district is not in this city
 			return this;

@@ -62,18 +62,25 @@ public class JobSeeker extends Model {
 		return this;
 	}
 	
+	// Problem in here when try to run resume.delete()
+	/*
 	public JobSeeker removeResume(int index) {
-		// The Resume.deleteResume(Resume) will do the remove from list job
-		Resume.deleteResume(this.resumes.get(index));
-		this.save();
+		Resume resume = this.resumes.get(index);
+		resume.delete();
+		System.out.println("Resume " + resume.name + " removed from JobSeeker " + this.email);	// Logging
+		this.resumes.remove(index);
 		
+		this.save();
 		return this;
 	}
+	*/
 	
 	/*
 	 public JobSeeker addApplication() {
 	 }
 	 */
+	
+	
 	
 	// Static methods
 	
