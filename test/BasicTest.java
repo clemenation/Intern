@@ -83,21 +83,16 @@ public class BasicTest extends UnitTest {
 	public void companySizeTest() {
 		Fixtures.loadModels("data.yml");
 
-		//CompanySize test
+		// CompanySize test
 		assertEquals(1, CompanySize.count());
-		List <CompanySize> t = CompanySize.findAll();
-		for (CompanySize counter : t) {
-			assertEquals("small", counter.size);
-		}
-		
-		CompanySize cs = t.get(0);
-		assertEquals("small", cs.size);
+		CompanySize companySize = CompanySize.all().first();
+		assertEquals("< 10", companySize.size);
 		
 	}
 	
 	@Test
 	public void cityTest() {
-		//City test
+		// City test
 	    // Create a new city
 	    City hanoi = new City("Hanoi").save();
 	 
