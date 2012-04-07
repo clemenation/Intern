@@ -97,10 +97,10 @@ public class BasicTest extends UnitTest {
 	    City hanoi = new City("Hanoi").save();
 	 
 	    // Add a first district
-	    new District(hanoi, "Dong Da").save();
-	    new District(hanoi, "Hai Ba Trung").save();
+	    hanoi.addDistrict("Dong Da");
+	    hanoi.addDistrict("Hai Ba Trung");
 	 
-	    // Retrieve all districts
+	    // Retrieve all districts (from District table)
 	    List<District> hanoiDistricts = District.find("byCity", hanoi).fetch();
 	 
 	    // Tests
@@ -113,6 +113,33 @@ public class BasicTest extends UnitTest {
 	    District secondDistrict = hanoiDistricts.get(1);
 	    assertNotNull(secondDistrict);
 	    assertEquals("Hai Ba Trung", secondDistrict.name);
+	    
+	    
+	    
+	    // Retrieve Hanoi's districts (directly from hanoi entity)
+	    hanoiDistricts = null;
+	    firstDistrict = null;
+	    secondDistrict = null;
+	    
+	    hanoiDistricts = hanoi.districts; 
+	    
+	    // Tests
+	    assertEquals(2, hanoiDistricts.size());
+	 
+	    firstDistrict = hanoiDistricts.get(0);
+	    assertNotNull(firstDistrict);
+	    assertEquals("Dong Da", firstDistrict.name);
+	    
+	    secondDistrict = hanoiDistricts.get(1);
+	    assertNotNull(secondDistrict);
+	    assertEquals("Hai Ba Trung", secondDistrict.name);
+	    
+	    
+	    // Removing a Dong Da from Hanoi
+	    hanoi.removeDistrict(firstDistrict);
+	    assertEquals(1, hanoi.districts.size());
+	    assertEquals(1, District.count());
+	    assertEquals("Hai Ba Trung", hanoi.districts.get(0).name);
 	}
 	
 	@Test
