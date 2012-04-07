@@ -12,12 +12,16 @@ public class Address extends Model {
 	@ManyToOne
 	public City city;
 	
+	@ManyToOne
+	public District district;
+	
 	public Address(City city) {
 		this.city = city;
 	}
 	
-	public Address(String address, City city) {
+	public Address(String address, City city, District district) {
 		this.address = address;
+		this.district = district;
 		this.city = city;
 	}
 }
