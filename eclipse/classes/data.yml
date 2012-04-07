@@ -45,3 +45,4 @@ Employer(tom):
     industry: Software
     description: We do things
     contactInfo: tomContactInfo
+    userType: employer

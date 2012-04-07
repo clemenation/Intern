@@ -62,6 +62,7 @@ public class BasicTest extends UnitTest {
 		
 		Employer tom = Employer.find("byEmail", "tom@gmail.com").first();
 		assertNotNull(tom);
+		assertEquals(tom.userType, "employer");
 		assertEquals(tom.contactInfo.address.address, "BK");
 		assertEquals(tom.contactInfo.address.city.name, "Hanoi");
 		assertEquals(tom.contactInfo.contactEmail, "tom@gmail.com");		

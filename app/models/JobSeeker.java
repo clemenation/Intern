@@ -6,12 +6,9 @@ import javax.persistence.*;
 import play.db.jpa.*;
 
 @Entity
-public class JobSeeker extends Model {
+public class JobSeeker extends User {
 		
 	// Variables
-	
-	public String email;
-	public String password;
 	
 	@Lob
 	public String aboutMe;
@@ -20,13 +17,8 @@ public class JobSeeker extends Model {
 	public String fullName;
 	public Date birthday;
 	
-	public ContactInfo contactInfo;
-	
 	@OneToMany(mappedBy="owner", cascade=CascadeType.ALL)
 	public List<Resume> resumes;
-
-	
-	
 	
 	// Constructors
 	
