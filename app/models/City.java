@@ -53,4 +53,8 @@ public class City extends Model {
 		this.save();
 		return this;
 	}
+	
+	public City removeDistrict(int index) {
+		return this.removeDistrict(this.districts.get(index));
+	}
 }
