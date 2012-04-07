@@ -8,7 +8,6 @@ import play.db.jpa.*;
 @Entity
 public class Job extends Model {
 	
-	public Education requiredEducation;
 	public String name;
 	public Date postedAt;
 	public int requiredWorkExperience;
@@ -19,36 +18,15 @@ public class Job extends Model {
 	@ManyToOne
 	public Employer owner;
 	
-	@OneToMany(mappedBy="job", cascade=CascadeType.ALL)
-	public List<Application> application;
-	
-	@OneToOne
-	public ContactInfo contactInfo;
-	
-	@ManyToMany
-	public List<Language> requiredLanguage;
-	
-	//Constructor
 	public Job(Employer owner, String name) {
 		this.owner = owner;
 		this.name = name;
 		this.postedAt = new Date();
 	}
 	
-	public Job(Employer owner, String name, int requiredWorkExperience, String description, ContactInfo contactInfo) {
+	public Job(Employer owner, String name, int requiredWorkExperience, String description) {
 		this(owner, name);
 		this.requiredWorkExperience = requiredWorkExperience;
 		this.description = description;
-		this.contactInfo = contactInfo;
 	}
-	
-	// Methods
-	/*
-	public Job addApplication() {
-		return this;
-	}
-	
-	public Job addLanguage() {
-	}
-	*/
 }
