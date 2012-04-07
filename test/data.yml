@@ -6,6 +6,18 @@
 #   password: secret
 #   fullname: Bob
 
+Major(firstMajor):
+    name: computer science
+
+Major(secondMajor):
+    name: electronic
+
+Education(firstEducation):
+    college: BK
+    gpa: 3.4
+    soNamHoc: 3
+    major: secondMajor
+
 JobSeeker(steve):
     email: steve@gmail.com
     password: jobs
@@ -16,28 +28,63 @@ JobSeeker(steve):
 JobSeeker(bob):
     email: bob@gmail.com
     password: secret
-    
+
+City(hanoi):
+    name: Hanoi
+
+District(firstDistrict):
+    name: Dong Da
+    city: hanoi
+
+District(secondDistrict):
+    name: Hai Ba Trung
+    city: hanoi
+
+Address(steveAddress):
+    address: KL
+    district: firstDistrict
+    city: hanoi
+
+Address(bobAddress):
+    address: TM
+    district: secondDistrict
+    city: hanoi
+
+Address(tomAddress):
+    address: BK
+    district: firstDistrict
+    city: hanoi    
+
+ContactInfo(steveContactInfo):
+    contactEmail: steve@gmail.com
+    address: steveAddress
+
+ContactInfo(tomContactInfo):
+    contactEmail: tom@gmail.com
+    address: tomAddress
+
+ContactInfo(bobContactInfo):
+    contactEmail: bob@gmail.com
+    address: bobAddress
+
 Resume(firstResume):
     name: My First Resume
     postedAt: 2012-04-01
     owner: steve
-    
+    contactInfo: steveContactInfo
+
 Resume(secondResume):
     name: My Second Resume
     postedAt: 2012-04-04
     owner: steve
+    contactInfo: steveContactInfo
     
-City(hanoi):
-    name: Hanoi    
-    
-Address(tomAddress):
-    address: BK
-    city: hanoi    
-    
-ContactInfo(tomContactInfo):
-    contactEmail: tom@gmail.com
-    address: tomAddress
-    
+Resume(bobResume):
+    name: bob Resume
+    postedAt: 2012-04-04
+    owner: bob
+    contactInfo: bobContactInfo
+
 Employer(tom):
     email: tom@gmail.com
     password: password
@@ -45,3 +92,26 @@ Employer(tom):
     industry: Software
     description: We do things
     contactInfo: tomContactInfo
+    
+Job(jobTest1):
+    name: doSomething
+    owner: tom
+    contactInfo: tomContactInfo
+    requiedEducation: firstEducation
+
+Application(SteveToTom):
+    employer: tom
+    job: jobTest1
+    jobSeeker: steve
+    resume: firstResume
+
+Application(BobToTom):
+    employer: tom
+    job: jobTest1
+    jobSeeker: bob
+    resume: bobResume
+
+CompanySize(abcSize):
+    size: small
+
+

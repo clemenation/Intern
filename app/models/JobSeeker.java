@@ -25,7 +25,8 @@ public class JobSeeker extends Model {
 	@OneToMany(mappedBy="owner", cascade=CascadeType.ALL)
 	public List<Resume> resumes;
 
-	
+	@OneToMany(mappedBy="jobSeeker", cascade=CascadeType.ALL)
+	public List<Application> applications;
 	
 	
 	// Constructors
@@ -34,6 +35,7 @@ public class JobSeeker extends Model {
 		this.email = email;
 		this.password = password;
 		this.resumes = new ArrayList<Resume>();
+		this.applications = new ArrayList<Application>();
 	}
 
 	public JobSeeker(String email, 
@@ -68,7 +70,10 @@ public class JobSeeker extends Model {
 		return this;
 	}
 	
-	
+	/*
+	 public JobSeeker addApplication() {
+	 }
+	 */
 	
 	// Static methods
 	
