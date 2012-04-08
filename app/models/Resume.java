@@ -54,10 +54,25 @@ public class Resume extends Model {
 	
 	
 	
-
-	
 	// Method
+	
 	public String toString() {
 		return this.name;
+	}
+	
+	
+	
+	// Static method
+	
+	public static boolean deleteResume(Resume resume) {
+		if (resume == null) {
+			System.out.println("ERROR: Deleting null resume");
+			return false;
+		}
+		
+		resume.owner.resumes.remove(resume);
+		resume.delete();
+		
+		return true;
 	}
 }

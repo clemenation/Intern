@@ -80,8 +80,34 @@ public class BasicTest extends UnitTest {
 
 	}
 
+	@Test
+	public void jobSeekerTest() {
+		JobSeeker tom = new JobSeeker("tom@gmail.com", "secret").save();
+		assertNotNull(tom);
+		tom.addResume("Tom's 1st resume");
+		tom.addResume("Tom's 2nd resume");
+		
+		// Counting
+		assertEquals(1, JobSeeker.count());
+		assertEquals(2, Resume.count());
+		assertEquals(2, tom.resumes.size());
+		
+		// Getting tom's resume from Resume table
+		Resume tomResume = Resume.find("byOwner", tom).first();
+		assertNotNull(tomResume);
+		
+		// Removing 1 resume of tom
+		tom.removeResume(0);
+		assertEquals(1, Resume.count());
+		assertEquals(1, tom.resumes.size());
+		
+		// Deleting tom
+		JobSeeker.deleteJobSeeker(tom);
+		assertEquals(0, JobSeeker.count());
+		assertEquals(0, Resume.count());
+		
+	}
 
-	//Van's test
 	@Test
 	public void companySizeTest() {
 		// Logging

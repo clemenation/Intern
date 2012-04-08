@@ -67,18 +67,18 @@ public class JobSeeker extends Model {
 		return this;
 	}
 	
-	// Problem in here when try to run resume.delete()
-	/*
-	public JobSeeker removeResume(int index) {
-		Resume resume = this.resumes.get(index);
-		resume.delete();
-		System.out.println("Resume " + resume.name + " removed from JobSeeker " + this.email);	// Logging
-		this.resumes.remove(index);
+	public boolean removeResume(Resume resume) {
+		if (!this.resumes.contains(resume)) {
+			System.out.println("ERROR: JobSeeker " + this + " does not have resume " + resume);
+			return false;
+		}
 		
-		this.save();
-		return this;
+		return Resume.deleteResume(resume);
 	}
-	*/
+	
+	public boolean removeResume(int index) {
+		return this.removeResume(this.resumes.get(index));
+	}
 	
 	/*
 	 public JobSeeker addApplication() {
@@ -88,6 +88,16 @@ public class JobSeeker extends Model {
 	
 	
 	// Static methods
+	
+	public static boolean deleteJobSeeker(JobSeeker jobSeeker) {
+		if (jobSeeker == null) {
+			System.out.println("ERROR: Deleting null jobSeeker");
+			return false;
+		}
+		
+		jobSeeker.delete();
+		return true;
+	}
 	
 	public static JobSeeker connect(String email, String password) {
 		return find("byEmailAndPassword", email, password).first();
