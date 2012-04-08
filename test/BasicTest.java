@@ -107,6 +107,34 @@ public class BasicTest extends UnitTest {
 		assertEquals(0, Resume.count());
 		
 	}
+	
+	@Test
+	public void employerTest() {
+		Employer tom = new Employer("tom@gmail.com", "secret").save();
+		assertNotNull(tom);
+		tom.addJob("Tom's 1st job");
+		tom.addJob("Tom's 2nd job");
+		
+		// Counting
+		assertEquals(1, Employer.count());
+		assertEquals(2, Job.count());
+		assertEquals(2, tom.jobs.size());
+		
+		// Getting tom's job from Job table
+		Job tomJob = Job.find("byOwner", tom).first();
+		assertNotNull(tomJob);
+		
+		// Removing 1 job of tom
+		tom.removeJob(0);
+		assertEquals(1, Job.count());
+		assertEquals(1, tom.jobs.size());
+		
+		// Deleting tom
+		Employer.deleteEmployer(tom);
+		assertEquals(0, Employer.count());
+		assertEquals(0, Job.count());
+		
+	}
 
 	@Test
 	public void companySizeTest() {
@@ -350,13 +378,30 @@ public class BasicTest extends UnitTest {
 		System.out.println();
 		System.out.println("Running applicationTestWithYml");
 
-		Fixtures.loadModels("data.yml");
-		List <Application> app = Application.findAll();
-		assertEquals(2, app.size());
-		Application firstApp = app.get(0);
-		assertEquals("tom@gmail.com", firstApp.employer.email);
-		assertEquals("doSomething", firstApp.job.name);
-		assertEquals("steve@gmail.com", firstApp.jobSeeker.email);
-		assertEquals("My First Resume", firstApp.resume.name);
+		// Loading
+		Fixtures.loadModels("dungnguyendata.yml");
+		
+		// Counting
+		assertEquals(1, JobSeeker.count());
+		assertEquals(1, Employer.count());
+		assertEquals(1, Application.count());
+		assertEquals(1, Resume.count());
+		assertEquals(1, Job.count());		
+		
+		// Getting the application
+		Application application = Application.all().first();
+		assertNotNull(application);
+		assertEquals(application.resume.name, "Steve's 1st resume");
+		assertEquals(application.job.name, "Tom's 1st job");
+		assertEquals(application.jobSeeker.email, "steve@gmail.com");
+		assertEquals(application.employer.email, "tom@gmail.com");
+		assertEquals(1, application.jobSeeker.applications.size());
+		assertEquals(1, application.employer.applications.size());
+		
+		// Deleting the application's resume
+		assertEquals(false, Resume.deleteResume(application.resume));
+		assertEquals(false, Job.deleteJob(application.job));
+		assertEquals(false, JobSeeker.deleteJobSeeker(application.jobSeeker));
+		assertEquals(false, Employer.deleteEmployer(application.employer));
 	}
 }

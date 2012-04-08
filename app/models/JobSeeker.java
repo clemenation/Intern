@@ -10,7 +10,9 @@ public class JobSeeker extends Model {
 		
 	// Variables
 	
+	// Required
 	public String email;
+	// Required
 	public String password;
 	
 	@Lob
@@ -26,7 +28,7 @@ public class JobSeeker extends Model {
 	@OneToMany(mappedBy="owner", cascade=CascadeType.ALL)
 	public List<Resume> resumes;
 
-	@OneToMany(mappedBy="jobSeeker", cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="jobSeeker")
 	public List<Application> applications;
 	
 	
@@ -92,6 +94,13 @@ public class JobSeeker extends Model {
 	public static boolean deleteJobSeeker(JobSeeker jobSeeker) {
 		if (jobSeeker == null) {
 			System.out.println("ERROR: Deleting null jobSeeker");
+			return false;
+		}
+		
+		// Check if any application is linking to this jobSeeker
+		Application application = Application.find("byJobSeeker", jobSeeker).first();
+		if (application != null) {
+			System.out.println("ERROR: There are still applications owned by jobSeeker " + jobSeeker + ", cannot delete yet");
 			return false;
 		}
 		

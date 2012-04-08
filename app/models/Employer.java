@@ -26,6 +26,9 @@ public class Employer extends Model {
 	@OneToMany(mappedBy="owner", cascade=CascadeType.ALL)
 	public List<Job> jobs;
 	
+	@OneToMany(mappedBy="employer")
+	public List<Application> applications;
+	
 	
 	
 	
@@ -35,6 +38,7 @@ public class Employer extends Model {
 		this.email = email;
 		this.password = password;
 		this.jobs = new ArrayList<Job>();
+		this.applications = new ArrayList<Application>();
 	}
 	
 	public Employer(String email, 
@@ -65,10 +69,39 @@ public class Employer extends Model {
 		return this;
 	}
 	
+	public boolean removeJob(Job job) {
+		if (!this.jobs.contains(job)) {
+			System.out.println("ERROR: employer " + this + " does not have job " + job);
+			return false;
+		}
+		
+		return Job.deleteJob(job);
+	}
+	
+	public boolean removeJob(int index) {
+		return this.removeJob(this.jobs.get(index));
+	}
 	
 	
 	
 	// Static methods
+	
+	public static boolean deleteEmployer(Employer employer) {
+		if (employer == null) {
+			System.out.println("ERROR: Deleting null employer");
+			return false;
+		}
+		
+		// Check if any application is linking to this employer
+		Application application = Application.find("byEmployer", employer).first();
+		if (application != null) {
+			System.out.println("ERROR: There are still applications owned by employer " + employer + ", cannot delete yet");
+			return false;
+		}
+		
+		employer.delete();
+		return true;
+	}
 	
 	public static Employer connect(String email, String password) {
 		return find("byEmailAndPassword", email, password).first();

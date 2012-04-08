@@ -1,0 +1,23 @@
+JobSeeker(steve):
+    email: steve@gmail.com
+    password: jobs
+    
+Resume(steveResume):
+    name: Steve's 1st resume
+    postedAt: 2012-04-04
+    owner: steve
+    
+Employer(tom):
+    email: tom@gmail.com
+    password: password
+    
+Job(tomJob):
+    name: Tom's 1st job
+    postedAt: 2012-04-08
+    owner: tom
+    
+Application(steveToTom):
+    job: tomJob
+    resume: steveResume
+    jobSeeker: steve
+    employer: tom

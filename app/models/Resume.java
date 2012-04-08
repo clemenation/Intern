@@ -12,7 +12,13 @@ public class Resume extends Model {
 	
 	// Properties
 	
+	// Required
 	public String name;
+	
+	// Required
+	@ManyToOne
+	public JobSeeker owner;
+	
 	public Date postedAt;
 	public int workExperience;
 	public Education education;
@@ -21,14 +27,11 @@ public class Resume extends Model {
 	@Lob
 	public String description;
 	
-	@ManyToOne
-	public JobSeeker owner;
-	
 	@OneToOne(cascade=CascadeType.ALL)
 	public ContactInfo contactInfo;
 	
-	// ??????
-	//public List<Application> applications;
+	@OneToMany(mappedBy="resume")
+	public List<Application> applications;
 	
 	@ManyToMany
 	public List<Language> languages;
@@ -41,6 +44,7 @@ public class Resume extends Model {
 		this.owner = owner;
 		this.name = name;
 		this.postedAt = new Date();
+		this.applications = new ArrayList<Application>();
 	}
 	
 	public Resume(JobSeeker owner, String name, int workExperience, String description, Education education, Address prefer, ContactInfo contactInfo) {
@@ -67,6 +71,13 @@ public class Resume extends Model {
 	public static boolean deleteResume(Resume resume) {
 		if (resume == null) {
 			System.out.println("ERROR: Deleting null resume");
+			return false;
+		}
+		
+		// Check if any application is linking to this resume
+		Application application = Application.find("byResume", resume).first();
+		if (application != null) {
+			System.out.println("ERROR: There are still applications owned by resume " + resume + ", cannot delete yet");
 			return false;
 		}
 		

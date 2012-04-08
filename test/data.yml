@@ -104,21 +104,15 @@ Job(jobTest1):
     name: doSomething
     owner: tom
     contactInfo: tomContactInfo
-    requiedEducation: firstEducation
+    requiredEducation: firstEducation
 
 Application(SteveToTom):
-    employer: tom
     job: jobTest1
-    jobSeeker: steve
     resume: firstResume
 
 Application(BobToTom):
-    employer: tom
     job: jobTest1
-    jobSeeker: bob
     resume: bobResume
 
 CompanySize(abcSize):
     size: < 10
-
-
