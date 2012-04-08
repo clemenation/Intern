@@ -29,6 +29,8 @@ public class Employer extends Model {
 	@OneToMany(mappedBy="employer")
 	public List<Application> applications;
 	
+	@ManyToOne
+	public CompanySize companySize;
 	
 	
 	
@@ -46,12 +48,14 @@ public class Employer extends Model {
 			String companyName, 
 			String industry, 
 			String description,
-			ContactInfo contactInfo) {
+			ContactInfo contactInfo,
+			CompanySize companySize) {
 		this(email, password);
 		this.companyName = companyName;
 		this.industry = industry;
 		this.description = description;
 		this.contactInfo = contactInfo;
+		this.companySize = companySize;
 	}
 	
 	

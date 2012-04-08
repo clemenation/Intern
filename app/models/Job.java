@@ -32,7 +32,7 @@ public class Job extends Model {
 	public ContactInfo contactInfo;
 	
 	@ManyToMany
-	public List<Language> requiredLanguage;
+	public List<Language> requiredLanguages;
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	public Education requiredEducation;
@@ -46,6 +46,7 @@ public class Job extends Model {
 		this.name = name;
 		this.postedAt = new Date();
 		this.application = new ArrayList<Application>();
+		this.requiredLanguages = new ArrayList<Language>();
 	}
 	
 	public Job(Employer owner, 
@@ -67,6 +68,42 @@ public class Job extends Model {
 	
 	public String toString() {
 		return this.name;
+	}
+	
+	public boolean addLanguage(Language language) {
+		if (language == null) {
+			System.out.println("ERROR: Adding null language");
+			return false;
+		}
+		
+		if (Language.find("byLanguage", language.language).first() == null) {
+			System.out.println("ERROR: Adding language not in language database");
+			return false;
+		}
+		
+		this.requiredLanguages.add(language);
+		language.useCount++;
+		language.save();
+		
+		return true;
+	}
+	
+	public boolean removeLanguage(Language language) {
+		if (language == null) {
+			System.out.println("ERROR: Adding null language");
+			return false;
+		}
+		
+		if (Language.find("byLanguage", language.language).first() == null) {
+			System.out.println("ERROR: Adding language not in language database");
+			return false;
+		}
+		
+		this.requiredLanguages.remove(language);
+		language.useCount--;
+		language.save();		
+		
+		return true;
 	}
 	
 	

@@ -6,6 +6,12 @@
 #   password: secret
 #   fullname: Bob
 
+Language(english):
+    language: English
+    
+Language(vietnam):
+    language: Vietnam
+
 Major(firstMajor):
     name: computer science
 

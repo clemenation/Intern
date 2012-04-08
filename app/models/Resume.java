@@ -46,9 +46,15 @@ public class Resume extends Model {
 		this.name = name;
 		this.postedAt = new Date();
 		this.applications = new ArrayList<Application>();
+		this.languages = new ArrayList<Language>();
 	}
 	
-	public Resume(JobSeeker owner, String name, int workExperience, String description, Education education, ContactInfo contactInfo) {
+	public Resume(JobSeeker owner, 
+			String name, 
+			int workExperience, 
+			String description, 
+			Education education, 
+			ContactInfo contactInfo) {
 		this(owner, name);
 		this.workExperience = workExperience;
 		this.description = description;
@@ -62,6 +68,42 @@ public class Resume extends Model {
 	
 	public String toString() {
 		return this.name;
+	}
+	
+	public boolean addLanguage(Language language) {
+		if (language == null) {
+			System.out.println("ERROR: Adding null language");
+			return false;
+		}
+		
+		if (Language.find("byLanguage", language.language).first() == null) {
+			System.out.println("ERROR: Adding language not in language database");
+			return false;
+		}
+		
+		this.languages.add(language);
+		language.useCount++;
+		language.save();
+		
+		return true;
+	}
+	
+	public boolean removeLanguage(Language language) {
+		if (language == null) {
+			System.out.println("ERROR: Adding null language");
+			return false;
+		}
+		
+		if (Language.find("byLanguage", language.language).first() == null) {
+			System.out.println("ERROR: Adding language not in language database");
+			return false;
+		}
+		
+		this.languages.remove(language);
+		language.useCount--;
+		language.save();		
+		
+		return true;
 	}
 	
 	

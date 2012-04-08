@@ -7,9 +7,17 @@ import javax.persistence.*;
 @Entity
 public class CompanySize extends Model {
 	
+	
+	
+	// Properties
+	
+	// Required
 	public String size;
 	
-	//Constructor
+	
+	
+	// Constructor
+	
 	public CompanySize(String s) {
 		this.size = s;
 	}

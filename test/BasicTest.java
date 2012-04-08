@@ -410,4 +410,38 @@ public class BasicTest extends UnitTest {
 		assertEquals(false, JobSeeker.deleteJobSeeker(application.jobSeeker));
 		assertEquals(false, Employer.deleteEmployer(application.employer));
 	}
+	
+	@Test
+	public void languageTestWithYml() {
+		// Logging
+		System.out.println();
+		System.out.println("Running languageTestWithYml");
+		
+		// Loading
+		Fixtures.loadModels("data.yml");
+		
+		// Counting
+		assertEquals(2, Language.count());
+		
+		// Getting english
+		Language english = Language.find("byLanguage", "English").first();
+		assertNotNull(english);
+		assertEquals(0, english.useCount);
+		
+		Resume resume = Resume.all().first();
+		resume.addLanguage(english);
+		assertEquals(1, english.useCount);
+		assertEquals(1, resume.languages.size());
+		
+		// Deleting english
+		assertEquals(false, Language.deleteLanguage(english));
+		
+		resume.removeLanguage(english);
+		assertEquals(0, english.useCount);
+		assertEquals(0, resume.languages.size());
+		
+		// Deleting english again
+		assertEquals(true, Language.deleteLanguage(english));
+		assertEquals(1, Language.count());
+	}
 }
