@@ -6,9 +6,17 @@ import play.db.jpa.Model;
 
 @Entity
 public class Major extends Model {
+	
+	
+	
+	// Properties
+	
 	public String name;
 	
-	//Constructor
+	
+	
+	// Constructors
+	
 	public Major(String name) {
 		this.name = name;
 	}

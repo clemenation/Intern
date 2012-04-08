@@ -15,7 +15,7 @@ Major(secondMajor):
 Education(firstEducation):
     college: BK
     gpa: 3.4
-    soNamHoc: 3
+    studyYears: 3
     major: secondMajor
     
 City(hanoi):

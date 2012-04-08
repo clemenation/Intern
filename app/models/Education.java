@@ -6,36 +6,35 @@ import play.db.jpa.Model;
 
 @Entity
 public class Education extends Model {
-	public String college;
+
+
+
+	// Properties
+
+	//Required
+	public int studyYears;
+
 	public double gpa;
-	public int soNamHoc;
-	
+	public String college;
+
 	@ManyToOne
 	public Major major;
-	
-	//Constructor
-	public Education(String college) {
-		this.college = college;
+
+
+
+	// Constructors
+
+	public Education(int studyYears) {
+		this.studyYears = studyYears;
 	}
-	
-	//Constructor
-	public Education(String college, double gpa) {
-		this.college = college;
-		this.gpa = gpa;
-	}
-	
-	//Constructor
-	public Education(String college, double gpa, Major major) {
-		this.college = college;
-		this.gpa = gpa;
-		this.major = major;
-	}
-	
-	//Constructor
-	public Education(String college, double gpa, Major major, int soNamHoc) {
+
+	public Education(int studyYears,
+			String college, 
+			double gpa, 
+			Major major) {
+		this.studyYears = studyYears;
 		this.college = college;
 		this.gpa = gpa;
 		this.major = major;
-		this.soNamHoc = soNamHoc;
 	}
 }

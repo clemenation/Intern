@@ -21,8 +21,9 @@ public class Resume extends Model {
 	
 	public Date postedAt;
 	public int workExperience;
+	
+	@OneToOne(cascade=CascadeType.ALL)
 	public Education education;
-	public Address preferWorkLocation;
 	
 	@Lob
 	public String description;
@@ -47,12 +48,11 @@ public class Resume extends Model {
 		this.applications = new ArrayList<Application>();
 	}
 	
-	public Resume(JobSeeker owner, String name, int workExperience, String description, Education education, Address prefer, ContactInfo contactInfo) {
+	public Resume(JobSeeker owner, String name, int workExperience, String description, Education education, ContactInfo contactInfo) {
 		this(owner, name);
 		this.workExperience = workExperience;
 		this.description = description;
 		this.education = education;
-		this.preferWorkLocation = prefer;
 		this.contactInfo = contactInfo;
 	}
 	

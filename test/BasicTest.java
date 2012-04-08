@@ -363,13 +363,19 @@ public class BasicTest extends UnitTest {
 		System.out.println();
 		System.out.println("Running educationTestWithYml");
 
+		// Loading
 		Fixtures.loadModels("data.yml");
+		
 		List <Education> education = Education.findAll();
 		assertEquals(education.size(), 1);
 		Education firstEducation = education.get(0);
 		assertEquals("BK", firstEducation.college);
 		assertEquals(3.4, firstEducation.gpa, 0.1);
 		assertEquals("electronic", firstEducation.major.name);
+		
+		Job job = Job.find("byRequiredEducation", firstEducation).first();
+		assertNotNull(job);
+		assertEquals("tom@gmail.com", job.owner.email);
 	}
 
 	@Test

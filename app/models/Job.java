@@ -12,16 +12,18 @@ public class Job extends Model {
 	
 	// Properties
 	
-	public Education requiredEducation;
+	// Required
 	public String name;
+	
+	// Required
+	@ManyToOne
+	public Employer owner;
+	
 	public Date postedAt;
 	public int requiredWorkExperience;
 	
 	@Lob
 	public String description;
-	
-	@ManyToOne
-	public Employer owner;
 	
 	@OneToMany(mappedBy="job")
 	public List<Application> application;
@@ -31,6 +33,9 @@ public class Job extends Model {
 	
 	@ManyToMany
 	public List<Language> requiredLanguage;
+	
+	@OneToOne(cascade=CascadeType.ALL)
+	public Education requiredEducation;
 	
 	
 	
@@ -43,11 +48,17 @@ public class Job extends Model {
 		this.application = new ArrayList<Application>();
 	}
 	
-	public Job(Employer owner, String name, int requiredWorkExperience, String description, ContactInfo contactInfo) {
+	public Job(Employer owner, 
+			String name, 
+			int requiredWorkExperience, 
+			String description, 
+			ContactInfo contactInfo,
+			Education requiredEducation) {
 		this(owner, name);
 		this.requiredWorkExperience = requiredWorkExperience;
 		this.description = description;
 		this.contactInfo = contactInfo;
+		this.requiredEducation = requiredEducation;
 	}
 	
 	
