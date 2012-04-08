@@ -18,7 +18,35 @@ public class CompanySize extends Model {
 	
 	// Constructor
 	
-	public CompanySize(String s) {
-		this.size = s;
+	public CompanySize(String size) {
+		this.size = size;
+	}
+	
+	
+	
+	// Methods
+	
+	public String toString() {
+		return this.size;
+	}
+	
+	
+	
+	// Static methods
+	public static boolean deleteCompanySize(CompanySize companySize) {
+		if (companySize == null) {
+			System.out.println("ERROR: Deleting null companySize");
+			return false;
+		}
+		
+		// Check if there is any employer linking with this companySize
+		Employer employer = Employer.find("byCompanySize", companySize).first();
+		if (employer != null) {
+			System.out.println("ERROR: There is still employers using companySize " + companySize + ", cannot delete yet.");
+			return false;
+		}
+		
+		companySize.delete();
+		return true;
 	}
 }

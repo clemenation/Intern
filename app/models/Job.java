@@ -26,7 +26,7 @@ public class Job extends Model {
 	public String description;
 	
 	@OneToMany(mappedBy="job")
-	public List<Application> application;
+	public List<Application> applications;
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	public ContactInfo contactInfo;
@@ -45,7 +45,7 @@ public class Job extends Model {
 		this.owner = owner;
 		this.name = name;
 		this.postedAt = new Date();
-		this.application = new ArrayList<Application>();
+		this.applications = new ArrayList<Application>();
 		this.requiredLanguages = new ArrayList<Language>();
 	}
 	
@@ -121,6 +121,11 @@ public class Job extends Model {
 		if (application != null) {
 			System.out.println("ERROR: There are still applications owned by job " + job + ", cannot delete yet");
 			return false;
+		}
+
+		// Remove languages from job properly
+		for (Language language : job.requiredLanguages) {
+			job.removeLanguage(language);
 		}
 		
 		// Removing job from its owner's job list

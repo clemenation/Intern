@@ -37,4 +37,33 @@ public class Education extends Model {
 		this.gpa = gpa;
 		this.major = major;
 	}
+	
+	
+	
+	// Static methods
+	
+	public static boolean deleteEducation(Education education) {
+		if (education == null) {
+			System.out.println("ERROR: Deleting null education");
+			return false;
+		}
+		
+		// Check if any Resume linking with this Education
+		Resume resume = Resume.find("byEducation", education).first();
+		if (resume != null) {
+			resume.education = null;
+			resume.save();
+		}
+		
+		// Check if any Job linking with this Education
+		Job job = Job.find("byRequiredEducation", education).first();
+		if (job != null) {
+			job.requiredEducation = null;
+			job.save();
+		}
+		
+		education.delete();
+		return true;
+		
+	}
 }

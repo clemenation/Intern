@@ -123,6 +123,11 @@ public class Resume extends Model {
 			return false;
 		}
 		
+		// Remove languages from resume properly
+		for (Language language : resume.languages) {
+			resume.removeLanguage(language);
+		}
+		
 		resume.owner.resumes.remove(resume);
 		resume.delete();
 		

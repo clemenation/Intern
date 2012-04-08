@@ -5,14 +5,21 @@ import javax.persistence.*;
 import play.db.jpa.Model;
 
 public class Point extends Model {
-	//Variables
+	
+	
+	
+	// Properties
+	
 	public Job job;
 	public Resume resume;
-	public int point;
+	public double point;
 	
-	//Constructor
-	public Point(Job j, Resume r) {
-		this.job = j;
-		this.resume = r;
+	
+	
+	// Constructor
+	
+	public Point(Job job, Resume resume) {
+		this.job = job;
+		this.resume = resume;
 	}
 }
