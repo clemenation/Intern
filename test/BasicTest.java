@@ -55,13 +55,15 @@ public class BasicTest extends UnitTest {
 		assertEquals(2, bob.resumes.size());
 		assertEquals(5, Resume.count());
 
+		/*
 		// Delete steve's latest resume
 		steveResumes.get(2).delete();
 		steve.resumes.remove(0);
 		assertEquals(2, steve.resumes.size());
 		assertEquals(4, Resume.count());
+		assertEquals(2, ContactInfo.count());
 
-		/*
+		
 		// Delete a null resume
 		Resume.deleteResume(null);
 		assertEquals(0, steve.resumes.size());
@@ -202,6 +204,29 @@ public class BasicTest extends UnitTest {
 		
 		// Deleting null address
 		assertEquals(false, Address.deleteAddress(null));
+	}
+	
+	@Test
+	public void contactInfoTestWithYml() {
+		// Logging
+		System.out.println();
+		System.out.println("Running contactInfoTestWithYml");
+		
+		Fixtures.loadModels("data.yml");
+		
+		// Counting
+		assertEquals(3, ContactInfo.count());
+		
+		ContactInfo steveContactInfo = ContactInfo.find("byContactEmail", "steve@gmail.com").first();
+		assertNotNull(steveContactInfo);
+		
+		JobSeeker steve = JobSeeker.find("byEmail", "steve@gmail.com").first();
+		steveContactInfo = steve.contactInfo;
+		assertNotNull(steveContactInfo);
+		
+		// Deleting steveContactInfo
+		assertEquals(false, ContactInfo.deleteContactInfo(steveContactInfo));
+		assertEquals(3, ContactInfo.count());
 	}
 
 	@Test

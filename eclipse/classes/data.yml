@@ -32,40 +32,40 @@ JobSeeker(bob):
 City(hanoi):
     name: Hanoi
 
-District(firstDistrict):
+District(dongda):
     name: Dong Da
     city: hanoi
 
-District(secondDistrict):
+District(haibatrung):
     name: Hai Ba Trung
     city: hanoi
 
-Address(steveAddress):
-    address: KL
-    district: firstDistrict
-    city: hanoi
-
-Address(bobAddress):
-    address: TM
-    district: secondDistrict
-    city: hanoi
-
-Address(tomAddress):
-    address: BK
-    district: firstDistrict
-    city: hanoi    
-
 ContactInfo(steveContactInfo):
     contactEmail: steve@gmail.com
-    address: steveAddress
 
 ContactInfo(tomContactInfo):
     contactEmail: tom@gmail.com
-    address: tomAddress
 
 ContactInfo(bobContactInfo):
     contactEmail: bob@gmail.com
-    address: bobAddress
+
+Address(steveAddress):
+    address: KL
+    district: dongda
+    city: hanoi
+    contactInfo: steveContactInfo
+
+Address(bobAddress):
+    address: TM
+    district: haibatrung
+    city: hanoi
+    contactInfo: bobContactInfo
+
+Address(tomAddress):
+    address: BK
+    district: dongda
+    city: hanoi
+    contactInfo: tomContactInfo
 
 Resume(firstResume):
     name: My First Resume
@@ -76,6 +76,12 @@ Resume(firstResume):
 Resume(secondResume):
     name: My Second Resume
     postedAt: 2012-04-04
+    owner: steve
+    contactInfo: steveContactInfo
+    
+Resume(thirdResume):
+    name: My Third Resume
+    postedAt: 2012-04-08
     owner: steve
     contactInfo: steveContactInfo
     

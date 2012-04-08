@@ -17,18 +17,7 @@ Education(firstEducation):
     gpa: 3.4
     soNamHoc: 3
     major: secondMajor
-
-JobSeeker(steve):
-    email: steve@gmail.com
-    password: jobs
-    aboutMe: I'm Jobs
-    fullName: Steve Jobs
-    college: Bates
     
-JobSeeker(bob):
-    email: bob@gmail.com
-    password: secret
-
 City(hanoi):
     name: Hanoi
 
@@ -66,6 +55,18 @@ Address(tomAddress):
     district: dongda
     city: hanoi
     contactInfo: tomContactInfo
+    
+JobSeeker(steve):
+    email: steve@gmail.com
+    password: jobs
+    aboutMe: I'm Jobs
+    fullName: Steve Jobs
+    college: Bates
+    contactInfo: steveContactInfo
+    
+JobSeeker(bob):
+    email: bob@gmail.com
+    password: secret
 
 Resume(firstResume):
     name: My First Resume

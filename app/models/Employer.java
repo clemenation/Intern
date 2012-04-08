@@ -20,7 +20,7 @@ public class Employer extends Model {
 	@Lob
 	public String description;
 	
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	public ContactInfo contactInfo;
 	
 	@OneToMany(mappedBy="owner", cascade=CascadeType.ALL)
@@ -53,6 +53,10 @@ public class Employer extends Model {
 	
 	
 	// Methods
+	
+	public String toString() {
+		return this.email;
+	}
 	
 	public Employer addJob(String name) {
 		Job newJob = new Job(this, name).save();

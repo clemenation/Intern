@@ -20,6 +20,7 @@ public class JobSeeker extends Model {
 	public String fullName;
 	public Date birthday;
 	
+	@OneToOne(cascade=CascadeType.ALL)
 	public ContactInfo contactInfo;
 	
 	@OneToMany(mappedBy="owner", cascade=CascadeType.ALL)
@@ -54,6 +55,10 @@ public class JobSeeker extends Model {
 	
 	
 	// Methods
+	
+	public String toString() {
+		return this.email;
+	}
 	
 	public JobSeeker addResume(String name) {
 		Resume newResume = new Resume(this, name).save();

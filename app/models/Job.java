@@ -22,7 +22,7 @@ public class Job extends Model {
 	@OneToMany(mappedBy="job", cascade=CascadeType.ALL)
 	public List<Application> application;
 	
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	public ContactInfo contactInfo;
 	
 	@ManyToMany
@@ -43,12 +43,8 @@ public class Job extends Model {
 	}
 	
 	// Methods
-	/*
-	public Job addApplication() {
-		return this;
-	}
 	
-	public Job addLanguage() {
+	public String toString() {
+		return this.name;
 	}
-	*/
 }

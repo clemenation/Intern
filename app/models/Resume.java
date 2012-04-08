@@ -24,7 +24,7 @@ public class Resume extends Model {
 	@ManyToOne
 	public JobSeeker owner;
 	
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	public ContactInfo contactInfo;
 	
 	// ??????
@@ -57,9 +57,7 @@ public class Resume extends Model {
 
 	
 	// Method
-	/*
-	  public Resume addLanguage() {
-	  }
-	
-	 */
+	public String toString() {
+		return this.name;
+	}
 }
