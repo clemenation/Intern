@@ -112,6 +112,6 @@ Application(BobToTom):
     resume: bobResume
 
 CompanySize(abcSize):
-    size: small
+    size: < 10
 
 

@@ -57,4 +57,26 @@ public class City extends Model {
 	public City removeDistrict(int index) {
 		return this.removeDistrict(this.districts.get(index));
 	}
+	
+	
+	
+	// Static methods
+	
+	public static boolean deleteCity(City city) {
+		if (city == null) {
+			System.out.println("ERROR: Deleting null city");
+			return false;
+		}
+		
+		// Check if any address have this city
+		Address address = Address.find("byCity", city).first();
+		if (address != null) {
+			System.out.println("ERROR: There is still an address that have city " + city.name + " in it so we cannot delete now.");
+			return false;
+		}
+		
+		city.delete();
+		
+		return true;
+	}
 }

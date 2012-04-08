@@ -79,6 +79,12 @@ Resume(secondResume):
     owner: steve
     contactInfo: steveContactInfo
     
+Resume(thirdResume):
+    name: My Third Resume
+    postedAt: 2012-04-08
+    owner: steve
+    contactInfo: steveContactInfo
+    
 Resume(bobResume):
     name: bob Resume
     postedAt: 2012-04-04

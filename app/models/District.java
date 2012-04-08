@@ -27,8 +27,21 @@ public class District extends Model {
 	
 	// Static methods
 	
-	public static void deleteDistrict(District district) {
+	public static boolean deleteDistrict(District district) {
+		if (district == null) {
+			System.out.println("ERROR: Deleting null district");
+			return false;
+		}
+		
+		// Check if any address have this city
+		Address address = Address.find("byDistrict", district).first();
+		if (address != null) {
+			System.out.println("ERROR: There is still an address that have city " + district.name + " in it so we cannot delete now.");
+			return false;
+		}
+		
 		district.city.districts.remove(district);
 		district.delete();
+		return true;
 	}
 }
