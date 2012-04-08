@@ -156,6 +156,15 @@ public class BasicTest extends UnitTest {
 		hanoi.removeDistrict(0);
 		assertEquals(0, hanoi.districts.size());
 		assertEquals(0, District.count());
+		
+		
+		City haiphong = new City("Hai Phong").save();
+		haiphong.addDistrict("Hai An");
+		assertEquals(2, City.count());
+		assertEquals(1, District.count());
+		City.deleteCity(haiphong);
+		assertEquals(1, City.count());
+		assertEquals(0, District.count());
 	}
 
 	@Test
@@ -204,6 +213,26 @@ public class BasicTest extends UnitTest {
 		
 		// Deleting null address
 		assertEquals(false, Address.deleteAddress(null));
+	}
+	
+	@Test
+	public void contactInfoTest() {
+		// Logging
+		System.out.println();
+		System.out.println("Running contactInfoTest");
+		
+		ContactInfo contactInfo = new ContactInfo("dung@gmail.com").save();
+		City hanoi = new City("Hanoi").save();
+		contactInfo.address = new Address(contactInfo, hanoi).save();
+		
+		assertEquals(1, ContactInfo.count());
+		assertEquals(1, City.count());
+		assertEquals(1, Address.count());
+		
+		assertEquals(true, ContactInfo.deleteContactInfo(contactInfo));
+		assertEquals(0, ContactInfo.count());
+		assertEquals(1, City.count());
+		assertEquals(0, Address.count());
 	}
 	
 	@Test
