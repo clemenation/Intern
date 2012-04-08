@@ -8,12 +8,22 @@ import play.db.jpa.*;
 @Entity
 public class ContactInfo extends Model {
 	
+	
+	
+	// Properties
+	
+	// Required
 	public String contactEmail;
+	
 	public String mobile;
 	public String phone;
 	
-	@OneToOne
+	@OneToOne(mappedBy="contactInfo", cascade=CascadeType.ALL)
 	public Address address;
+	
+	
+	
+	// Constructors
 	
 	public ContactInfo(String email) {
 		this.contactEmail = email;
@@ -28,4 +38,9 @@ public class ContactInfo extends Model {
 		this.phone = phone;
 		this.address = address;
 	}
+	
+	
+	
+	// Methods
+	
 }

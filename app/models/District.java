@@ -10,8 +10,11 @@ public class District extends Model {
 	
 	
 	// Properties
+	
+	// Required
 	public String name;
 	
+	// Required
 	@ManyToOne
 	public City city;
 	
@@ -33,14 +36,17 @@ public class District extends Model {
 			return false;
 		}
 		
-		// Check if any address have this city
+		// Check if any Address have this District
 		Address address = Address.find("byDistrict", district).first();
 		if (address != null) {
 			System.out.println("ERROR: There is still an address that have city " + district.name + " in it so we cannot delete now.");
 			return false;
 		}
 		
+		// Removing this district from its city
 		district.city.districts.remove(district);
+		district.city.save();
+		
 		district.delete();
 		return true;
 	}

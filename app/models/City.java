@@ -12,6 +12,7 @@ public class City extends Model {
 	
 	// Properties
 	
+	// Required
 	public String name;
 	
 	@OneToMany(mappedBy="city", cascade=CascadeType.ALL)

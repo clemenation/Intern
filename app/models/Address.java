@@ -7,21 +7,65 @@ import play.db.jpa.*;
 
 @Entity
 public class Address extends Model {
-	public String address;
 	
+	
+	
+	// Properties
+
+	// Required
 	@ManyToOne
 	public City city;
-	
+
+	// Required
+	@OneToOne
+	public ContactInfo contactInfo;
+
+	public String address;
+
 	@ManyToOne
 	public District district;
+
 	
-	public Address(City city) {
+	
+	
+	
+	// Constructors
+	
+	public Address(ContactInfo contactInfo, City city) {
+		this.contactInfo = contactInfo;
 		this.city = city;
 	}
 	
-	public Address(String address, City city, District district) {
+	public Address(ContactInfo contactInfo, String address, City city, District district) {
+		this(contactInfo, city);
+		
 		this.address = address;
 		this.district = district;
-		this.city = city;
+	}
+	
+	
+	
+	// Methods
+	
+	public String toString() {
+		return this.city.name;
+	}
+	
+	
+	
+	// Static methods
+	
+	public static boolean deleteAddress(Address address) {
+		if (address == null) {
+			System.out.println("ERROR: Deleting null address");
+			return false;
+		}
+		
+		// Removing this address from its contactInfo
+		address.contactInfo.address = null;
+		address.contactInfo.save();
+		
+		address.delete();
+		return true;
 	}
 }

@@ -181,10 +181,10 @@ public class BasicTest extends UnitTest {
 	}
 
 	@Test
-	public void AddressTestWithYml() {
+	public void addressTestWithYml() {
 		// Logging
 		System.out.println();
-		System.out.println("Running AddressTestWithYml");
+		System.out.println("Running addressTestWithYml");
 
 		Fixtures.loadModels("data.yml");
 		List<Address> address = Address.findAll();
@@ -193,6 +193,15 @@ public class BasicTest extends UnitTest {
 		assertEquals("TM", firstAddress.address);
 		assertEquals("Hanoi", firstAddress.city.name);
 		assertEquals("Hai Ba Trung", firstAddress.district.name);
+		
+		// Deleting while the address is linked with its contactInfo
+		ContactInfo contactInfo = firstAddress.contactInfo;
+		assertEquals(true, Address.deleteAddress(firstAddress));
+		assertEquals(Address.count(), 2);
+		assertNull(contactInfo.address);
+		
+		// Deleting null address
+		assertEquals(false, Address.deleteAddress(null));
 	}
 
 	@Test
