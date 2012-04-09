@@ -6,6 +6,62 @@
 #   password: secret
 #   fullname: Bob
 
+Language(english):
+    language: English
+    
+Language(vietnam):
+    language: Vietnam
+
+Major(firstMajor):
+    name: computer science
+
+Major(secondMajor):
+    name: electronic
+
+Education(firstEducation):
+    college: BK
+    gpa: 3.4
+    studyYears: 3
+    major: secondMajor
+    
+City(hanoi):
+    name: Hanoi
+
+District(dongda):
+    name: Dong Da
+    city: hanoi
+
+District(haibatrung):
+    name: Hai Ba Trung
+    city: hanoi
+
+ContactInfo(steveContactInfo):
+    contactEmail: steve@gmail.com
+
+ContactInfo(tomContactInfo):
+    contactEmail: tom@gmail.com
+
+ContactInfo(bobContactInfo):
+    contactEmail: bob@gmail.com
+
+Address(steveAddress):
+    address: KL
+    district: dongda
+    city: hanoi
+    contactInfo: steveContactInfo
+
+Address(bobAddress):
+    address: TM
+    district: haibatrung
+    city: hanoi
+    contactInfo: bobContactInfo
+
+Address(tomAddress):
+    address: BK
+    district: dongda
+    city: hanoi
+    contactInfo: tomContactInfo
+    
 JobSeeker(steve):
     email: steve@gmail.com
     password: jobs
@@ -13,6 +69,7 @@ JobSeeker(steve):
     fullName: Steve Jobs
     college: Bates
     userType: Job Seeker
+    contactInfo: steveContactInfo
     
 JobSeeker(bob):
     email: bob@gmail.com
@@ -23,23 +80,26 @@ Resume(firstResume):
     name: My First Resume
     postedAt: 2012-04-01
     owner: steve
-    
+    contactInfo: steveContactInfo
+
 Resume(secondResume):
     name: My Second Resume
     postedAt: 2012-04-04
     owner: steve
+    contactInfo: steveContactInfo
     
-City(hanoi):
-    name: Hanoi    
+Resume(thirdResume):
+    name: My Third Resume
+    postedAt: 2012-04-08
+    owner: steve
+    contactInfo: steveContactInfo
     
-Address(tomAddress):
-    address: BK
-    city: hanoi    
-    
-ContactInfo(tomContactInfo):
-    contactEmail: tom@gmail.com
-    address: tomAddress
-    
+Resume(bobResume):
+    name: bob Resume
+    postedAt: 2012-04-04
+    owner: bob
+    contactInfo: bobContactInfo
+
 Employer(tom):
     email: tom@gmail.com
     password: password
@@ -48,3 +108,20 @@ Employer(tom):
     description: We do things
     contactInfo: tomContactInfo
     userType: Employer
+    
+Job(jobTest1):
+    name: doSomething
+    owner: tom
+    contactInfo: tomContactInfo
+    requiredEducation: firstEducation
+
+Application(SteveToTom):
+    job: jobTest1
+    resume: firstResume
+
+Application(BobToTom):
+    job: jobTest1
+    resume: bobResume
+
+CompanySize(abcSize):
+    size: < 10
