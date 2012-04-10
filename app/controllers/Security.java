@@ -27,4 +27,23 @@ public class Security extends Secure.Security {
 		Application.index();
 	}
 	
+	static void onAuthenticated() {
+		String userType="";
+		
+		InternJobSeeker jobSeeker = InternJobSeeker.find("byEmail", connected()).first();
+		InternEmployer employer = InternEmployer.find("byEmail", connected()).first();
+		
+		if (((jobSeeker != null) && (jobSeeker.isAdmin) ||
+				(employer != null) && (employer.isAdmin)) == true) {
+			session.put("isAdmin", true);
+		} else {
+			session.put("isAdmin", false);
+		}
+		
+		if (jobSeeker != null) userType = "Job Seeker";
+		if (employer != null) userType = "Employer";
+		
+		session.put("userType", userType);
+	}
+	
 }

@@ -1,0 +1,11 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<h1>Intern/Job Seeker</h1>
+
+#{if resumes}
+	#{list items:resumes, as:'resume'}
+		<h2>${resume.name}</h2>	
+	#{/list}
+
+#{/if}

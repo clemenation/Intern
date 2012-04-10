@@ -1,17 +1,29 @@
+InternLanguage(englishLanguage):
+    language: English
+
+InternLanguage(vietnamLanguage):
+    language: Vietnam
+    
+InternMajor(computerScienceMajor):
+    name: Computer Science
+    
+InternMajor(electronicEngineeringMajor):
+    name: Electronic Engineering
+
 InternContactInfo(dungNguyenContactInfo):
     contactEmail: nguyentuandung299@gmail.com
 
-InternCity(hanoi):
+InternCity(haNoiCity):
     name: Ha Noi
 
-InternDistrict(dongda):
+InternDistrict(dongDaDistrict):
     name: Dong Da
-    city: hanoi
+    city: haNoiCity
 
 InternAddress(dungNguyenAddress):
     address: 37/157 Phao Dai Lang
-    district: dongda
-    city: hanoi
+    district: dongDaDistrict
+    city: haNoiCity
     contactInfo: dungNguyenContactInfo
 
 InternJobSeeker(dungnguyen):
@@ -24,6 +36,24 @@ InternJobSeeker(dungnguyen):
     contactInfo: dungNguyenContactInfo
     isAdmin: true
     
+InternResume(dungNguyenFirstResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: dungnguyen
+    contactInfo: dungNguyenContactInfo
+    
+InternResume(dungNguyenSecondResume):
+    name: Dung Nguyen's 2nd Resume
+    postedAt: 2012-04-02
+    owner: dungnguyen
+    contactInfo: dungNguyenContactInfo
+    
+InternResume(dungNguyenThirdResume):
+    name: Dung Nguyen's 3rd Resume
+    postedAt: 2012-04-03
+    owner: dungnguyen
+    contactInfo: dungNguyenContactInfo
+
 InternJobSeeker(vannd):
     email: vannd@gmail.com
     password: vannd
