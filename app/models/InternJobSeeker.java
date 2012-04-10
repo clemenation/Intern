@@ -32,6 +32,12 @@ public class InternJobSeeker extends InternUser {
 	
 	// Constructors
 	
+	public InternJobSeeker() {
+		super("Job Seeker");
+		this.resumes = new ArrayList<InternResume>();
+		this.applications = new ArrayList<InternApplication>();
+	}
+	
 	public InternJobSeeker(String email, String password) {
 		super(email, password, "Job Seeker");
 		this.resumes = new ArrayList<InternResume>();

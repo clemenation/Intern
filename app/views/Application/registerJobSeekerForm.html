@@ -1,0 +1,54 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<h1>Intern/Job Seeker</h1>
+
+#{ifErrors}
+	<h1>Oops...</h1>
+	#{errors}
+		<li>${error}</li>
+	#{/errors}
+#{/ifErrors}
+
+#{form @Application.registerJobSeeker()}
+	<div>
+		Email: <input type="text" name="jobSeeker.email" value="${flash['jobSeeker.email']}" />
+		<span class="error">#{error 'jobSeeker.email' /}</span>
+	</div>
+	<div>
+		Password: <input type="password" name="jobSeeker.password" value="${flash['jobSeeker.password']}" />
+		<span class="error">#{error 'jobSeeker.password' /}</span>
+	</div>
+	<div>
+		Full name: <input type="text" name="jobSeeker.fullName" value="${flash['jobSeeker.fullName']}" />
+		<span class="error">#{error 'jobSeeker.fullName' /}</span>
+	</div>
+	<div>
+		Birthday: <input type="text" name="jobSeeker.birthday" value="${flash['jobSeeker.birthday']}" />
+		<span class="error">#{error 'jobSeeker.birthday' /}</span>
+	</div>
+	<div>
+		About me: <input type="text" name="jobSeeker.aboutMe" value="${flash['jobSeeker.aboutMe']}" />
+		<span class="error">#{error 'jobSeeker.aboutMe' /}</span>
+	</div>
+	<div>
+		College: <input type="text" name="jobSeeker.college" value="${flash['jobSeeker.college']}" />
+		<span class="error">#{error 'jobSeeker.college' /}</span>
+	</div>
+	<div>
+		Contact Info:
+		<span class="error">#{error 'contactInfo' /}</span>
+		<div>
+			Mobile: <input type="text" name="jobSeeker.contactInfo.mobile" value="${flash['jobSeeker.contactInfo.mobile']}" />
+			<span class="error">#{error 'contactInfo.mobile' /}</span>
+		</div>
+		<div>
+			Phone: <input type="text" name="jobSeeker.contactInfo.phone" value="${flash['jobSeeker.contactInfo.phone']}" />
+			<span class="error">#{error 'contactInfo.phone' /}</span>
+		</div>
+	</div>
+	<div>
+		<input type="submit" value="Register" />
+	</div>
+
+#{/form}

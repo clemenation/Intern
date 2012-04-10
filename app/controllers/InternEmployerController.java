@@ -14,8 +14,4 @@ public class InternEmployerController extends Controller {
 	public static void index() {
 		render();
 	}
-	
-	public static void register() {
-		render();
-	}
 }

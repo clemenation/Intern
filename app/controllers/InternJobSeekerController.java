@@ -17,8 +17,4 @@ public class InternJobSeekerController extends Controller {
 		List<InternResume> resumes = InternResume.find("owner = ? order by postedAt desc", jobSeeker).from(0).fetch(10);
 		render(resumes);
 	}
-	
-	public static void register() {
-		render();
-	}
 }

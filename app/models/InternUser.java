@@ -39,6 +39,11 @@ public abstract class InternUser extends Model {
 	
 	// Constructors
 	
+	public InternUser(String userType) {
+		this.userType = userType;
+		this.isAdmin = false;
+	}
+	
 	public InternUser(String email, String password, String userType) {
 		this.email = email;
 		this.password = password;

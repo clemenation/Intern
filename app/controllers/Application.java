@@ -2,6 +2,7 @@ package controllers;
 
 import play.*;
 import play.mvc.*;
+import play.data.validation.*;
 
 import java.util.*;
 
@@ -26,6 +27,35 @@ public class Application extends Controller {
     	} catch (Throwable e) {
 
     	}
+    	
+    }
+    
+    public static void registerJobSeekerForm() {
+    	if (Security.connected() == null) {
+    		render();
+    	} else {
+    		index();
+    	}
+    }
+    
+    public static void registerJobSeeker(@Valid InternJobSeeker jobSeeker) {
+    	InternContactInfo contactInfo = jobSeeker.contactInfo;
+    	if (jobSeeker.contactInfo != null) {
+    		jobSeeker.contactInfo.contactEmail = jobSeeker.email;
+    	}
+    	
+    	
+    	validation.valid(contactInfo);
+    	if (validation.hasErrors()) {
+    		params.flash();	// add http parameters to the flash scope
+    		validation.keep();	// keep the errors for the next request
+    		registerJobSeekerForm();
+    	}
+    	
+    	render(jobSeeker);
+    }
+    
+    public static void registerEmployer() {
     	
     }
 
