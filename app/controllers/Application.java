@@ -11,7 +11,7 @@ import models.*;
 public class Application extends Controller {
 
     public static void index() {
-    	// If logged in check for userType and redirect to proper site
+    	// If logged in check for userType and redirect to proper page
     	String userType = session.get("userType");
     	if (userType != null) {
     		if (userType.equals("Job Seeker")) {
@@ -31,9 +31,11 @@ public class Application extends Controller {
     }
     
     public static void registerJobSeekerForm() {
+    	// Check if user already logged in
     	if (Security.connected() == null) {
     		render();
     	} else {
+    		// If logged in then they cannot register, redirect to index now
     		index();
     	}
     }
