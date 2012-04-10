@@ -6,6 +6,12 @@
 #   password: secret
 #   fullname: Bob
 
+Language(english):
+    language: English
+    
+Language(vietnam):
+    language: Vietnam
+
 Major(firstMajor):
     name: computer science
 
@@ -15,20 +21,9 @@ Major(secondMajor):
 Education(firstEducation):
     college: BK
     gpa: 3.4
-    soNamHoc: 3
+    studyYears: 3
     major: secondMajor
-
-JobSeeker(steve):
-    email: steve@gmail.com
-    password: jobs
-    aboutMe: I'm Jobs
-    fullName: Steve Jobs
-    college: Bates
     
-JobSeeker(bob):
-    email: bob@gmail.com
-    password: secret
-
 City(hanoi):
     name: Hanoi
 
@@ -66,7 +61,21 @@ Address(tomAddress):
     district: dongda
     city: hanoi
     contactInfo: tomContactInfo
-
+    
+JobSeeker(steve):
+    email: steve@gmail.com
+    password: jobs
+    aboutMe: I'm Jobs
+    fullName: Steve Jobs
+    college: Bates
+    userType: Job Seeker
+    contactInfo: steveContactInfo
+    
+JobSeeker(bob):
+    email: bob@gmail.com
+    password: secret
+    userType: Job Seeker
+    
 Resume(firstResume):
     name: My First Resume
     postedAt: 2012-04-01
@@ -98,30 +107,21 @@ Employer(tom):
     industry: Software
     description: We do things
     contactInfo: tomContactInfo
-<<<<<<< HEAD
-    userType: employer
-=======
+    userType: Employer
     
 Job(jobTest1):
     name: doSomething
     owner: tom
     contactInfo: tomContactInfo
-    requiedEducation: firstEducation
+    requiredEducation: firstEducation
 
 Application(SteveToTom):
-    employer: tom
     job: jobTest1
-    jobSeeker: steve
     resume: firstResume
 
 Application(BobToTom):
-    employer: tom
     job: jobTest1
-    jobSeeker: bob
     resume: bobResume
 
 CompanySize(abcSize):
     size: < 10
-
-
->>>>>>> dungnguyen

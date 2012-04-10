@@ -1,0 +1,46 @@
+InternContactInfo(dungNguyenContactInfo):
+    contactEmail: nguyentuandung299@gmail.com
+
+InternCity(hanoi):
+    name: Ha Noi
+
+InternDistrict(dongda):
+    name: Dong Da
+    city: hanoi
+
+InternAddress(dungNguyenAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongda
+    city: hanoi
+    contactInfo: dungNguyenContactInfo
+
+InternJobSeeker(dungnguyen):
+    email: nguyentuandung2991@gmail.com
+    password: dungnguyen
+    aboutMe: I'm Dung
+    fullName: Nguyen Tuan Dung
+    college: Hanoi University of Science and Technology
+    userType: Job Seeker
+    contactInfo: dungNguyenContactInfo
+    
+InternJobSeeker(vannd):
+    email: vannd@gmail.com
+    password: vannd
+    aboutMe: I'm Van
+    fullName: Nguyen Duc Van
+    college: Hanoi University of Science and Technology
+    userType: Job Seeker
+    
+InternJobSeeker(nguyenquac):
+    email: nguyenquac@gmail.com
+    password: nguyenquac
+    aboutMe: I'm Quac
+    fullName: Nguyen Quang Anh
+    college: Hanoi University of Science and Technology
+    userType: Job Seeker
+    
+InternEmployer(hoangtran):
+    email: hoangtran@gmail.com
+    password: hoangtran
+    companyName: Hoang Tran Software
+    userType: Employer
