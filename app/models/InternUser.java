@@ -27,6 +27,10 @@ public abstract class InternUser extends Model {
 	@Required
 	public String userType;
 	
+	// Required
+	@Required
+	public boolean isAdmin;
+	
 	@OneToOne(cascade=CascadeType.ALL)
 	public InternContactInfo contactInfo;
 	
@@ -38,15 +42,19 @@ public abstract class InternUser extends Model {
 		this.email = email;
 		this.password = password;
 		this.userType = userType;
+		this.isAdmin = false;
+	}
+	
+	public InternUser(String email, String password, String userType, boolean isAdmin) {
+		this(email, password, userType);
+		this.isAdmin = true;
 	}
 	
 	public InternUser(String email, 
 			String password, 
 			String userType,
 			InternContactInfo contactInfo) {
-		this.email = email;
-		this.password = password;
-		this.userType = userType;
+		this(email, password, userType);
 		this.contactInfo = contactInfo;
 	}
 	
@@ -57,5 +65,9 @@ public abstract class InternUser extends Model {
 	public String toString() {
 		return this.email;
 	}
+	
+	
+	
+	// Static methods
 	
 }

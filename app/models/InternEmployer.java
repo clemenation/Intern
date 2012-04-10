@@ -37,6 +37,11 @@ public class InternEmployer extends InternUser {
 		this.applications = new ArrayList<InternApplication>();
 	}
 	
+	public InternEmployer(String email, String password, boolean isAdmin) {
+		this(email, password);
+		this.isAdmin = true;
+	}
+	
 	public InternEmployer(String email, 
 			String password, 
 			String companyName, 
