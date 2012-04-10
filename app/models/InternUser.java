@@ -21,6 +21,7 @@ public abstract class InternUser extends Model {
 	
 	// Required
 	@Required
+	@MinSize(6)
 	public String password;
 	
 	// Required
