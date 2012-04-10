@@ -4,6 +4,7 @@ import java.util.*;
 import javax.persistence.*;
 
 import play.db.jpa.*;
+import play.data.validation.*;
 
 @Entity
 public class InternContactInfo extends Model {
@@ -13,9 +14,14 @@ public class InternContactInfo extends Model {
 	// Properties
 	
 	// Required
+	@Required
+	@Email
 	public String contactEmail;
 	
+	@Phone
 	public String mobile;
+	
+	@Phone
 	public String phone;
 	
 	@OneToOne(mappedBy="contactInfo", cascade=CascadeType.ALL)

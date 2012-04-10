@@ -10,8 +10,12 @@ public class InternPoint extends Model {
 	
 	// Properties
 	
+	// Required
 	public InternJob job;
+	
+	// Required
 	public InternResume resume;
+	
 	public double point;
 	
 	

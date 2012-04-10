@@ -3,6 +3,7 @@ package models;
 import javax.persistence.*;
 
 import play.db.jpa.Model;
+import play.data.validation.*;
 
 @Entity
 public class InternEducation extends Model {
@@ -12,9 +13,13 @@ public class InternEducation extends Model {
 	// Properties
 
 	//Required
+	@Required
+	@Min(1)
 	public int studyYears;
 
+	@Min(0)
 	public double gpa;
+	
 	public String college;
 
 	@ManyToOne

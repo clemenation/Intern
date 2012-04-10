@@ -1,6 +1,7 @@
 package models;
 
 import play.db.jpa.Model;
+import play.data.validation.*;
 import java.util.*;
 import javax.persistence.*;
 
@@ -12,6 +13,7 @@ public class InternCompanySize extends Model {
 	// Properties
 	
 	// Required
+	@Required
 	public String size;
 	
 	

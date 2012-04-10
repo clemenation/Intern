@@ -4,6 +4,7 @@ import java.util.*;
 import javax.persistence.*;
 
 import play.db.jpa.*;
+import play.data.validation.*;
 
 @Entity
 public class InternLanguage extends Model {
@@ -13,8 +14,10 @@ public class InternLanguage extends Model {
 	// Properties
 	
 	// Required
+	@Required
 	public String language;
 	
+	@Min(0)
 	public int useCount;
 	
 	

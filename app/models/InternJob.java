@@ -4,6 +4,7 @@ import java.util.*;
 import javax.persistence.*;
 
 import play.db.jpa.*;
+import play.data.validation.*;
 
 @Entity
 public class InternJob extends Model {
@@ -13,13 +14,18 @@ public class InternJob extends Model {
 	// Properties
 	
 	// Required
+	@Required
 	public String name;
 	
 	// Required
+	@Required
 	@ManyToOne
 	public InternEmployer owner;
 	
 	public Date postedAt;
+	
+	@Min(0)
+	@Max(200)
 	public int requiredWorkExperience;
 	
 	@Lob

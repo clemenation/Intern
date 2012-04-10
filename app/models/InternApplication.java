@@ -3,6 +3,7 @@ package models;
 import java.util.*;
 import javax.persistence.*;
 import play.db.jpa.Model;
+import play.data.validation.*;
 
 @Entity
 public class InternApplication extends Model {
@@ -12,10 +13,12 @@ public class InternApplication extends Model {
 	// Properties 
 	
 	// Required
+	@Required
 	@ManyToOne
 	public InternJob job;
 
 	// Required
+	@Required
 	@ManyToOne
 	public InternResume resume;
 	
@@ -26,6 +29,7 @@ public class InternApplication extends Model {
 	public InternEmployer employer;
 	
 	@Lob
+	@MaxSize(10000)
 	public String message;
 	
 	

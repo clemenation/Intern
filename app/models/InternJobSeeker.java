@@ -4,19 +4,22 @@ import java.util.*;
 import javax.persistence.*;
 
 import play.db.jpa.*;
+import play.data.validation.*;
 
 @Entity
 public class InternJobSeeker extends InternUser {
 		
 	
 	
-	// Variables
+	// Properties
 	
 	@Lob
 	public String aboutMe;
 	
 	public String college;
 	public String fullName;
+	
+	@InPast
 	public Date birthday;
 	
 	@OneToMany(mappedBy="owner", cascade=CascadeType.ALL)

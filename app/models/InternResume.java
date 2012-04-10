@@ -4,6 +4,7 @@ import java.util.*;
 import javax.persistence.*;
 
 import play.db.jpa.*;
+import play.data.validation.*;
 
 @Entity
 public class InternResume extends Model {
@@ -13,13 +14,18 @@ public class InternResume extends Model {
 	// Properties
 	
 	// Required
+	@Required
 	public String name;
 	
 	// Required
+	@Required
 	@ManyToOne
 	public InternJobSeeker owner;
 	
 	public Date postedAt;
+	
+	@Min(0)
+	@Max(200)
 	public int workExperience;
 	
 	@OneToOne(cascade=CascadeType.ALL)

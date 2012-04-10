@@ -1,6 +1,7 @@
 package models;
 
 import play.db.jpa.Model;
+import play.data.validation.*;
 import java.util.*;
 import javax.persistence.*;
 
@@ -12,9 +13,11 @@ public class InternDistrict extends Model {
 	// Properties
 	
 	// Required
+	@Required
 	public String name;
 	
 	// Required
+	@Required
 	@ManyToOne
 	public InternCity city;
 	

@@ -4,6 +4,7 @@ import java.util.*;
 import javax.persistence.*;
 
 import play.db.jpa.*;
+import play.data.validation.*;
 
 @Entity
 public class InternCity extends Model {
@@ -13,6 +14,7 @@ public class InternCity extends Model {
 	// Properties
 	
 	// Required
+	@Required
 	public String name;
 	
 	@OneToMany(mappedBy="city", cascade=CascadeType.ALL)

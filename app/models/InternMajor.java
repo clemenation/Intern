@@ -3,6 +3,7 @@ package models;
 import javax.persistence.Entity;
 
 import play.db.jpa.Model;
+import play.data.validation.*;
 
 @Entity
 public class InternMajor extends Model {
@@ -11,6 +12,8 @@ public class InternMajor extends Model {
 	
 	// Properties
 	
+	// Required
+	@Required
 	public String name;
 	
 	
