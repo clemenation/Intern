@@ -10,8 +10,12 @@ import models.*;
 @With(Secure.class)
 public class InternEmployerController extends Controller {
 	
-	@Check("Job Seeker")
+	@Check("Employer")
 	public static void index() {
-		render();
+		String username = Security.connected();
+		InternEmployer employer = InternEmployer.find("byEmail", username).first();
+		List<InternJob> jobs = InternJob.find("owner = ? order by postedAt desc", employer).from(0).fetch(4);
+		List<InternApplication> applications = InternApplication.find("employer = ? order by postedAt desc", employer).from(0).fetch(4);
+		render(employer, jobs, applications);
 	}
 }

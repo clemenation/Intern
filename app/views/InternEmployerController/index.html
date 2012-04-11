@@ -1,4 +1,55 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
+<a href="@{Secure.logout()}">Logout</a>
+
 <h1>Intern/Employer</h1>
+
+<h2>Profile</h2>
+<div>
+	Email: ${employer.email}
+</div>
+<div>
+	User type: ${employer.userType}
+</div>
+<div>
+	Is Admin: ${employer.isAdmin}
+</div>
+<div>
+	Password: ${employer.password}
+</div>
+<div>
+	Company name: ${employer.companyName}
+</div>
+<div>
+	Industry: ${employer.industry}
+</div>
+<div>
+	Company Description: ${employer.description}
+</div>
+<div>
+	Company Size: ${employer.companySize}
+</div>
+<div>
+	Contact Email: ${employer.contactInfo.contactEmail}
+</div>
+<div>
+	Mobile: ${employer.contactInfo.mobile}
+</div>
+<div>
+	Phone: ${employer.contactInfo.phone}
+</div>
+
+#{if jobs}
+<h2>Jobs</h2>
+	#{list items:jobs, as:'job'}
+		<h3>${job}</h3>
+	#{/list}
+#{/if}
+
+#{if applications}
+<h2>Applications</h2>
+	#{list items:applications, as:'application'}
+		<h3>${application.jobSeeker.fullName} 's Application for ${application.job.name}</h3>
+	#{/list}
+#{/if}
