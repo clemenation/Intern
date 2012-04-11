@@ -9,7 +9,7 @@ public class BasicTest extends UnitTest {
 	public void setup() {
 		Fixtures.deleteDatabase();
 	}
-
+	
 	// 1 city, 2 district, 3 address, 3 contactinfo
 	// jobSeeker: bob, steve
 	// steve has 2 resumes (firstResume, secondResume), bob has a resume (bobResume)

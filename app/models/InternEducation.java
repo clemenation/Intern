@@ -14,7 +14,7 @@ public class InternEducation extends Model {
 
 	//Required
 	@Required
-	@Min(1)
+	@Min(0)
 	public int studyYears;
 
 	@Min(0)
