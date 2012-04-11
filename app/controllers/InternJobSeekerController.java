@@ -14,6 +14,8 @@ public class InternJobSeekerController extends Controller {
 	public static void index() {
 		String username = Security.connected();
 		InternJobSeeker jobSeeker = InternJobSeeker.find("byEmail", username).first();
-		render(jobSeeker);
+		List<InternResume> resumes = InternResume.find("owner = ? order by postedAt desc", jobSeeker).from(0).fetch(4);
+		List<InternApplication> applications = InternApplication.find("jobSeeker = ? order by postedAt desc", jobSeeker).from(0).fetch(4);
+		render(jobSeeker, resumes, applications);
 	}
 }

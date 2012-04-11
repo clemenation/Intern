@@ -75,3 +75,15 @@ InternEmployer(hoangtran):
     password: hoangtran
     companyName: Hoang Tran Software
     userType: Employer
+    
+InternJob(hoangTranFirstJob):
+    name: Hoang Tran's 1st Job
+    postedAt: 2012-04-04
+    owner: hoangtran
+    
+InternApplication(dungToHoang):
+    job: hoangTranFirstJob
+    resume: dungNguyenSecondResume
+    jobSeeker: dungnguyen
+    employer: hoangtran
+    postedAt: 2012-04-05

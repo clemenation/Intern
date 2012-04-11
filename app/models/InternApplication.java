@@ -22,6 +22,10 @@ public class InternApplication extends Model {
 	@ManyToOne
 	public InternResume resume;
 	
+	// Required
+	@Required
+	public Date postedAt;
+	
 	@ManyToOne
 	public InternJobSeeker jobSeeker;
 	
@@ -41,6 +45,7 @@ public class InternApplication extends Model {
 		this.resume = resume;
 		this.jobSeeker = resume.owner;
 		this.employer = job.owner;
+		this.postedAt = new Date();
 	}
 	
 	public InternApplication(InternJob job, InternResume resume, String message) {
@@ -51,6 +56,10 @@ public class InternApplication extends Model {
 	
 	
 	// Methods
+	
+	public String toString() {
+		return (this.jobSeeker + "'s " + this.resume + " to " + this.employer + "'s " + this.job);
+	}
 	
 	
 	

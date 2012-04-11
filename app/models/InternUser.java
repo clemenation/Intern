@@ -101,6 +101,7 @@ public abstract class InternUser extends Model {
 		this.email = email;
 		this.password = password;
 		this.userType = userType;
+		this.contactInfo = new InternContactInfo(this.email);
 		this.isAdmin = false;
 	}
 	

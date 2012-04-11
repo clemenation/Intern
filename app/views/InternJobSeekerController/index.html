@@ -5,6 +5,7 @@
 
 <h1>Intern/Job Seeker</h1>
 
+<h2>Profile</h2>
 <div>
 	Email: ${jobSeeker.email}
 </div>
@@ -38,3 +39,17 @@
 <div>
 	Phone: ${jobSeeker.contactInfo.phone}
 </div>
+
+#{if resumes}
+<h2>Resumes</h2>
+	#{list items:resumes, as:'resume'}
+		<h3>${resume}</h3>
+	#{/list}
+#{/if}
+
+#{if applications}
+<h2>Applications</h2>
+	#{list items:applications, as:'application'}
+		<h3>${application.job.name}</h3>
+	#{/list}
+#{/if}
