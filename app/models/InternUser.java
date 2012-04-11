@@ -81,6 +81,7 @@ public abstract class InternUser extends Model {
 		}
 
 		public boolean isSatisfied(Object user, Object email) {
+			setMessage("validation.emailUsed", (String)email);
 			
 			return (checkJobSeeker((InternUser)user, (String)email) && checkEmployer((InternUser)user, (String)email));
 		}

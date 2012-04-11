@@ -3,3 +3,4 @@
 #
 secure.username=Email
 secure.password=Password
+validation.emailUsed = %2$s already used
