@@ -40,21 +40,30 @@ public class Application extends Controller {
     	}
     }
     
-    public static void registerJobSeeker(@Valid InternJobSeeker jobSeeker) {
-    	InternContactInfo contactInfo = jobSeeker.contactInfo;
+    public static void registerJobSeeker(InternJobSeeker jobSeeker) {
     	if (jobSeeker.contactInfo != null) {
     		jobSeeker.contactInfo.contactEmail = jobSeeker.email;
     	}
     	
+    	validation.valid(jobSeeker);
     	
-    	validation.valid(contactInfo);
     	if (validation.hasErrors()) {
-    		params.flash();	// add http parameters to the flash scope
+    		params.flash();		// add http parameters to the flash scope
     		validation.keep();	// keep the errors for the next request
     		registerJobSeekerForm();
     	}
     	
-    	render(jobSeeker);
+    	jobSeeker.save();	// Save to database
+    	
+    	params.put("success", "Registration successful! Login with your created account.");
+    	params.put("username", jobSeeker.email);
+    	params.flash();
+    	
+    	try {
+    		Secure.login();
+    	} catch (Throwable e) {
+
+    	}
     }
     
     public static void registerEmployer() {

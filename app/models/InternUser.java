@@ -1,6 +1,7 @@
 package models;
 
 import java.util.*;
+
 import javax.persistence.*;
 
 import play.db.jpa.*;
@@ -17,6 +18,7 @@ public abstract class InternUser extends Model {
 	// Required
 	@Required
 	@Email
+	@CheckWith(EmailUniqueCheck.class)
 	public String email;
 	
 	// Required
@@ -32,8 +34,58 @@ public abstract class InternUser extends Model {
 	@Required
 	public boolean isAdmin;
 	
+	@Valid
 	@OneToOne(cascade=CascadeType.ALL)
 	public InternContactInfo contactInfo;
+	
+	
+	
+	// Static class
+
+	public static class EmailUniqueCheck extends Check {
+		
+		public boolean checkJobSeeker(InternUser jobSeeker, String email) {
+			
+			boolean checkOk = true;
+
+			List<InternJobSeeker> existingJobSeekers = InternJobSeeker.find("byEmail", email).fetch(2);
+			checkOk = (existingJobSeekers.size() == 0);
+			if (existingJobSeekers.size() == 1) {
+				if (jobSeeker.id != null) {
+					InternJobSeeker existingJobSeeker = existingJobSeekers.get(0);
+					if (existingJobSeeker.getId().equals(jobSeeker.id)) {
+						checkOk = true;
+					}
+				}
+			}
+
+			return checkOk;
+		}
+		
+		public boolean checkEmployer(InternUser employer, String email) {
+			
+			boolean checkOk = true;
+
+			List<InternEmployer> existingEmployers = InternEmployer.find("byEmail", email).fetch(2);
+			checkOk = (existingEmployers.size() == 0);
+			if (existingEmployers.size() == 1) {
+				if (employer.id != null) {
+					InternEmployer existingEmployer = existingEmployers.get(0);
+					if (existingEmployer.getId().equals(employer.id)) {
+						checkOk = true;
+					}
+				}
+			}
+
+			return checkOk;
+		}
+
+		public boolean isSatisfied(Object user, Object email) {
+			
+			return (checkJobSeeker((InternUser)user, (String)email) && checkEmployer((InternUser)user, (String)email));
+		}
+
+	}
 	
 	
 	

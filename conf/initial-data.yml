@@ -11,7 +11,7 @@ InternMajor(electronicEngineeringMajor):
     name: Electronic Engineering
 
 InternContactInfo(dungNguyenContactInfo):
-    contactEmail: nguyentuandung299@gmail.com
+    contactEmail: nguyentuandung2991@gmail.com
 
 InternCity(haNoiCity):
     name: Ha Noi
