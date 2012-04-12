@@ -24,13 +24,13 @@ public class InternPointTest extends UnitTest {
 		assertEquals(1, InternEmployer.count());
 		assertEquals(1, InternApplication.count());
 		assertEquals(1, InternResume.count());
-		assertEquals(1, InternJob.count());
+		assertEquals(3, InternJob.count());
 		
 		// Getting the resume and job
 		InternResume resume = InternResume.all().first();
 		InternJob job = InternJob.all().first();
 		
 		// Create point system
-		InternPoint point = new InternPoint(resume, job);
+		System.out.println(resume.findJobs());
 	}
 }

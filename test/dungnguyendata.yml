@@ -66,6 +66,22 @@ InternJob(tomJob):
     contactInfo: tomContactInfo
     requiredEducation: tomEducation
     
+InternJob(tomJob2):
+    name: Tom's 2nd job
+    postedAt: 2012-04-09
+    owner: tom
+    requiredWorkExperience: 10
+    contactInfo: tomContactInfo
+    requiredEducation: tomEducation
+    
+InternJob(tomJob3):
+    name: Tom's 3rd job
+    postedAt: 2012-04-10
+    owner: tom
+    requiredWorkExperience: 2
+    contactInfo: tomContactInfo
+    requiredEducation: tomEducation
+    
 InternApplication(steveToTom):
     job: tomJob
     resume: steveResume

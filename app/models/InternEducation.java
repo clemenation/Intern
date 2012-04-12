@@ -12,12 +12,10 @@ public class InternEducation extends Model {
 
 	// Properties
 
-	//Required
-	@Required
-	@Min(0)
+	@Min(0)					// Real min is 1 but 0 means unspecified
 	public int studyYears;
 
-	@Min(0)
+	@Min(0)					// Real min is 0.1 but 0 means unspecified
 	public double gpa;
 	
 	public String college;
