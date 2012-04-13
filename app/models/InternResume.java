@@ -25,7 +25,7 @@ public class InternResume extends Model {
 	public Date postedAt;
 	
 	@Min(0)
-	@Max(200)
+	@Max(10)
 	public int workExperience;
 	
 	@OneToOne(cascade=CascadeType.ALL)
@@ -72,10 +72,8 @@ public class InternResume extends Model {
 	
 	// Method
 	
-	public List<InternJob> findJobs() {
-		List<InternJob> jobs = new ArrayList<InternJob>();
-		
-		jobs = InternJob.all().fetch();		// Getting all jobs from database
+	public List<InternPoint> findJobs() {
+		List<InternJob> jobs = InternJob.all().fetch();		// Getting all jobs from database
 		
 		List<InternPoint> points = new ArrayList<InternPoint>();
 		
@@ -86,12 +84,7 @@ public class InternResume extends Model {
 		Collections.sort(points, new InternPoint.InternPointComparator());	// Sort by point
 		Collections.reverse(points);
 		
-		jobs.clear();
-		for (InternPoint point: points) {
-			jobs.add(point.job);			// reorder the job list by point
-		}
-		
-		return jobs;
+		return points;
 	}
 	
 	public String toString() {

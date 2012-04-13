@@ -1,0 +1,59 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<a href="@{InternJobSeekerController.index()}">Home</a>
+<a href="@{InternJobSeekerController.profile()}">Me</a>
+<a href="@{Secure.logout()}">Logout</a>
+
+<h1>Intern/Job Seeker</h1>
+
+<h2>Profile</h2>
+<div>
+	Email: ${jobSeeker.email}
+</div>
+<div>
+	User type: ${jobSeeker.userType}
+</div>
+<div>
+	Is Admin: ${jobSeeker.isAdmin}
+</div>
+<div>
+	Password: ${jobSeeker.password}
+</div>
+<div>
+	Full name: ${jobSeeker.fullName}
+</div>
+<div>
+	Birthday: ${jobSeeker.birthday}
+</div>
+<div>
+	About me: ${jobSeeker.aboutMe}
+</div>
+<div>
+	College: ${jobSeeker.college}
+</div>
+#{if jobSeeker.contactInfo}
+	<div>
+		Contact Email: ${jobSeeker.contactInfo.contactEmail}
+	</div>
+	<div>
+		Mobile: ${jobSeeker.contactInfo.mobile}
+	</div>
+	<div>
+		Phone: ${jobSeeker.contactInfo.phone}
+	</div>
+#{/if}
+
+#{if resumes}
+<h2>Resumes</h2>
+	#{list items:resumes, as:'resume'}
+		<h3>${resume}</h3>
+	#{/list}
+#{/if}
+
+#{if applications}
+<h2>Applications</h2>
+	#{list items:applications, as:'application'}
+		<h3>${application.job.name}</h3>
+	#{/list}
+#{/if}

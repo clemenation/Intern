@@ -11,6 +11,15 @@ import models.*;
 public class Application extends Controller {
 
     public static void index() {
+    	// Check for superadmin
+    	try {
+    		if (Security.connected().equals("admin")) {
+    			CRUD.index();
+    		}
+    	} catch (NullPointerException e) {
+    		// Do nothing
+    	}
+    	
     	// If logged in check for userType and redirect to proper page
     	String userType = session.get("userType");
     	if (userType != null) {

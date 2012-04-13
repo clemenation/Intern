@@ -1,6 +1,7 @@
 package models;
 
 import java.util.*;
+
 import javax.persistence.*;
 
 import play.db.jpa.*;
@@ -60,6 +61,35 @@ public class InternJobSeeker extends InternUser {
 	
 	
 	// Methods
+	
+	public List<InternPoint> findJobs() {
+		List<List<InternPoint>> pointLists = new ArrayList<List<InternPoint>>();
+		for (InternResume resume : resumes) {
+			pointLists.add(resume.findJobs());
+		}
+		
+		int max = 0;		// Getting longest job list
+		for (List<InternPoint> points : pointLists) {
+			if (max < points.size()) max = points.size();
+		}
+		
+		List<InternJob> finalJobs = new ArrayList<InternJob>();
+		List<InternPoint> finalPoints = new ArrayList<InternPoint>();
+		for (int i=0; i<max; i++) {
+			for (List<InternPoint> points : pointLists) {
+				try {
+					if (!finalJobs.contains(points.get(i).job)) {
+						finalJobs.add(points.get(i).job);
+						finalPoints.add(points.get(i));
+					}
+				} catch (IndexOutOfBoundsException e) {
+					// Do nothing if go over this jobs list size
+				}
+			}
+		}
+		
+		return finalPoints;
+	}
 	
 	public String toString() {
 		return this.email;

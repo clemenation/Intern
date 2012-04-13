@@ -78,7 +78,7 @@ InternJob(tomJob3):
     name: Tom's 3rd job
     postedAt: 2012-04-10
     owner: tom
-    requiredWordExperience: 2
+    requiredWorkExperience: 2
     contactInfo: tomContactInfo
     requiredEducation: tomEducation
     
