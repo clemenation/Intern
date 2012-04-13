@@ -32,10 +32,11 @@ public class Application extends Controller {
     	
     	// If not logged in then display login page
     	try {
-    		Secure.login();
-    	} catch (Throwable e) {
-
-    	}
+			Secure.login();
+		} catch (Throwable e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     	
     }
     
@@ -50,7 +51,7 @@ public class Application extends Controller {
     }
     
     public static void registerJobSeeker(InternJobSeeker jobSeeker) {
-    	if (jobSeeker.contactInfo != null) {
+    	if (jobSeeker.contactInfo != null && jobSeeker.contactInfo.contactEmail.equals("")) {
     		jobSeeker.contactInfo.contactEmail = jobSeeker.email;
     	}
     	

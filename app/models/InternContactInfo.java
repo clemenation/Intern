@@ -49,6 +49,19 @@ public class InternContactInfo extends Model {
 	
 	// Methods
 	
+	public InternContactInfo update(InternContactInfo contactInfo) {
+		this.contactEmail = contactInfo.contactEmail;
+		this.mobile = contactInfo.mobile;
+		this.phone = contactInfo.phone;
+		if (this.address == null) {
+			this.address = contactInfo.address;
+		} else {
+			this.address.update(contactInfo.address);
+		}
+		
+		return this;
+	}
+	
 	public String toString() {
 		return this.contactEmail;
 	}

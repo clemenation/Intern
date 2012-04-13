@@ -95,13 +95,14 @@ public abstract class InternUser extends Model {
 	public InternUser(String userType) {
 		this.userType = userType;
 		this.isAdmin = false;
+		this.contactInfo = new InternContactInfo("");
 	}
 	
 	public InternUser(String email, String password, String userType) {
+		this(userType);
 		this.email = email;
 		this.password = password;
-		this.userType = userType;
-		this.contactInfo = new InternContactInfo(this.email);
+		this.contactInfo.contactEmail = email;
 		this.isAdmin = false;
 	}
 	
@@ -115,7 +116,7 @@ public abstract class InternUser extends Model {
 			String userType,
 			InternContactInfo contactInfo) {
 		this(email, password, userType);
-		this.contactInfo = contactInfo;
+		this.contactInfo.update(contactInfo);
 	}
 	
 	

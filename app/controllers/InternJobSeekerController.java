@@ -46,4 +46,53 @@ public class InternJobSeekerController extends Controller {
 			index();
 		}
 	}
+	
+	public static void updateProfileForm() {
+		String username = Security.connected();
+		InternJobSeeker jobSeeker = InternJobSeeker.find("byEmail", username).first();
+		
+		render(jobSeeker);
+	}
+	
+	public static void updateProfile() {
+		InternJobSeeker editedJobSeeker = params.get("jobSeeker", InternJobSeeker.class);
+		
+		if (editedJobSeeker.contactInfo != null && editedJobSeeker.contactInfo.contactEmail.equals("")) {
+			editedJobSeeker.contactInfo.contactEmail = editedJobSeeker.email;
+		}
+		
+		String username = Security.connected();
+		InternJobSeeker jobSeeker = InternJobSeeker.find("byEmail", username).first();
+		
+		jobSeeker.update(editedJobSeeker);
+		validation.valid(jobSeeker);
+		
+		System.out.println("Hello guys");
+		System.out.println(validation.errorsMap());
+		
+		if (validation.hasErrors()) {
+    		params.flash();		// add http parameters to the flash scope
+    		validation.keep();	// keep the errors for the next request
+    		updateProfileForm();
+    	}
+		
+		jobSeeker.save();
+		
+		params.put("success", "Update profile successful!");
+		
+		if (!username.equals(jobSeeker.email)) {
+			// If email changed than have to logout and login again
+			params.put("username", jobSeeker.email);
+			params.flash();
+			try {
+				Secure.logout();
+			} catch (Throwable e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else {
+			params.flash();
+			profile();
+		}
+	}
 }

@@ -50,17 +50,35 @@ public class InternJobSeeker extends InternUser {
 			String aboutMe, 
 			String college, 
 			String fullName,
+			Date birthday,
 			InternContactInfo contactInfo) {
 		this(email, password);
 		this.aboutMe = aboutMe;
 		this.college = college;
 		this.fullName = fullName;
 		this.contactInfo = contactInfo;
+		this.birthday = birthday;
 	}
 	
 	
 	
 	// Methods
+	
+	public InternJobSeeker update(InternJobSeeker jobSeeker) {
+		this.email = jobSeeker.email;
+		this.password = jobSeeker.password;
+		this.aboutMe = jobSeeker.aboutMe;
+		this.college = jobSeeker.college;
+		this.fullName = jobSeeker.fullName;
+		this.birthday = jobSeeker.birthday;
+		if (this.contactInfo == null) {
+			this.contactInfo = jobSeeker.contactInfo;
+		} else {
+			this.contactInfo.update(jobSeeker.contactInfo);
+		}
+		
+		return this;
+	}
 	
 	public List<InternPoint> findJobs() {
 		List<List<InternPoint>> pointLists = new ArrayList<List<InternPoint>>();

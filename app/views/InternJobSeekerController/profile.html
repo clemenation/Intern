@@ -1,13 +1,24 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-<a href="@{InternJobSeekerController.index()}">Home</a>
-<a href="@{InternJobSeekerController.profile()}">Me</a>
-<a href="@{Secure.logout()}">Logout</a>
+#{navigationBar /}
 
 <h1>Intern/Job Seeker</h1>
 
+#{if flash.error}
+	<p class="error">
+		&{flash.error}
+	</p>
+#{/if}
+
+#{if flash.success}
+	<p class="success">
+		&{flash.success}
+	</p>
+#{/if}
+
 <h2>Profile</h2>
+<a href="@{InternJobSeekerController.updateProfileForm()}">edit</a>
 
 #{displayJobSeeker jobSeeker:jobSeeker /}
 

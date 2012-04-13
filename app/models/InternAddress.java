@@ -50,6 +50,16 @@ public class InternAddress extends Model {
 	
 	// Methods
 	
+	public InternAddress update(InternAddress address) {
+		if (address != null) {
+			this.address = address.address;
+			this.city = address.city;
+			this.district = address.district;
+		}
+		
+		return this;
+	}
+	
 	public String toString() {
 		return this.city.name;
 	}
