@@ -1,22 +1,88 @@
-JobSeeker(steve):
+InternMajor(computerScience):
+    name: Computer Science
+    
+InternMajor(electricalEngineering):
+    name: Electrical Engineering
+
+InternLanguage(vietnam):
+    language: Vietnam
+    
+InternLanguage(english):
+    language: English
+    
+InternCity(hanoi):
+    name: Hanoi
+
+InternDistrict(dongda):
+    name: Dong Da
+    city: hanoi
+    
+InternDistrict(haibatrung):
+    name: Hai Ba Trung
+    city: hanoi
+    
+InternContactInfo(steveContactInfo):
+    contactEmail: steve@hotmail.com
+    phone: 01234
+    mobile: 56789
+    
+InternAddress(steveAddress):
+    city: hanoi
+    district: dongda
+    contactInfo: steveContactInfo
+
+InternJobSeeker(steve):
     email: steve@gmail.com
     password: jobs
+    contactInfo: steveContactInfo
     
-Resume(steveResume):
+InternResume(steveResume):
     name: Steve's 1st resume
     postedAt: 2012-04-04
     owner: steve
+    workExperience: 2
+    contactInfo: steveContactInfo
     
-Employer(tom):
+InternContactInfo(tomContactInfo):
+    email: tom@live.com
+    
+InternAddress(tomAddress):
+    city: hanoi
+    district: haibatrung
+    contactInfo: tomContactInfo
+    
+InternEducation(tomEducation):
+    major: computerScience
+    
+InternEmployer(tom):
     email: tom@gmail.com
     password: password
     
-Job(tomJob):
+InternJob(tomJob):
     name: Tom's 1st job
     postedAt: 2012-04-08
     owner: tom
+    requiredWorkExperience: 0
+    contactInfo: tomContactInfo
+    requiredEducation: tomEducation
     
-Application(steveToTom):
+InternJob(tomJob2):
+    name: Tom's 2nd job
+    postedAt: 2012-04-09
+    owner: tom
+    requiredWorkExperience: 10
+    contactInfo: tomContactInfo
+    requiredEducation: tomEducation
+    
+InternJob(tomJob3):
+    name: Tom's 3rd job
+    postedAt: 2012-04-10
+    owner: tom
+    requiredWorkExperience: 2
+    contactInfo: tomContactInfo
+    requiredEducation: tomEducation
+    
+InternApplication(steveToTom):
     job: tomJob
     resume: steveResume
     jobSeeker: steve

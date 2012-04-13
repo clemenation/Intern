@@ -24,10 +24,21 @@ InternContactInfo(quacNguyenContactInfo):
 
 InternCity(haNoiCity):
     name: Ha Noi
+    
+InternCity(haiPhongCity):
+    name: Hai Phong
 
 InternDistrict(dongDaDistrict):
     name: Dong Da
     city: haNoiCity
+    
+InternDistrict(haiBaTrungDistrict):
+    name: Hai Ba Trung
+    city: haNoiCity
+    
+InternDistrict(doSonDistrict):
+    name: Do Son
+    city: haiPhongCity
 
 InternAddress(dungNguyenAddress):
     address: 37/157 Phao Dai Lang
