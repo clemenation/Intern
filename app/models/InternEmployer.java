@@ -33,6 +33,12 @@ public class InternEmployer extends InternUser {
 	
 	// Constructors
 	
+	public InternEmployer() {
+		super("Employer");
+		this.jobs = new ArrayList<InternJob>();
+		this.applications = new ArrayList<InternApplication>();
+	}
+	
 	public InternEmployer(String email, String password) {
 		super(email, password, "Employer");
 		this.jobs = new ArrayList<InternJob>();
@@ -110,6 +116,5 @@ public class InternEmployer extends InternUser {
 	public static InternEmployer connect(String email, String password) {
 		return find("byEmailAndPassword", email, password).first();
 	}
-	
-	
+
 }
