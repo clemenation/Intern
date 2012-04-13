@@ -1,0 +1,55 @@
+#{extends 'main.html' /}
+#{set title:'Register Employer' /}
+
+<h1>Intern/Employer</h1>
+
+#{ifErrors}
+	<h1>Oops...</h1>
+	#{errors}
+		<li>${error}</li>
+	#{/errors}
+#{/ifErrors}
+
+#{form @Application.registerEmployer()}
+	<div>
+		Email: <input type="text" name="employer.email" value="${flash['employer.email']}" />
+		<span class="error">#{error 'employer.email' /}</span>
+	</div>
+	<div>
+		Password: <input type="password" name="employer.password]" value="${flash['employer.password']}" />
+		<span class="error">#{error 'employer.employer.password' /}</span>
+	</div>
+	<div>
+		CompanyName: <input type="text" name="employer.companyName" value="${flash['employer.companyName']}" />
+		<span class="error">#{error 'employer.companyName' /}</span>
+	</div>
+	<div>
+		Description: <input type="text" name="employer.description" value="${flash['employer.description']}" />
+		<span class="error">#{error 'employer.description' /}</span>
+	</div>
+	<div>
+		Company Size: <input type="text" name="employer.companySize" value="${flash['employer.companySize']}" />
+		<span class="error">#{error 'employer.companySize' /}</span>
+	</div>
+	<div>
+		Industry: <input type="text" name="employer.industry" value="${flash['employer.industry']}" />
+		<span class="error">#{error 'employer.industry' /}</span>
+	</div>
+	
+	<div>
+		Contact Info:
+		<span class="error">#{error 'contactInfo' /}</span>
+		<div>
+			Mobile: <input type="text" name="employer.contactInfo.mobile" value="${flash['employer.contactInfo.mobile']}" />
+			<span class="error">#{error 'jobSeeker.contactInfo.mobile' /}</span>
+		</div>
+		<div>
+			Phone: <input type="text" name="employer.contactInfo.phone" value="${flash['employer.contactInfo.phone']}" />
+			<span class="error">#{error 'jobSeeker.contactInfo.phone' /}</span>
+		</div>
+	</div>
+	<div>
+		<input type="submit" value="Register" />
+	</div>
+	
+#{/form}

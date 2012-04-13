@@ -1,0 +1,38 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<h1>Intern/Employer</h1>
+
+<div>
+	Email: ${employer.email}
+</div>
+<div>
+	User type: ${employer.userType}
+</div>
+<div>
+	Is Admin: ${employer.isAdmin}
+</div>
+<div>
+	Password: ${employer.password}
+</div>
+<div>
+	Company name: ${employer.companyName}
+</div>
+<div>
+	Description: ${employer.description}
+</div>
+<div>
+	Company size: ${employer.companySize}
+</div>
+<div>
+	Industry: ${employer.industry}
+</div>
+<div>
+	Contact Email: ${employer.contactInfo.contactEmail}
+</div>
+<div>
+	Mobile: ${employer.contactInfo.mobile}
+</div>
+<div>
+	Phone: ${employer.contactInfo.phone}
+</div>
