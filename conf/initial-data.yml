@@ -52,6 +52,7 @@ InternResume(dungNguyenFirstResume):
     postedAt: 2012-04-01
     owner: dungnguyen
     contactInfo: dungNguyenContactInfo
+    workExperience: 2
     
 InternResume(dungNguyenSecondResume):
     name: Dung Nguyen's 2nd Resume
@@ -91,6 +92,7 @@ InternJob(hoangTranFirstJob):
     name: Hoang Tran's 1st Job
     postedAt: 2012-04-04
     owner: hoangtran
+    requiredWorkExperience: 2
     
 InternApplication(dungToHoang):
     job: hoangTranFirstJob

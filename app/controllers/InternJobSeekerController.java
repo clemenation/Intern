@@ -27,4 +27,23 @@ public class InternJobSeekerController extends Controller {
 		List<InternApplication> applications = InternApplication.find("jobSeeker = ? order by postedAt desc", jobSeeker).from(0).fetch(4);
 		render(jobSeeker, resumes, applications);
 	}
+	
+	public static void viewJob(long jobId) {
+		InternJob job = InternJob.findById(jobId);
+		if (job != null) {
+			render(job);
+		} else {
+			index();
+		}
+	}
+	
+	public static void viewResume(long resumeId) {
+		InternResume resume = InternResume.findById(resumeId);
+		if (resume != null) {
+			List<InternPoint> jobPoints = resume.findJobs();
+			render(resume, jobPoints);
+		} else {
+			index();
+		}
+	}
 }

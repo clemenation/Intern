@@ -1,0 +1,43 @@
+<div>
+	Email: ${_jobSeeker?.email}
+</div>
+
+#{if _as == "full"}
+	<div>
+		User type: ${_jobSeeker?.userType}
+	</div>
+	
+	<div>
+		Is Admin: ${_jobSeeker?.isAdmin}
+	</div>
+	
+	<div>
+		Password: ${_jobSeeker?.password}
+	</div>
+#{/if}
+
+#{if _jobSeeker?.fullName}
+<div>
+	Full name: ${_jobSeeker?.fullName}
+</div>
+#{/if}
+
+#{if _jobSeeker?.birthday}
+<div>
+	Birthday: ${_jobSeeker?.birthday}
+</div>
+#{/if}
+
+#{if _jobSeeker?.aboutMe}
+<div>
+	About me: ${_jobSeeker?.aboutMe}
+</div>
+#{/if}
+
+#{if _jobSeeker?.college}
+<div>
+	College: ${_jobSeeker?.college}
+</div>
+#{/if}
+
+#{displayContactInfo contactInfo:_jobSeeker?.contactInfo /}

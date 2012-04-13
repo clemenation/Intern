@@ -1,0 +1,13 @@
+#{extends 'main.html' /}
+#{set title:'View Job' /}
+
+#{if session['isAdmin'] == "true"}
+	<a href="@{CRUD.index()}">Admin</a>
+#{/if}
+<a href="@{InternJobSeekerController.index()}">Home</a>
+<a href="@{InternJobSeekerController.profile()}">Me</a>
+<a href="@{Secure.logout()}">Logout</a>
+
+<h1>Intern/Job Seeker</h1>
+
+#{displayJob job:job /}
