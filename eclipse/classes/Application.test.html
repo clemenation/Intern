@@ -64,18 +64,29 @@
 	// Logout
 	open('@{Secure.logout()}')
 	
-	// Login as superadmin
+	// Login as wrong superadmin
 	type('username', 'admin')
 	type('password', 'admina')
 	clickAndWait('css=input[type=submit]')
 	
 	// Should get an error
 	assertTextPresent('Oops, unknown username or password.')
+	
+	// Login as true superadmin
 	type('username', 'admin')
 	type('password', 'admin')
 	clickAndWait('css=input[type=submit]')
 	
 	// Check if displayed admin CRUD  page
+	assertTextPresent('Administration')
+	assertTextPresent('Choose the object to edit')
+	
+	// Should display access denied when go to jobseeker's pages 
+	open('@{InternJobSeekerController.index()}')
+	assertTextPresent('Access denied')
+	
+	// Go to root, should display admin CRUD page
+	open('/')
 	assertTextPresent('Administration')
 	assertTextPresent('Choose the object to edit')
 	

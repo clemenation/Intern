@@ -1,0 +1,159 @@
+*{ You can use plain selenium command using the selenium tag }*
+
+#{fixture delete:'all', load:'dungnguyendata.yml' /}
+
+#{selenium}
+	clearSession()
+	
+	// Open login page
+	open('/')
+	assertTextPresent('Or register as Job Seeker & Employer')
+	
+	// Login as job seeker
+	type('username', 'nguyentuandung2991@gmail.com')
+	type('password', 'dungnguyen')
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('Admin')
+	assertTextPresent('Logout')
+	assertTextPresent('Intern/Job Seeker')
+	assertTextPresent('Suitable Jobs')
+	assertTextPresent('Hoang Tran's 1st Job for Dung Nguyen's 1st Resume')
+	assertTextPresent('Point: +2.0 -0.0')
+#{/selenium}
+
+#{selenium 'Test Profile'}
+	clickAndWait('link=Me')
+	assertTitle('Nguyen Tuan Dung')
+	assertTextPresent('Profile')
+	assertTextPresent('edit')
+	assertTextPresent('Email: nguyentuandung2991@gmail.com')
+	assertTextPresent('Resumes')
+	assertTextPresent('Dung Nguyen's 3rd Resume')
+	assertTextPresent('Applications')
+	assertTextPresent('nguyentuandung2991@gmail.com's Dung Nguyen's 2nd Resume to hoangtran@gmail.com's Hoang Tran's 1st Job')
+#{/selenium}
+
+#{selenium 'Test View All Resume'}
+	clickAndWait('link=view all')
+	assertTextPresent('Resumes')
+	assertTextPresent('Dung Nguyen's 3rd Resume')
+	assertTextPresent('Dung Nguyen's 2nd Resume')
+	assertTextPresent('Dung Nguyen's 1st Resume')
+#{/selenium}
+
+#{selenium 'Test View Resume'}
+	clickAndWait('link=Dung Nguyen's 1st Resume')
+	assertTextPresent('Owner: Nguyen Tuan Dung')
+	assertTextPresent('Work experience: 2')
+	assertTextPresent('Suitable Jobs')
+	assertTextPresent('Hoang Tran's 1st Job for Dung Nguyen's 1st Resume')
+	
+	// Open a null resume, should go back to resume's index
+	open('@{InternJobSeekerController.viewResume(0)}')
+	assertTextPresent('Suitable Jobs')
+#{/selenium}
+
+#{selenium 'Test View Job'}
+	clickAndWait('link=Hoang Tran's 1st Job for Dung Nguyen's 1st Resume')
+	assertTextPresent('Hoang Tran's 1st Job')
+	assertTextPresent('Posted at: 2012-04-04 07:00:00.0')
+	assertTextPresent('Required work experience: 2')
+	
+	// Open a null job, should go back to job seeker's index
+	open('@{InternJobSeekerController.viewJob(0)}')
+	assertTextPresent('Suitable Jobs')
+#{/selenium}
+
+#{selenium 'Test Add Resume'}
+	// Open Add Resume page
+	clickAndWait('link=Add')
+	assertTitle('Add Resume')
+	
+	type('resume.name', 'Photography')
+	type('resume.workExperience', '1')
+	type('resume.description', 'Worked in photography business for several clients')
+	type('resume.contactInfo.contactEmail', 'me@dungnguyenphotography.com')
+	
+	// Typing wrong phone format
+	type('resume.contactInfo.phone', 'aaaa')
+	
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('Not a valid phone')
+	
+	// Typing right phone format
+	type('resume.contactInfo.phone', '')
+	clickAndWait('css=input[type=submit]')
+	
+	// Should display resume info page
+	assertTitle('Photography')
+	assertTextPresent('Worked in photography business for several clients')
+	assertTextPresent('me@dungnguyenphotography.com')
+#{/selenium}
+
+#{selenium 'Test Update Profile'}
+	// Open profile page
+	open('@{InternJobSeekerController.profile()}')
+	assertTitle('Nguyen Tuan Dung')
+	
+	clickAndWait('link=edit')
+	assertTitle('Update Profile')
+	assertTextPresent('Email:')	
+	
+	// Entering wrong password format
+	type('jobSeeker.password', 'abc')
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('Minimum size is 6')
+	
+	// Entering right password
+	type('jobSeeker.password', 'dungnguyen')
+	
+	// Entering more information
+	type('jobSeeker.birthday', '1991-09-29')
+	type('jobSeeker.contactInfo.mobile', '090-432-9991')
+	type('jobSeeker.contactInfo.phone', '043-775-3126')
+	
+	// Changing contact email
+	type('jobSeeker.contactInfo.contactEmail', 'clemenation@yahoo.com')
+	
+	// Changing about me
+	type('jobSeeker.aboutMe', 'Photographer from Hanoi')
+	
+	// Submit
+	clickAndWait('css=input[type=submit]')
+	
+	// Should return to profile page with success message
+	assertTitle('Nguyen Tuan Dung')
+	assertTextPresent('Update profile successful!')
+	
+	// Checking if modified and added fields
+	verifyTextPresent('Birthday: 1991-09-29 00:00:00.0')
+	verifyTextPresent('Mobile: 090-432-9991')
+	verifyTextPresent('Phone: 043-775-3126')
+	verifyTextPresent('Contact Email: clemenation@yahoo.com')
+	verifyTextPresent('About me: Photographer from Hanoi')
+	
+	// Edit email this time, will have to login again
+	clickAndWait('link=edit')
+	type('jobSeeker.email', 'me@dungnguyenphotography.com')
+	type('jobSeeker.contactInfo.contactEmail', '')
+	clickAndWait('css=input[type=submit]')
+	assertTitle('Login')
+	
+	// Should not logged in
+	type('username', 'nguyentuandung2991@gmail.com')
+	type('password', 'dungnguyen')
+	clickAndWait('css=input[type=submit]')
+	assertTitle('Login')
+	
+	// Using newly changed email
+	type('username', 'me@dungnguyenphotography.com')
+	type('password', 'dungnguyen')
+	clickAndWait('css=input[type=submit]')
+	assertTitle('Home')
+	
+	// Go to profile to check info
+	open('@{InternJobSeekerController.profile()}')
+	assertTitle('Nguyen Tuan Dung')
+	verifyTextPresent('Email: me@dungnguyenphotography')
+	verifyTextPresent('Contact Email: me@dungnguyenphotography')
+#{/selenium}

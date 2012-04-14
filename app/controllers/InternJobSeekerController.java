@@ -87,7 +87,6 @@ public class InternJobSeekerController extends Controller {
 			try {
 				Secure.logout();
 			} catch (Throwable e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		} else {
@@ -120,7 +119,7 @@ public class InternJobSeekerController extends Controller {
 		
 		params.put("success", "Add new resume successful!");
 		params.flash();
-		profile();
+		viewResume(resume.id);
 	}
 	
 	public static void resumes(int page) {

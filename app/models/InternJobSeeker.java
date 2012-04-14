@@ -110,6 +110,7 @@ public class InternJobSeeker extends InternUser {
 	}
 	
 	public String toString() {
+		if (this.fullName != null && !this.fullName.equals("")) return this.fullName;
 		return this.email;
 	}
 	
