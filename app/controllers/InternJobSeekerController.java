@@ -122,4 +122,13 @@ public class InternJobSeekerController extends Controller {
 		params.flash();
 		profile();
 	}
+	
+	public static void resumes(int page) {
+		String username = Security.connected();
+		InternJobSeeker jobSeeker = InternJobSeeker.find("byEmail", username).first();
+		
+		List<InternResume> resumes = InternResume.find("owner = ? order by postedAt desc", jobSeeker).fetch();
+		
+		render(resumes);
+	}
 }

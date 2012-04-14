@@ -23,14 +23,22 @@
 #{displayJobSeeker jobSeeker:jobSeeker /}
 
 #{if resumes}
-<h2>Resumes</h2>
+	<h2>Resumes</h2>
+	<a href="@{InternJobSeekerController.resumes()}">view all</a>
 	#{list items:resumes, as:'resume'}
-		<a href="@{InternJobSeekerController.viewResume(resume.id)}"><h3>${resume}</h3></a>
+		<div>
+			<a href="@{InternJobSeekerController.viewResume(resume.id)}"><h3>${resume}</h3></a>
+			#{if resume.description}
+				<div>				
+					${resume.description}				
+				</div>
+			#{/if}
+		</div>
 	#{/list}
 #{/if}
 
 #{if applications}
-<h2>Applications</h2>
+	<h2>Applications</h2>
 	#{list items:applications, as:'application'}
 		<h3>${application}</h3>
 	#{/list}

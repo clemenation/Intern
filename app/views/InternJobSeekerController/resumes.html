@@ -1,0 +1,30 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+#{navigationBar /}
+
+<h1>Intern/Job Seeker</h1>
+
+#{if flash.error}
+	<p class="error">
+		&{flash.error}
+	</p>
+#{/if}
+
+#{if flash.success}
+	<p class="success">
+		&{flash.success}
+	</p>
+#{/if}
+
+#{if resumes}
+<h2>Resumes</h2>
+	#{list items:resumes, as:'resume'}
+		<a href="@{InternJobSeekerController.viewResume(resume.id)}"><h3>${resume}</h3></a>
+		#{if resume.description}
+			<div>				
+				${resume.description}				
+			</div>
+		#{/if}
+	#{/list}
+#{/if}
