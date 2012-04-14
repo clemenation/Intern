@@ -95,4 +95,31 @@ public class InternJobSeekerController extends Controller {
 			profile();
 		}
 	}
+	
+	public static void addResumeForm() {
+		String username = Security.connected();
+		InternJobSeeker jobSeeker = InternJobSeeker.find("byEmail", username).first();
+		
+		render(jobSeeker);
+	}
+	
+	public static void addResume(InternResume resume) {
+		String username = Security.connected();
+		InternJobSeeker jobSeeker = InternJobSeeker.find("byEmail", username).first();
+		
+		resume.owner = jobSeeker;
+		validation.valid(resume);
+		
+		if (validation.hasErrors()) {
+			params.flash();
+			validation.keep();
+			addResumeForm();
+		}
+		
+		resume.save();
+		
+		params.put("success", "Add new resume successful!");
+		params.flash();
+		profile();
+	}
 }

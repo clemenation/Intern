@@ -3,6 +3,7 @@
 #{/if}
 
 #{if session['userType'] == "Job Seeker"}
+<a href="@{InternJobSeekerController.addResumeForm()}">Add</a>
 <a href="@{InternJobSeekerController.index()}">Home</a>
 <a href="@{InternJobSeekerController.profile()}">Me</a>
 #{/if}
