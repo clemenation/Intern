@@ -51,7 +51,7 @@ public class Application extends Controller {
     }
     
     public static void registerJobSeeker(InternJobSeeker jobSeeker) {
-    	if (jobSeeker.contactInfo != null && jobSeeker.contactInfo.contactEmail.equals("")) {
+    	if (jobSeeker.contactInfo != null && (jobSeeker.contactInfo.contactEmail == null || jobSeeker.contactInfo.contactEmail.equals(""))) {
     		jobSeeker.contactInfo.contactEmail = jobSeeker.email;
     	}
     	
