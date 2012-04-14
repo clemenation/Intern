@@ -1,0 +1,26 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<a href="@{InternEmployerController.index()}">Home</a>
+<a href="@{InternEmployerController.profile()}">Me</a>
+<a href="@{Secure.logout()}">Logout</a>
+
+<h1>Intern/Employer</h1>
+
+<h2>Profile</h2>
+
+#{displayEmployer employer:employer /}
+
+#{if jobs}
+<h2>Jobs</h2>
+	#{list items:jobs, as:'job'}
+		<a href="@{InternEmployerController.viewJob(job.id)}"><h3>${job}</h3></a>
+	#{/list}
+#{/if}
+
+#{if applications}
+<h2>Applications</h2>
+	#{list items:applications, as:'application'}
+		<h3>${application}</h3>
+	#{/list}
+#{/if}

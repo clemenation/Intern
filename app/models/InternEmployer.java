@@ -69,6 +69,38 @@ public class InternEmployer extends InternUser {
 	
 	// Methods
 	
+	public List<InternPoint> findResume() {
+		// Find all resumes respectively to each job		
+		List<List<InternPoint>> pointLists = new ArrayList<List<InternPoint>>();
+		for (InternJob job : jobs) {
+			pointLists.add(job.findResumes());
+		}
+		
+		// Find the longest resume list		
+		int max = 0;
+		for (List<InternPoint> points : pointLists) {
+			if (max < points.size()) max = points.size();
+		}
+		
+		// Extract distinct satisfied resumes from all resumes
+		List<InternResume> finalResumes = new ArrayList<InternResume>();
+		List<InternPoint> finalPoints = new ArrayList<InternPoint>();
+		for (int i=0; i<max; i++) {
+			for (List<InternPoint> points : pointLists) {
+				try {
+					if (!finalResumes.contains(points.get(i).resume)) {
+						finalResumes.add(points.get(i).resume);
+						finalPoints.add(points.get(i));
+					}
+				} catch (IndexOutOfBoundsException e) {
+					// Do nothing if go over this resume list size
+				}
+			}
+		}
+		
+		return finalPoints;
+	}
+	
 	public String toString() {
 		return this.email;
 	}

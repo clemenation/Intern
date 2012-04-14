@@ -1,0 +1,43 @@
+<div>
+	Email: ${_employer?.email}
+</div>
+
+#{if _as == "full"}
+	<div>
+		User type: ${_employer?.userType}
+	</div>
+	
+	<div>
+		Is Admin: ${_employer?.isAdmin}
+	</div>
+	
+	<div>
+		Password: ${_employer?.password}
+	</div>
+#{/if}
+
+#{if _employer?.companyName}
+<div>
+	Company name: ${_employer?.companyName}
+</div>
+#{/if}
+
+#{if _employer?.industry}
+<div>
+	Industry: ${_employer?.industry}
+</div>
+#{/if}
+
+#{if _employer?.description}
+<div>
+	Description: ${_employer?.description}
+</div>
+#{/if}
+
+#{if _employer?.companySize}
+<div>
+	Company size: ${_employer?.companySize}
+</div>
+#{/if}
+
+#{displayContactInfo contactInfo:_jobSeeker?.contactInfo /}

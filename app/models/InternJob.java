@@ -72,7 +72,7 @@ public class InternJob extends Model {
 	
 	// Methods
 	
-	public List<InternResume> findResumes() {
+	public List<InternPoint> findResumes() {
 		List<InternResume> resumes = InternResume.all().fetch();	// Getting all resumes from database
 		
 		List<InternPoint> points = new ArrayList<InternPoint>();
@@ -83,13 +83,8 @@ public class InternJob extends Model {
 		
 		Collections.sort(points, new InternPoint.InternPointComparator());
 		Collections.reverse(points);
-		
-		resumes.clear();
-		for (InternPoint point : points) {
-			resumes.add(point.resume);
-		}
-		
-		return resumes;
+				
+		return points;
 	}
 	
 	public String toString() {
