@@ -28,9 +28,10 @@ public class InternPointTest extends UnitTest {
 		
 		// Getting the resume and job
 		InternResume resume = InternResume.all().first();
-		InternJob job = InternJob.all().first();
+		InternJob job = InternJob.all().<InternJob>fetch().get(1);
 		
 		// Create point system
 		System.out.println(resume.findJobs());
+		System.out.println(job.findResumes());
 	}
 }

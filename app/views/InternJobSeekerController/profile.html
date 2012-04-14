@@ -1,0 +1,26 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<a href="@{InternJobSeekerController.index()}">Home</a>
+<a href="@{InternJobSeekerController.profile()}">Me</a>
+<a href="@{Secure.logout()}">Logout</a>
+
+<h1>Intern/Job Seeker</h1>
+
+<h2>Profile</h2>
+
+#{displayJobSeeker jobSeeker:jobSeeker /}
+
+#{if resumes}
+<h2>Resumes</h2>
+	#{list items:resumes, as:'resume'}
+		<a href="@{InternJobSeekerController.viewResume(resume.id)}"><h3>${resume}</h3></a>
+	#{/list}
+#{/if}
+
+#{if applications}
+<h2>Applications</h2>
+	#{list items:applications, as:'application'}
+		<h3>${application}</h3>
+	#{/list}
+#{/if}

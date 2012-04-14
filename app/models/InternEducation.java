@@ -13,6 +13,7 @@ public class InternEducation extends Model {
 	// Properties
 
 	@Min(0)					// Real min is 1 but 0 means unspecified
+	@Max(10)
 	public int studyYears;
 
 	@Min(0)					// Real min is 0.1 but 0 means unspecified

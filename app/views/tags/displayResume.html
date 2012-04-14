@@ -1,0 +1,38 @@
+<h2>${_resume}</h2>
+
+#{if _as=="full"}
+	<div>
+		Owner: ${_resume?.owner}
+	</div>
+#{/if}
+
+<div>
+	Posted at: ${_resume?.postedAt}
+</div>
+
+#{if _resume?.workExperience > 0}
+	<div>
+		Work experience: ${_resume?.workExperience}
+	</div>
+#{/if}
+
+#{if _resume?.description}
+	<div>
+		Description: ${_resume?.description}
+	</div>
+#{/if}
+
+#{displayContactInfo contactInfo:_resume?.contactInfo /}
+
+#{if _resume?.languages}
+	<div>
+		Languages: #{list items:_resume?.languages, as:'language'}${language} #{/list}
+	</div>
+#{/if}
+
+#{if _resume?.education}
+	<div>
+		Education:
+			#{displayEducation education:_resume?.education /}
+	</div> 
+#{/if}

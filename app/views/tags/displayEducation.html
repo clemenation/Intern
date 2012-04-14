@@ -1,0 +1,23 @@
+#{if _education?.studyYears > 0}
+<div>
+	Study years: ${_education?.studyYears}
+</div>
+#{/if}
+
+#{if _education?.gpa > 0}
+<div>
+	GPA: ${_education?.gpa}
+</div>
+#{/if}
+
+#{if _education?.college}
+<div>
+	College: ${_education?.college}
+</div>
+#{/if}
+
+#{if _education?.major}
+<div>
+	Major: ${_education?.major}
+</div>
+#{/if}
