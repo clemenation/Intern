@@ -17,9 +17,9 @@ public class Security extends Secure.Security {
 		InternEmployer employer = InternEmployer.find("byEmail", connected()).first();
 		
 		if ("admin".equals(profile)) {
-			return ((jobSeeker != null) && (jobSeeker.isAdmin) ||
-					(employer != null) && (employer.isAdmin) ||
-					(connected().equals("admin")));
+			return (((jobSeeker != null) && (jobSeeker.isAdmin)) ||
+					((employer != null) && (employer.isAdmin)) ||
+					(connected().equals("admin") == true));
 		}
 		
 		return ((jobSeeker != null) && (jobSeeker.userType.equals(profile)) ||
@@ -36,9 +36,9 @@ public class Security extends Secure.Security {
 		InternJobSeeker jobSeeker = InternJobSeeker.find("byEmail", connected()).first();
 		InternEmployer employer = InternEmployer.find("byEmail", connected()).first();
 		
-		if (((jobSeeker != null) && (jobSeeker.isAdmin) ||
-				(employer != null) && (employer.isAdmin) ||
-				connected().equals("admin")) == true) {
+		if (((jobSeeker != null) && (jobSeeker.isAdmin)) ||
+				((employer != null) && (employer.isAdmin)) ||
+				(connected().equals("admin") == true)) {
 			session.put("isAdmin", true);
 		} else {
 			session.put("isAdmin", false);

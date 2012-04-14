@@ -1,7 +1,212 @@
 *{ You can use plain selenium command using the selenium tag }*
 
+#{fixture delete:'all', load:'dungnguyendata.yml' /}
+
 #{selenium}
+	clearSession()
+	
     // Open the home page, and check that no error occured
     open('/')
-    assertNotTitle('Application error')
+
+	// Check that the login page is present
+	assertTextPresent('Email')
+	assertTextPresent('Password')
+	assertTextPresent('Remember me')
+	assertTextPresent('Or register as Job Seeker & Employer')
+#{/selenium}
+
+#{selenium 'Test login'}
+	clearSession()
+	
+	open('/')
+	assertTextPresent('Or register as Job Seeker & Employer')
+	
+	//================= Test JobSeeker login =================
+	// Type in email and password
+	type('username', 'nguyentuandung2991@gmail.com')
+	type('password', 'dung')
+	clickAndWait('css=input[type=submit]')
+	
+	// Should get an error
+	assertTextPresent('Oops, unknown username or password.')
+	type('username', 'nguyentuandung2991@gmail.com')
+	type('password', 'dungnguyen')
+	clickAndWait('css=input[type=submit]')
+	
+	// Check if displayed Job Seeker index page
+	assertTextPresent('Intern/Job Seeker')
+	assertTextPresent('Suitable Jobs')
+	assertTextPresent('Hoang Tran's 1st Job for Dung Nguyen's 1st Resume')
+	assertTextPresent('Point: +2.0 -0.0')
+	
+	// Logout
+	clickAndWait('link=Logout')
+	assertTextPresent('Or register as Job Seeker & Employer')
+	
+	// Go to JobSeeker profile without login
+	open('/jobseeker/profile')
+	assertTextPresent('Or register as Job Seeker & Employer')	// Should display login page
+	
+	//================= Test admin login =================
+	
+	// Go to Admin CRUD without login
+	open('@{CRUD.index()}')
+	assertTextPresent('Or register as Job Seeker & Employer')	// Should display login page
+	
+	// Login as JobSeeker don't have admin priviledge
+	type('username', 'vannd@gmail.com')
+	type('password', 'vannd')
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('Access denied')
+	
+	//========== TODO: Write login as Employer have and don't have admin priviledge
+	
+	// Logout
+	open('@{Secure.logout()}')
+	
+	// Login as superadmin
+	type('username', 'admin')
+	type('password', 'admina')
+	clickAndWait('css=input[type=submit]')
+	
+	// Should get an error
+	assertTextPresent('Oops, unknown username or password.')
+	type('username', 'admin')
+	type('password', 'admin')
+	clickAndWait('css=input[type=submit]')
+	
+	// Check if displayed admin CRUD  page
+	assertTextPresent('Administration')
+	assertTextPresent('Choose the object to edit')
+	
+	// Logout
+	open('/logout')
+	assertTextPresent('Or register as Job Seeker & Employer')
+	
+	// Login as JobSeeker having admin priviledge
+	type('username', 'nguyentuandung2991@gmail.com')
+	type('password', 'dungnguyen')
+	clickAndWait('css=input[type=submit]')
+	
+	// Check if displayed Job Seeker index page
+	assertTextPresent('Intern/Job Seeker')
+	
+	// Go to admin CRUD page
+	clickAndWait('link=Admin')
+	assertTextPresent('Administration')
+	assertTextPresent('Choose the object to edit')
+	
+	
+	//========== TODO: Write check for employer login ============
+	
+#{/selenium}
+
+
+
+#{selenium 'Test JobSeeker register'}
+	clearSession()
+	
+	// Go to login page
+	open('/')
+	assertTextPresent('Or register as Job Seeker & Employer')
+	
+	// Go to register as JobSeeker page
+	clickAndWait('link=Job Seeker')
+	assertTextPresent('Intern/Job Seeker')
+	assertTextPresent('Email:')
+	assertTextPresent('Password:')
+	
+	// Register without entering, should get errors
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('Required')
+	
+	// Using registered jobseeker email, should get errors
+	type('jobSeeker.email', 'nguyentuandung2991@gmail.com')
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('nguyentuandung2991@gmail.com already used')
+	
+	// Using registered employer email, should get errors
+	type('jobSeeker.email', 'hoangtran@gmail.com')
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('hoangtran@gmail.com already used')
+	
+	// Using wrong email format
+	type('jobSeeker.email', 'hoangtran')
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent(' Invalid email address')
+	
+	// Entering acceptable email
+	type('jobSeeker.email', 'clemenation@yahoo.com')
+	
+	// Register without entering password, should get errors
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('Required')
+	
+	// Using too short password
+	type('jobSeeker.password', 'dung')
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('Minimum size is 6')
+	
+	// Entering acceptable password
+	type('jobSeeker.password', 'dungnguyen')
+	
+	// Entering wrong birthday format
+	type('jobSeeker.birthday', 'asdf')
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('Incorrect value')
+	
+	// Entering acceptable birthday
+	type('jobSeeker.birthday', '1991-09-29')	
+	
+	// Entering wrong mobile format
+	type('jobSeeker.contactInfo.mobile', 'adsad')
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('Not a valid phone')
+	
+	// Entering acceptable mobile
+	type('jobSeeker.contactInfo.mobile', '090-432-9991')
+	
+	// Entering wrong phone format
+	type('jobSeeker.contactInfo.phone', 'adsad')
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('Not a valid phone')
+	
+	// Entering acceptable phone
+	type('jobSeeker.contactInfo.phone', '043-775-3126')
+			
+	// Entering optional fields
+	type('jobSeeker.fullName', 'Nguyen Tuan Dung')
+	type('jobSeeker.aboutMe', 'Photographer based in Hanoi')
+	type('jobSeeker.college', 'Hanoi University of Science and Technology')
+	
+	// Check if registered successfully
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('Registration successful! Login with your created account.')
+	
+	// Check if login successfully with newly created account
+	type('username', 'clemenation@yahoo.com')
+	type('password', 'dungnguyen')
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('Intern/Job Seeker')
+	
+	// Go to register page while logged in, should go back to job seeker index page
+	open('@{Application.registerJobSeekerForm}')
+	assertTextPresent('Logout')
+	
+	// Go to profile page to check profile info
+	open('@{InternJobSeekerController.profile}')
+	assertTextPresent('Profile')
+	assertTextPresent('Email: clemenation@yahoo.com')
+	assertTextPresent('Full name: Nguyen Tuan Dung')
+	assertTextPresent('Birthday: 1991-09-29 00:00:00.0')
+	assertTextPresent('About me: Photographer based in Hanoi')
+	assertTextPresent('College: Hanoi University of Science and Technology')
+	assertTextPresent('Contact Email: clemenation@yahoo.com')
+	assertTextPresent('Mobile: 090-432-9991')
+	assertTextPresent('Phone: 043-775-3126')
+	
+#{/selenium}
+
+#{selenium 'Test Employer register'}
+	//========== TODO: Write check for employer registration ============
 #{/selenium}
