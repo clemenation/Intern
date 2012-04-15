@@ -54,6 +54,8 @@ public class InternResume extends Model {
 		this.postedAt = new Date();
 		this.applications = new ArrayList<InternApplication>();
 		this.languages = new ArrayList<InternLanguage>();
+		this.education = new InternEducation();
+		this.contactInfo = new InternContactInfo("");
 	}
 	
 	public InternResume(InternJobSeeker owner, String name) {
@@ -61,6 +63,7 @@ public class InternResume extends Model {
 		
 		this.owner = owner;
 		this.name = name;
+		this.contactInfo.update(owner.contactInfo);
 	}
 	
 	public InternResume(InternJobSeeker owner, 
@@ -72,13 +75,24 @@ public class InternResume extends Model {
 		this(owner, name);
 		this.workExperience = workExperience;
 		this.description = description;
-		this.education = education;
-		this.contactInfo = contactInfo;
+		this.education.update(education);
+		this.contactInfo.update(owner.contactInfo);
 	}
 	
 	
 	
 	// Method
+	
+	public InternResume update(InternResume resume) {
+		this.name = resume.name;
+		this.workExperience = resume.workExperience;
+		this.education.update(resume.education);
+		this.description = resume.description;
+		this.contactInfo.update(resume.contactInfo);
+		this.languages = resume.languages;
+		
+		return this;
+	}
 	
 	public List<InternPoint> findJobs() {
 		List<InternJob> jobs = InternJob.all().fetch();		// Getting all jobs from database

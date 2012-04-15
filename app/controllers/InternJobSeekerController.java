@@ -57,7 +57,7 @@ public class InternJobSeekerController extends Controller {
 	public static void updateProfile() {
 		InternJobSeeker editedJobSeeker = params.get("jobSeeker", InternJobSeeker.class);
 		
-		if (editedJobSeeker.contactInfo != null && editedJobSeeker.contactInfo.contactEmail.equals("")) {
+		if (editedJobSeeker.contactInfo.contactEmail.equals("")) {
 			editedJobSeeker.contactInfo.contactEmail = editedJobSeeker.email;
 		}
 		
@@ -66,9 +66,6 @@ public class InternJobSeekerController extends Controller {
 		
 		jobSeeker.update(editedJobSeeker);
 		validation.valid(jobSeeker);
-		
-		System.out.println("Hello guys");
-		System.out.println(validation.errorsMap());
 		
 		if (validation.hasErrors()) {
     		params.flash();		// add http parameters to the flash scope
@@ -122,6 +119,39 @@ public class InternJobSeekerController extends Controller {
 		viewResume(resume.id);
 	}
 	
+	public static void editResumeForm(long resumeId) {
+		InternResume resume = InternResume.findById(resumeId);
+		if (resume == null) {
+			resumes(1);		// Go to resumes list if resume not found
+		}
+		
+		render(resume);
+	}
+	
+	public static void editResume(long resumeId) {
+		InternResume resume = InternResume.findById(resumeId);
+		if (resume == null) {
+			resumes(1);		// Go to resumes list if resume not found
+		}
+		
+		InternResume editedResume = params.get("resume", InternResume.class);	// Getting the edited resume from the params
+		resume.update(editedResume);		// Update the old resume with new info (not saved yet)
+		validation.valid(resume);			// Checking fields for errors
+		
+		if (validation.hasErrors()) {
+			params.flash();
+			validation.keep();
+			editResumeForm(resumeId);
+		}
+		
+		resume.save();
+		
+		params.put("success", "Edit resume successful!");
+		params.flash();
+		
+		viewResume(resumeId);
+	}
+	
 	public static void resumes(int page) {
 		String username = Security.connected();
 		InternJobSeeker jobSeeker = InternJobSeeker.find("byEmail", username).first();
@@ -130,4 +160,5 @@ public class InternJobSeekerController extends Controller {
 		
 		render(resumes);
 	}
+	
 }

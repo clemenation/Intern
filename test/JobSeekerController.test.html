@@ -43,10 +43,10 @@
 
 #{selenium 'Test View Resume'}
 	clickAndWait('link=Dung Nguyen's 1st Resume')
-	assertTextPresent('Owner: Nguyen Tuan Dung')
-	assertTextPresent('Work experience: 2')
-	assertTextPresent('Suitable Jobs')
-	assertTextPresent('Hoang Tran's 1st Job for Dung Nguyen's 1st Resume')
+	assertTitle('Dung Nguyen's 1st Resume')
+	verifyTextPresent('Work experience: 2')
+	verifyTextPresent('Suitable Jobs')
+	verifyTextPresent('Hoang Tran's 1st Job for Dung Nguyen's 1st Resume')
 	
 	// Open a null resume, should go back to resume's index
 	open('@{InternJobSeekerController.viewResume(0)}')
@@ -156,4 +156,39 @@
 	assertTitle('Nguyen Tuan Dung')
 	verifyTextPresent('Email: me@dungnguyenphotography')
 	verifyTextPresent('Contact Email: me@dungnguyenphotography')
+#{/selenium}
+
+#{selenium 'Test Edit Resume'}
+	// Editing a resume not on database, should display resumes list page
+	open('@{InternJobSeekerController.editResumeForm(-1)}')
+	assertTitle('Resumes')
+	
+	// Submit a resume not on database, should display resumes list page
+	open('@{InternJobSeekerController.editResume(-1)}')
+	assertTitle('Resumes')
+
+	// Select 'Photography' resume
+	clickAndWait('link=Photography')
+	assertTitle('Photography')
+	
+	// Click edit button, should show edit page
+	clickAndWait('link=edit')
+	assertTitle('Edit Resume')
+	
+	// Change some info
+	type('resume.description', 'Worked hard')
+	
+	// Entering wrong phone format
+	type('resume.contactInfo.phone', 'aaaaa')
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('Not a valid phone')
+	
+	// Correcting phone field
+	type('resume.contactInfo.phone', '043-775-3126')
+	
+	// Submit, should display resume page
+	clickAndWait('css=input[type=submit]')
+	assertTitle('Photography')
+	verifyTextPresent('Worked hard')
+	verifyTextPresent('043-775-3126')
 #{/selenium}

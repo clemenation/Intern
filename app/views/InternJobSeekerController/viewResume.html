@@ -3,14 +3,33 @@
 
 #{navigationBar /}
 
-<h1>Intern/resume Seeker</h1>
+<h1>Intern/Job Seeker</h1>
 
-#{displayResume resume:resume, as:"full" /}
+#{if flash.error}
+	<p class="error">
+		&{flash.error}
+	</p>
+#{/if}
+
+#{if flash.success}
+	<p class="success">
+		&{flash.success}
+	</p>
+#{/if}
+
+#{displayResume resume:resume, as:"jobSeeker" /}
 
 #{if jobPoints}
 <h2>Suitable Jobs</h2>
 	#{list items:jobPoints, as:'point'}
 		<a href="@{InternJobSeekerController.viewJob(point.job.id)}"><h3>${point.job} for ${point.resume}</h3></a>
 		<div>Point: +${point.strongPoint} -${point.weakPoint}</div>
+	#{/list}
+#{/if}
+
+#{if resume?.applications}
+	<h2>Applications</h2>
+	#{list items:resume.applications, as:'application'}
+		<h3>${application}</h3>
 	#{/list}
 #{/if}
