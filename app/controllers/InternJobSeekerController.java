@@ -1,6 +1,7 @@
 package controllers;
 
 import play.*;
+import play.libs.Images;
 import play.mvc.*;
 
 import java.util.*;
@@ -65,6 +66,10 @@ public class InternJobSeekerController extends Controller {
 			editedJobSeeker.contactInfo.contactEmail = editedJobSeeker.email;
 		}
 		
+		if (editedJobSeeker.photo != null) {
+			Images.resize(editedJobSeeker.photo.getFile(), editedJobSeeker.photo.getFile(), 160, 240, true);
+		}
+		
 		String username = Security.connected();
 		InternJobSeeker jobSeeker = getJobSeeker();
 		
@@ -72,6 +77,7 @@ public class InternJobSeekerController extends Controller {
 		validation.valid(jobSeeker);
 		
 		if (validation.hasErrors()) {
+			System.out.println(validation.errorsMap());
     		params.flash();		// add http parameters to the flash scope
     		validation.keep();	// keep the errors for the next request
     		updateProfileForm();
@@ -159,6 +165,15 @@ public class InternJobSeekerController extends Controller {
 		List<InternResume> resumes = InternResume.find("owner = ? order by postedAt desc", jobSeeker).fetch();
 		
 		render(resumes);
+	}
+	
+	public static void photo() {
+		InternJobSeeker jobSeeker = getJobSeeker();
+
+		response.setContentTypeIfNotSet(jobSeeker.photo.type());
+		java.io.InputStream binaryData = jobSeeker.photo.get();
+
+		if (binaryData != null) renderBinary(binaryData);
 	}
 	
 }

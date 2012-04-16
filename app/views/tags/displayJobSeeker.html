@@ -1,3 +1,9 @@
+#{if _jobSeeker?.photo && _jobSeeker?.photo.exists()}
+<div>
+	Profile picture: <img src="@{InternJobSeekerController.photo()}" />
+</div>
+#{/if}
+
 <div>
 	Email: ${_jobSeeker?.email}
 </div>
