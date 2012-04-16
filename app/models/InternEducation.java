@@ -44,6 +44,14 @@ public class InternEducation extends Model {
 	
 	
 	
+	// Methods
+	
+	public boolean isEmpty() {
+		return (studyYears==0 && gpa==0 && (college==null || college.equals("")) && major==null);
+	}
+	
+	
+	
 	// Static methods
 	
 	public static boolean deleteEducation(InternEducation education) {

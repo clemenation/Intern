@@ -22,6 +22,7 @@ public class InternResume extends Model {
 	@ManyToOne
 	public InternJobSeeker owner;
 	
+	@Required
 	public Date postedAt;
 	
 	@Min(0)
@@ -35,6 +36,8 @@ public class InternResume extends Model {
 	public String description;
 	
 	@OneToOne(cascade=CascadeType.ALL)
+	@Valid
+	@Required
 	public InternContactInfo contactInfo;
 	
 	@OneToMany(mappedBy="resume")
@@ -47,12 +50,17 @@ public class InternResume extends Model {
 	
 	// Constructors
 	
-	public InternResume(InternJobSeeker owner, String name) {
-		this.owner = owner;
-		this.name = name;
+	public InternResume() {
 		this.postedAt = new Date();
 		this.applications = new ArrayList<InternApplication>();
 		this.languages = new ArrayList<InternLanguage>();
+	}
+	
+	public InternResume(InternJobSeeker owner, String name) {
+		this();
+		
+		this.owner = owner;
+		this.name = name;
 	}
 	
 	public InternResume(InternJobSeeker owner, 

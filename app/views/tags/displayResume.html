@@ -30,7 +30,7 @@
 	</div>
 #{/if}
 
-#{if _resume?.education}
+#{if _resume?.education && !_resume?.education.isEmpty()}
 	<div>
 		Education:
 			#{displayEducation education:_resume?.education /}
