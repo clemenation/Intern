@@ -10,10 +10,16 @@ import models.*;
 @Check("Job Seeker")
 @With(Secure.class)
 public class InternJobSeekerController extends Controller {
-		
-	public static void index() {
+	
+	private static InternJobSeeker getJobSeeker() {
 		String username = Security.connected();
 		InternJobSeeker jobSeeker = InternJobSeeker.find("byEmail", username).first();
+		
+		return jobSeeker;
+	}
+		
+	public static void index() {
+		InternJobSeeker jobSeeker = getJobSeeker();
 		
 		List<InternPoint> finalPoints = jobSeeker.findJobs();
 		
@@ -21,8 +27,7 @@ public class InternJobSeekerController extends Controller {
 	}
 	
 	public static void profile() {
-		String username = Security.connected();
-		InternJobSeeker jobSeeker = InternJobSeeker.find("byEmail", username).first();
+		InternJobSeeker jobSeeker = getJobSeeker();
 		List<InternResume> resumes = InternResume.find("owner = ? order by postedAt desc", jobSeeker).from(0).fetch(4);
 		List<InternApplication> applications = InternApplication.find("jobSeeker = ? order by postedAt desc", jobSeeker).from(0).fetch(4);
 		render(jobSeeker, resumes, applications);
@@ -31,7 +36,8 @@ public class InternJobSeekerController extends Controller {
 	public static void viewJob(long jobId) {
 		InternJob job = InternJob.findById(jobId);
 		if (job != null) {
-			render(job);
+			List<InternPoint> points = job.findResumesOfJobSeeker(getJobSeeker());
+			render(job, points);
 		} else {
 			index();
 		}
@@ -48,9 +54,7 @@ public class InternJobSeekerController extends Controller {
 	}
 	
 	public static void updateProfileForm() {
-		String username = Security.connected();
-		InternJobSeeker jobSeeker = InternJobSeeker.find("byEmail", username).first();
-		
+		InternJobSeeker jobSeeker = getJobSeeker();
 		render(jobSeeker);
 	}
 	
@@ -62,7 +66,7 @@ public class InternJobSeekerController extends Controller {
 		}
 		
 		String username = Security.connected();
-		InternJobSeeker jobSeeker = InternJobSeeker.find("byEmail", username).first();
+		InternJobSeeker jobSeeker = getJobSeeker();
 		
 		jobSeeker.update(editedJobSeeker);
 		validation.valid(jobSeeker);
@@ -93,15 +97,12 @@ public class InternJobSeekerController extends Controller {
 	}
 	
 	public static void addResumeForm() {
-		String username = Security.connected();
-		InternJobSeeker jobSeeker = InternJobSeeker.find("byEmail", username).first();
-		
+		InternJobSeeker jobSeeker = getJobSeeker();
 		render(jobSeeker);
 	}
 	
 	public static void addResume(InternResume resume) {
-		String username = Security.connected();
-		InternJobSeeker jobSeeker = InternJobSeeker.find("byEmail", username).first();
+		InternJobSeeker jobSeeker = getJobSeeker();
 		
 		resume.owner = jobSeeker;
 		validation.valid(resume);
@@ -153,8 +154,7 @@ public class InternJobSeekerController extends Controller {
 	}
 	
 	public static void resumes(int page) {
-		String username = Security.connected();
-		InternJobSeeker jobSeeker = InternJobSeeker.find("byEmail", username).first();
+		InternJobSeeker jobSeeker = getJobSeeker();
 		
 		List<InternResume> resumes = InternResume.find("owner = ? order by postedAt desc", jobSeeker).fetch();
 		

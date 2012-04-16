@@ -55,9 +55,13 @@
 
 #{selenium 'Test View Job'}
 	clickAndWait('link=Hoang Tran's 1st Job for Dung Nguyen's 1st Resume')
-	assertTextPresent('Hoang Tran's 1st Job')
-	assertTextPresent('Posted at: 2012-04-04 07:00:00.0')
-	assertTextPresent('Required work experience: 2')
+	assertTitle('Hoang Tran's 1st Job')
+	verifyTextPresent('Posted at: 2012-04-04 07:00:00.0')
+	verifyTextPresent('Required work experience: 2')
+	
+	// There should be list of resumes
+	verifyTextPresent('Your resume's points')
+	verifyTextPresent('Dung Nguyen's 1st Resume')
 	
 	// Open a null job, should go back to job seeker's index
 	open('@{InternJobSeekerController.viewJob(0)}')
