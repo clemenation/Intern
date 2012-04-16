@@ -41,5 +41,10 @@
 	<h2>Applications</h2>
 	#{list items:applications, as:'application'}
 		<h3>${application}</h3>
+		#{if application.message}
+		<p>
+			${application.message}
+		</p>
+		#{/if}
 	#{/list}
 #{/if}

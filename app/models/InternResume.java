@@ -125,6 +125,7 @@ public class InternResume extends Model {
 		}
 		
 		this.languages.add(language);
+		this.save();
 		language.useCount++;
 		language.save();
 		
@@ -143,6 +144,7 @@ public class InternResume extends Model {
 		}
 		
 		this.languages.remove(language);
+		this.save();
 		language.useCount--;
 		language.save();		
 		

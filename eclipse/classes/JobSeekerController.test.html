@@ -68,6 +68,61 @@
 	assertTextPresent('Suitable Jobs')
 #{/selenium}
 
+#{selenium 'Test Apply Job'}
+	// Go to job page
+	clickAndWait('link=Hoang Tran's 1st Job for Dung Nguyen's 1st Resume')
+	assertTitle('Hoang Tran's 1st Job')
+	
+	// Click apply button, should open apply page
+	clickAndWait('link=Apply')
+	assertTitle('Apply Hoang Tran's 1st Job')
+	
+	// Should apply ok and go to profile page
+	type('application.message', 'Apply 1')
+	clickAndWait('css=input[type=submit]')
+	assertTitle('Nguyen Tuan Dung')
+	assertTextPresent('Apply 1')
+	
+	// Go to job page
+	open('/')
+	clickAndWait('link=Hoang Tran's 1st Job for Dung Nguyen's 1st Resume')
+	assertTitle('Hoang Tran's 1st Job')
+	
+	// Click apply button, should open apply page
+	clickAndWait('link=Apply')
+	assertTitle('Apply Hoang Tran's 1st Job')
+	
+	// Should apply ok and go to profile page
+	type('application.message', 'Apply 2')
+	clickAndWait('css=input[type=submit]')
+	assertTitle('Nguyen Tuan Dung')
+	assertTextPresent('Apply 2')
+	
+	//==== Test if all resumes have been applied
+	
+	// Go to job page
+	open('/')
+	clickAndWait('link=Hoang Tran's 1st Job for Dung Nguyen's 1st Resume')
+	assertTitle('Hoang Tran's 1st Job')
+	
+	// Click apply button, should open apply page
+	clickAndWait('link=Apply')
+	assertTitle('Apply Hoang Tran's 1st Job')
+	
+	// Don't have any more resume to apply
+	assertTextPresent('No more resume to apply.')
+	
+	*{** Problem here because ID changes after tests
+	//===== Test when apply without go through form, should display form
+	open('@{InternJobSeekerController.applyJob(1)}')
+	assertTitle('Apply Hoang Tran's 1st Job')
+	**}*
+	
+	//==== Test when apply a null resume, should display index
+	open('@{InternJobSeekerController.applyJobForm(0)}')
+	assertTitle('Home')
+#{/selenium}
+
 #{selenium 'Test Add Resume'}
 	// Open Add Resume page
 	clickAndWait('link=Add')

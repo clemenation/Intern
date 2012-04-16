@@ -1,6 +1,7 @@
 package controllers;
 
 import play.*;
+import play.data.validation.Validation;
 import play.libs.Images;
 import play.mvc.*;
 
@@ -37,11 +38,53 @@ public class InternJobSeekerController extends Controller {
 	public static void viewJob(long jobId) {
 		InternJob job = InternJob.findById(jobId);
 		if (job != null) {
-			List<InternPoint> points = job.findResumesOfJobSeeker(getJobSeeker());
+			List<InternPoint> points = job.findResumesOfJobSeeker(getJobSeeker(), false);
 			render(job, points);
 		} else {
 			index();
 		}
+	}
+	
+	public static void applyJobForm(long jobId) {
+		InternJob job = InternJob.findById(jobId);
+		if (job != null) {
+			List<InternPoint> points = job.findResumesOfJobSeeker(getJobSeeker(), true);
+			render(job, points);
+		} else {
+			index();
+		}
+	}
+	
+	public static void applyJob(long jobId) {
+		InternApplication application = params.get("application", InternApplication.class);
+		
+		if (application == null || application.resume==null) {
+			System.out.println("ERROR: Application info not entered yet");
+			applyJobForm(jobId);
+		}
+		
+		InternJob job = InternJob.findById(jobId);
+		
+		application.job = job;
+		application.jobSeeker = application.resume.owner;
+		application.employer = application.job.owner;
+		
+		/* Not needed
+		validation.valid(application);
+		
+		if (validation.hasErrors()) {
+			System.out.println(validation.errorsMap());
+			params.flash();
+			validation.keep();
+			applyJobForm(jobId);
+		}
+		*/
+		
+		application.apply();
+		
+		params.put("success", "Job applied successful!");
+		params.flash();
+		profile();
 	}
 	
 	public static void viewResume(long resumeId) {

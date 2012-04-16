@@ -1,0 +1,38 @@
+#{extends 'main.html' /}
+#{set title:'Apply ' + job /}
+
+#{navigationBar /}
+
+<h1>Intern/Job Seeker</h1>
+
+#{ifErrors}
+	<h1>Oops...</h1>
+	#{errors}
+		<li>${error}</li>
+	#{/errors}
+#{/ifErrors}
+
+#{if points}
+#{form @InternJobSeekerController.applyJob(job.id) }
+		<div>
+			Resume to apply: 
+			<select name="application.resume.id">			
+				#{list items: points, as:'point'}
+					<option value="${point.resume.id}" #{ifErrors}#{if flash['application.resume?.id']==point.resume.id}selected="true"#{/if}#{/ifErrors}>${point.resume} +${point.strongPoint} -${point.weakPoint}</option>
+				#{/list}			
+			</select>
+		</div>
+		
+		<div>
+			Message: <input type="text" name="application.message" value="#{ifErrors}${flash['application.message']}#{/ifErrors}" />
+			<span class="error">#{error 'application.message' /}</span>
+		</div>
+		
+		<div>
+			<input type="submit" value="Apply" />
+		</div>
+	#{/form}
+#{/if}
+#{else}
+	No more resume to apply.
+#{/else}

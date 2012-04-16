@@ -72,8 +72,16 @@ public class InternJob extends Model {
 	
 	// Methods
 	
-	public List<InternPoint> findResumesOfJobSeeker(InternJobSeeker jobSeeker) {
-		return pointsFromResumes(jobSeeker.resumes);
+	public List<InternPoint> findResumesOfJobSeeker(InternJobSeeker jobSeeker, boolean notApplied) {
+		List<InternResume> resumes = new ArrayList<InternResume>(jobSeeker.resumes);
+		
+		if (notApplied == true) {
+			for (InternApplication application : jobSeeker.applications) {
+				resumes.remove(application.resume);
+			}
+		}
+		
+		return pointsFromResumes(resumes);
 	}
 	
 	public List<InternPoint> findResumes() {
