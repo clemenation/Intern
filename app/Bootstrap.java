@@ -9,8 +9,10 @@ public class Bootstrap extends Job {
 
 	public void doJob() {
 		// Check if the database is empty
-		if (InternJobSeeker.count() == 0) {
-			Fixtures.loadModels("initial-data.yml");
+		if(!Play.id.equals("test")) {
+			if (InternJobSeeker.count() == 0) {
+				Fixtures.loadModels("initial-data.yml");
+			}
 		}
 	}
 }

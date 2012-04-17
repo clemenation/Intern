@@ -27,6 +27,10 @@ public class InternEducation extends Model {
 
 
 	// Constructors
+	
+	public InternEducation() {
+		
+	}
 
 	public InternEducation(int studyYears) {
 		this.studyYears = studyYears;
@@ -45,6 +49,15 @@ public class InternEducation extends Model {
 	
 	
 	// Methods
+	
+	public InternEducation update(InternEducation education) {
+		this.studyYears = education.studyYears;
+		this.college = education.college;
+		this.gpa = education.gpa;
+		this.major = education.major;
+		
+		return this;
+	}
 	
 	public boolean isEmpty() {
 		return (studyYears==0 && gpa==0 && (college==null || college.equals("")) && major==null);

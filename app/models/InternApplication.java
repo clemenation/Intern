@@ -40,12 +40,17 @@ public class InternApplication extends Model {
 	
 	// Constructor
 	
+	public InternApplication() {
+		this.postedAt = new Date();
+	}
+	
 	public InternApplication(InternJob job, InternResume resume) {
+		this();
+		
 		this.job = job;
 		this.resume = resume;
 		this.jobSeeker = resume.owner;
 		this.employer = job.owner;
-		this.postedAt = new Date();
 	}
 	
 	public InternApplication(InternJob job, InternResume resume, String message) {
@@ -59,6 +64,26 @@ public class InternApplication extends Model {
 	
 	public String toString() {
 		return (this.jobSeeker + "'s " + this.resume + " to " + this.employer + "'s " + this.job);
+	}
+	
+	public boolean apply() {
+		if (job == null || resume == null || jobSeeker==null || employer == null) {
+			System.out.println("ERROR: Applying null job and resume");
+			return false;
+		}
+		
+		job.applications.add(this);
+		job.save();
+		resume.applications.add(this);
+		resume.save();
+		jobSeeker.applications.add(this);
+		jobSeeker.save();
+		employer.applications.add(this);
+		employer.save();
+		
+		this.save();
+		
+		return true;
 	}
 	
 	

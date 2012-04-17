@@ -1,89 +1,102 @@
-InternMajor(computerScience):
-    name: Computer Science
-    
-InternMajor(electricalEngineering):
-    name: Electrical Engineering
+InternLanguage(englishLanguage):
+    language: English
 
-InternLanguage(vietnam):
+InternLanguage(vietnamLanguage):
     language: Vietnam
     
-InternLanguage(english):
-    language: English
+InternMajor(computerScienceMajor):
+    name: Computer Science
     
-InternCity(hanoi):
-    name: Hanoi
+InternMajor(electronicEngineeringMajor):
+    name: Electronic Engineering
 
-InternDistrict(dongda):
+InternContactInfo(dungNguyenContactInfo):
+    contactEmail: nguyentuandung2991@gmail.com
+
+InternCity(haNoiCity):
+    name: Ha Noi
+    
+InternCity(haiPhongCity):
+    name: Hai Phong
+
+InternDistrict(dongDaDistrict):
     name: Dong Da
-    city: hanoi
+    city: haNoiCity
     
-InternDistrict(haibatrung):
+InternDistrict(haiBaTrungDistrict):
     name: Hai Ba Trung
-    city: hanoi
+    city: haNoiCity
     
-InternContactInfo(steveContactInfo):
-    contactEmail: steve@hotmail.com
-    phone: 01234
-    mobile: 56789
-    
-InternAddress(steveAddress):
-    city: hanoi
-    district: dongda
-    contactInfo: steveContactInfo
+InternDistrict(doSonDistrict):
+    name: Do Son
+    city: haiPhongCity
 
-InternJobSeeker(steve):
-    email: steve@gmail.com
-    password: jobs
-    contactInfo: steveContactInfo
+InternAddress(dungNguyenAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: dungNguyenContactInfo
+
+InternJobSeeker(dungnguyen):
+    email: nguyentuandung2991@gmail.com
+    password: dungnguyen
+    aboutMe: I'm Dung
+    fullName: Nguyen Tuan Dung
+    college: Hanoi University of Science and Technology
+    userType: Job Seeker
+    contactInfo: dungNguyenContactInfo
+    isAdmin: true
     
-InternResume(steveResume):
-    name: Steve's 1st resume
-    postedAt: 2012-04-04
-    owner: steve
+InternResume(dungNguyenFirstResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: dungnguyen
+    contactInfo: dungNguyenContactInfo
     workExperience: 2
-    contactInfo: steveContactInfo
     
-InternContactInfo(tomContactInfo):
-    email: tom@live.com
+InternResume(dungNguyenSecondResume):
+    name: Dung Nguyen's 2nd Resume
+    postedAt: 2012-04-02
+    owner: dungnguyen
+    contactInfo: dungNguyenContactInfo
     
-InternAddress(tomAddress):
-    city: hanoi
-    district: haibatrung
-    contactInfo: tomContactInfo
+InternResume(dungNguyenThirdResume):
+    name: Dung Nguyen's 3rd Resume
+    postedAt: 2012-04-03
+    owner: dungnguyen
+    contactInfo: dungNguyenContactInfo
+
+InternJobSeeker(vannd):
+    email: vannd@gmail.com
+    password: vannd
+    aboutMe: I'm Van
+    fullName: Nguyen Duc Van
+    college: Hanoi University of Science and Technology
+    userType: Job Seeker
     
-InternEducation(tomEducation):
-    major: computerScience
+InternJobSeeker(nguyenquac):
+    email: nguyenquac@gmail.com
+    password: nguyenquac
+    aboutMe: I'm Quac
+    fullName: Nguyen Quang Anh
+    college: Hanoi University of Science and Technology
+    userType: Job Seeker
     
-InternEmployer(tom):
-    email: tom@gmail.com
-    password: password
+InternEmployer(hoangtran):
+    email: hoangtran@gmail.com
+    password: hoangtran
+    companyName: Hoang Tran Software
+    userType: Employer
     
-InternJob(tomJob):
-    name: Tom's 1st job
-    postedAt: 2012-04-08
-    owner: tom
-    requiredWorkExperience: 0
-    contactInfo: tomContactInfo
-    requiredEducation: tomEducation
-    
-InternJob(tomJob2):
-    name: Tom's 2nd job
-    postedAt: 2012-04-09
-    owner: tom
-    requiredWorkExperience: 10
-    contactInfo: tomContactInfo
-    requiredEducation: tomEducation
-    
-InternJob(tomJob3):
-    name: Tom's 3rd job
-    postedAt: 2012-04-10
-    owner: tom
+InternJob(hoangTranFirstJob):
+    name: Hoang Tran's 1st Job
+    postedAt: 2012-04-04
+    owner: hoangtran
     requiredWorkExperience: 2
-    contactInfo: tomContactInfo
-    requiredEducation: tomEducation
     
-InternApplication(steveToTom):
-    job: tomJob
-    resume: steveResume
-    jobSeeker: steve
-    employer: tom
+InternApplication(dungToHoang):
+    job: hoangTranFirstJob
+    resume: dungNguyenSecondResume
+    jobSeeker: dungnguyen
+    employer: hoangtran
+    postedAt: 2012-04-05

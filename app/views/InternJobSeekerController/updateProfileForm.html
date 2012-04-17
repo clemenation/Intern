@@ -1,5 +1,5 @@
 #{extends 'main.html' /}
-#{set title:'Home' /}
+#{set title:'Update Profile' /}
 
 #{navigationBar /}
 
@@ -12,7 +12,11 @@
 	#{/errors}
 #{/ifErrors}
 
-#{form @InternJobSeekerController.updateProfile()}
+#{form @InternJobSeekerController.updateProfile(), enctype:'multipart/form-data'}
+	<div>
+		Profile picture: <input type="file" name="jobSeeker.photo" />
+		<span class="error">#{error 'jobSeeker.photo' /}</span>
+	</div>
 	<div>
 		Email: <input type="text" name="jobSeeker.email" value="#{ifErrors}${flash['jobSeeker.email']}#{/ifErrors}#{else}${jobSeeker.email}#{/else}" />
 		<span class="error">#{error 'jobSeeker.email' /}</span>

@@ -19,6 +19,7 @@ public class InternJobSeeker extends InternUser {
 	
 	public String college;
 	public String fullName;
+	public Blob photo;
 	
 	@InPast
 	public Date birthday;
@@ -71,6 +72,7 @@ public class InternJobSeeker extends InternUser {
 		this.college = jobSeeker.college;
 		this.fullName = jobSeeker.fullName;
 		this.birthday = jobSeeker.birthday;
+		this.photo = jobSeeker.photo;
 		if (this.contactInfo == null) {
 			this.contactInfo = jobSeeker.contactInfo;
 		} else {
@@ -110,6 +112,7 @@ public class InternJobSeeker extends InternUser {
 	}
 	
 	public String toString() {
+		if (this.fullName != null && !this.fullName.equals("")) return this.fullName;
 		return this.email;
 	}
 	

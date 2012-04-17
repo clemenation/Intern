@@ -1,6 +1,8 @@
 package controllers;
 
 import play.*;
+import play.data.validation.Validation;
+import play.libs.Images;
 import play.mvc.*;
 
 import java.util.*;
@@ -10,10 +12,16 @@ import models.*;
 @Check("Job Seeker")
 @With(Secure.class)
 public class InternJobSeekerController extends Controller {
-		
-	public static void index() {
+	
+	private static InternJobSeeker getJobSeeker() {
 		String username = Security.connected();
 		InternJobSeeker jobSeeker = InternJobSeeker.find("byEmail", username).first();
+		
+		return jobSeeker;
+	}
+		
+	public static void index() {
+		InternJobSeeker jobSeeker = getJobSeeker();
 		
 		List<InternPoint> finalPoints = jobSeeker.findJobs();
 		
@@ -21,8 +29,7 @@ public class InternJobSeekerController extends Controller {
 	}
 	
 	public static void profile() {
-		String username = Security.connected();
-		InternJobSeeker jobSeeker = InternJobSeeker.find("byEmail", username).first();
+		InternJobSeeker jobSeeker = getJobSeeker();
 		List<InternResume> resumes = InternResume.find("owner = ? order by postedAt desc", jobSeeker).from(0).fetch(4);
 		List<InternApplication> applications = InternApplication.find("jobSeeker = ? order by postedAt desc", jobSeeker).from(0).fetch(4);
 		render(jobSeeker, resumes, applications);
@@ -31,10 +38,53 @@ public class InternJobSeekerController extends Controller {
 	public static void viewJob(long jobId) {
 		InternJob job = InternJob.findById(jobId);
 		if (job != null) {
-			render(job);
+			List<InternPoint> points = job.findResumesOfJobSeeker(getJobSeeker(), false);
+			render(job, points);
 		} else {
 			index();
 		}
+	}
+	
+	public static void applyJobForm(long jobId) {
+		InternJob job = InternJob.findById(jobId);
+		if (job != null) {
+			List<InternPoint> points = job.findResumesOfJobSeeker(getJobSeeker(), true);
+			render(job, points);
+		} else {
+			index();
+		}
+	}
+	
+	public static void applyJob(long jobId) {
+		InternApplication application = params.get("application", InternApplication.class);
+		
+		if (application == null || application.resume==null) {
+			System.out.println("ERROR: Application info not entered yet");
+			applyJobForm(jobId);
+		}
+		
+		InternJob job = InternJob.findById(jobId);
+		
+		application.job = job;
+		application.jobSeeker = application.resume.owner;
+		application.employer = application.job.owner;
+		
+		/* Not needed
+		validation.valid(application);
+		
+		if (validation.hasErrors()) {
+			System.out.println(validation.errorsMap());
+			params.flash();
+			validation.keep();
+			applyJobForm(jobId);
+		}
+		*/
+		
+		application.apply();
+		
+		params.put("success", "Job applied successful!");
+		params.flash();
+		profile();
 	}
 	
 	public static void viewResume(long resumeId) {
@@ -48,29 +98,29 @@ public class InternJobSeekerController extends Controller {
 	}
 	
 	public static void updateProfileForm() {
-		String username = Security.connected();
-		InternJobSeeker jobSeeker = InternJobSeeker.find("byEmail", username).first();
-		
+		InternJobSeeker jobSeeker = getJobSeeker();
 		render(jobSeeker);
 	}
 	
 	public static void updateProfile() {
 		InternJobSeeker editedJobSeeker = params.get("jobSeeker", InternJobSeeker.class);
 		
-		if (editedJobSeeker.contactInfo != null && editedJobSeeker.contactInfo.contactEmail.equals("")) {
+		if (editedJobSeeker.contactInfo.contactEmail.equals("")) {
 			editedJobSeeker.contactInfo.contactEmail = editedJobSeeker.email;
 		}
 		
+		if (editedJobSeeker.photo != null) {
+			Images.resize(editedJobSeeker.photo.getFile(), editedJobSeeker.photo.getFile(), 160, 240, true);
+		}
+		
 		String username = Security.connected();
-		InternJobSeeker jobSeeker = InternJobSeeker.find("byEmail", username).first();
+		InternJobSeeker jobSeeker = getJobSeeker();
 		
 		jobSeeker.update(editedJobSeeker);
 		validation.valid(jobSeeker);
 		
-		System.out.println("Hello guys");
-		System.out.println(validation.errorsMap());
-		
 		if (validation.hasErrors()) {
+			System.out.println(validation.errorsMap());
     		params.flash();		// add http parameters to the flash scope
     		validation.keep();	// keep the errors for the next request
     		updateProfileForm();
@@ -87,7 +137,6 @@ public class InternJobSeekerController extends Controller {
 			try {
 				Secure.logout();
 			} catch (Throwable e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		} else {
@@ -97,15 +146,12 @@ public class InternJobSeekerController extends Controller {
 	}
 	
 	public static void addResumeForm() {
-		String username = Security.connected();
-		InternJobSeeker jobSeeker = InternJobSeeker.find("byEmail", username).first();
-		
+		InternJobSeeker jobSeeker = getJobSeeker();
 		render(jobSeeker);
 	}
 	
 	public static void addResume(InternResume resume) {
-		String username = Security.connected();
-		InternJobSeeker jobSeeker = InternJobSeeker.find("byEmail", username).first();
+		InternJobSeeker jobSeeker = getJobSeeker();
 		
 		resume.owner = jobSeeker;
 		validation.valid(resume);
@@ -120,15 +166,57 @@ public class InternJobSeekerController extends Controller {
 		
 		params.put("success", "Add new resume successful!");
 		params.flash();
-		profile();
+		viewResume(resume.id);
+	}
+	
+	public static void editResumeForm(long resumeId) {
+		InternResume resume = InternResume.findById(resumeId);
+		if (resume == null) {
+			resumes(1);		// Go to resumes list if resume not found
+		}
+		
+		render(resume);
+	}
+	
+	public static void editResume(long resumeId) {
+		InternResume resume = InternResume.findById(resumeId);
+		if (resume == null) {
+			resumes(1);		// Go to resumes list if resume not found
+		}
+		
+		InternResume editedResume = params.get("resume", InternResume.class);	// Getting the edited resume from the params
+		resume.update(editedResume);		// Update the old resume with new info (not saved yet)
+		validation.valid(resume);			// Checking fields for errors
+		
+		if (validation.hasErrors()) {
+			params.flash();
+			validation.keep();
+			editResumeForm(resumeId);
+		}
+		
+		resume.save();
+		
+		params.put("success", "Edit resume successful!");
+		params.flash();
+		
+		viewResume(resumeId);
 	}
 	
 	public static void resumes(int page) {
-		String username = Security.connected();
-		InternJobSeeker jobSeeker = InternJobSeeker.find("byEmail", username).first();
+		InternJobSeeker jobSeeker = getJobSeeker();
 		
 		List<InternResume> resumes = InternResume.find("owner = ? order by postedAt desc", jobSeeker).fetch();
 		
 		render(resumes);
 	}
+	
+	public static void photo() {
+		InternJobSeeker jobSeeker = getJobSeeker();
+
+		response.setContentTypeIfNotSet(jobSeeker.photo.type());
+		java.io.InputStream binaryData = jobSeeker.photo.get();
+
+		if (binaryData != null) renderBinary(binaryData);
+	}
+	
 }

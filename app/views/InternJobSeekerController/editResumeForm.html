@@ -1,0 +1,72 @@
+#{extends 'main.html' /}
+#{set title:'Edit Resume' /}
+
+#{navigationBar /}
+
+<h1>Intern/Job Seeker</h1>
+
+#{ifErrors}
+	<h1>Oops...</h1>
+	#{errors}
+		<li>${error}</li>
+	#{/errors}
+#{/ifErrors}
+
+#{form @InternJobSeekerController.editResume(resume.id)}
+	<div>
+		Name: <input type="text" name="resume.name" value="#{ifErrors}${flash['resume.name']}#{/ifErrors}#{else}${resume.name}#{/else}" />
+		<span class="error">#{error 'resume.name' /}</span>
+	</div>
+	<div>
+		Work Experience: <input type="text" name="resume.workExperience" value="#{ifErrors}${flash['resume.workExperience']}#{/ifErrors}#{else}${resume.workExperience}#{/else}" />
+		<span class="error">#{error 'resume.workExperience' /}</span>
+	</div>
+	<div>
+		Description: <input type="text" name="resume.description" value="#{ifErrors}${flash['resume.description']}#{/ifErrors}#{else}${resume.description}#{/else}" />
+		<span class="error">#{error 'resume.description' /}</span>
+	</div>
+	<div>
+		Education:
+		<div>
+			Study Years: <input type="text" name="resume.education.studyYears"
+				value="#{ifErrors}${flash['resume.education.studyYears']}#{/ifErrors}#{else}${resume.education.studyYears}#{/else}" /> 
+				<span class="error">#{error 'resume.education.studyYears' /}</span>
+		</div>
+		<div>
+			GPA: <input type="text" name="resume.education.gpa"
+				value="#{ifErrors}${flash['resume.education.gpa']}#{/ifErrors}#{else}${resume.education.gpa}#{/else}" /> 
+				<span class="error">#{error 'resume.education.gpa' /}</span>
+		</div>
+		<div>
+			College: <input type="text" name="resume.education.college"
+				value="#{ifErrors}${flash['resume.education.college']}#{/ifErrors}#{else}${resume.education.college}#{/else}" /> <span class="error">#{error
+				'resume.education.college' /}</span>
+		</div>
+		<div>
+			Major: *{*** TODO: Write Major here ***}*
+		</div>
+	</div>
+	<div>
+		Contact Info:
+		<span class="error">#{error 'contactInfo' /}</span>
+		<div>
+			Contact email: <input type="text" name="resume.contactInfo.contactEmail" value="#{ifErrors}${flash['resume.contactInfo.contactEmail']}#{/ifErrors}#{else}${resume.contactInfo.contactEmail}#{/else}" />
+			<span class="error">#{error 'resume.contactInfo.contactEmail' /}</span>
+		</div>
+		<div>
+			Mobile: <input type="text" name="resume.contactInfo.mobile" value="#{ifErrors}${flash['resume.contactInfo.mobile']}#{/ifErrors}#{else}${resume.contactInfo.mobile}#{/else}" />
+			<span class="error">#{error 'resume.contactInfo.mobile' /}</span>
+		</div>
+		<div>
+			Phone: <input type="text" name="resume.contactInfo.phone" value="#{ifErrors}${flash['resume.contactInfo.phone']}#{/ifErrors}#{else}${resume.contactInfo.phone}#{/else}" />
+			<span class="error">#{error 'resume.contactInfo.phone' /}</span>
+		</div>
+	</div>
+	<div>
+		Languages: *{*** TODO : Write Languages here ***}*
+	</div>
+	<div>
+		<input type="submit" value="Save" />
+	</div>
+
+#{/form}

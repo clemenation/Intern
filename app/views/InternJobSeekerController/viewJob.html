@@ -1,8 +1,16 @@
 #{extends 'main.html' /}
-#{set title:'View Job' /}
+#{set title: job /}
 
 #{navigationBar /}
 
 <h1>Intern/Job Seeker</h1>
 
 #{displayJob job:job /}
+#{if points}
+	<a href="@{InternJobSeekerController.applyJobForm(job.id)}"><h3>Apply</h3></a>
+	<h2>Your resume's points</h2>
+	#{list items: points, as:'point'}
+		<a href="@{InternJobSeekerController.viewResume(point.resume.id)}"><h3>${point.resume}</h3></a>
+		<div>Point: +${point.strongPoint} -${point.weakPoint}</div>
+	#{/list}
+#{/if}
