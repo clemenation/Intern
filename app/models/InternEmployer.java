@@ -69,22 +69,6 @@ public class InternEmployer extends InternUser {
 	
 	// Methods
 	
-	public InternEmployer update(InternEmployer employer) {
-		this.email = employer.email;
-		this.password = employer.password;
-		this.description = employer.description;
-		this.companyName = employer.companyName;
-		this.companySize = employer.companySize;
-		this.industry = employer.industry;
-		if (this.contactInfo == null) {
-			this.contactInfo = employer.contactInfo;
-		} else {
-			this.contactInfo.update(employer.contactInfo);
-		}
-		
-		return this;
-	}
-	
 	public List<InternPoint> findResume() {
 		// Find all resumes respectively to each job		
 		List<List<InternPoint>> pointLists = new ArrayList<List<InternPoint>>();
