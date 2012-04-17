@@ -30,6 +30,6 @@
 #{if resume?.applications}
 	<h2>Applications</h2>
 	#{list items:resume.applications, as:'application'}
-		<h3>${application}</h3>
+		<a href="@{InternJobSeekerController.viewApplication(application.id)}"><h3>${application.job}</h3></a>
 	#{/list}
 #{/if}

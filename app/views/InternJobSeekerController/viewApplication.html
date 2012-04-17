@@ -1,0 +1,32 @@
+#{extends 'main.html' /}
+#{set title: 'View Application' /}
+
+#{navigationBar /}
+
+<h1>Intern/Job Seeker</h1>
+
+#{if flash.error}
+	<p class="error">
+		&{flash.error}
+	</p>
+#{/if}
+
+#{if flash.success}
+	<p class="success">
+		&{flash.success}
+	</p>
+#{/if}
+
+<div>
+	Posted at: ${application.postedAt}
+</div>
+
+#{if application.message}
+	<div>
+		<h2>Message</h2> ${application.message}
+	</div>
+#{/if}
+
+#{displayJob job:application.job /}
+
+#{displayResume resume:application.resume /}

@@ -69,6 +69,16 @@ public class InternJobSeekerController extends Controller {
 		application.job = job;
 		application.jobSeeker = application.resume.owner;
 		application.employer = application.job.owner;
+
+		// Check if resume applied
+		for (InternApplication checkApplication : application.resume.applications) {
+			if (checkApplication.job == job) {
+				System.out.println("ERROR: Cannot use this resume to apply for this job again");
+				params.put("error", "Cannot use this resume to apply this job again");
+				params.flash();
+				viewJob(jobId);
+			}
+		}
 		
 		/* Not needed
 		validation.valid(application);
@@ -85,7 +95,20 @@ public class InternJobSeekerController extends Controller {
 		
 		params.put("success", "Job applied successful!");
 		params.flash();
-		profile();
+		viewApplication(application.id);
+	}
+	
+	public static void viewApplication(long applicationId) {
+		InternApplication application = InternApplication.findById(applicationId);
+		InternJobSeeker jobSeeker = getJobSeeker();
+		
+		if ((application == null) || (!jobSeeker.applications.contains(application))) {
+			// If the application is null or not of current user
+			System.out.println("ERROR: Cannot view this application");
+			profile();
+		}
+		
+		render(application);
 	}
 	
 	public static void viewResume(long resumeId) {
