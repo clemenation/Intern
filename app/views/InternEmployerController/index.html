@@ -1,12 +1,7 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-#{if session['isAdmin'] == "true"}
-	<a href="@{CRUD.index()}">Admin</a>
-#{/if}
-<a href="@{InternEmployerController.index()}">Home</a>
-<a href="@{InternEmployerController.profile()}">Me</a>
-<a href="@{Secure.logout()}">Logout</a>
+#{navigationBar /}
 
 <h1>Intern/Employer</h1>
 

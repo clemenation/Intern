@@ -1,13 +1,16 @@
 #{extends 'main.html' /}
 #{set title:'View Job' /}
 
-#{if session['isAdmin'] == "true"}
-	<a href="@{CRUD.index()}">Admin</a>
+#{navigationBar /}
+
+<h1>Intern/Employer</h1>
+
+#{displayJob job:job /}
+#{if points}
+	<a href="@{InternEmployerController.applyResumeForm(resume.id)}"><h3>Apply</h3></a>
+	<h2>Your Job's points</h2>
+	#{list items: points, as:'point'}
+		<a href="@{InternEmployerController.viewJob(point.jobe.id)}"><h3>${point.resume}</h3></a>
+		<div>Point: +${point.strongPoint} -${point.weakPoint}</div>
+	#{/list}
 #{/if}
-<a href="@{InternEmployerController.index()}">Home</a>
-<a href="@{InternEmployerController.profile()}">Me</a>
-<a href="@{Secure.logout()}">Logout</a>
-
-<h1>Intern/ Employer</h1>
-
-#{displayResume resume:resume /}

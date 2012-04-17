@@ -1,26 +1,50 @@
 #{extends 'main.html' /}
-#{set title:'Home' /}
+#{set title:'Employer' /}
 
-<a href="@{InternEmployerController.index()}">Home</a>
-<a href="@{InternEmployerController.profile()}">Me</a>
-<a href="@{Secure.logout()}">Logout</a>
+#{navigationBar /}
 
 <h1>Intern/Employer</h1>
 
+#{if flash.error}
+	<p class="error">
+		&{flash.error}
+	</p>
+#{/if}
+
+#{if flash.success}
+	<p class="success">
+		&{flash.success}
+	</p>
+#{/if}
+
 <h2>Profile</h2>
+<a href="@{InternEmployerController.updateProfileForm()}">edit</a>
 
 #{displayEmployer employer:employer /}
 
 #{if jobs}
 <h2>Jobs</h2>
+	<a href="@{InternEmployerController.jobs()}">view all</a>
 	#{list items:jobs, as:'job'}
-		<a href="@{InternEmployerController.viewJob(job.id)}"><h3>${job}</h3></a>
+		<div>
+			<a href="@{InternEmployerController.viewJob(job.id)}"><h3>${job}</h3></a>
+			#{if job.description}
+				<div>
+					${job.description}
+				</div>
+			#{/if}
+		</div>
 	#{/list}
 #{/if}
 
 #{if applications}
-<h2>Applications</h2>
+	<h2>Applications</h2>
 	#{list items:applications, as:'application'}
 		<h3>${application}</h3>
+		#{if application.message}
+		<p>
+			${application.message}
+		</p>
+		#{/if}
 	#{/list}
 #{/if}

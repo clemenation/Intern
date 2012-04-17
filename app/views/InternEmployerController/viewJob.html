@@ -1,21 +1,35 @@
 #{extends 'main.html' /}
 #{set title:'View Job' /}
 
-#{if session['isAdmin'] == "true"}
-	<a href="@{CRUD.index()}">Admin</a>
-#{/if}
-<a href="@{InternEmployerController.index()}">Home</a>
-<a href="@{InternEmployerController.profile()}">Me</a>
-<a href="@{Secure.logout()}">Logout</a>
+#{navigationBar /}
 
 <h1>Intern/job Employer</h1>
 
-#{displayJob job:job, as:"full" /}
+#{if flash.error}
+	<p class="error">
+		&{flash.error}
+	</p>
+#{/if}
+
+#{if flash.success}
+	<p class="success">
+		&{flash.success}
+	</p>
+#{/if}
+
+#{displayJob job:job, as:"employer" /}
 
 #{if jobPoints}
 <h2>Suitable Resumes</h2>
 	#{list items:jobPoints, as:'point'}
 		<a href="@{InternEmployerController.viewResume(point.resume.id)}"><h3>${point.resume} for ${point.job}</h3></a>
 		<div>Point: +${point.strongPoint} -${point.weakPoint}</div>
+	#{/list}
+#{/if}
+
+#{if job?.applications}
+	<h2>Applications</h2>
+	#{list items:job.application, as:'application'}
+		<h3>${application}</h3>
 	#{/list}
 #{/if}
