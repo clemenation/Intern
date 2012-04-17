@@ -70,3 +70,7 @@
 	</div>
 
 #{/form}
+
+#{if resume.canDelete()}
+<a href="@{InternJobSeekerController.deleteResume(resume.id)}"><h3>Delete Resume</h3></a>
+#{/if}

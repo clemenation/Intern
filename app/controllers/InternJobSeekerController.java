@@ -226,6 +226,26 @@ public class InternJobSeekerController extends Controller {
 		viewResume(resumeId);
 	}
 	
+	public static void deleteResume(long resumeId) {
+		InternResume resume = InternResume.findById(resumeId);
+		
+		if ((resume == null) || (resume.owner != getJobSeeker())) {
+			params.put("error", "Cannot delete this resume");
+			params.flash();
+			resumes(1);
+		}
+		
+		if (InternResume.deleteResume(resume) == false) {
+			params.put("error", "Cannot delete this resume");
+			params.flash();
+			resumes(1);
+		} else {
+			params.put("success", "Resume deleted successful");
+			params.flash();
+			resumes(1);
+		}
+	}
+	
 	public static void resumes(int page) {
 		InternJobSeeker jobSeeker = getJobSeeker();
 		

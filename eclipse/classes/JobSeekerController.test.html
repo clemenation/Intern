@@ -270,3 +270,33 @@
 	verifyTextPresent('Worked hard')
 	verifyTextPresent('043-775-3126')
 #{/selenium}
+
+#{selenium 'Test Delete Resume'}
+
+	//==== Delete normally
+	// Go to edit page, should have Delete link
+	clickAndWait('link=edit')
+	assertTitle('Edit Resume')		
+	assertTextPresent('Delete Resume')
+	
+	// Delete it, should go to profile page and display success result
+	clickAndWait('link=Delete Resume')	
+	assertTitle('Resumes')
+	assertTextPresent('Resume deleted successful')
+	assertTextNotPresent('Photography')
+	
+	
+	//==== Deleting resume that already applied
+	// Go to edit page of 1st Resume
+	clickAndWait('link=Dung Nguyen's 1st Resume')
+	clickAndWait('link=edit')
+	assertTitle('Edit Resume')		
+	assertTextNotPresent('Delete Resume')
+	
+	
+	//===== Delete null resume
+	open('@{InternJobSeekerController.deleteResume(0)}')
+	assertTitle('Resumes')
+	assertTextPresent('Cannot delete this resume')
+	
+#{/selenium}
