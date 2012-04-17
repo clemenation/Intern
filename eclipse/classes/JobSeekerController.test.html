@@ -63,6 +63,9 @@
 	verifyTextPresent('Your resume's points')
 	verifyTextPresent('Dung Nguyen's 1st Resume')
 	
+	// There should be list of applied resumes
+	verifyTextPresent('Your resumes that applied to this job')
+	
 	// Open a null job, should go back to job seeker's index
 	open('@{InternJobSeekerController.viewJob(0)}')
 	assertTextPresent('Suitable Jobs')

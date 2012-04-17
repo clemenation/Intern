@@ -39,7 +39,8 @@ public class InternJobSeekerController extends Controller {
 		InternJob job = InternJob.findById(jobId);
 		if (job != null) {
 			List<InternPoint> points = job.findResumesOfJobSeeker(getJobSeeker(), false);
-			render(job, points);
+			List<InternApplication> applications = job.applicationsByJobSeeker(getJobSeeker());
+			render(job, points, applications);
 		} else {
 			index();
 		}

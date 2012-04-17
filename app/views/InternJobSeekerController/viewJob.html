@@ -14,3 +14,10 @@
 		<div>Point: +${point.strongPoint} -${point.weakPoint}</div>
 	#{/list}
 #{/if}
+
+#{if applications}
+	<h2>Your resumes that applied to this job</h2>
+	#{list items: applications, as:'application'}
+		<a href="@{InternJobSeekerController.viewResume(application.resume.id)}"><h3>${application.resume}</h3></a>
+	#{/list}
+#{/if}
