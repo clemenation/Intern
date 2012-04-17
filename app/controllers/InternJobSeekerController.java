@@ -66,7 +66,7 @@ public class InternJobSeekerController extends Controller {
 		
 		jobSeeker.update(editedJobSeeker);
 		validation.valid(jobSeeker);
-	
+		
 		System.out.println("Hello guys");
 		System.out.println(validation.errorsMap());
 		
