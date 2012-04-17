@@ -71,9 +71,7 @@ public class InternJob extends Model {
 	
 	
 	// Methods
-	
-<<<<<<< HEAD
-=======
+
 	public List<InternPoint> findResumesOfJobSeeker(InternJobSeeker jobSeeker, boolean notApplied) {
 		List<InternResume> resumes = new ArrayList<InternResume>(jobSeeker.resumes);
 		
@@ -85,8 +83,7 @@ public class InternJob extends Model {
 		
 		return pointsFromResumes(resumes);
 	}
-	
->>>>>>> 787258627099620bf9bbe74c1bd2634a42a52110
+
 	public List<InternPoint> findResumes() {
 		List<InternResume> resumes = InternResume.all().fetch();	// Getting all resumes from database
 		
@@ -102,11 +99,7 @@ public class InternJob extends Model {
 
 		Collections.sort(points, new InternPoint.InternPointComparator());
 		Collections.reverse(points);
-<<<<<<< HEAD
 				
-=======
-
->>>>>>> 787258627099620bf9bbe74c1bd2634a42a52110
 		return points;
 	}
 	
