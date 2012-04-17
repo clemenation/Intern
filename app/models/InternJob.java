@@ -22,6 +22,7 @@ public class InternJob extends Model {
 	@ManyToOne
 	public InternEmployer owner;
 	
+	@Required
 	public Date postedAt;
 	
 	@Min(0)
@@ -35,6 +36,8 @@ public class InternJob extends Model {
 	public List<InternApplication> applications;
 	
 	@OneToOne(cascade=CascadeType.ALL)
+	@Valid
+	@Required
 	public InternContactInfo contactInfo;
 	
 	@ManyToMany
@@ -47,12 +50,20 @@ public class InternJob extends Model {
 	
 	//Constructor
 	
-	public InternJob(InternEmployer owner, String name) {
-		this.owner = owner;
-		this.name = name;
+	public InternJob() {
 		this.postedAt = new Date();
 		this.applications = new ArrayList<InternApplication>();
 		this.requiredLanguages = new ArrayList<InternLanguage>();
+		this.requiredEducation = new InternEducation();
+		this.contactInfo = new InternContactInfo("");
+	}
+	
+	public InternJob(InternEmployer owner, String name) {
+		this();
+		
+		this.owner = owner;
+		this.name = name;
+		this.contactInfo.update(owner.contactInfo);
 	}
 	
 	public InternJob(InternEmployer owner, 
@@ -71,6 +82,17 @@ public class InternJob extends Model {
 	
 	
 	// Methods
+	
+	public InternJob update(InternJob job) {
+		this.name = job.name;
+		this.requiredWorkExperience = job.requiredWorkExperience;
+		this.requiredEducation.update(job.requiredEducation);
+		this.description = job.description;
+		this.contactInfo.update(job.contactInfo);
+		this.requiredLanguages = job.requiredLanguages;
+	
+		return this;
+	}
 
 	public List<InternPoint> findResumesOfJobSeeker(InternJobSeeker jobSeeker, boolean notApplied) {
 		List<InternResume> resumes = new ArrayList<InternResume>(jobSeeker.resumes);

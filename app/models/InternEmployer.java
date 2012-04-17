@@ -16,7 +16,8 @@ public class InternEmployer extends InternUser {
 	
 	public String companyName;
 	public String industry;
-	
+	public Blob logo;
+		
 	@Lob
 	public String description;
 	
@@ -45,11 +46,6 @@ public class InternEmployer extends InternUser {
 		this.applications = new ArrayList<InternApplication>();
 	}
 	
-	public InternEmployer(String email, String password, boolean isAdmin) {
-		this(email, password);
-		this.isAdmin = true;
-	}
-	
 	public InternEmployer(String email, 
 			String password, 
 			String companyName, 
@@ -68,6 +64,23 @@ public class InternEmployer extends InternUser {
 	
 	
 	// Methods
+	
+	public InternEmployer update(InternEmployer employer) {
+		this.email = employer.email;
+		this.password = employer.password;
+		this.description = employer.description;
+		this.companyName = employer.companyName;
+		this.companySize = employer.companySize;
+		this.industry = employer.industry;
+		this.logo = employer.logo;
+		if (this.contactInfo == null) {
+			this.contactInfo = employer.contactInfo;
+		} else {
+			this.contactInfo.update(employer.contactInfo);
+		}
+		
+		return this;
+	}
 	
 	public List<InternPoint> findResume() {
 		// Find all resumes respectively to each job		

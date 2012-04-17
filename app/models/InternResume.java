@@ -93,10 +93,26 @@ public class InternResume extends Model {
 		
 		return this;
 	}
+
+	public List<InternPoint> findJobsOfEmployer(InternEmployer employer, boolean notApplied) {
+		List<InternJob> jobs = new ArrayList<InternJob>(employer.jobs);
+		
+		if (notApplied == true) {
+			for (InternApplication application : employer.applications) {
+				jobs.remove(application.job);
+			}
+		}
+		
+		return pointsFromJobs(jobs);
+	}
 	
 	public List<InternPoint> findJobs() {
 		List<InternJob> jobs = InternJob.all().fetch();		// Getting all jobs from database
 		
+		return pointsFromJobs(jobs);
+	}
+	
+	public List<InternPoint> pointsFromJobs(List<InternJob> jobs) {
 		List<InternPoint> points = new ArrayList<InternPoint>();
 		
 		for (InternJob job : jobs) {
