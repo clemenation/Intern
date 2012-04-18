@@ -19,6 +19,9 @@ InternCity(haNoiCity):
 InternCity(haiPhongCity):
     name: Hai Phong
 
+InternCity(hoChiMinhCity):
+    name: TP Ho Chi Minh
+
 InternDistrict(dongDaDistrict):
     name: Dong Da
     city: haNoiCity
