@@ -1,4 +1,7 @@
 <h2>${_job}</h2>
+#{if _as=="employer"}
+	<a href="@{InternEmployerController.editJobForm(_job.id)}">edit</a>
+#{/if}
 
 #{if _as=="full"}
 <div>

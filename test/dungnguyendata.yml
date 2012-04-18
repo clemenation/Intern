@@ -13,6 +13,9 @@ InternMajor(electronicEngineeringMajor):
 InternContactInfo(dungNguyenContactInfo):
     contactEmail: nguyentuandung2991@gmail.com
 
+InternContactInfo(hoangTranContactInfo):
+    contactEmail: hoangtran@gmail.com
+
 InternCity(haNoiCity):
     name: Ha Noi
     
@@ -87,13 +90,15 @@ InternEmployer(hoangtran):
     password: hoangtran
     companyName: Hoang Tran Software
     userType: Employer
+    contacInfo: hoangTranContactInfo
     
 InternJob(hoangTranFirstJob):
     name: Hoang Tran's 1st Job
     postedAt: 2012-04-04
     owner: hoangtran
     requiredWorkExperience: 2
-    
+    contactInfo: hoangTranContactInfo
+
 InternApplication(dungToHoang):
     job: hoangTranFirstJob
     resume: dungNguyenSecondResume

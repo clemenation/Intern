@@ -92,6 +92,7 @@ public class InternEmployerController extends Controller {
 	
 	public static void updateProfile() {
 		InternEmployer editedEmployer = params.get("employer", InternEmployer.class);
+		
 		if (editedEmployer.contactInfo.contactEmail.equals("")) {
 			editedEmployer.contactInfo.contactEmail = editedEmployer.email;
 		}

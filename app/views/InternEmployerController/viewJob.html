@@ -3,7 +3,7 @@
 
 #{navigationBar /}
 
-<h1>Intern/job Employer</h1>
+<h1>Intern/Employer</h1>
 
 #{if flash.error}
 	<p class="error">
@@ -29,7 +29,7 @@
 
 #{if job?.applications}
 	<h2>Applications</h2>
-	#{list items:job.application, as:'application'}
+	#{list items:job.applications, as:'applications'}
 		<h3>${application}</h3>
 	#{/list}
 #{/if}

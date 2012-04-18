@@ -1,0 +1,30 @@
+#{extends 'main.html' /}
+#{set title:'Jobs' /}
+
+#{navigationBar /}
+
+<h1>Intern/Employer</h1>
+
+#{if flash.error}
+	<p class="error">
+		&{flash.error}
+	</p>
+#{/if}
+
+#{if flash.success}
+	<p class="success">
+		&{flash.success}
+	</p>
+#{/if}
+
+#{if jobs}
+<h2>Jobs</h2>
+	#{list items:jobs, as:'job'}
+		<a href="@{InternEmployerController.viewJob(job.id)}"><h3>${job}</h3></a>
+		#{if job.description}
+			<div>				
+				${job.description}				
+			</div>
+		#{/if}
+	#{/list}
+#{/if}
