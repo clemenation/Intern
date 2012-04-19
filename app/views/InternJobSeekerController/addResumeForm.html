@@ -100,7 +100,13 @@
 		</div>
 	</div>
 	<div>
-		Languages: *{*** TODO : Write Languages here ***}*
+		Languages:
+			<select multiple="yes" name="resume.languages.id">
+				#{list items:models.InternLanguage.all().fetch(), as:'language'}
+					<option value=${language.id}
+					>${language}</option>
+				#{/list}
+			</select>
 	</div>
 	<div>
 		<input type="submit" value="Add" />

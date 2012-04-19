@@ -46,7 +46,7 @@
 			Major: 
 				<select name="resume.education.major.id">
 					#{list items:models.InternMajor.all().fetch(), as:'major'}
-						<option
+						<option value=${major.id}
 							#{ifErrors}
 								#{if Long.parseLong(flash['resume.education.major.id']) == major.id}
 									selected=true
@@ -109,7 +109,16 @@
 		</div>
 	</div>
 	<div>
-		Languages: *{*** TODO : Write Languages here ***}*
+		Languages:
+			<select multiple="yes" name="resume.languages.id">
+				#{list items:models.InternLanguage.all().fetch(), as:'language'}
+					<option value=${language.id}
+						#{if resume.languages.contains(models.InternLanguage.findById(language.id))}
+							selected=true
+						#{/if}
+					>${language}</option>
+				#{/list}
+			</select>
 	</div>
 	<div>
 		<input type="submit" value="Save" />
