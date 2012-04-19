@@ -34,7 +34,7 @@
 		<span class="error">#{error 'jobSeeker.birthday' /}</span>
 	</div>
 	<div>
-		About me: <input type="text" name="jobSeeker.aboutMe" value="#{ifErrors}${flash['jobSeeker.aboutMe']}#{/ifErrors}#{else}${jobSeeker.aboutMe}#{/else}" />
+		About me: <textarea name="jobSeeker.aboutMe">#{ifErrors}${flash['jobSeeker.aboutMe']}#{/ifErrors}#{else}${jobSeeker.aboutMe}#{/else}</textarea>
 		<span class="error">#{error 'jobSeeker.aboutMe' /}</span>
 	</div>
 	<div>

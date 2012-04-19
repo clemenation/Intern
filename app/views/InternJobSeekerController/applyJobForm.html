@@ -24,7 +24,7 @@
 		</div>
 		
 		<div>
-			Message: <input type="text" name="application.message" value="#{ifErrors}${flash['application.message']}#{/ifErrors}" />
+			Message: <textarea name="application.message">#{ifErrors}${flash['application.message']}#{/ifErrors}</textarea>
 			<span class="error">#{error 'application.message' /}</span>
 		</div>
 		
