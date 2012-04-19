@@ -1,0 +1,7 @@
+#{if districts}
+	<select>
+		#{list items:districts, as: 'district'}
+			<option value="${district.id}">${district.name}</option>
+		#{/list}
+	</select>
+#{/if}

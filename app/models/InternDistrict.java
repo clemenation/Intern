@@ -1,24 +1,32 @@
 package models;
 
-import play.db.jpa.Model;
+import play.db.jpa.*;
 import play.data.validation.*;
 import java.util.*;
 import javax.persistence.*;
 
+import com.google.gson.annotations.Expose;
+
 @Entity
-public class InternDistrict extends Model {
+public class InternDistrict extends GenericModel {
 	
 	
 	
 	// Properties
 	
+	@Expose
+	@Id
+	@GeneratedValue
+	public long id;
+	
 	// Required
+	@Expose
 	@Required
 	public String name;
 	
 	// Required
 	@Required
-	@ManyToOne
+	@ManyToOne	
 	public InternCity city;
 	
 

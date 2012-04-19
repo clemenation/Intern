@@ -33,6 +33,7 @@ public class InternContactInfo extends Model {
 	
 	public InternContactInfo(String email) {
 		this.contactEmail = email;
+		this.address = new InternAddress(this);
 	}
 	
 	public InternContactInfo(String email,
@@ -42,7 +43,7 @@ public class InternContactInfo extends Model {
 		this.contactEmail = email;
 		this.mobile = mobile;
 		this.phone = phone;
-		this.address = address;
+		this.address.update(address);
 	}
 	
 	

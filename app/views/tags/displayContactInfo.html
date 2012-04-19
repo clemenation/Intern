@@ -13,3 +13,18 @@
 	Phone: ${_contactInfo.phone}
 </div>
 #{/if}
+#{if _contactInfo?.address}
+<div>
+	#{if _contactInfo.address.address}
+		Address: ${_contactInfo.address.address}
+	#{/if}
+		<div>
+			#{if _contactInfo.address.city}
+				City: ${_contactInfo.address.city}
+			#{/if}
+			#{if _contactInfo.address.district}
+				District: ${_contactInfo.address.district}
+			#{/if}
+		</div>
+</div>
+#{/if}

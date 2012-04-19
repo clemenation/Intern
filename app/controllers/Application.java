@@ -6,6 +6,8 @@ import play.data.validation.*;
 
 import java.util.*;
 
+import com.google.gson.*;
+
 import models.*;
 
 public class Application extends Controller {
@@ -52,6 +54,7 @@ public class Application extends Controller {
     
     public static void registerJobSeeker(InternJobSeeker jobSeeker) {
     	jobSeeker.contactInfo.contactEmail = jobSeeker.email;
+    	jobSeeker.contactInfo.address = new InternAddress(jobSeeker.contactInfo);
     	
     	validation.valid(jobSeeker);
     	
@@ -76,6 +79,19 @@ public class Application extends Controller {
     
     public static void registerEmployer() {
     	
+    }
+    
+    public static void districtsForCity(Long cityId) {
+    	InternCity city = InternCity.findById(cityId);
+    	if (city == null) {
+    		return;
+    	}
+    	
+    	List<InternDistrict> districts = city.districts;
+    	
+    	Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+    	renderJSON(gson.toJson(districts));
+    	//renderText(districts.toString());
     }
 
 }

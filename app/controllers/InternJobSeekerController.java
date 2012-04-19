@@ -1,6 +1,7 @@
 package controllers;
 
 import play.*;
+import play.cache.Cache;
 import play.data.validation.Validation;
 import play.libs.Images;
 import play.mvc.*;
@@ -123,7 +124,11 @@ public class InternJobSeekerController extends Controller {
 	
 	public static void updateProfileForm() {
 		InternJobSeeker jobSeeker = getJobSeeker();
-		render(jobSeeker);
+		List<InternCity> cities = InternCity.all().fetch();
+		List<InternDistrict> districts;
+		if (jobSeeker.contactInfo.address.city != null) districts = jobSeeker.contactInfo.address.city.districts;
+		else districts = cities.get(0).districts;
+		render(jobSeeker, cities, districts);
 	}
 	
 	public static void updateProfile() {
@@ -171,12 +176,15 @@ public class InternJobSeekerController extends Controller {
 	
 	public static void addResumeForm() {
 		InternJobSeeker jobSeeker = getJobSeeker();
-		render(jobSeeker);
+		List<InternCity> cities = InternCity.all().fetch();
+		render(jobSeeker, cities);
 	}
 	
-	public static void addResume(InternResume resume) {
+	public static void addResume(InternResume resume, InternAddress address) {
 		InternJobSeeker jobSeeker = getJobSeeker();
+		if (resume.contactInfo.address == null) resume.contactInfo.address = new InternAddress(resume.contactInfo);
 		
+		resume.contactInfo.address.update(address);
 		resume.owner = jobSeeker;
 		validation.valid(resume);
 		
@@ -199,7 +207,8 @@ public class InternJobSeekerController extends Controller {
 			resumes(1);		// Go to resumes list if resume not found
 		}
 		
-		render(resume);
+		List<InternCity> cities = InternCity.all().fetch();
+		render(resume, cities);
 	}
 	
 	public static void editResume(long resumeId) {

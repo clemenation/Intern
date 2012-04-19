@@ -47,24 +47,33 @@ InternJobSeeker(dungnguyen):
     contactInfo: dungNguyenContactInfo
     isAdmin: true
     
+InternContactInfo(dungNguyenFirstResumeContactInfo):
+    contactEmail: me@dungnguyenphotography.com
+    
 InternResume(dungNguyenFirstResume):
     name: Dung Nguyen's 1st Resume
     postedAt: 2012-04-01
     owner: dungnguyen
-    contactInfo: dungNguyenContactInfo
+    contactInfo: dungNguyenFirstResumeContactInfo
     workExperience: 2
+    
+InternContactInfo(dungNguyenSecondResumeContactInfo):
+    contactEmail: nguyentuandung2991@gmail.com
     
 InternResume(dungNguyenSecondResume):
     name: Dung Nguyen's 2nd Resume
     postedAt: 2012-04-02
     owner: dungnguyen
-    contactInfo: dungNguyenContactInfo
+    contactInfo: dungNguyenSecondResumeContactInfo
+    
+InternContactInfo(dungNguyenThirdResumeContactInfo):
+    contactEmail: nguyentuandung2991@gmail.com
     
 InternResume(dungNguyenThirdResume):
     name: Dung Nguyen's 3rd Resume
     postedAt: 2012-04-03
     owner: dungnguyen
-    contactInfo: dungNguyenContactInfo
+    contactInfo: dungNguyenThirdResumeContactInfo
 
 InternJobSeeker(vannd):
     email: vannd@gmail.com
@@ -88,10 +97,14 @@ InternEmployer(hoangtran):
     companyName: Hoang Tran Software
     userType: Employer
     
+InternContactInfo(hoangTranFirstJobContactInfo):
+    contactEmail: hoangtran@gmail.com
+    
 InternJob(hoangTranFirstJob):
     name: Hoang Tran's 1st Job
     postedAt: 2012-04-04
     owner: hoangtran
+    contactInfo: hoangTranFirstJobContactInfo
     requiredWorkExperience: 2
     
 InternApplication(dungToHoang):
