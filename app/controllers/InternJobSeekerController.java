@@ -126,7 +126,11 @@ public class InternJobSeekerController extends Controller {
 		InternJobSeeker jobSeeker = getJobSeeker();
 		List<InternCity> cities = InternCity.all().fetch();
 		List<InternDistrict> districts;
-		if (jobSeeker.contactInfo.address.city != null) districts = jobSeeker.contactInfo.address.city.districts;
+		if (Cache.get("cityId") != null) {
+			long cityId = ((Long)Cache.get("cityId")).longValue();
+			districts = ((InternCity)InternCity.findById(cityId)).districts;
+		}
+		else if (jobSeeker.contactInfo.address.city != null) districts = jobSeeker.contactInfo.address.city.districts;
 		else districts = cities.get(0).districts;
 		render(jobSeeker, cities, districts);
 	}
@@ -152,6 +156,7 @@ public class InternJobSeekerController extends Controller {
 			System.out.println(validation.errorsMap());
     		params.flash();		// add http parameters to the flash scope
     		validation.keep();	// keep the errors for the next request
+    		Cache.set("cityId", jobSeeker.contactInfo.address.city.id);
     		updateProfileForm();
     	}
 		
@@ -176,8 +181,18 @@ public class InternJobSeekerController extends Controller {
 	
 	public static void addResumeForm() {
 		InternJobSeeker jobSeeker = getJobSeeker();
+		
 		List<InternCity> cities = InternCity.all().fetch();
-		render(jobSeeker, cities);
+		List<InternDistrict> districts;
+		
+		if (Cache.get("cityId") != null) {
+			long cityId = ((Long)Cache.get("cityId")).longValue();
+			districts = ((InternCity)InternCity.findById(cityId)).districts;
+			Cache.delete("cityId");
+		} else {
+			districts = cities.get(0).districts;
+		}
+		render(jobSeeker, cities, districts);
 	}
 	
 	public static void addResume(InternResume resume, InternAddress address) {
@@ -191,6 +206,7 @@ public class InternJobSeekerController extends Controller {
 		if (validation.hasErrors()) {
 			params.flash();
 			validation.keep();
+			Cache.set("cityId", resume.contactInfo.address.city.id);
 			addResumeForm();
 		}
 		
@@ -208,7 +224,17 @@ public class InternJobSeekerController extends Controller {
 		}
 		
 		List<InternCity> cities = InternCity.all().fetch();
-		render(resume, cities);
+		List<InternDistrict> districts;
+		
+		if (Cache.get("cityId") != null) {
+			long cityId = ((Long)Cache.get("cityId")).longValue();
+			districts = ((InternCity)InternCity.findById(cityId)).districts;
+			Cache.delete("cityId");
+		} else {
+			districts = cities.get(0).districts;
+		}
+		
+		render(resume, cities, districts);
 	}
 	
 	public static void editResume(long resumeId) {
@@ -224,6 +250,7 @@ public class InternJobSeekerController extends Controller {
 		if (validation.hasErrors()) {
 			params.flash();
 			validation.keep();
+			Cache.set("cityId", resume.contactInfo.address.city.id);
 			editResumeForm(resumeId);
 		}
 		

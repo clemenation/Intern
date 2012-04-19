@@ -66,7 +66,7 @@
 				#{list items:cities, as:'city'}
 					<option value=${city.id} 
 						#{ifErrors}
-							#{if flash['resume.contactInfo.address.city.id==city.id']}
+							#{if Long.parseLong(flash['address.city.id']) == city.id}
 								selected=true
 							#{/if}
 						#{/ifErrors}
@@ -76,7 +76,15 @@
 		</div>
 		<div>
 			District: <select id="districtSelect" name="address.district.id">
-			
+				#{list items:districts, as:'district'}
+					<option value=${district.id}
+						#{ifErrors}
+							#{if Long.parseLong(flash['address.district.id']) == district.id}
+								selected=true
+							#{/if}
+						#{/ifErrors}
+					>${district.name}</option>
+				#{/list}
 			</select>
 		</div>
 	</div>
@@ -89,15 +97,6 @@
 	
 	<script type="text/javascript">
 		var districtAction = #{jsAction @Application.districtsForCity(':cityId') /}
-		
-		$(function() {
-			$.get(districtAction({cityId: $('#citySelect').val()}), function(districts) {
-				$('#districtSelect option').remove();
-				$.each(districts, function(index, district) {
-					$("#districtSelect").append('<option value="' + district.id + '">' + district.name + "</option>");
-					});
-				});
-		});
 		
 		$('#citySelect').change(function() {
 			$.get(districtAction({cityId: $('#citySelect').val()}), function(districts) {	

@@ -63,10 +63,15 @@
 		<div>
 			City: <select id="citySelect" name="jobSeeker.contactInfo.address.city.id">				
 				#{list items:cities, as:'city'}
-					<option value=${city.id}
-						#{if jobSeeker.contactInfo.address.city?.id==city.id}
+					<option value=${city.id} 
+						#{ifErrors}
+							#{if Long.parseLong(flash['jobSeeker.contactInfo.address.city.id']) == (city.id)}
+								selected=true
+							#{/if}
+						#{/ifErrors}
+						#{elseif jobSeeker.contactInfo.address.city?.id==city.id}
 							selected=true
-						#{/if}
+						#{/elseif}
 					>${city}</option>
 				#{/list}
 			</select>
@@ -75,9 +80,14 @@
 			District: <select id="districtSelect" name="jobSeeker.contactInfo.address.district.id">
 				#{list items:districts, as:'district'}
 					<option value=${district.id}
-						#{if jobSeeker.contactInfo.address.district?.id==district.id}
+						#{ifErrors}
+							#{if Long.parseLong(flash['jobSeeker.contactInfo.address.district.id']) == (district.id)}
+								selected=true
+							#{/if}
+						#{/ifErrors}
+						#{elseif jobSeeker.contactInfo.address.district?.id==district.id}
 							selected=true
-						#{/if}
+						#{/elseif}
 					>${district.name}</option>
 				#{/list}
 			</select>
