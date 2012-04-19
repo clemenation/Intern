@@ -22,7 +22,7 @@
 
 #{displayJobSeeker jobSeeker:jobSeeker /}
 
-#{if resumes}
+#{if (resumes=models.InternResume.find("owner = ? order by postedAt desc", jobSeeker).from(0).fetch(4))}
 	<h2>Resumes</h2>
 	<a href="@{InternJobSeekerController.resumes()}">view all</a>
 	#{list items:resumes, as:'resume'}
@@ -37,7 +37,7 @@
 	#{/list}
 #{/if}
 
-#{if applications}
+#{if (applications=models.InternApplication.find("jobSeeker = ? order by postedAt desc", jobSeeker).from(0).fetch(4))}
 	<h2>Applications</h2>
 	#{list items:applications, as:'application'}
 		<a href="@{InternJobSeekerController.viewApplication(application.id)}"><h3>${application}</h3></a>
