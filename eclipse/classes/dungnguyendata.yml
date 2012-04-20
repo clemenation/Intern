@@ -10,9 +10,6 @@ InternMajor(computerScienceMajor):
 InternMajor(electronicEngineeringMajor):
     name: Electronic Engineering
 
-InternContactInfo(dungNguyenContactInfo):
-    contactEmail: nguyentuandung2991@gmail.com
-
 InternCity(haNoiCity):
     name: Ha Noi
     
@@ -30,6 +27,9 @@ InternDistrict(haiBaTrungDistrict):
 InternDistrict(doSonDistrict):
     name: Do Son
     city: haiPhongCity
+    
+InternContactInfo(dungNguyenContactInfo):
+    contactEmail: nguyentuandung2991@gmail.com
 
 InternAddress(dungNguyenAddress):
     address: 37/157 Phao Dai Lang
@@ -46,9 +46,12 @@ InternJobSeeker(dungnguyen):
     userType: Job Seeker
     contactInfo: dungNguyenContactInfo
     isAdmin: true
-    
+        
 InternContactInfo(dungNguyenFirstResumeContactInfo):
     contactEmail: me@dungnguyenphotography.com
+    
+InternAddress(dungNguyenFirstResumeContactInfoAddress):
+    contactInfo: dungNguyenFirstResumeContactInfo
     
 InternResume(dungNguyenFirstResume):
     name: Dung Nguyen's 1st Resume
@@ -60,6 +63,9 @@ InternResume(dungNguyenFirstResume):
 InternContactInfo(dungNguyenSecondResumeContactInfo):
     contactEmail: nguyentuandung2991@gmail.com
     
+InternAddress(dungNguyenSecondResumeContactInfoAddress):
+    contactInfo: dungNguyenSecondResumeContactInfo
+    
 InternResume(dungNguyenSecondResume):
     name: Dung Nguyen's 2nd Resume
     postedAt: 2012-04-02
@@ -69,11 +75,20 @@ InternResume(dungNguyenSecondResume):
 InternContactInfo(dungNguyenThirdResumeContactInfo):
     contactEmail: nguyentuandung2991@gmail.com
     
+InternAddress(dungNguyenThirdResumeContactInfoAddress):
+    contactInfo: dungNguyenThirdResumeContactInfo
+    
 InternResume(dungNguyenThirdResume):
     name: Dung Nguyen's 3rd Resume
     postedAt: 2012-04-03
     owner: dungnguyen
     contactInfo: dungNguyenThirdResumeContactInfo
+    
+InternContactInfo(vanndContactInfo):
+    contactEmail: vannd@gmail.com
+    
+InternAddress(vanndContactInfoAddress):
+    contactInfo: vanndContactInfo
 
 InternJobSeeker(vannd):
     email: vannd@gmail.com
@@ -83,6 +98,12 @@ InternJobSeeker(vannd):
     college: Hanoi University of Science and Technology
     userType: Job Seeker
     
+InternContactInfo(nguyenquacContactInfo):
+    contactEmail: nguyenquac@gmail.com
+
+InternAddress(nguyenquacContactInfoAddress):
+    contactInfo: nguyenquacContactInfo
+    
 InternJobSeeker(nguyenquac):
     email: nguyenquac@gmail.com
     password: nguyenquac
@@ -90,6 +111,12 @@ InternJobSeeker(nguyenquac):
     fullName: Nguyen Quang Anh
     college: Hanoi University of Science and Technology
     userType: Job Seeker
+    
+InternContactInfo(hoangtranContactInfo):
+    contactEmail: hoangtran@gmail.com
+
+InternAddress(hoangtranContactInfoAddress):
+    contactInfo: hoangtranContactInfo
     
 InternEmployer(hoangtran):
     email: hoangtran@gmail.com
@@ -99,6 +126,9 @@ InternEmployer(hoangtran):
     
 InternContactInfo(hoangTranFirstJobContactInfo):
     contactEmail: hoangtran@gmail.com
+    
+InternAddress(hoangTranFirstJobContactInfoAddress):
+    contactInfo: hoangTranFirstJobContactInfo
     
 InternJob(hoangTranFirstJob):
     name: Hoang Tran's 1st Job
