@@ -291,7 +291,13 @@
 	clickAndWait('link=Dung Nguyen's 1st Resume')
 	clickAndWait('link=edit')
 	assertTitle('Edit Resume')		
-	assertTextNotPresent('Delete Resume')
+	assertTextPresent('Delete Resume')
+	clickAndWait('link=Delete Resume')	
+	assertTitle('Resumes')
+	assertTextPresent('Resume deleted successful')
+	assertTextNotPresent('Dung Nguyen's 1st Resume')
+	clickAndWait('link=Me')
+	assertTextNotPresent('Nguyen Tuan Dung's Dung Nguyen's 2nd Resume to hoangtran@gmail.com's Hoang Tran's 1st Job')
 	
 	
 	//===== Delete null resume
