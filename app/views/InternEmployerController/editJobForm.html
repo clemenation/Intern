@@ -14,32 +14,32 @@
 
 #{form @InternEmployerController.editJob(job.id)}
 	<div>
-		Name: <input type="text" name="job.name" value="${flash['job.name']}" />
+		Name: <input type="text" name="job.name" value="#{ifErrors}${flash['job.name']}#{/ifErrors}#{else}${job.name}#{/else}" />
 		<span class="error">#{error 'job.name' /}</span>
 	</div>
 	<div>
-		Required Work Experience: <input type="text" name="job.requiredWorkExperience" value="${flash['job.requiredWorkExperience']}" />
+		Required Work Experience: <input type="text" name="job.requiredWorkExperience" value="#{ifErrors}${flash['job.requiredWorkExperience']}#{/ifErrors}#{else}${job.requiredWorkExperience}#{/else}" />
 		<span class="error">#{error 'job.requiredWorkExperience' /}</span>
 	</div>
 	<div>
-		Description: <input type="text" name="job.description" value="${flash['job.description']}" />
+		Description: <input type="text" name="job.description" value="#{ifErrors}${flash['job.description']}#{/ifErrors}#{else}${job.description}#{/else}" />
 		<span class="error">#{error 'job.description' /}</span>
 	</div>
 	<div>
 		Required Education:
 		<div>
 			Study Years: <input type="text" name="job.requiredEducation.studyYears"
-				value="${flash['job.requiredEducation.studyYears']}" /> 
+				value="#{ifErrors}${flash['job.requiredEducation.studyYears']}#{/ifErrors}#{else}${job.requiredEducation.studyYears}#{/else}" /> 
 				<span class="error">#{error 'job.requiredEducation.studyYears' /}</span>
 		</div>
 		<div>
 			GPA: <input type="text" name="job.requiredEducation.gpa"
-				value="${flash['job.requiredEducation.gpa']}" /> <span class="error">#{error
+				value="#{ifErrors}${flash['job.requiredEducation.gpa']}#{/ifErrors}#{else}${job.requiredEducation.gpa}#{/else}" /> <span class="error">#{error
 				'job.requiredEducation.gpa' /}</span>
 		</div>
 		<div>
 			College: <input type="text" name="job.requiredEducation.college"
-				value="${flash['job.requiredEducation.college']}" /> <span class="error">#{error
+				value="#{ifErrors}${flash['job.requiredEducation.college']}#{/ifErrors}#{else}${job.requiredEducation.college}#{/else}" /> <span class="error">#{error
 				'job.requiredEducation.college' /}</span>
 		</div>
 		<div>

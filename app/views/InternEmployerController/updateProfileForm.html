@@ -22,8 +22,8 @@
 		<span class="error">#{error 'employer.email' /}</span>
 	</div>
 	<div>
-		Password: <input type="password" name="employer.password]" value="#{ifErrors}${flash['employer.password']}#{/ifErrors}#{else}${employer.password}#{/else}" />
-		<span class="error">#{error 'employer.employer.password' /}</span>
+		Password: <input type="password" name="employer.password" value="#{ifErrors}${flash['employer.password']}#{/ifErrors}#{else}${employer.password}#{/else}" />
+		<span class="error">#{error 'employer.password' /}</span>
 	</div>
 	<div>
 		CompanyName: <input type="text" name="employer.companyName" value="#{ifErrors}${flash['employer.companyName']}#{/ifErrors}#{else}${employer.companyName}#{/else}" />

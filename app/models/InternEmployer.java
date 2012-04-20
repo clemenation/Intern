@@ -27,8 +27,7 @@ public class InternEmployer extends InternUser {
 	@OneToMany(mappedBy="employer")
 	public List<InternApplication> applications;
 	
-	@ManyToOne
-	public InternCompanySize companySize;
+	public String companySize;
 	
 	
 	
@@ -52,7 +51,7 @@ public class InternEmployer extends InternUser {
 			String industry, 
 			String description,
 			InternContactInfo contactInfo,
-			InternCompanySize companySize) {
+			String companySize) {
 		this(email, password);
 		this.companyName = companyName;
 		this.industry = industry;

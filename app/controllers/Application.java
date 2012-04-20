@@ -85,9 +85,7 @@ public class Application extends Controller {
     }
     
     public static void registerEmployer(InternEmployer employer) {
-    	if (employer.contactInfo != null) {
-    		employer.contactInfo.contactEmail = employer.email;
-    	}
+    	employer.contactInfo.contactEmail = employer.email;
     	
     	validation.valid(employer);
     	System.out.println(validation.errorsMap());
@@ -100,7 +98,7 @@ public class Application extends Controller {
     	
     	employer.save();	// save to database
     	
-    	params.put("success", "Registration successfull! Login with your created account.");
+    	params.put("success", "Registration successful! Login with your created account.");
     	params.put("username", employer.email);
     	params.flash();
     	

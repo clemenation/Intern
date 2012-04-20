@@ -59,7 +59,18 @@
 	clickAndWait('css=input[type=submit]')
 	assertTextPresent('Access denied')
 	
-	//========== TODO: Write login as Employer have and don't have admin priviledge
+	// Logout
+	open('@{Secure.logout()}')
+	
+	// Go to Admin CRUD without login
+	open('@{CRUD.index()}')
+	assertTextPresent('Or register as Job Seeker & Employer')	// Should display login page
+	
+	// Login as Employer and don't have admin priviledge
+	type('username', 'hoangtran@gmail.com')
+	type('password', 'hoangtran')
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('Access denied')
 	
 	// Logout
 	open('@{Secure.logout()}')
@@ -107,8 +118,34 @@
 	assertTextPresent('Administration')
 	assertTextPresent('Choose the object to edit')
 	
+	// Logout
+	open('/logout')
+	assertTextPresent('Or register as Job Seeker & Employer')
 	
-	//========== TODO: Write check for employer login ============
+	// Write check for employer login ============
+	type('username', 'hoangtran@gmail.com')
+	type('password', 'hoang')
+	clickAndWait('css=input[type=submit]')
+	
+	// Should get an error
+	assertTextPresent('Oops, unknown username or password.')
+	type('username', 'hoangtran@gmail.com')
+	type('password', 'hoangtran')
+	clickAndWait('css=input[type=submit]')
+	
+	// Check if displayed Job Seeker index page
+	assertTextPresent('Intern/Employer')
+	assertTextPresent('Suitable Resumes')
+	assertTextPresent('Dung Nguyen's 3rd Resume for Hoang Tran's 1st Job')
+	assertTextPresent('Point: +10.0 -0.0')
+	
+	// Logout
+	clickAndWait('link=Logout')
+	assertTextPresent('Or register as Job Seeker & Employer')
+	
+	// Go to Employer profile without login
+	open('/employer/profile')
+	assertTextPresent('Or register as Job Seeker & Employer')	// Should display login page
 	
 #{/selenium}
 
@@ -219,5 +256,93 @@
 #{/selenium}
 
 #{selenium 'Test Employer register'}
-	//========== TODO: Write check for employer registration ============
+	clearSession()
+	
+	// Go to login page
+	open('/')
+	assertTextPresent('Or register as Job Seeker & Employer')
+	
+	// Go to register as Employer page
+	clickAndWait('link=Employer')
+	assertTextPresent('Intern/Employer')
+	assertTextPresent('Email:')
+	assertTextPresent('Password:')
+	
+	// Register without entering, should get errors
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('Required')
+	
+	// Using registered employer email, should get errors
+	type('employer.email', 'hoangtran@gmail.com')
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('hoangtran@gmail.com already used')
+	
+	// Using wrong email format
+	type('employer.email', 'hoangtran')
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent(' Invalid email address')
+	
+	// Entering acceptable email
+	type('employer.email', 'hoanglong@gmail.com')
+	
+	// Register without entering password, should get errors
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('Required')
+	
+	// Using too short password
+	type('employer.password', 'hoang')
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('Minimum size is 6')
+	
+	// Entering acceptable password
+	type('employer.password', 'hoanglong')
+	
+	// Entering wrong mobile format
+	type('employer.contactInfo.mobile', 'adsad')
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('Not a valid phone')
+	
+	// Entering acceptable mobile
+	type('employer.contactInfo.mobile', '090-432-9991')
+	
+	// Entering wrong phone format
+	type('employer.contactInfo.phone', 'adsad')
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('Not a valid phone')
+	
+	// Entering acceptable phone
+	type('employer.contactInfo.phone', '043-775-3126')
+			
+	// Entering optional fields
+	type('employer.companyName', 'Nhat Hoang muon nam')
+	type('employer.description', 'Nhat Hoang o Viet Nam')
+	type('employer.industry', 'eating')
+	type('employer.companySize', 'small')
+	
+	// Check if registered successfully
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('Registration successful! Login with your created account.')
+	
+	// Check if login successfully with newly created account
+	type('username', 'hoanglong@gmail.com')
+	type('password', 'hoanglong')
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('Intern/Employer')
+	
+	// Go to register page while logged in, should go back to employer index page
+	open('@{Application.registerEmployerForm}')
+	assertTextPresent('Logout')
+	
+	// Go to profile page to check profile info
+	open('@{InternEmployerController.profile}')
+	assertTextPresent('Profile')
+	assertTextPresent('Email: hoanglong@gmail.com')
+	assertTextPresent('Company name: Nhat Hoang muon nam')
+	assertTextPresent('Company size: small')
+	assertTextPresent('Description: Nhat Hoang o Viet Nam')
+	assertTextPresent('Industry: eating')
+	assertTextPresent('Contact Email: hoanglong@gmail.com')
+	assertTextPresent('Mobile: 090-432-9991')
+	assertTextPresent('Phone: 043-775-3126')
+	
 #{/selenium}
