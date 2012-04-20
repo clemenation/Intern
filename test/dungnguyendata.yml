@@ -16,6 +16,9 @@ InternContactInfo(dungNguyenContactInfo):
 InternContactInfo(hoangTranContactInfo):
     contactEmail: hoangtran@gmail.com
 
+InternContactInfo(hoangTranContactInfoForJob):
+    contactEmail: hoangtran@gmail.com
+
 InternCity(haNoiCity):
     name: Ha Noi
     
@@ -76,6 +79,14 @@ InternJobSeeker(vannd):
     fullName: Nguyen Duc Van
     college: Hanoi University of Science and Technology
     userType: Job Seeker
+
+InternJobSeeker(vannd1):
+    email: vannd1@gmail.com
+    password: vannd
+    aboutMe: I'm Van
+    fullName: Nguyen Duc Van
+    college: Hanoi University of Science and Technology
+    userType: Job Seeker
     
 InternJobSeeker(nguyenquac):
     email: nguyenquac@gmail.com
@@ -90,14 +101,14 @@ InternEmployer(hoangtran):
     password: hoangtran
     companyName: Hoang Tran Software
     userType: Employer
-    contacInfo: hoangTranContactInfo
+    contactInfo: hoangTranContactInfo
     
 InternJob(hoangTranFirstJob):
     name: Hoang Tran's 1st Job
     postedAt: 2012-04-04
     owner: hoangtran
-    requiredWorkExperience: 2
-    contactInfo: hoangTranContactInfo
+    requiredWorkExperience: 2    
+    contactInfo: hoangTranContactInfoForJob
 
 InternApplication(dungToHoang):
     job: hoangTranFirstJob

@@ -38,41 +38,11 @@ public class InternEmployerController extends Controller {
 	public static void viewResume(long resumeId) {
 		InternResume resume = InternResume.findById(resumeId);
 		if (resume != null) {
-			render(resume);
-		} else {
-			index();
-		}
-	}
-	
-	public static void applyResumeForm(long resumeId) {
-		InternResume resume = InternResume.findById(resumeId);
-		if (resume != null) {
-			List<InternPoint> points = resume.findJobsOfEmployer(getEmployer(), true);
+			List<InternPoint> points = resume.findJobsOfEmployer(getEmployer(), false);
 			render(resume, points);
 		} else {
 			index();
 		}
-	}
-	
-	public static void applyResume(long resumeId) {
-		InternApplication application = params.get("application", InternApplication.class);
-		
-		if (application == null || application.job == null) {
-			System.out.println("ERROR: Application info not entered yet");
-			applyResumeForm(resumeId);
-		}
-		
-		InternResume resume = InternResume.findById(resumeId);
-		
-		application.resume = resume;
-		application.employer = application.job.owner;
-		application.jobSeeker = application.resume.owner;
-		
-		application.apply();
-		
-		params.put("success", "Resume applied successfull!");
-		params.flash();
-		profile();
 	}
 	
 	public static void viewJob(long jobId) {
@@ -162,7 +132,8 @@ public class InternEmployerController extends Controller {
 			jobs(1);
 		}
 		
-		render(job);
+		InternEmployer employer = job.owner;
+		render(job, employer);
 	}
 	
 	public static void editJob(long jobId) {

@@ -29,22 +29,24 @@ public class InternJob extends Model {
 	@Max(200)
 	public int requiredWorkExperience;
 	
+	@OneToOne(cascade=CascadeType.ALL)
+	public InternEducation requiredEducation;
+	
 	@Lob
 	public String description;
-	
-	@OneToMany(mappedBy="job")
-	public List<InternApplication> applications;
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	@Valid
 	@Required
 	public InternContactInfo contactInfo;
 	
+	@OneToMany(mappedBy="job")
+	public List<InternApplication> applications;
+	
 	@ManyToMany
 	public List<InternLanguage> requiredLanguages;
 	
-	@OneToOne(cascade=CascadeType.ALL)
-	public InternEducation requiredEducation;
+
 	
 	
 	
@@ -75,8 +77,8 @@ public class InternJob extends Model {
 		this(owner, name);
 		this.requiredWorkExperience = requiredWorkExperience;
 		this.description = description;
-		this.contactInfo = contactInfo;
-		this.requiredEducation = requiredEducation;
+		this.contactInfo.update(owner.contactInfo);
+		this.requiredEducation.update(requiredEducation);
 	}
 	
 	
