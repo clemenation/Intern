@@ -1,6 +1,7 @@
 package controllers;
 
 import play.*;
+import play.cache.Cache;
 import play.data.validation.Validation;
 import play.libs.Images;
 import play.mvc.*;
@@ -59,7 +60,11 @@ public class InternEmployerController extends Controller {
 		InternEmployer employer = getEmployer();
 		List<InternCity> cities = InternCity.all().fetch();
 		List<InternDistrict> districts;
-		if (employer.contactInfo.address.city != null) districts = employer.contactInfo.address.city.districts;
+		if (Cache.get("cityId") != null) {
+			long cityId = ((Long)Cache.get("cityId")).longValue();
+			districts = ((InternCity)InternCity.findById(cityId)).districts;
+		}
+		else if (employer.contactInfo.address.city != null) districts = employer.contactInfo.address.city.districts;
 		else districts = cities.get(0).districts;
 		render(employer, cities, districts);
 	}
@@ -85,6 +90,7 @@ public class InternEmployerController extends Controller {
 			System.out.println(validation.errorsMap());
 			params.flash();
 			validation.keep();
+    		Cache.set("cityId", employer.contactInfo.address.city.id);
 			updateProfileForm();
 		}
 		
@@ -108,8 +114,18 @@ public class InternEmployerController extends Controller {
 
 	public static void addJobForm() {
 		InternEmployer employer = getEmployer();
+
 		List<InternCity> cities = InternCity.all().fetch();
-		render(employer, cities);
+		List<InternDistrict> districts;
+		
+		if (Cache.get("cityId") != null) {
+			long cityId = ((Long)Cache.get("cityId")).longValue();
+			districts = ((InternCity)InternCity.findById(cityId)).districts;
+			Cache.delete("cityId");
+		} else {
+			districts = cities.get(0).districts;
+		}
+		render(employer, cities, districts);
 	}
 	
 	public static void addJob(InternJob job, InternAddress address) {
@@ -123,6 +139,7 @@ public class InternEmployerController extends Controller {
 		if (validation.hasErrors()) {
 			params.flash();
 			validation.keep();
+			Cache.set("cityID", job.contactInfo.address.city.id);
 			addJobForm();
 		}
 		
@@ -140,8 +157,19 @@ public class InternEmployerController extends Controller {
 		}
 		
 		List<InternCity> cities = InternCity.all().fetch();
+		List<InternDistrict> districts;
+		
+		if (Cache.get("cityId") != null) {
+			long cityId = ((Long)Cache.get("cityId")).longValue();
+			districts = ((InternCity)InternCity.findById(cityId)).districts;
+			Cache.delete("cityId");
+		} else {
+			districts = cities.get(0).districts;
+		}
+		
 		InternEmployer employer = job.owner;
-		render(job, employer, cities);
+		
+		render(job, employer, cities, districts);
 	}
 	
 	public static void editJob(long jobId) {
@@ -157,6 +185,7 @@ public class InternEmployerController extends Controller {
 		if (validation.hasErrors()) {
 			params.flash();
 			validation.keep();
+			Cache.set("cityId", job.contactInfo.address.city.id);
 			editJobForm(jobId);
 		}
 		
@@ -166,6 +195,26 @@ public class InternEmployerController extends Controller {
 		params.flash();
 		
 		viewJob(jobId);
+	}
+	
+	public static void deleteJob(long jobId) {
+		InternJob job = InternJob.findById(jobId);
+		
+		if ((job == null) || (job.owner != getEmployer())) {
+			params.put("error", "Cannot delete this job");
+			params.flash();
+			jobs(1);
+		}
+		
+		if (InternJob.deleteJob(job) == false) {
+			params.put("error", "Cannot delete this job");
+			params.flash();
+			jobs(1);
+		} else {
+			params.put("success", "Job deleted successful");
+			params.flash();
+			jobs(1);
+		}
 	}
 	
 	public static void jobs(int page) {

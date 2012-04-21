@@ -179,7 +179,14 @@ public class InternJob extends Model {
 		return true;
 	}
 	
-	
+	public boolean canDelete() {
+		InternApplication application = InternApplication.find("byJob", this).first();
+		if (application != null) {
+			return false;
+		}
+		
+		return true;
+	}
 	
 	// Static methods
 	
@@ -205,6 +212,7 @@ public class InternJob extends Model {
 		job.owner.jobs.remove(job);
 		
 		job.delete();
+		
 		return true;
 	}
 }
