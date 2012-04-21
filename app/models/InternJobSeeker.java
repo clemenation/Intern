@@ -72,12 +72,21 @@ public class InternJobSeeker extends InternUser {
 		this.college = jobSeeker.college;
 		this.fullName = jobSeeker.fullName;
 		this.birthday = jobSeeker.birthday;
-		this.photo = jobSeeker.photo;
+		// this.photo = jobSeeker.photo;		// Photo updating using updatePhoto
 		if (this.contactInfo == null) {
 			this.contactInfo = jobSeeker.contactInfo;
 		} else {
 			this.contactInfo.update(jobSeeker.contactInfo);
 		}
+		
+		return this;
+	}
+	
+	public InternJobSeeker updatePhoto(InternJobSeeker jobSeeker) {
+		if (this.photo.exists()) {
+			this.photo.getFile().delete();
+		}
+		this.photo = jobSeeker.photo;
 		
 		return this;
 	}

@@ -1,3 +1,9 @@
+#{if _employer?.logo && _employer?.logo.exists()}
+<div>
+	Profile picture: <img src="@{InternEmployerController.logo()}" />
+</div>
+#{/if}
+
 <div>
 	Email: ${_employer?.email}
 </div>

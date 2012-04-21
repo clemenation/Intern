@@ -152,15 +152,9 @@ InternJob(hoangTranFirstJob):
     name: Hoang Tran's 1st Job
     postedAt: 2012-04-04
     owner: hoangtran
-<<<<<<< HEAD
-    requiredWorkExperience: 2    
-    contactInfo: hoangTranContactInfoForJob
-
-=======
     contactInfo: hoangTranFirstJobContactInfo
     requiredWorkExperience: 2
     
->>>>>>> 6091ff2d33a787a47c1973a11bd935cc8ba1c778
 InternApplication(dungToHoang):
     job: hoangTranFirstJob
     resume: dungNguyenSecondResume

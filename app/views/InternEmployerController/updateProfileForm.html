@@ -12,6 +12,21 @@
 	#{/errors}
 #{/ifErrors}
 
+#{form @InternEmployerController.updateProfilePhoto(), enctype:'multipart/form-data'}
+	<div>
+		Company Logo or Profile Photo: 
+		#{if employer?.logo && employer?.logo.exists()}
+			<img src="@{InternEmployerController.logo()}" />
+		#{/if}
+		#{else}
+			none
+		#{/else}
+		<input type="file" name="employer.logo" />
+		<span class="error">#{error 'employer.logo' /}</span>
+		<input type="submit" value="Upload" />
+	</div>
+#{/form}
+
 #{form @InternEmployerController.updateProfile(), enctype:'multipart/form-data'}
 	<div>
 		Company logo: <input type="file" name="employer.logo" />

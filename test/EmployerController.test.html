@@ -92,7 +92,7 @@
 	
 	// Entering wrong password format
 	type('employer.password', 'abc')
-	clickAndWait('css=input[type=submit]')
+	clickAndWait('css=input[type=Save]')
 	assertTextPresent('Minimum size is 6')
 	
 	// Entering right password
@@ -110,7 +110,7 @@
 	type('employer.description', 'Hoang Tran description')
 	
 	// Submit
-	clickAndWait('css=input[type=submit]')
+	clickAndWait('css=input[type=Save]')
 	
 	// Should return to profile page with success message
 	assertTitle('Employer')
@@ -127,7 +127,7 @@
 	clickAndWait('link=edit')
 	type('employer.email', 'hoanglong@gmail.com')
 	type('employer.contactInfo.contactEmail', '')
-	clickAndWait('css=input[type=submit]')
+	clickAndWait('css=input[type=Save]')
 	assertTitle('Login')
 	
 	// Should not logged in

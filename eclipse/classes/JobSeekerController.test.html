@@ -179,7 +179,7 @@
 	
 	// Entering wrong password format
 	type('jobSeeker.password', 'abc')
-	clickAndWait('css=input[type=submit]')
+	clickAndWait('css=input[value=Save]')
 	assertTextPresent('Minimum size is 6')
 	
 	// Entering right password
@@ -197,7 +197,7 @@
 	type('jobSeeker.aboutMe', 'Photographer from Hanoi')
 	
 	// Submit
-	clickAndWait('css=input[type=submit]')
+	clickAndWait('css=input[value=Save]')
 	
 	// Should return to profile page with success message
 	assertTitle('Nguyen Tuan Dung')
@@ -214,7 +214,7 @@
 	clickAndWait('link=edit')
 	type('jobSeeker.email', 'me@dungnguyenphotography.com')
 	type('jobSeeker.contactInfo.contactEmail', '')
-	clickAndWait('css=input[type=submit]')
+	clickAndWait('css=input[value=Save]')
 	assertTitle('Login')
 	
 	// Should not logged in

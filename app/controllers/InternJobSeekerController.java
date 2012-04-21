@@ -133,6 +133,21 @@ public class InternJobSeekerController extends Controller {
 		render(jobSeeker, districts);
 	}
 	
+	public static void updateProfilePhoto() {
+		InternJobSeeker editedJobSeeker = params.get("jobSeeker", InternJobSeeker.class);
+		
+		if (editedJobSeeker.photo != null) {
+			Images.resize(editedJobSeeker.photo.getFile(), editedJobSeeker.photo.getFile(), 160, 240, true);
+		}
+		
+		InternJobSeeker jobSeeker = getJobSeeker();
+		
+		jobSeeker.updatePhoto(editedJobSeeker);
+		jobSeeker.save();
+		
+		updateProfileForm();
+	}
+	
 	public static void updateProfile() {
 		InternJobSeeker editedJobSeeker = params.get("jobSeeker", InternJobSeeker.class);
 		

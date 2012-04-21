@@ -71,12 +71,21 @@ public class InternEmployer extends InternUser {
 		this.companyName = employer.companyName;
 		this.companySize = employer.companySize;
 		this.industry = employer.industry;
-		this.logo = employer.logo;
+		//this.logo = employer.logo;
 		if (this.contactInfo == null) {
 			this.contactInfo = employer.contactInfo;
 		} else {
 			this.contactInfo.update(employer.contactInfo);
 		}
+		
+		return this;
+	}
+	
+	public InternEmployer updateLogo(InternEmployer employer) {
+		if (this.logo.exists()) {
+			this.logo.getFile().delete();
+		}
+		this.logo = employer.logo;
 		
 		return this;
 	}

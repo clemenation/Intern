@@ -80,6 +80,21 @@ public class InternEmployerController extends Controller {
 		render(employer, districts);
 	}
 	
+	public static void updateProfilePhoto() {
+		InternEmployer editedEmployer = params.get("employer", InternEmployer.class);
+		
+		if (editedEmployer.logo != null) {
+			Images.resize(editedEmployer.logo.getFile(), editedEmployer.logo.getFile(), 160, 240, true);
+		}
+		
+		InternEmployer employer = getEmployer();
+		
+		employer.updateLogo(editedEmployer);
+		employer.save();
+		
+		updateProfileForm();
+	}
+	
 	public static void updateProfile() {
 		InternEmployer editedEmployer = params.get("employer", InternEmployer.class);
 		
