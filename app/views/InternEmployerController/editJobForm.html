@@ -22,7 +22,7 @@
 		<span class="error">#{error 'job.requiredWorkExperience' /}</span>
 	</div>
 	<div>
-		Description: <input type="text" name="job.description" value="#{ifErrors}${flash['job.description']}#{/ifErrors}#{else}${job.description}#{/else}" />
+		Description: <textarea type="text" name="job.description">#{ifErrors}${flash['job.description']}#{/ifErrors}#{else}${job.description}#{/else}</textarea>>
 		<span class="error">#{error 'job.description' /}</span>
 	</div>
 	<div>
@@ -61,12 +61,54 @@
 			Phone: <input type="text" name="job.contactInfo.phone" value="#{ifErrors}${flash['job.contactInfo.phone']}#{/ifErrors}#{else}${employer.contactInfo.phone}#{/else}" />
 			<span class="error">#{error 'job.contactInfo.phone' /}</span>
 		</div>
+		<div>
+			City: <select id="citySelect" name="job.contactInfo.address.city.id">
+				#{list items:cities, as:'city'}
+					<option value=${city.id} 
+						#{ifErrors}
+							#{if flash['job.contactInfo.address.city.id==city.id']}
+								selected=true
+							#{/if}
+						#{/ifErrors}
+						#{elseif job.contactInfo.address.city?.id==city.id}
+							selected=true
+						#{/elseif}
+					>${city}</option>
+				#{/list}
+			</select>
+		</div>
+		<div>
+			District: <select id="districtSelect" name="job.contactInfo.address.district.id">
+			</select>
+		</div>
 	</div>
 	<div>
 		Languages: *{*** TODO : Write Languages here ***}*
 	</div>
+	
 	<div>
 		<input type="submit" value="Apply change" />
 	</div>
 
+	<script type="text/javascript">
+		var districtAction = #{jsAction @Application.districtsForCity(':cityId') /}
+		
+		$(function() {
+			$.get(districtAction({cityId: $('#citySelect').val()}), function(districts) {
+				$('#districtSelect option').remove();
+				$.each(districts, function(index, district) {
+					$("#districtSelect").append('<option value="' + district.id + '">' + district.name + "</option>");
+					});
+				});
+		});
+		
+		$('#citySelect').change(function() {
+			$.get(districtAction({cityId: $('#citySelect').val()}), function(districts) {	
+				$('#districtSelect option').remove();
+				$.each(districts, function(index, district) {
+					$("#districtSelect").append('<option value="' + district.id + '">' + district.name + "</option>");
+					});
+				});
+		});
+	</script>
 #{/form}

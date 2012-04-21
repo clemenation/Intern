@@ -40,11 +40,6 @@
 #{if applications}
 	<h2>Applications</h2>
 	#{list items:applications, as:'application'}
-		<h3>${application}</h3>
-		#{if application.message}
-		<p>
-			${application.message}
-		</p>
-		#{/if}
+		<a href="@{InternJobSeekerController.viewApplication(application.id)}"><h3>${application}</h3></a>
 	#{/list}
 #{/if}

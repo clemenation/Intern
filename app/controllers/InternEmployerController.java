@@ -57,7 +57,11 @@ public class InternEmployerController extends Controller {
 	
 	public static void updateProfileForm() {
 		InternEmployer employer = getEmployer();
-		render(employer);
+		List<InternCity> cities = InternCity.all().fetch();
+		List<InternDistrict> districts;
+		if (employer.contactInfo.address.city != null) districts = employer.contactInfo.address.city.districts;
+		else districts = cities.get(0).districts;
+		render(employer, cities, districts);
 	}
 	
 	public static void updateProfile() {
@@ -104,12 +108,15 @@ public class InternEmployerController extends Controller {
 
 	public static void addJobForm() {
 		InternEmployer employer = getEmployer();
-		render(employer);
+		List<InternCity> cities = InternCity.all().fetch();
+		render(employer, cities);
 	}
 	
-	public static void addJob(InternJob job) {
+	public static void addJob(InternJob job, InternAddress address) {
 		InternEmployer employer = getEmployer();
+		if (job.contactInfo.address == null) job.contactInfo.address = new InternAddress(job.contactInfo);
 		
+		job.contactInfo.address.update(address);
 		job.owner = employer;
 		validation.valid(job);
 		
@@ -132,8 +139,9 @@ public class InternEmployerController extends Controller {
 			jobs(1);
 		}
 		
+		List<InternCity> cities = InternCity.all().fetch();
 		InternEmployer employer = job.owner;
-		render(job, employer);
+		render(job, employer, cities);
 	}
 	
 	public static void editJob(long jobId) {

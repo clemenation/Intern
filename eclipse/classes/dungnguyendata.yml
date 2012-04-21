@@ -13,6 +13,12 @@ InternMajor(electronicEngineeringMajor):
 InternContactInfo(dungNguyenContactInfo):
     contactEmail: nguyentuandung2991@gmail.com
 
+InternContactInfo(hoangTranContactInfo):
+    contactEmail: hoangtran@gmail.com
+
+InternContactInfo(hoangTranContactInfoForJob):
+    contactEmail: hoangtran@gmail.com
+
 InternCity(haNoiCity):
     name: Ha Noi
     
@@ -30,6 +36,9 @@ InternDistrict(haiBaTrungDistrict):
 InternDistrict(doSonDistrict):
     name: Do Son
     city: haiPhongCity
+    
+InternContactInfo(dungNguyenContactInfo):
+    contactEmail: nguyentuandung2991@gmail.com
 
 InternAddress(dungNguyenAddress):
     address: 37/157 Phao Dai Lang
@@ -46,25 +55,49 @@ InternJobSeeker(dungnguyen):
     userType: Job Seeker
     contactInfo: dungNguyenContactInfo
     isAdmin: true
+        
+InternContactInfo(dungNguyenFirstResumeContactInfo):
+    contactEmail: me@dungnguyenphotography.com
+    
+InternAddress(dungNguyenFirstResumeContactInfoAddress):
+    contactInfo: dungNguyenFirstResumeContactInfo
     
 InternResume(dungNguyenFirstResume):
     name: Dung Nguyen's 1st Resume
     postedAt: 2012-04-01
     owner: dungnguyen
-    contactInfo: dungNguyenContactInfo
+    contactInfo: dungNguyenFirstResumeContactInfo
     workExperience: 2
+    
+InternContactInfo(dungNguyenSecondResumeContactInfo):
+    contactEmail: nguyentuandung2991@gmail.com
+    
+InternAddress(dungNguyenSecondResumeContactInfoAddress):
+    contactInfo: dungNguyenSecondResumeContactInfo
     
 InternResume(dungNguyenSecondResume):
     name: Dung Nguyen's 2nd Resume
     postedAt: 2012-04-02
     owner: dungnguyen
-    contactInfo: dungNguyenContactInfo
+    contactInfo: dungNguyenSecondResumeContactInfo
+    
+InternContactInfo(dungNguyenThirdResumeContactInfo):
+    contactEmail: nguyentuandung2991@gmail.com
+    
+InternAddress(dungNguyenThirdResumeContactInfoAddress):
+    contactInfo: dungNguyenThirdResumeContactInfo
     
 InternResume(dungNguyenThirdResume):
     name: Dung Nguyen's 3rd Resume
     postedAt: 2012-04-03
     owner: dungnguyen
-    contactInfo: dungNguyenContactInfo
+    contactInfo: dungNguyenThirdResumeContactInfo
+    
+InternContactInfo(vanndContactInfo):
+    contactEmail: vannd@gmail.com
+    
+InternAddress(vanndContactInfoAddress):
+    contactInfo: vanndContactInfo
 
 InternJobSeeker(vannd):
     email: vannd@gmail.com
@@ -73,6 +106,20 @@ InternJobSeeker(vannd):
     fullName: Nguyen Duc Van
     college: Hanoi University of Science and Technology
     userType: Job Seeker
+
+InternJobSeeker(vannd1):
+    email: vannd1@gmail.com
+    password: vannd
+    aboutMe: I'm Van
+    fullName: Nguyen Duc Van
+    college: Hanoi University of Science and Technology
+    userType: Job Seeker
+    
+InternContactInfo(nguyenquacContactInfo):
+    contactEmail: nguyenquac@gmail.com
+
+InternAddress(nguyenquacContactInfoAddress):
+    contactInfo: nguyenquacContactInfo
     
 InternJobSeeker(nguyenquac):
     email: nguyenquac@gmail.com
@@ -82,18 +129,38 @@ InternJobSeeker(nguyenquac):
     college: Hanoi University of Science and Technology
     userType: Job Seeker
     
+InternContactInfo(hoangtranContactInfo):
+    contactEmail: hoangtran@gmail.com
+
+InternAddress(hoangtranContactInfoAddress):
+    contactInfo: hoangtranContactInfo
+    
 InternEmployer(hoangtran):
     email: hoangtran@gmail.com
     password: hoangtran
     companyName: Hoang Tran Software
     userType: Employer
+    contactInfo: hoangTranContactInfo
+    
+InternContactInfo(hoangTranFirstJobContactInfo):
+    contactEmail: hoangtran@gmail.com
+    
+InternAddress(hoangTranFirstJobContactInfoAddress):
+    contactInfo: hoangTranFirstJobContactInfo
     
 InternJob(hoangTranFirstJob):
     name: Hoang Tran's 1st Job
     postedAt: 2012-04-04
     owner: hoangtran
+<<<<<<< HEAD
+    requiredWorkExperience: 2    
+    contactInfo: hoangTranContactInfoForJob
+
+=======
+    contactInfo: hoangTranFirstJobContactInfo
     requiredWorkExperience: 2
     
+>>>>>>> 6091ff2d33a787a47c1973a11bd935cc8ba1c778
 InternApplication(dungToHoang):
     job: hoangTranFirstJob
     resume: dungNguyenSecondResume

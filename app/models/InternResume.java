@@ -167,6 +167,17 @@ public class InternResume extends Model {
 		return true;
 	}
 	
+	public boolean canDelete() {
+		// Check if any application is linking to this resume
+		InternApplication application = InternApplication.find("byResume", this).first();
+		if (application != null) {
+			// System.out.println("ERROR: There are still applications owned by resume " + resume + ", cannot delete yet");
+			return false;
+		}
+		
+		return true;
+	}
+	
 	
 	
 	// Static method
@@ -177,12 +188,7 @@ public class InternResume extends Model {
 			return false;
 		}
 		
-		// Check if any application is linking to this resume
-		InternApplication application = InternApplication.find("byResume", resume).first();
-		if (application != null) {
-			System.out.println("ERROR: There are still applications owned by resume " + resume + ", cannot delete yet");
-			return false;
-		}
+		if (resume.canDelete() == false) return false;
 		
 		// Remove languages from resume properly
 		for (InternLanguage language : resume.languages) {
@@ -190,6 +196,7 @@ public class InternResume extends Model {
 		}
 		
 		resume.owner.resumes.remove(resume);
+
 		resume.delete();
 		
 		return true;

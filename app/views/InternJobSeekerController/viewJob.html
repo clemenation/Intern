@@ -5,6 +5,18 @@
 
 <h1>Intern/Job Seeker</h1>
 
+#{if flash.error}
+	<p class="error">
+		&{flash.error}
+	</p>
+#{/if}
+
+#{if flash.success}
+	<p class="success">
+		&{flash.success}
+	</p>
+#{/if}
+
 #{displayJob job:job /}
 #{if points}
 	<a href="@{InternJobSeekerController.applyJobForm(job.id)}"><h3>Apply</h3></a>
@@ -12,5 +24,12 @@
 	#{list items: points, as:'point'}
 		<a href="@{InternJobSeekerController.viewResume(point.resume.id)}"><h3>${point.resume}</h3></a>
 		<div>Point: +${point.strongPoint} -${point.weakPoint}</div>
+	#{/list}
+#{/if}
+
+#{if applications}
+	<h2>Your resumes that applied to this job</h2>
+	#{list items: applications, as:'application'}
+		<a href="@{InternJobSeekerController.viewApplication(application.id)}"><h3>${application.resume}</h3></a>
 	#{/list}
 #{/if}

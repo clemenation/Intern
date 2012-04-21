@@ -22,7 +22,7 @@
 		<span class="error">#{error 'resume.workExperience' /}</span>
 	</div>
 	<div>
-		Description: <input type="text" name="resume.description" value="${flash['resume.description']}" />
+		Description: <textarea name="resume.description">${flash['resume.description']}</textarea>
 		<span class="error">#{error 'resume.description' /}</span>
 	</div>
 	<div>
@@ -61,6 +61,24 @@
 			Phone: <input type="text" name="resume.contactInfo.phone" value="#{ifErrors}${flash['resume.contactInfo.phone']}#{/ifErrors}#{else}${jobSeeker.contactInfo.phone}#{/else}" />
 			<span class="error">#{error 'resume.contactInfo.phone' /}</span>
 		</div>
+		<div>
+			City: <select id="citySelect" name="address.city.id">
+				#{list items:cities, as:'city'}
+					<option value=${city.id} 
+						#{ifErrors}
+							#{if flash['resume.contactInfo.address.city.id==city.id']}
+								selected=true
+							#{/if}
+						#{/ifErrors}
+					>${city}</option>
+				#{/list}
+			</select>
+		</div>
+		<div>
+			District: <select id="districtSelect" name="address.district.id">
+			
+			</select>
+		</div>
 	</div>
 	<div>
 		Languages: *{*** TODO : Write Languages here ***}*
@@ -68,5 +86,27 @@
 	<div>
 		<input type="submit" value="Add" />
 	</div>
+	
+	<script type="text/javascript">
+		var districtAction = #{jsAction @Application.districtsForCity(':cityId') /}
+		
+		$(function() {
+			$.get(districtAction({cityId: $('#citySelect').val()}), function(districts) {
+				$('#districtSelect option').remove();
+				$.each(districts, function(index, district) {
+					$("#districtSelect").append('<option value="' + district.id + '">' + district.name + "</option>");
+					});
+				});
+		});
+		
+		$('#citySelect').change(function() {
+			$.get(districtAction({cityId: $('#citySelect').val()}), function(districts) {	
+				$('#districtSelect option').remove();
+				$.each(districts, function(index, district) {
+					$("#districtSelect").append('<option value="' + district.id + '">' + district.name + "</option>");
+					});
+				});
+		});
+	</script>
 
 #{/form}

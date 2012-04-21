@@ -96,6 +96,18 @@ public class InternJob extends Model {
 		return this;
 	}
 
+	public List<InternApplication> applicationsByJobSeeker(InternJobSeeker jobSeeker) {
+		List<InternApplication> applications = new ArrayList<InternApplication>();
+		
+		for (InternApplication application : this.applications) {
+			if (application.jobSeeker == jobSeeker) {
+				applications.add(application);
+			}
+		}
+		
+		return applications;
+	}
+	
 	public List<InternPoint> findResumesOfJobSeeker(InternJobSeeker jobSeeker, boolean notApplied) {
 		List<InternResume> resumes = new ArrayList<InternResume>(jobSeeker.resumes);
 		

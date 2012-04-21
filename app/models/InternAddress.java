@@ -14,7 +14,6 @@ public class InternAddress extends Model {
 	// Properties
 
 	// Required
-	@Required
 	@ManyToOne
 	public InternCity city;
 
@@ -33,6 +32,10 @@ public class InternAddress extends Model {
 	
 	
 	// Constructors
+	
+	public InternAddress(InternContactInfo contactInfo) {
+		this.contactInfo = contactInfo;
+	}
 	
 	public InternAddress(InternContactInfo contactInfo, InternCity city) {
 		this.contactInfo = contactInfo;
@@ -61,7 +64,8 @@ public class InternAddress extends Model {
 	}
 	
 	public String toString() {
-		return this.city.name;
+		if (this.city != null) return this.city.name;
+		return this.contactInfo.toString();
 	}
 	
 	
