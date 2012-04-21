@@ -1,0 +1,33 @@
+#{extends 'main.html' /}
+#{set title:'Applications for ' + resume /}
+
+#{navigationBar /}
+
+<h1>Intern/Job Seeker</h1>
+
+#{if flash.error}
+	<p class="error">
+		&{flash.error}
+	</p>
+#{/if}
+
+#{if flash.success}
+	<p class="success">
+		&{flash.success}
+	</p>
+#{/if}
+
+#{if applications}
+	<h2>Applications</h2>
+	#{list items:applications, as:'application'}
+		<a href="@{InternJobSeekerController.viewApplication(application.id)}"><h3>${application}</h3></a>
+	#{/list}
+	<div>
+		#{if page > 1}
+			<a href="@{InternJobSeekerController.applicationsForResume(resume.id, page-1)}">Prev</a>
+		#{/if}
+		#{if page < max}
+			<a href="@{InternJobSeekerController.applicationsForResume(resume.id, page+1)}">Next</a>
+		#{/if}
+	</div>
+#{/if}

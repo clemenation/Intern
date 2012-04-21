@@ -21,15 +21,17 @@
 
 #{if jobPoints}
 <h2>Suitable Jobs</h2>
+	<a href ="@{InternJobSeekerController.jobsForResume(resume.id, 1)}">view all</a>
 	#{list items:jobPoints, as:'point'}
 		<a href="@{InternJobSeekerController.viewJob(point.job.id)}"><h3>${point.job} for ${point.resume}</h3></a>
 		<div>Point: +${point.strongPoint} -${point.weakPoint}</div>
 	#{/list}
 #{/if}
 
-#{if resume?.applications}
+#{if resume?.applications}	
 	<h2>Applications</h2>
-	#{list items:resume.applications, as:'application'}
+	<a href="@{InternJobSeekerController.applicationsForResume(resume.id, 1)}">view all</a>
+	#{list items:models.InternApplication.find("resume = ? order by postedAt desc", resume).fetch(4), as:'application'}
 		<a href="@{InternJobSeekerController.viewApplication(application.id)}"><h3>${application.job}</h3></a>
 	#{/list}
 #{/if}
