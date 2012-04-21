@@ -106,6 +106,8 @@ public class InternEmployerController extends Controller {
 			Images.resize(editedEmployer.logo.getFile(), editedEmployer.logo.getFile(), 160, 240, true);
 		}
 		
+		System.out.println("hello" + editedEmployer.companySize.size);
+		
 		String username = Security.connected();
 		InternEmployer employer = getEmployer();
 		

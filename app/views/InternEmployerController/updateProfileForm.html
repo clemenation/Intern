@@ -29,10 +29,6 @@
 
 #{form @InternEmployerController.updateProfile(), enctype:'multipart/form-data'}
 	<div>
-		Company logo: <input type="file" name="employer.logo" />
-		<span class="error">#{error 'employer.logo' /}</span>
-	</div>
-	<div>
 		Email: <input type="text" name="employer.email" value="#{ifErrors}${flash['employer.email']}#{/ifErrors}#{else}${employer.email}#{/else}" />
 		<span class="error">#{error 'employer.email' /}</span>
 	</div>
@@ -45,12 +41,16 @@
 		<span class="error">#{error 'employer.companyName' /}</span>
 	</div>
 	<div>
-		Description: <textarea name="employer.description">#{ifErrors}${flash['employer.description']}#{/ifErrors}#{else}${employer.description}#{/else}"</textarea>
+		Description: <textarea name="employer.description">#{ifErrors}${flash['employer.description']}#{/ifErrors}#{else}${employer.description}#{/else}</textarea>
 		<span class="error">#{error 'employer.description' /}</span>
 	</div>
 	<div>
-		Company Size: <input type="text" name="employer.companySize" value="#{ifErrors}${flash['employer.companySize']}#{/ifErrors}#{else}${employer.companySize}#{/else}" />
-		<span class="error">#{error 'employer.companySize' /}</span>
+		Company Size: 
+			<select name="employer.companySize.id">
+				#{list items:models.InternCompanySize.all().fetch(), as:'comSize'}
+					<option value=${comSize.id}>${comSize}</option>
+				#{/list}
+			</select>
 	</div>
 	<div>
 		Industry: <input type="text" name="employer.industry" value="#{ifErrors}${flash['employer.industry']}#{/ifErrors}#{else}${employer.industry}#{/else}" />

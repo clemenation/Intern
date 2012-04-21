@@ -26,8 +26,9 @@ public class InternEmployer extends InternUser {
 	
 	@OneToMany(mappedBy="employer")
 	public List<InternApplication> applications;
-	
-	public String companySize;
+
+	@ManyToOne
+	public InternCompanySize companySize;
 	
 	
 	
@@ -51,7 +52,7 @@ public class InternEmployer extends InternUser {
 			String industry, 
 			String description,
 			InternContactInfo contactInfo,
-			String companySize) {
+			InternCompanySize companySize) {
 		this(email, password);
 		this.companyName = companyName;
 		this.industry = industry;
@@ -70,6 +71,8 @@ public class InternEmployer extends InternUser {
 		this.description = employer.description;
 		this.companyName = employer.companyName;
 		this.companySize = employer.companySize;
+		System.out.println(this.companySize.size);
+		
 		this.industry = employer.industry;
 		//this.logo = employer.logo;
 		if (this.contactInfo == null) {
