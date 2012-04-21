@@ -30,7 +30,7 @@
 		<span class="error">#{error 'employer.companyName' /}</span>
 	</div>
 	<div>
-		Description: <input type="text" name="employer.description" value="#{ifErrors}${flash['employer.description']}#{/ifErrors}#{else}${employer.description}#{/else}" />
+		Description: <textarea name="employer.description">#{ifErrors}${flash['employer.description']}#{/ifErrors}#{else}${employer.description}#{/else}"</textarea>
 		<span class="error">#{error 'employer.description' /}</span>
 	</div>
 	<div>

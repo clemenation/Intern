@@ -43,7 +43,18 @@
 				'job.requiredEducation.college' /}</span>
 		</div>
 		<div>
-			Major: *{*** TODO: Write Major here ***}*
+			Major:
+				<select name="job.education.major.id">
+					#{list items:models.InternMajor.all().fetch(), as:'major'}
+						<option value=${major.id}
+							#{ifErrors}
+								#{if Long.parseLong(flash['job.education.major.id']) == major.id}
+									selected=true
+								#{/if}
+							#{/ifErrors}
+						>${major}</option>
+					#{/list}
+				</select>
 		</div>
 	</div>
 	<div>
@@ -89,7 +100,13 @@
 		</div>
 	</div>
 	<div>
-		Languages: *{*** TODO : Write Languages here ***}*
+		Required Languages: 
+			<select multiple="yes" name="job.requiredLanguages.id">
+				#{list items:models.InternLanguage.all().fetch(), as:'language'}
+					<option value=${language.id}
+					>${language}</option>
+				#{/list}
+			</select>
 	</div>
 	<div>
 		<input type="submit" value="Add" />

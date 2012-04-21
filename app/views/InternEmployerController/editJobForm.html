@@ -22,7 +22,7 @@
 		<span class="error">#{error 'job.requiredWorkExperience' /}</span>
 	</div>
 	<div>
-		Description: <textarea type="text" name="job.description">#{ifErrors}${flash['job.description']}#{/ifErrors}#{else}${job.description}#{/else}</textarea>>
+		Description: <textarea type="text" name="job.description">#{ifErrors}${flash['job.description']}#{/ifErrors}#{else}${job.description}#{/else}</textarea>
 		<span class="error">#{error 'job.description' /}</span>
 	</div>
 	<div>
@@ -43,7 +43,21 @@
 				'job.requiredEducation.college' /}</span>
 		</div>
 		<div>
-			Major: *{*** TODO: Write Major here ***}*
+			Major: 
+				<select name="job.requiredEducation.major.id">
+					#{list items:models.InternMajor.all().fetch(), as:'major'}
+						<option value=${major.id}
+							#{ifErrors}
+								#{if Long.parseLong(flash['job.requiredEducation.major.id']) == major.id}
+									selected=true
+								#{/if}
+							#{/ifErrors}
+							#{elseif job.requiredEducation.major?.id == major.id}
+								selected=true
+							#{/elseif}
+						>${major}</option>
+					#{/list}
+				</select>
 		</div>
 	</div>
 	<div>
@@ -95,7 +109,16 @@
 		</div>
 	</div>
 	<div>
-		Languages: *{*** TODO : Write Languages here ***}*
+		Languages: 
+			<select multiple="yes" name="job.requiredLanguages.id">
+				#{list items:models.InternLanguage.all().fetch(), as:'language'}
+					<option value=${language.id}
+						#{if job.requiredLanguages.contains(models.InternLanguage.findById(language.id))}
+							selected=true
+						#{/if}
+					>${language}</option>
+				#{/list}
+			</select>
 	</div>
 	
 	<div>
