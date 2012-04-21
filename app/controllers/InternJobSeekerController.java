@@ -25,17 +25,22 @@ public class InternJobSeekerController extends Controller {
 		InternJobSeeker jobSeeker = getJobSeeker();
 		
 		List<InternPoint> points = jobSeeker.findJobs();
+		List<InternPoint> finalPoints;
+		if (points.size() == 0) {
+			finalPoints = points;
+			render(finalPoints, page);
+		}
 		
 		int begin = (page-1)*12;
 		int end = page*12;
 		if (begin < 0 || end < 0) index(1);
 		if (begin >= points.size()) {
-			index(points.size()/12);
+			index(points.size()/12 + 1);
 		} else if (end >= points.size()) {
 			end = points.size();
 		}
 				
-		List<InternPoint> finalPoints = points.subList(begin, end);
+		finalPoints = points.subList(begin, end);
 		
 		render(finalPoints, page);
 	}
