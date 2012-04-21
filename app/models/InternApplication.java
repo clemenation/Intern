@@ -44,6 +44,7 @@ public class InternApplication extends Model {
 		this.postedAt = new Date();
 	}
 	
+	/*
 	public InternApplication(InternJob job, InternResume resume) {
 		this();
 		
@@ -57,6 +58,7 @@ public class InternApplication extends Model {
 		this (job, resume);
 		this.message = message;
 	}
+	*/
 	
 	
 	
@@ -96,8 +98,20 @@ public class InternApplication extends Model {
 			return false;
 		}
 		
-		System.out.println("ERROR: All applications can never be deleted");		
+		application.resume.applications.remove(application);
+		application.resume = null;
 		
-		return false;
+		application.job.applications.remove(application);
+		application.job = null;
+		
+		application.jobSeeker.applications.remove(application);
+		application.jobSeeker = null;
+		
+		application.employer.applications.remove(application);
+		application.employer = null;
+		
+		application.delete();
+		
+		return true;
 	}
 }

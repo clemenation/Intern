@@ -1,0 +1,2711 @@
+# HA NOI DISTRICT
+
+InternDistrict(baDinhDistrict):
+    name: Ba Dinh
+    city: haNoiCity
+
+InternDistrict(cauGiayDistrict):
+    name: Cau Giay
+    city: haNoiCity
+
+InternDistrict(dongDaDistrict):
+    name: Dong Da
+    city: haNoiCity
+
+InternDistrict(haiBaTrungDistrict):
+    name: Hai Ba Trung
+    city: haNoiCity
+
+InternDistrict(hoangMaiDistrict):
+    name: Hoang Mai
+    city: haNoiCity
+
+InternDistrict(hoanKiemDistrict):
+    name: Hoan Kiem
+    city: haNoiCity
+
+InternDistrict(longBienDistrict):
+    name: Long Bien
+    city: haNoiCity
+
+InternDistrict(tayHoDistrict):
+    name: Tay Ho
+    city: haNoiCity
+
+InternDistrict(thanhXuanDistrict):
+    name: Thanh Xuan
+    city: haNoiCity
+
+InternDistrict(dongAnhDistrict):
+    name: Dong Anh
+    city: haNoiCity
+
+InternDistrict(giaLamDistrict):
+    name: Gia Lam
+    city: haNoiCity
+
+InternDistrict(socSonDistrict):
+    name: Soc Son
+    city: haNoiCity
+
+InternDistrict(thanhTriDistrict):
+    name: Thanh Tri
+    city: haNoiCity
+
+InternDistrict(tuLiemDistrict):
+    name: Tu Liem
+    city: haNoiCity
+
+InternDistrict(haDongDistrict):
+    name: Ha Dong
+    city: haNoiCity
+
+InternDistrict(sonTayDistrict):
+    name: Son Tay
+    city: haNoiCity
+
+InternDistrict(baViDistrict):
+    name: Ba Vi
+    city: haNoiCity
+
+InternDistrict(chuongMyDistrict):
+    name: Chuong My
+    city: haNoiCity
+
+InternDistrict(danPhuongDistrict):
+    name: Dan Phuong
+    city: haNoiCity
+
+InternDistrict(hoaiDucDistrict):
+    name: Hoai Duc
+    city: haNoiCity
+
+InternDistrict(myDucDistrict):
+    name: My Duc
+    city: haNoiCity
+
+InternDistrict(phuXuyenDistrict):
+    name: Phu Xuyen
+    city: haNoiCity
+
+InternDistrict(phucThoDistrict):
+    name: Phuc Tho
+    city: haNoiCity
+
+InternDistrict(quocOaiDistrict):
+    name: Quoc Oai
+    city: haNoiCity
+
+InternDistrict(thachThatDistrict):
+    name: Thach That
+    city: haNoiCity
+
+InternDistrict(thanhOaiDistrict):
+    name: Thanh Oai
+    city: haNoiCity
+
+InternDistrict(thuongTinDistrict):
+    name: Thuong Tin
+    city: haNoiCity
+
+InternDistrict(ungHoaDistrict):
+    name: Ung Hoa
+    city: haNoiCity
+
+# HO CHI MINH DISTRICT
+
+InternDistrict(quan1District):
+    name: Quan 1
+    city: hoChiMinhCity
+
+InternDistrict(quan2District):
+    name: Quan 2
+    city: hoChiMinhCity
+
+InternDistrict(quan3District):
+    name: Quan 3
+    city: hoChiMinhCity
+
+InternDistrict(quan4District):
+    name: Quan 4
+    city: hoChiMinhCity
+
+InternDistrict(quan5District):
+    name: Quan 5
+    city: hoChiMinhCity
+
+InternDistrict(quan6District):
+    name: Quan 6
+    city: hoChiMinhCity
+
+InternDistrict(quan7District):
+    name: Quan 7
+    city: hoChiMinhCity
+
+InternDistrict(quan8District):
+    name: Quan 8
+    city: hoChiMinhCity
+
+InternDistrict(quan9District):
+    name: Quan 9
+    city: hoChiMinhCity
+
+InternDistrict(quan10District):
+    name: Quan 10
+    city: hoChiMinhCity
+
+InternDistrict(quan11District):
+    name: Quan 11
+    city: hoChiMinhCity
+
+InternDistrict(quan12District):
+    name: Quan 12
+    city: hoChiMinhCity
+
+InternDistrict(tanPhuDistrict):
+    name: Tan Phu
+    city: hoChiMinhCity
+
+InternDistrict(binhTanDistrict):
+    name: Binh Tan
+    city: hoChiMinhCity
+
+InternDistrict(binhThanhDistrict):
+    name: Binh Thanh
+    city: hoChiMinhCity
+
+InternDistrict(goVapDistrict):
+    name: Go Vap
+    city: hoChiMinhCity
+
+InternDistrict(phuNhuanDistrict):
+    name: Phu Nhuan
+    city: hoChiMinhCity
+
+InternDistrict(tanBinhDistrict):
+    name: Tan Binh
+    city: hoChiMinhCity
+
+InternDistrict(thuDucDistrict):
+    name: Thu Duc
+    city: hoChiMinhCity
+
+InternDistrict(binhChanhDistrict):
+    name: Binh Chanh
+    city: hoChiMinhCity
+
+InternDistrict(canGioDistrict):
+    name: Can Gio
+    city: hoChiMinhCity
+
+InternDistrict(cuChiDistrict):
+    name: Cu Chi
+    city: hoChiMinhCity
+
+InternDistrict(hocMonDistrict):
+    name: Hoc Mon
+    city: hoChiMinhCity
+
+InternDistrict(nhaBeDistrict):
+    name: Nha Be
+    city: hoChiMinhCity
+
+# HAI PHONG DISTRICT
+
+InternDistrict(haiAnDistrict):
+    name: Hai An
+    city: haiPhongCity
+
+InternDistrict(hongBangDistrict):
+    name: Hong Bang
+    city: haiPhongCity
+
+InternDistrict(kienAnDistrict):
+    name: Kien An
+    city: haiPhongCity
+
+InternDistrict(leChanDistrict):
+    name: Le Chan
+    city: haiPhongCity
+
+InternDistrict(ngoQuyenDistrict):
+    name: Ngo Quyen
+    city: haiPhongCity
+
+InternDistrict(doSonDistrict):
+    name: Do Son
+    city: haiPhongCity
+
+InternDistrict(anDuongDistrict):
+    name: An Duong
+    city: haiPhongCity
+
+InternDistrict(anLaoDistrict):
+    name: An Lao
+    city: haiPhongCity
+
+InternDistrict(bachLongViDistrict):
+    name: Bach Long Vi
+    city: haiPhongCity
+
+InternDistrict(catHaiDistrict):
+    name: Cat Hai
+    city: haiPhongCity
+
+InternDistrict(kienThuyDistrict):
+    name: Kien Thuy
+    city: haiPhongCity
+
+InternDistrict(thuyNguyenDistrict):
+    name: Thuy Nguyen
+    city: haiPhongCity
+
+InternDistrict(tienLangDistrict):
+    name: Tien Lang
+    city: haiPhongCity
+
+InternDistrict(vinhBaoDistrict):
+    name: Vinh Bao
+    city: haiPhongCity
+
+# HUE DISTRICT
+
+InternDistrict(thanhPhoHueDistrict):
+    name: TP. Hue
+    city: hueCity
+
+InternDistrict(aLuoiDistrict):
+    name: A Luoi
+    city: hueCity
+
+InternDistrict(huongThuyDistrict):
+    name: Huong Thuy
+    city: hueCity
+
+InternDistrict(huongTraDistrict):
+    name: Huong Tra
+    city: hueCity
+
+InternDistrict(namDongDistrict):
+    name: Nam Dong
+    city: hueCity
+
+InternDistrict(phongDienDistrict):
+    name: Phong Dien
+    city: hueCity
+
+InternDistrict(phuLocDistrict):
+    name: Phu Loc
+    city: hueCity
+
+InternDistrict(phuVangDistrict):
+    name: Phu Vang
+    city: hueCity
+
+InternDistrict(quangDienDistrict):
+    name: Quang Dien
+    city: hueCity
+
+# AN GIANG DISTRICT
+
+InternDistrict(longXuyenDistrict):
+    name: Long Xuyen
+    city: anGiangCity
+
+InternDistrict(chauDocDistrict):
+    name: Chau Doc
+    city: anGiangCity
+
+InternDistrict(tanChauDistrict):
+    name: Tan Chau
+    city: anGiangCity
+
+InternDistrict(anPhuDistrict):
+    name: An Phu
+    city: anGiangCity
+
+InternDistrict(chauPhuDistrict):
+    name: Chau Phu
+    city: anGiangCity
+
+InternDistrict(chauThanhDistrict):
+    name: Chau Thanh
+    city: anGiangCity
+
+InternDistrict(choMoiDistrict):
+    name: Cho Moi
+    city: anGiangCity
+
+InternDistrict(phuTanDistrict):
+    name: Phu Tan
+    city: anGiangCity
+
+InternDistrict(thoaiSonDistrict):
+    name: Thoai Son
+    city: anGiangCity
+
+InternDistrict(tinhBienDistrict):
+    name: Tinh Bien
+    city: anGiangCity
+
+InternDistrict(triTonDistrict):
+    name: Tri Ton
+    city: anGiangCity
+
+# BA RIA VUNG TAU
+
+InternDistrict(thanhPhoVungTauDistrict):
+    name: TP. Vung Tau
+    city: baRiaVungTauCity
+
+InternDistrict(baRiaDistrict):
+    name: Ba Ria
+    city: baRiaVungTauCity
+
+InternDistrict(chauDucDistrict):
+    name: Chau Duc
+    city: baRiaVungTauCity
+
+InternDistrict(conDaoDistrict):
+    name: Con Dao
+    city: baRiaVungTauCity
+
+InternDistrict(longDienDistrict):
+    name: Long Dien
+    city: baRiaVungTauCity
+
+InternDistrict(datDoDistrict):
+    name: Dat Do
+    city: baRiaVungTauCity
+
+InternDistrict(tanThanhDistrict):
+    name: Tan Thanh
+    city: baRiaVungTauCity
+
+InternDistrict(xuyenMocDistrict):
+    name: Xuyen Moc
+    city: baRiaVungTauCity
+
+# BAC GIANG
+
+InternDistrict(thiXaBacGiangDistrict):
+    name: TX. Bac Giang
+    city: bacGiangCity
+
+InternDistrict(hiepHoaDistrict):
+    name: Hiep Hoa
+    city: bacGiangCity
+
+InternDistrict(langGiangDistrict):
+    name: Lang Giang
+    city: bacGiangCity
+
+InternDistrict(lucNamDistrict):
+    name: Luc Nam
+    city: bacGiangCity
+
+InternDistrict(sonDongDistrict):
+    name: Son Dong
+    city: bacGiangCity
+
+InternDistrict(tanYenDistrict):
+    name: Tan Yen
+    city: bacGiangCity
+
+InternDistrict(vietYenDistrict):
+    name: Viet Yen
+    city: bacGiangCity
+
+InternDistrict(yenDungDistrict):
+    name: Yen Dung
+    city: bacGiangCity
+
+InternDistrict(yenTheDistrict):
+    name: Yen The
+    city: bacGiangCity
+
+# BAC KAN
+
+InternDistrict(thiXaBacKanDistrict):
+    name: TX. Bac Kan
+    city: bacKanCity
+
+InternDistrict(baBeDistrict):
+    name: Ba Be
+    city: bacKanCity
+
+InternDistrict(bachThongDistrict):
+    name: Bach Thong
+    city: bacKanCity
+
+InternDistrict(choDonDistrict):
+    name: Cho Don
+    city: bacKanCity
+
+InternDistrict(choMoiDistrict):
+    name: Cho Moi
+    city: bacKanCity
+
+InternDistrict(naRiDistrict):
+    name: Na Ri
+    city: bacKanCity
+
+InternDistrict(nganSonDistrict):
+    name: Ngan Son
+    city: bacKanCity
+
+InternDistrict(pacNamDistrict):
+    name: Pac Nam
+    city: bacKanCity
+
+# BAC LIEU
+
+InternDistrict(thiXaBacLieuDistrict):
+    name: TX. Bac Lieu
+    city: bacLieuCity
+
+InternDistrict(giaRaiDistrict):
+    name: Gia Rai
+    city: bacLieuCity
+
+InternDistrict(dongHaiDistrict):
+    name: Dong Hai
+    city: bacLieuCity
+
+InternDistrict(hongDanDistrict):
+    name: Hong Dan
+    city: bacLieuCity
+
+InternDistrict(phuocLongDistrict):
+    name: Phuoc Long
+    city: bacLieuCity
+
+InternDistrict(vinhLoiDistrict):
+    name: Vinh Loi
+    city: bacLieuCity
+
+# BAC NINH
+
+InternDistrict(thanhPhoBacNinhDistrict):
+    name: TP. Bac Ninh
+    city: bacNinhCity
+
+InternDistrict(tuSonDistrict):
+    name: Tu Son
+    city: bacNinhCity
+
+InternDistrict(giaBinhDistrict):
+    name: Gia Binh
+    city: bacNinhCity
+
+InternDistrict(luongTaiDistrict):
+    name: Luong Tai
+    city: bacNinhCity
+
+InternDistrict(queVoDistrict):
+    name: Que Vo
+    city: bacNinhCity
+
+InternDistrict(thuanThanhDistrict):
+    name: Thuan Thanh
+    city: bacNinhCity
+
+InternDistrict(tienDuDistrict):
+    name: Tien Du
+    city: bacNinhCity
+
+InternDistrict(yenPhongDistrict):
+    name: Yen Phong
+    city: bacNinhCity
+
+# BEN TRE
+
+InternDistrict(thiXaBenTreDistrict):
+    name: TX. Ben Tre
+    city: benTreCity
+
+InternDistrict(baTriDistrict):
+    name: Ba Tri
+    city: benTreCity
+
+InternDistrict(binhDaiDistrict):
+    name: Binh Dai
+    city: benTreCity
+
+InternDistrict(chauThanhDistrict):
+    name: Chau Thanh
+    city: benTreCity
+
+InternDistrict(choLachDistrict):
+    name: Cho Lach
+    city: benTreCity
+
+InternDistrict(giongTromDistrict):
+    name: Giong Trom
+    city: benTreCity
+
+InternDistrict(moCayDistrict):
+    name: Mo Cay
+    city: benTreCity
+
+InternDistrict(thanhPhuDistrict):
+    name: Thanh Phu
+    city: benTreCity
+
+# BINH DINH
+
+InternDistrict(thanhPhoTuyHoaDistrict):
+    name: TP. Tuy Hoa
+    city: binhDinhCity
+
+InternDistrict(dongXuanDistrict):
+    name: Dong Xuan
+    city: binhDinhCity
+
+InternDistrict(phuHoaDistrict):
+    name: Phu Hoa
+    city: binhDinhCity
+
+InternDistrict(songCauDistrict):
+    name: Song Cau
+    city: binhDinhCity
+
+InternDistrict(songHinhDistrict):
+    name: Song Hinh
+    city: binhDinhCity
+
+InternDistrict(sonHoaDistrict):
+    name: Son Hoa
+    city: binhDinhCity
+
+InternDistrict(tuyAnDistrict):
+    name: Tuy An
+    city: binhDinhCity
+
+InternDistrict(tuyHoaDistrict):
+    name: Tuy Hoa
+    city: binhDinhCity
+
+# BINH DUONG
+
+InternDistrict(thuDauMotDistrict):
+    name: Thu Dau Mot
+    city: binhDuongCity
+
+InternDistrict(benCatDistrict):
+    name: Ben Cat
+    city: binhDuongCity
+
+InternDistrict(dauTiengDistrict):
+    name: Dau Tieng
+    city: binhDuongCity
+
+InternDistrict(diAnDistrict):
+    name: Di An
+    city: binhDuongCity
+
+InternDistrict(phuGiaoDistrict):
+    name: Phu Giao
+    city: binhDuongCity
+
+InternDistrict(tanUyenDistrict):
+    name: Tan Uyen
+    city: binhDuongCity
+
+InternDistrict(thuanAnDistrict):
+    name: Thuan An
+    city: binhDuongCity
+
+# BINH PHUOC
+
+InternDistrict(dongXoaiDistrict):
+    name: Dong Xoai
+    city: binhPhuocCity
+
+InternDistrict(buDopDistrict):
+    name: Bu Dop
+    city: binhPhuocCity
+
+InternDistrict(binhLongDistrict):
+    name: Binh Long
+    city: binhPhuocCity
+
+InternDistrict(chonThanhDistrict):
+    name: Chon Thanh
+    city: binhPhuocCity
+
+InternDistrict(buDangDistrict):
+    name: Bu Dang
+    city: binhPhuocCity
+
+InternDistrict(dongPhuDistrict):
+    name: Dong Phu
+    city: binhPhuocCity
+
+InternDistrict(locNinhDistrict):
+    name: Loc Ninh
+    city: binhPhuocCity
+
+InternDistrict(phuocLongDistrict):
+    name: Phuoc Long
+    city: binhPhuocCity
+
+# BINH THUAN
+
+InternDistrict(phanThietDistrict):
+    name: Phan Thiet
+    city: binhThuanCity
+
+InternDistrict(bacBinhDistrict):
+    name: Bac Binh
+    city: binhThuanCity
+
+InternDistrict(ducLinhDistrict):
+    name: Duc Linh
+    city: binhThuanCity
+
+InternDistrict(hamTanDistrict):
+    name: Ham Tan
+    city: binhThuanCity
+
+InternDistrict(hamThuanBacDistrict):
+    name: Ham Thuan Bac
+    city: binhThuanCity
+
+InternDistrict(hamThuanNamDistrict):
+    name: Ham Thuan Nam
+    city: binhThuanCity
+
+InternDistrict(phuQuyDistrict):
+    name: Phu Quy
+    city: binhThuanCity
+
+InternDistrict(tanhLinhDistrict):
+    name: Tanh Linh
+    city: binhThuanCity
+
+InternDistrict(tuyPhongDistrict):
+    name: Tuy Phong
+    city: binhThuanCity
+
+# CA MAU
+
+InternDistrict(thanhPhoCaMauDistrict):
+    name: TP. Ca Mau
+    city: caMauCity
+
+InternDistrict(caiNuocDistrict):
+    name: Cai Nuoc
+    city: caMauCity
+
+InternDistrict(phuTanDistrict):
+    name: Phu Tan
+    city: caMauCity
+
+InternDistrict(damDoiDistrict):
+    name: Dam Doi
+    city: caMauCity
+
+InternDistrict(ngocHienDistrict):
+    name: Ngoc Hien
+    city: caMauCity
+
+InternDistrict(namCanDistrict):
+    name: Nam Can
+    city: caMauCity
+
+InternDistrict(thoiBinhDistrict):
+    name: Thoi Binh
+    city: caMauCity
+
+InternDistrict(tranVanThoiDistrict):
+    name: Tran Van Thoi
+    city: caMauCity
+
+InternDistrict(uMinhDistrict):
+    name: U Minh
+    city: caMauCity
+
+# CAO BANG
+
+InternDistrict(thiXaCaoBangDistrict):
+    name: TX. Cao Bang
+    city: caoBangCity
+
+InternDistrict(baoLacDistrict):
+    name: Bao Lac
+    city: caoBangCity
+
+InternDistrict(baoLamDistrict):
+    name: Bao Lam
+    city: caoBangCity
+
+InternDistrict(haQuangDistrict):
+    name: Ha Quang
+    city: caoBangCity
+
+InternDistrict(haLangDistrict):
+    name: Ha Lang
+    city: caoBangCity
+
+InternDistrict(hoaAnDistrict):
+    name: Hoa An
+    city: caoBangCity
+
+InternDistrict(nguyenBinhDistrict):
+    name: Nguyen Binh
+    city: caoBangCity
+
+InternDistrict(phucHoaDistrict):
+    name: Phuc Hoa
+    city: caoBangCity
+
+InternDistrict(quangUyenDistrict):
+    name: Quang Uyen
+    city: caoBangCity
+
+InternDistrict(thachAnDistrict):
+    name: Thach An
+    city: caoBangCity
+
+InternDistrict(thongNongDistrict):
+    name: Thong Nong
+    city: caoBangCity
+
+InternDistrict(traLinhDistrict):
+    name: Tra Linh
+    city: caoBangCity
+
+InternDistrict(trungKhanhDistrict):
+    name: Trung Khanh
+    city: caoBangCity
+
+# DAK LAK
+
+InternDistrict(buonMaThuotDistrict):
+    name: Buon Ma Thuot
+    city: dakLakCity
+
+InternDistrict(buonDonDistrict):
+    name: Buon Don
+    city: dakLakCity
+
+InternDistrict(cuM'GarDistrict):
+    name: Cu M'Gar
+    city: dakLakCity
+
+InternDistrict(eaH'LeoDistrict):
+    name: Ea H'Leo
+    city: dakLakCity
+
+InternDistrict(eaKarDistrict):
+    name: Ea Kar
+    city: dakLakCity
+
+InternDistrict(eaSupDistrict):
+    name: Ea Sup
+    city: dakLakCity
+
+InternDistrict(krongAnaDistrict):
+    name: Krong Ana
+    city: dakLakCity
+
+InternDistrict(krongBongDistrict):
+    name: Krong Bong
+    city: dakLakCity
+
+InternDistrict(krongBukDistrict):
+    name: Krong Buk
+    city: dakLakCity
+
+InternDistrict(krongNangDistrict):
+    name: Krong Nang
+    city: dakLakCity
+
+InternDistrict(krongPakDistrict):
+    name: Krong Pak
+    city: dakLakCity
+
+InternDistrict(lakDistrict):
+    name: Lak
+    city: dakLakCity
+
+InternDistrict(m'DrakDistrict):
+    name: M'Drak
+    city: dakLakCity
+
+# DAK NONG
+
+InternDistrict(cuJutDistrict):
+    name: Cu Jut
+    city: dakNongCity
+
+InternDistrict(dakMilDistrict):
+    name: Dak Mil
+    city: dakNongCity
+
+InternDistrict(dakNongDistrict):
+    name: Dak Nong
+    city: dakNongCity
+
+InternDistrict(dakR'LapDistrict):
+    name: Dak R'Lap
+    city: dakNongCity
+
+InternDistrict(dakSongDistrict):
+    name: Dak Song
+    city: dakNongCity
+
+InternDistrict(krongNoDistrict):
+    name: Krong No
+    city: dakNongCity
+
+# DIEN BIEN
+
+InternDistrict(dienBienPhuDistrict):
+    name: Dien Bien Phu
+    city: dienBienCity
+
+InternDistrict(muongLayDistrict):
+    name: Muong Lay
+    city: dienBienCity
+
+InternDistrict(dienBienDistrict):
+    name: Dien Bien
+    city: dienBienCity
+
+InternDistrict(dienBienDongDistrict):
+    name: Dien Bien Dong
+    city: dienBienCity
+
+InternDistrict(muongChaDistrict):
+    name: Muong Cha
+    city: dienBienCity
+
+InternDistrict(muongNheDistrict):
+    name: Muong Nhe
+    city: dienBienCity
+
+InternDistrict(tuaChuaDistrict):
+    name: Tua Chua
+    city: dienBienCity
+
+InternDistrict(tuanGiaoDistrict):
+    name: Tuan Giao
+    city: dienBienCity
+
+# DONG NAI
+
+InternDistrict(bienHoaDistrict):
+    name: Bien Hoa
+    city: dongNaiCity
+
+InternDistrict(longKhanhDistrict):
+    name: Long Khanh
+    city: dongNaiCity
+
+InternDistrict(dinhQuanDistrict):
+    name: Dinh Quan
+    city: dongNaiCity
+
+InternDistrict(longThanhDistrict):
+    name: Long Thanh
+    city: dongNaiCity
+
+InternDistrict(nhonTrachDistrict):
+    name: Nhon Trach
+    city: dongNaiCity
+
+InternDistrict(tanPhuDistrict):
+    name: Tan Phu
+    city: dongNaiCity
+
+InternDistrict(thongNhatDistrict):
+    name: Thong Nhat
+    city: dongNaiCity
+
+InternDistrict(vinhCuuDistrict):
+    name: Vinh Cuu
+    city: dongNaiCity
+
+InternDistrict(xuanLocDistrict):
+    name: Xuan Loc
+    city: dongNaiCity
+
+InternDistrict(camMyDistrict):
+    name: Cam My
+    city: dongNaiCity
+
+InternDistrict(trangBomDistrict):
+    name: Trang Bom
+    city: dongNaiCity
+
+# DONG THAP
+
+InternDistrict(caoLanhDistrict):
+    name: Cao Lanh
+    city: dongThapCity
+
+InternDistrict(saDecDistrict):
+    name: Sa Dec
+    city: dongThapCity
+
+InternDistrict(chauThanhDistrict):
+    name: Chau Thanh
+    city: dongThapCity
+
+InternDistrict(hongNguDistrict):
+    name: Hong Ngu
+    city: dongThapCity
+
+InternDistrict(laiVungDistrict):
+    name: Lai Vung
+    city: dongThapCity
+
+InternDistrict(lapVoDistrict):
+    name: Lap Vo
+    city: dongThapCity
+
+InternDistrict(tamNongDistrict):
+    name: Tam Nong
+    city: dongThapCity
+
+InternDistrict(tanHongDistrict):
+    name: Tan Hong
+    city: dongThapCity
+
+InternDistrict(thanhBinhDistrict):
+    name: Thanh Binh
+    city: dongThapCity
+
+InternDistrict(thapMuoiDistrict):
+    name: Thap Muoi
+    city: dongThapCity
+
+# GAI LAI
+
+InternDistrict(pleikuDistrict):
+    name: Pleiku
+    city: giaLaiCity
+
+InternDistrict(anKheDistrict):
+    name: An Khe
+    city: giaLaiCity
+
+InternDistrict(dakPoDistrict):
+    name: Dak Po
+    city: giaLaiCity
+
+InternDistrict(aYunPaDistrict):
+    name: A Yun Pa
+    city: giaLaiCity
+
+InternDistrict(dakDoaDistrict):
+    name: Dak Doa
+    city: giaLaiCity
+
+InternDistrict(ducCoDistrict):
+    name: Duc Co
+    city: giaLaiCity
+
+InternDistrict(chuPahDistrict):
+    name: Chu Pah
+    city: giaLaiCity
+
+InternDistrict(chuProngDistrict):
+    name: Chu Prong
+    city: giaLaiCity
+
+InternDistrict(chuSeDistrict):
+    name: Chu Se
+    city: giaLaiCity
+
+InternDistrict(laGraiDistrict):
+    name: La Grai
+    city: giaLaiCity
+
+InternDistrict(k'BangDistrict):
+    name: K'Bang
+    city: giaLaiCity
+
+InternDistrict(krongChroDistrict):
+    name: Krong Chro
+    city: giaLaiCity
+
+InternDistrict(krongPaDistrict):
+    name: Krong Pa
+    city: giaLaiCity
+
+InternDistrict(mangYangDistrict):
+    name: Mang Yang
+    city: giaLaiCity
+
+InternDistrict(laPaDistrict):
+    name: La Pa
+    city: giaLaiCity
+
+# HA GIANG
+
+InternDistrict(thiXaHaGiangDistrict):
+    name: TX. Ha Giang
+    city: haGiangCity
+
+InternDistrict(bacMeDistrict):
+    name: Bac Me
+    city: haGiangCity
+
+InternDistrict(bacQuangDistrict):
+    name: Bac Quang
+    city: haGiangCity
+
+InternDistrict(dongVanDistrict):
+    name: Dong Van
+    city: haGiangCity
+
+InternDistrict(hoangSuPhiDistrict):
+    name: Hoang Su Phi
+    city: haGiangCity
+
+InternDistrict(meoVacDistrict):
+    name: Meo Vac
+    city: haGiangCity
+
+InternDistrict(quanBaDistrict):
+    name: Quan Ba
+    city: haGiangCity
+
+InternDistrict(quangBinhDistrict):
+    name: Quang Binh
+    city: haGiangCity
+
+InternDistrict(xinManDistrict):
+    name: Xin Man
+    city: haGiangCity
+
+InternDistrict(viXuyenDistrict):
+    name: Vi Xuyen
+    city: haGiangCity
+
+InternDistrict(yenMinhDistrict):
+    name: Yen Minh
+    city: haGiangCity
+
+# HA NAM
+
+InternDistrict(phuLyDistrict):
+    name: Phu Ly
+    city: haNamCity
+
+InternDistrict(binhLucDistrict):
+    name: Binh Luc
+    city: haNamCity
+
+InternDistrict(duyTienDistrict):
+    name: Duy Tien
+    city: haNamCity
+
+InternDistrict(kimBangDistrict):
+    name: Kim Bang
+    city: haNamCity
+
+InternDistrict(lyNhanDistrict):
+    name: Ly Nhan
+    city: haNamCity
+
+InternDistrict(thanhLiemDistrict):
+    name: Thanh Liem
+    city: haNamCity
+
+# HA TINH
+
+InternDistrict(thiXaHaTinhDistrict):
+    name: Thi Xa Ha Tinh
+    city: haTinhCity
+
+InternDistrict(hongLinhDistrict):
+    name: Hong Linh
+    city: haTinhCity
+
+InternDistrict(camXuyenDistrict):
+    name: Cam Xuyen
+    city: haTinhCity
+
+InternDistrict(canLocDistrict):
+    name: Can Loc
+    city: haTinhCity
+
+InternDistrict(ducThoDistrict):
+    name: Duc Tho
+    city: haTinhCity
+
+InternDistrict(huongKheDistrict):
+    name: Huong Khe
+    city: haTinhCity
+
+InternDistrict(huongSonDistrict):
+    name: Huong Son
+    city: haTinhCity
+
+InternDistrict(kyAnhDistrict):
+    name: Ky Anh
+    city: haTinhCity
+
+InternDistrict(nghiXuanDistrict):
+    name: Nghi Xuan
+    city: haTinhCity
+
+InternDistrict(thachHaDistrict):
+    name: Thach Ha
+    city: haTinhCity
+
+InternDistrict(vuQuangDistrict):
+    name: Vu Quang
+    city: haTinhCity
+
+# HAI DUONG
+
+InternDistrict(thanhPhoHaiDuongDistrict):
+    name: Thanh Pho Hai Duong
+    city: haiDuongCity
+
+InternDistrict(binhGiangDistrict):
+    name: Binh Giang
+    city: haiDuongCity
+
+InternDistrict(camGiangDistrict):
+    name: Cam Giang
+    city: haiDuongCity
+
+InternDistrict(chiLinhDistrict):
+    name: Chi Linh
+    city: haiDuongCity
+
+InternDistrict(giaLocDistrict):
+    name: Gia Loc
+    city: haiDuongCity
+
+InternDistrict(kimThanhDistrict):
+    name: Kim Thanh
+    city: haiDuongCity
+
+InternDistrict(kinhMonDistrict):
+    name: Kinh Mon
+    city: haiDuongCity
+
+InternDistrict(namSachDistrict):
+    name: Nam Sach
+    city: haiDuongCity
+
+InternDistrict(ninhGiangDistrict):
+    name: Ninh Giang
+    city: haiDuongCity
+
+InternDistrict(thanhHaDistrict):
+    name: Thanh Ha
+    city: haiDuongCity
+
+InternDistrict(thanhMienDistrict):
+    name: Thanh Mien
+    city: haiDuongCity
+
+InternDistrict(tuKyDistrict):
+    name: Tu Ky
+    city: haiDuongCity
+
+# HAU GIANG
+
+InternDistrict(viThanhDistrict):
+    name: Vi Thanh
+    city: hauGiangCity
+
+InternDistrict(chauThanhDistrict):
+    name: Chau Thanh
+    city: hauGiangCity
+
+InternDistrict(chauThanhADistrict):
+    name: Chau Thanh A
+    city: hauGiangCity
+
+InternDistrict(longMyDistrict):
+    name: Long My
+    city: hauGiangCity
+
+InternDistrict(phungHiepDistrict):
+    name: Phung Hiep
+    city: hauGiangCity
+
+InternDistrict(viThuyDistrict):
+    name: Vi Thuy
+    city: hauGiangCity
+
+# HOA BINH
+
+InternDistrict(thiXaHoaBinhDistrict):
+    name: TX. Hoa Binh
+    city: hoaBinhCity
+
+InternDistrict(caoPhongDistrict):
+    name: Cao Phong
+    city: hoaBinhCity
+
+InternDistrict(daBacDistrict):
+    name: Da Bac
+    city: hoaBinhCity
+
+InternDistrict(kimBoiDistrict):
+    name: Kim Boi
+    city: hoaBinhCity
+
+InternDistrict(kySonDistrict):
+    name: Ky Son
+    city: hoaBinhCity
+
+InternDistrict(lacSonDistrict):
+    name: Lac Son
+    city: hoaBinhCity
+
+InternDistrict(lacThuyDistrict):
+    name: Lac Thuy
+    city: hoaBinhCity
+
+InternDistrict(luongSonDistrict):
+    name: Luong Son
+    city: hoaBinhCity
+
+InternDistrict(maiChauDistrict):
+    name: Mai Chau
+    city: hoaBinhCity
+
+InternDistrict(tanLacDistrict):
+    name: Tan Lac
+    city: hoaBinhCity
+
+InternDistrict(yenThuyDistrict):
+    name: Yen Thuy
+    city: hoaBinhCity
+
+# HUNG YEN
+
+InternDistrict(thiXaHungYenDistrict):
+    name: TX. Hung Yen
+    city: hungYenCity
+
+InternDistrict(anThiDistrict):
+    name: An Thi
+    city: hungYenCity
+
+InternDistrict(khoaiChauDistrict):
+    name: Khoai Chau
+    city: hungYenCity
+
+InternDistrict(kimDongDistrict):
+    name: Kim Dong
+    city: hungYenCity
+
+InternDistrict(myHaoDistrict):
+    name: My Hao
+    city: hungYenCity
+
+InternDistrict(phuCuDistrict):
+    name: Phu Cu
+    city: hungYenCity
+
+InternDistrict(tienLuDistrict):
+    name: Tien Lu
+    city: hungYenCity
+
+InternDistrict(vanGiangDistrict):
+    name: Van Giang
+    city: hungYenCity
+
+InternDistrict(vanLamDistrict):
+    name: Van Lam
+    city: hungYenCity
+
+InternDistrict(yenMyDistrict):
+    name: Yen My
+    city: hungYenCity
+
+# KHANH HOA
+
+InternDistrict(nhaTrangDistrict):
+    name: Nha Trang
+    city: khanhHoaCity
+
+InternDistrict(camRanhDistrict):
+    name: Cam Ranh
+    city: khanhHoaCity
+
+InternDistrict(dienKhanhDistrict):
+    name: Dien Khanh
+    city: khanhHoaCity
+
+InternDistrict(khanhSonDistrict):
+    name: Khanh Son
+    city: khanhHoaCity
+
+InternDistrict(khanhVinhDistrict):
+    name: Khanh Vinh
+    city: khanhHoaCity
+
+InternDistrict(ninhHoaDistrict):
+    name: Ninh Hoa
+    city: khanhHoaCity
+
+InternDistrict(truongSaDistrict):
+    name: Truong Sa
+    city: khanhHoaCity
+
+InternDistrict(vanNinhDistrict):
+    name: Van Ninh
+    city: khanhHoaCity
+
+# KIEN GIANG
+
+InternDistrict(rachGiaDistrict):
+    name: Rach Gia
+    city: kienGiangCity
+
+InternDistrict(haTienDistrict):
+    name: Ha Tien
+    city: kienGiangCity
+
+InternDistrict(anBienDistrict):
+    name: An Bien
+    city: kienGiangCity
+
+InternDistrict(anMinhDistrict):
+    name: An Minh
+    city: kienGiangCity
+
+InternDistrict(chauThanhDistrict):
+    name: Chau Thanh
+    city: kienGiangCity
+
+InternDistrict(giongRiengDistrict):
+    name: Giong Rieng
+    city: kienGiangCity
+
+InternDistrict(goQuaoDistrict):
+    name: Go Quao
+    city: kienGiangCity
+
+InternDistrict(honDatDistrict):
+    name: Hon Dat
+    city: kienGiangCity
+
+InternDistrict(kienHaiDistrict):
+    name: Kien Hai
+    city: kienGiangCity
+
+InternDistrict(kienLuongDistrict):
+    name: Kien Luong
+    city: kienGiangCity
+
+InternDistrict(phuQuocDistrict):
+    name: Phu Quoc
+    city: kienGiangCity
+
+InternDistrict(tanHiepDistrict):
+    name: Tan Hiep
+    city: kienGiangCity
+
+InternDistrict(vinhThuanDistrict):
+    name: Vinh Thuan
+    city: kienGiangCity
+
+# KON TUM
+
+InternDistrict(thiXaKonTumDistrict):
+    name: TX. Kon Tum
+    city: konTumCity
+
+InternDistrict(dakGieiDistrict):
+    name: Dak Giei
+    city: konTumCity
+
+InternDistrict(dakHaDistrict):
+    name: Dak Ha
+    city: konTumCity
+
+InternDistrict(dakToDistrict):
+    name: Dak To
+    city: konTumCity
+
+InternDistrict(konPiongDistrict):
+    name: Kon Piong
+    city: konTumCity
+
+InternDistrict(konRayDistrict):
+    name: Kon Ray
+    city: konTumCity
+
+InternDistrict(ngocHoiDistrict):
+    name: Ngoc Hoi
+    city: konTumCity
+
+InternDistrict(saThayDistrict):
+    name: Sa Thay
+    city: konTumCity
+
+# LAI CHAU
+
+InternDistrict(thiXaLaiChauDistrict):
+    name: TX. Lai Chau
+    city: laiChauCity
+
+InternDistrict(muongTeDistrict):
+    name: Muong Te
+    city: laiChauCity
+
+InternDistrict(phongThoDistrict):
+    name: Phong Tho
+    city: laiChauCity
+
+InternDistrict(sinHoDistrict):
+    name: Sin Ho
+    city: laiChauCity
+
+InternDistrict(tamDuongDistrict):
+    name: Tam Duong
+    city: laiChauCity
+
+InternDistrict(thanUyenDistrict):
+    name: Than Uyen
+    city: laiChauCity
+
+# LAM DONG
+
+InternDistrict(daLatDistrict):
+    name: Da Lat
+    city: lamDongCity
+
+InternDistrict(baoLocDistrict):
+    name: Bao Loc
+    city: lamDongCity
+
+InternDistrict(baoLamDistrict):
+    name: Bao Lam
+    city: lamDongCity
+
+InternDistrict(catTienDistrict):
+    name: Cat Tien
+    city: lamDongCity
+
+InternDistrict(diLinhDistrict):
+    name: Di Linh
+    city: lamDongCity
+
+InternDistrict(daHuoaiDistrict):
+    name: Da Huoai
+    city: lamDongCity
+
+InternDistrict(daTenDistrict):
+    name: Da Ten
+    city: lamDongCity
+
+InternDistrict(damRongDistrict):
+    name: Dam Rong
+    city: lamDongCity
+
+InternDistrict(donDuongDistrict):
+    name: Don Duong
+    city: lamDongCity
+
+InternDistrict(ducTrongDistrict):
+    name: Duc Trong
+    city: lamDongCity
+
+InternDistrict(lacDuongDistrict):
+    name: Lac Duong
+    city: lamDongCity
+
+InternDistrict(lamHaDistrict):
+    name: Lam Ha
+    city: lamDongCity
+
+# LANG SON
+
+InternDistrict(thanhPhoLangSonDistrict):
+    name: TP. Lang Son
+    city: langSonCity
+
+InternDistrict(bacSonDistrict):
+    name: Bac Son
+    city: langSonCity
+
+InternDistrict(binhGiaDistrict):
+    name: Binh Gia
+    city: langSonCity
+
+InternDistrict(caoLocDistrict):
+    name: Cao Loc
+    city: langSonCity
+
+InternDistrict(chiLangDistrict):
+    name: Chi Lang
+    city: langSonCity
+
+InternDistrict(dinhLapDistrict):
+    name: Dinh Lap
+    city: langSonCity
+
+InternDistrict(huuLungDistrict):
+    name: Huu Lung
+    city: langSonCity
+
+InternDistrict(locBinhDistrict):
+    name: Loc Binh
+    city: langSonCity
+
+InternDistrict(trangDinhDistrict):
+    name: Trang Dinh
+    city: langSonCity
+
+InternDistrict(vanLangDistrict):
+    name: Van Lang
+    city: langSonCity
+
+InternDistrict(vanQuanDistrict):
+    name: Van Quan
+    city: langSonCity
+
+# LAO CAI
+
+InternDistrict(thanhPhoLaoCaiDistrict):
+    name: TP. Lao Cai
+    city: laoCaiCity
+
+InternDistrict(bacHaDistrict):
+    name: Bac Ha
+    city: laoCaiCity
+
+InternDistrict(baoThangDistrict):
+    name: Bao Thang
+    city: laoCaiCity
+
+InternDistrict(baoYenDistrict):
+    name: Bao Yen
+    city: laoCaiCity
+
+InternDistrict(batXatDistrict):
+    name: Bat Xat
+    city: laoCaiCity
+
+InternDistrict(muongKhuongDistrict):
+    name: Muong Khuong
+    city: laoCaiCity
+
+InternDistrict(saPaDistrict):
+    name: Sa Pa
+    city: laoCaiCity
+
+InternDistrict(siMaCaiDistrict):
+    name: Si Ma Cai
+    city: laoCaiCity
+
+InternDistrict(vanBanDistrict):
+    name: Van Ban
+    city: laoCaiCity
+
+# LONG AN
+
+InternDistrict(tanAnDistrict):
+    name: Tan An
+    city: longAnCity
+
+InternDistrict(benLucDistrict):
+    name: Ben Luc
+    city: longAnCity
+
+InternDistrict(canDuocDistrict):
+    name: Can Duoc
+    city: longAnCity
+
+InternDistrict(canGuocDistrict):
+    name: Can Guoc
+    city: longAnCity
+
+InternDistrict(chauThanhDistrict):
+    name: Chau Thanh
+    city: longAnCity
+
+InternDistrict(ducHoaDistrict):
+    name: Duc Hoa
+    city: longAnCity
+
+InternDistrict(ducHueDistrict):
+    name: Duc Hue
+    city: longAnCity
+
+InternDistrict(mocHoaDistrict):
+    name: Moc Hoa
+    city: longAnCity
+
+InternDistrict(tanHungDistrict):
+    name: Tan Hung
+    city: longAnCity
+
+InternDistrict(tanThanhDistrict):
+    name: Tan Thanh
+    city: longAnCity
+
+InternDistrict(tanTruDistrict):
+    name: Tan Tru
+    city: longAnCity
+
+InternDistrict(thanhHoaDistrict):
+    name: Thanh Hoa
+    city: longAnCity
+
+InternDistrict(thuThuaDistrict):
+    name: Thu Thua
+    city: longAnCity
+
+InternDistrict(vinhHungDistrict):
+    name: Vinh Hung
+    city: longAnCity
+
+# NAM DINH
+
+InternDistrict(thanhPhoNamDinhDistrict):
+    name: TP. Nam Dinh
+    city: namDinhCity
+
+InternDistrict(giaoThuyDistrict):
+    name: Giao Thuy
+    city: namDinhCity
+
+InternDistrict(haiHauDistrict):
+    name: Hai Hau
+    city: namDinhCity
+
+InternDistrict(myLocDistrict):
+    name: My Loc
+    city: namDinhCity
+
+InternDistrict(namTrucDistrict):
+    name: Nam Truc
+    city: namDinhCity
+
+InternDistrict(nghiaHungDistrict):
+    name: Nghia Hung
+    city: namDinhCity
+
+InternDistrict(trucNinhDistrict):
+    name: Truc Ninh
+    city: namDinhCity
+
+InternDistrict(vuBanDistrict):
+    name: Vu Ban
+    city: namDinhCity
+
+InternDistrict(xuanTruongDistrict):
+    name: Xuan Truong
+    city: namDinhCity
+
+InternDistrict(yYenDistrict):
+    name: Y Yen
+    city: namDinhCity
+
+# NGHE AN
+
+InternDistrict(vinhDistrict):
+    name: Vinh
+    city: ngheAnCity
+
+InternDistrict(cuaLoDistrict):
+    name: Cua Lo
+    city: ngheAnCity
+
+InternDistrict(anhSonDistrict):
+    name: Anh Son
+    city: ngheAnCity
+
+InternDistrict(conCuongDistrict):
+    name: Con Cuong
+    city: ngheAnCity
+
+InternDistrict(dienChauDistrict):
+    name: Dien Chau
+    city: ngheAnCity
+
+InternDistrict(doLuongDistrict):
+    name: Do Luong
+    city: ngheAnCity
+
+InternDistrict(hungNguyenDistrict):
+    name: Hung Nguyen
+    city: ngheAnCity
+
+InternDistrict(kySonDistrict):
+    name: Ky Son
+    city: ngheAnCity
+
+InternDistrict(namDanDistrict):
+    name: Nam Dan
+    city: ngheAnCity
+
+InternDistrict(nghiLocDistrict):
+    name: Nghi Loc
+    city: ngheAnCity
+
+InternDistrict(nghiaDanDistrict):
+    name: Nghia Dan
+    city: ngheAnCity
+
+InternDistrict(quePhongDistrict):
+    name: Que Phong
+    city: ngheAnCity
+
+InternDistrict(quyChauDistrict):
+    name: Quy Chau
+    city: ngheAnCity
+
+InternDistrict(quyHopDistrict):
+    name: Quy Hop
+    city: ngheAnCity
+
+InternDistrict(quynhLuuDistrict):
+    name: Quynh Luu
+    city: ngheAnCity
+
+InternDistrict(tanKyDistrict):
+    name: Tan Ky
+    city: ngheAnCity
+
+InternDistrict(thanhChuongDistrict):
+    name: Thanh Chuong
+    city: ngheAnCity
+
+InternDistrict(tuongDuongDistrict):
+    name: Tuong Duong
+    city: ngheAnCity
+
+InternDistrict(yenThanhDistrict):
+    name: Yen Thanh
+    city: ngheAnCity
+
+# NINH BINH
+
+InternDistrict(thanhPhoNinhBinhDistrict):
+    name: TP. Ninh Binh
+    city: ninhBinhCity
+
+InternDistrict(tamDiepDistrict):
+    name: Tam Diep
+    city: ninhBinhCity
+
+InternDistrict(giaVienDistrict):
+    name: Gia Vien
+    city: ninhBinhCity
+
+InternDistrict(hoaLuDistrict):
+    name: Hoa Lu
+    city: ninhBinhCity
+
+InternDistrict(kimSonDistrict):
+    name: Kim Son
+    city: ninhBinhCity
+
+InternDistrict(nhoQuanDistrict):
+    name: Nho Quan
+    city: ninhBinhCity
+
+InternDistrict(yenKhanhDistrict):
+    name: Yen Khanh
+    city: ninhBinhCity
+
+InternDistrict(yenMoDistrict):
+    name: Yen Mo
+    city: ninhBinhCity
+
+# NINH THUAN
+
+InternDistrict(phanRangThapChamDistrict):
+    name: Phan Rang - Thap Cham
+    city: ninhThuanCity
+
+InternDistrict(bacAiDistrict):
+    name: Bac Ai
+    city: ninhThuanCity
+
+InternDistrict(ninhHaiDistrict):
+    name: Ninh Hai
+    city: ninhThuanCity
+
+InternDistrict(ninhPhuocDistrict):
+    name: Ninh Phuoc
+    city: ninhThuanCity
+
+InternDistrict(ninhSonDistrict):
+    name: Ninh Son
+    city: ninhThuanCity
+
+# PHU THO
+
+InternDistrict(vietTriDistrict):
+    name: Viet Tri
+    city: phuThoCity
+
+InternDistrict(thiXaPhuThoDistrict):
+    name: TX. Phu Tho
+    city: phuThoCity
+
+InternDistrict(doanHungDistrict):
+    name: Doan Hung
+    city: phuThoCity
+
+InternDistrict(haHoaDistrict):
+    name: Ha Hoa
+    city: phuThoCity
+
+InternDistrict(lamThaoDistrict):
+    name: Lam Thao
+    city: phuThoCity
+
+InternDistrict(phuNinhDistrict):
+    name: Phu Ninh
+    city: phuThoCity
+
+InternDistrict(camKheDistrict):
+    name: Cam Khe
+    city: phuThoCity
+
+InternDistrict(tamNongDistrict):
+    name: Tam Nong
+    city: phuThoCity
+
+InternDistrict(thanhBaDistrict):
+    name: Thanh Ba
+    city: phuThoCity
+
+InternDistrict(thanhSonDistrict):
+    name: Thanh Son
+    city: phuThoCity
+
+InternDistrict(thanhThuyDistrict):
+    name: Thanh Thuy
+    city: phuThoCity
+
+InternDistrict(yenLapDistrict):
+    name: Yen Lap
+    city: phuThoCity
+
+# QUANG BINH
+
+InternDistrict(dongHoiDistrict):
+    name: Dong Hoi
+    city: quangBinhCity
+
+InternDistrict(boTrachDistrict):
+    name: Bo Trach
+    city: quangBinhCity
+
+InternDistrict(leThuyDistrict):
+    name: Le Thuy
+    city: quangBinhCity
+
+InternDistrict(minhHoaDistrict):
+    name: Minh Hoa
+    city: quangBinhCity
+
+InternDistrict(quangNinhDistrict):
+    name: Quang Ninh
+    city: quangBinhCity
+
+InternDistrict(quangTrachDistrict):
+    name: Quang Trach
+    city: quangBinhCity
+
+InternDistrict(tuyenHoaDistrict):
+    name: Tuyen Hoa
+    city: quangBinhCity
+
+# QUANG NAM
+
+InternDistrict(tamKyDistrict):
+    name: Tam Ky
+    city: quangNamCity
+
+InternDistrict(hoiAnDistrict):
+    name: Hoi An
+    city: quangNamCity
+
+InternDistrict(bacTraMyDistrict):
+    name: Bac Tra My
+    city: quangNamCity
+
+InternDistrict(duyXuyenDistrict):
+    name: Duy Xuyen
+    city: quangNamCity
+
+InternDistrict(daiLocDistrict):
+    name: Dai Loc
+    city: quangNamCity
+
+InternDistrict(dongGiangDistrict):
+    name: Dong Giang
+    city: quangNamCity
+
+InternDistrict(dienBanDistrict):
+    name: Dien Ban
+    city: quangNamCity
+
+InternDistrict(hiepDucDistrict):
+    name: Hiep Duc
+    city: quangNamCity
+
+InternDistrict(namGiangDistrict):
+    name: Nam Giang
+    city: quangNamCity
+
+InternDistrict(namTraMyDistrict):
+    name: Nam Tra My
+    city: quangNamCity
+
+InternDistrict(phuNinhDistrict):
+    name: Phu Ninh
+    city: quangNamCity
+
+InternDistrict(nuiThanhDistrict):
+    name: Nui Thanh
+    city: quangNamCity
+
+InternDistrict(phuocSonDistrict):
+    name: Phuoc Son
+    city: quangNamCity
+
+InternDistrict(queSonDistrict):
+    name: Que Son
+    city: quangNamCity
+
+InternDistrict(tayGiangDistrict):
+    name: Tay Giang
+    city: quangNamCity
+
+InternDistrict(tienPhuocDistrict):
+    name:  Tien Phuoc
+    city: quangNamCity
+
+InternDistrict(thangBinhDistrict):
+    name: Thang Binh
+    city: quangNamCity
+
+# QUANG NGAI
+
+InternDistrict(thiXaQuangNgaiDistrict):
+    name: TX. Quang Ngai
+    city: quangNgaiCity
+
+InternDistrict(baToDistrict):
+    name: Ba To
+    city: quangNgaiCity
+
+InternDistrict(binhSonDistrict):
+    name: Binh Son
+    city: quangNgaiCity
+
+InternDistrict(ducPhoDistrict):
+    name: Duc Pho
+    city: quangNgaiCity
+
+InternDistrict(lySonDistrict):
+    name: Ly Son
+    city: quangNgaiCity
+
+InternDistrict(moDucDistrict):
+    name: Mo Duc
+    city: quangNgaiCity
+
+InternDistrict(minhLongDistrict):
+    name: Minh Long
+    city: quangNgaiCity
+
+InternDistrict(nghiaHanhDistrict):
+    name: Nghia Hanh
+    city: quangNgaiCity
+
+InternDistrict(sonHaDistrict):
+    name: Son Ha
+    city: quangNgaiCity
+
+InternDistrict(sonTayDistrict):
+    name: Son Tay
+    city: quangNgaiCity
+
+InternDistrict(sonTinhDistrict):
+    name: Son Tinh
+    city: quangNgaiCity
+
+InternDistrict(tuNghiaDistrict):
+    name: Tu Nghia
+    city: quangNgaiCity
+
+InternDistrict(tayTraDistrict):
+    name: Tay Tra
+    city: quangNgaiCity
+
+InternDistrict(traBongDistrict):
+    name: Tra Bong
+    city: quangNgaiCity
+
+# QUANG NINH
+
+InternDistrict(haLongDistrict):
+    name: Ha Long
+    city: quangNinhCity
+
+InternDistrict(camPhaDistrict):
+    name: Cam Pha
+    city: quangNinhCity
+
+InternDistrict(mongCaiDistrict):
+    name: Mong Cai
+    city: quangNinhCity
+
+InternDistrict(uongBiDistrict):
+    name: Uong Bi
+    city: quangNinhCity
+
+InternDistrict(baCheDistrict):
+    name: Ba Che
+    city: quangNinhCity
+
+InternDistrict(binhLieuDistrict):
+    name: Binh Lieu
+    city: quangNinhCity
+
+InternDistrict(coToDistrict):
+    name: Co To
+    city: quangNinhCity
+
+InternDistrict(damHaDistrict):
+    name: Dam Ha
+    city: quangNinhCity
+
+InternDistrict(dongTrieuDistrict):
+    name: Dong Trieu
+    city: quangNinhCity
+
+InternDistrict(haiHaDistrict):
+    name: Hai Ha
+    city: quangNinhCity
+
+InternDistrict(hoanhBoDistrict):
+    name: Hoanh Bo
+    city: quangNinhCity
+
+InternDistrict(tienYenDistrict):
+    name: Tien Yen
+    city: quangNinhCity
+
+InternDistrict(vanDonDistrict):
+    name: Van Don
+    city: quangNinhCity
+
+InternDistrict(yenHungDistrict):
+    name: Yen Hung
+    city: quangNinhCity
+
+# QUANG TRI
+
+InternDistrict(dongHaDistrict):
+    name: Dong Ha
+    city: quangTriCity
+
+InternDistrict(quangTriDistrict):
+    name: Quang Tri
+    city: quangTriCity
+
+InternDistrict(camLoDistrict):
+    name: Cam Lo
+    city: quangTriCity
+
+InternDistrict(conCoDistrict):
+    name: Con Co
+    city: quangTriCity
+
+InternDistrict(daKrongDistrict):
+    name: Da Krong
+    city: quangTriCity
+
+InternDistrict(gioLinhDistrict):
+    name: Gio Linh
+    city: quangTriCity
+
+InternDistrict(haiLangDistrict):
+    name: Hai Lang
+    city: quangTriCity
+
+InternDistrict(huongHoaDistrict):
+    name: Huong Hoa
+    city: quangTriCity
+
+InternDistrict(trieuPhongDistrict):
+    name: Trieu Phong
+    city: quangTriCity
+
+InternDistrict(vinhLinhDistrict):
+    name: Vinh Linh
+    city: quangTriCity
+
+# SOC TRANG
+
+InternDistrict(socTrangDistrict):
+    name: Soc Trang
+    city: socTrangCity
+
+InternDistrict(cuLaoDungDistrict):
+    name: Cu Lao Dung
+    city: socTrangCity
+
+InternDistrict(keSachDistrict):
+    name: Ke Sach
+    city: socTrangCity
+
+InternDistrict(longPhuDistrict):
+    name: Long Phu
+    city: socTrangCity
+
+InternDistrict(myTuDistrict):
+    name: My Tu
+    city: socTrangCity
+
+InternDistrict(myXuyenDistrict):
+    name: My Xuyen
+    city: socTrangCity
+
+InternDistrict(ngaNamDistrict):
+    name: Nga Nam
+    city: socTrangCity
+
+InternDistrict(thanhTriDistrict):
+    name: Thanh Tri
+    city: socTrangCity
+
+InternDistrict(vinhChauDistrict):
+    name: Vinh Chau
+    city: socTrangCity
+
+# SON LA
+
+InternDistrict(sonLaDistrict):
+    name: Son La
+    city: sonLaCity
+
+InternDistrict(bacYenDistrict):
+    name: Bac Yen
+    city: sonLaCity
+
+InternDistrict(maiSonDistrict):
+    name: Mai Son
+    city: sonLaCity
+
+InternDistrict(mocChauDistrict):
+    name: Moc Chau
+    city: sonLaCity
+
+InternDistrict(muongLaDistrict):
+    name: Muong La
+    city: sonLaCity
+
+InternDistrict(phuYenDistrict):
+    name: Phu Yen
+    city: sonLaCity
+
+InternDistrict(quynhNhaiDistrict):
+    name: Quynh Nhai
+    city: sonLaCity
+
+InternDistrict(songMaDistrict):
+    name: Song Ma
+    city: sonLaCity
+
+InternDistrict(sopCopDistrict):
+    name: Sop Cop
+    city: sonLaCity
+
+InternDistrict(thuanChauDistrict):
+    name: Thuan Chau
+    city: sonLaCity
+
+InternDistrict(yenChauDistrict):
+    name: Yen Chau
+    city: sonLaCity
+
+# THAI BINH
+
+InternDistrict(thaiBinhDistrict):
+    name: Thai Binh
+    city: thaiBinhCity
+
+InternDistrict(dongHungDistrict):
+    name: Dong Hung
+    city: thaiBinhCity
+
+InternDistrict(hungHaDistrict):
+    name: Hung Ha
+    city: thaiBinhCity
+
+InternDistrict(kienXuongDistrict):
+    name: Kien Xuong
+    city: thaiBinhCity
+
+InternDistrict(quynhPhuDistrict):
+    name: Quynh Phu
+    city: thaiBinhCity
+
+InternDistrict(thaiThuyDistrict):
+    name: Thai Thuy
+    city: thaiBinhCity
+
+InternDistrict(tienHaiDistrict):
+    name: Tien Hai
+    city: thaiBinhCity
+
+InternDistrict(vuThuDistrict):
+    name: Vu Thu
+    city: thaiBinhCity
+
+# THAI NGUYEN
+
+InternDistrict(thaiNguyenDistrict):
+    name: Thai Nguyen
+    city: thaiNguyenCity
+
+InternDistrict(songCongDistrict):
+    name: Song Cong
+    city: thaiNguyenCity
+
+InternDistrict(daiTuDistrict):
+    name: Dai Tu
+    city: thaiNguyenCity
+
+InternDistrict(dinhHoaDistrict):
+    name: Dinh Hoa
+    city: thaiNguyenCity
+
+InternDistrict(dongHyDistrict):
+    name: Dong Hy
+    city: thaiNguyenCity
+
+InternDistrict(phoYenDistrict):
+    name: Pho Yen
+    city: thaiNguyenCity
+
+InternDistrict(phuBinhDistrict):
+    name: Phu Binh
+    city: thaiNguyenCity
+
+InternDistrict(phuLuongDistrict):
+    name: Phu Luong
+    city: thaiNguyenCity
+
+InternDistrict(voNhaiDistrict):
+    name: Vo Nhai
+    city: thaiNguyenCity
+
+# THANH HOA
+
+InternDistrict(thanhHoaDistrict):
+    name: Thanh Hoa
+    city: thanhHoaCity
+
+InternDistrict(bimSonDistrict):
+    name: Bim Son
+    city: thanhHoaCity
+
+InternDistrict(samSonDistrict):
+    name: Sam Son
+    city: thanhHoaCity
+
+InternDistrict(baThuocDistrict):
+    name: Ba Thuoc
+    city: thanhHoaCity
+
+InternDistrict(camThuyDistrict):
+    name: Cam Thuy
+    city: thanhHoaCity
+
+InternDistrict(dongSonDistrict):
+    name: Dong Son
+    city: thanhHoaCity
+
+InternDistrict(haTrungDistrict):
+    name: Ha Trung
+    city: thanhHoaCity
+
+InternDistrict(hauLocDistrict):
+    name: Hau Loc
+    city: thanhHoaCity
+
+InternDistrict(hoangHoaDistrict):
+    name: Hoang Hoa
+    city: thanhHoaCity
+
+InternDistrict(langChanhDistrict):
+    name: Lang Chanh
+    city: thanhHoaCity
+
+InternDistrict(muongLatDistrict):
+    name: Muong Lat
+    city: thanhHoaCity
+
+InternDistrict(ngaSonDistrict):
+    name: Nga Son
+    city: thanhHoaCity
+
+InternDistrict(ngocLacDistrict):
+    name: Ngoc Lac
+    city: thanhHoaCity
+
+InternDistrict(nhuThanhDistrict):
+    name: Nhu Thanh
+    city: thanhHoaCity
+
+InternDistrict(nhuXuanDistrict):
+    name: Nhu Xuan
+    city: thanhHoaCity
+
+InternDistrict(nongCongDistrict):
+    name: Nong Cong
+    city: thanhHoaCity
+
+InternDistrict(quanHoaDistrict):
+    name: Quan Hoa
+    city: thanhHoaCity
+
+InternDistrict(qUanSonDistrict):
+    name: QUan Son
+    city: thanhHoaCity
+
+InternDistrict(quangXuongDistrict):
+    name: Quang Xuong
+    city: thanhHoaCity
+
+InternDistrict(thachThanhDistrict):
+    name: Thach Thanh
+    city: thanhHoaCity
+
+InternDistrict(thieuHoaDistrict):
+    name: Thieu Hoa
+    city: thanhHoaCity
+
+InternDistrict(thoXuanDistrict):
+    name: Tho Xuan
+    city: thanhHoaCity
+
+InternDistrict(thuongXuanDistrict):
+    name: Thuong Xuan
+    city: thanhHoaCity
+
+InternDistrict(tinhGiaDistrict):
+    name: Tinh Gia
+    city: thanhHoaCity
+
+InternDistrict(trieuSonDistrict):
+    name: Trieu Son
+    city: thanhHoaCity
+
+InternDistrict(vinhLocDistrict):
+    name: Vinh Loc
+    city: thanhHoaCity
+
+InternDistrict(yenDinhDistrict):
+    name: Yen Dinh
+    city: thanhHoaCity
+
+# TIEN GIANG
+
+InternDistrict(myThoDistrict):
+    name: My Tho
+    city: tienGiangCity
+
+InternDistrict(goCongDistrict):
+    name: Go Cong
+    city: tienGiangCity
+
+InternDistrict(caiBeDistrict):
+    name: Cai Be
+    city: tienGiangCity
+
+InternDistrict(caiLayDistrict):
+    name: Cai Lay
+    city: tienGiangCity
+
+InternDistrict(chauThanhDistrict):
+    name: Chau Thanh
+    city: tienGiangCity
+
+InternDistrict(choGaoDistrict):
+    name: Cho Gao
+    city: tienGiangCity
+
+InternDistrict(goCongDongDistrict):
+    name: Go Cong Dong
+    city: tienGiangCity
+
+InternDistrict(goCongTayDistrict):
+    name: Go Cong Tay
+    city: tienGiangCity
+
+InternDistrict(tanPhuocDistrict):
+    name: Tan Phuoc
+    city: tienGiangCity
+
+# TRA VINH
+
+InternDistrict(traVinhDistrict):
+    name: Tra Vinh
+    city: traVinhCity
+
+InternDistrict(cangLongDistrict):
+    name: Cang Long
+    city: traVinhCity
+
+InternDistrict(cauKeDistrict):
+    name: Cau Ke
+    city: traVinhCity
+
+InternDistrict(cauNgangDistrict):
+    name: Cau Ngang
+    city: traVinhCity
+
+InternDistrict(chauThanhDistrict):
+    name: Chau Thanh
+    city: traVinhCity
+
+InternDistrict(duyenHaiDistrict):
+    name: Duyen Hai
+    city: traVinhCity
+
+InternDistrict(tienCanDistrict):
+    name: Tien Can
+    city: traVinhCity
+
+InternDistrict(traCuDistrict):
+    name: Tra Cu
+    city: traVinhCity
+
+# TUYEN QUANG
+
+InternDistrict(tuyenQuangDistrict):
+    name: Tuyen Quang
+    city: tuyenQuangCity
+
+InternDistrict(chiemHoaDistrict):
+    name: Chiem Hoa
+    city: tuyenQuangCity
+
+InternDistrict(hamYenDistrict):
+    name: Ham Yen
+    city: tuyenQuangCity
+
+InternDistrict(naHangDistrict):
+    name: Na Hang
+    city: tuyenQuangCity
+
+InternDistrict(sonDuongDistrict):
+    name: Son Duong
+    city: tuyenQuangCity
+
+InternDistrict(yenSonDistrict):
+    name: Yen Son
+    city: tuyenQuangCity
+
+# VINH LONG
+
+InternDistrict(vinhLongDistrict):
+    name: Vinh Long
+    city: vinhLongCity
+
+InternDistrict(binhMinhDistrict):
+    name: Binh Minh
+    city: vinhLongCity
+
+InternDistrict(longHoDistrict):
+    name: Long Ho
+    city: vinhLongCity
+
+InternDistrict(mangThitDistrict):
+    name: Mang Thit
+    city: vinhLongCity
+
+InternDistrict(tamBinhDistrict):
+    name: Tam Binh
+    city: vinhLongCity
+
+InternDistrict(traOnDistrict):
+    name: Tra On
+    city: vinhLongCity
+
+InternDistrict(vungLiemDistrict):
+    name: Vung Liem
+    city: vinhLongCity
+
+# VINH PHUC
+
+InternDistrict(vinhYenDistrict):
+    name: Vinh Yen
+    city: vinhPhucCity
+
+InternDistrict(phucYenDistrict):
+    name: Phuc Yen
+    city: vinhPhucCity
+
+InternDistrict(binhXuyenDistrict):
+    name: Binh Xuyen
+    city: vinhPhucCity
+
+InternDistrict(lapThachDistrict):
+    name: Lap Thach
+    city: vinhPhucCity
+
+InternDistrict(meLinhDistrict):
+    name: Me Linh
+    city: vinhPhucCity
+
+InternDistrict(tamDuongDistrict):
+    name: Tam Duong
+    city: vinhPhucCity
+
+InternDistrict(tamDaoDistrict):
+    name: Tam Dao
+    city: vinhPhucCity
+
+InternDistrict(vinhTuongDistrict):
+    name: Vinh Tuong
+    city: vinhPhucCity
+
+InternDistrict(yenLacDistrict):
+    name: Yen Lac
+    city: vinhPhucCity
+
+# YEN BAI
+
+InternDistrict(yenBaiDistrict):
+    name: Yen Bai
+    city: yenBaiCity
+
+InternDistrict(nghiaLoDistrict):
+    name: Nghia Lo
+    city: yenBaiCity
+
+InternDistrict(lucYenDistrict):
+    name: Luc Yen
+    city: yenBaiCity
+
+InternDistrict(muCangChaiDistrict):
+    name: Mu Cang Chai
+    city: yenBaiCity
+
+InternDistrict(tramTauDistrict):
+    name: Tram Tau
+    city: yenBaiCity
+
+InternDistrict(tranYenDistrict):
+    name: Tran Yen
+    city: yenBaiCity
+
+InternDistrict(vanChanDistrict):
+    name: Van Chan
+    city: yenBaiCity
+
+InternDistrict(vanYenDistrict):
+    name: Van Yen
+    city: yenBaiCity
+
+InternDistrict(yenBinhDistrict):
+    name: Yen Binh
+    city: yenBaiCity
+
+# PHU YEN
+
+InternDistrict(thanhPhoTuyHoaDistrict):
+    name: TP. Tuy Hoa
+    city: phuYenCity
+
+InternDistrict(dongXuanDistrict):
+    name: Dong Xuan
+    city: phuYenCity
+
+InternDistrict(phuHoaDistrict):
+    name: Phu Hoa
+    city: phuYenCity
+
+InternDistrict(songCauDistrict):
+    name: Song Cau
+    city: phuYenCity
+
+InternDistrict(songHinhDistrict):
+    name: Song Hinh
+    city: phuYenCity
+
+InternDistrict(sonHoaDistrict):
+    name: Son Hoa
+    city: phuYenCity
+
+InternDistrict(tuyAnDistrict):
+    name: Tuy An
+    city: phuYenCity
+
+InternDistrict(tuyHoaDistrict):
+    name:  Tuy Hoa
+    city: phuYenCity
+
+# CAN THO
+
+InternDistrict(viThanhDistrict):
+    name: Vi Thanh
+    city: canThoCity
+
+InternDistrict(chauThanhDistrict):
+    name: Chau Thanh
+    city: canThoCity
+
+InternDistrict(chauThanhADistrict):
+    name: Chau Thanh A
+    city: canThoCity
+
+InternDistrict(longMyDistrict):
+    name: Long My
+    city: canThoCity
+
+InternDistrict(phungHiepDistrict):
+    name: Phung Hiep
+    city: canThoCity
+
+InternDistrict(viThuyDistrict):
+    name: Vi Thuy
+    city: canThoCity
+
+# DA NANG
+
+InternDistrict(haiChauDistrict):
+    name: Hai Chau
+    city: daNangCity
+
+InternDistrict(lienChieuDistrict):
+    name: Lien Chieu
+    city: daNangCity
+
+InternDistrict(nguHanhSonDistrict):
+    name: Ngu Hanh Son
+    city: daNangCity
+
+InternDistrict(sonTraDistrict):
+    name: Son Tra
+    city: daNangCity
+
+InternDistrict(thanhKheDistrict):
+    name: Thanh Khe
+    city: daNangCity
+
+InternDistrict(hoaVangDistrict):
+    name: Hoa Vang
+    city: daNangCity
+
+InternDistrict(hoangSaDistrict):
+    name: Hoang Sa
+    city: daNangCity

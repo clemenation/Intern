@@ -1,0 +1,214 @@
+# MAJOR
+
+InternMajor(animationandVisualEffectsMajor):
+    name: Animation and Visual Effects
+
+InternMajor(anthropologyMajor):
+    name: Anthropology
+
+InternMajor(architecturalEngineeringMajor):
+    name: Architectural Engineering
+
+InternMajor(architectureMajor):
+    name: Architecture
+
+InternMajor(behavioralHealthCounselingMajor):
+    name: Behavioral Health Counseling
+
+InternMajor(biologicalSciencesMajor):
+    name: Biological Sciences
+
+InternMajor(biomedicalEngineeringMajor):
+    name: Biomedical Engineering
+
+InternMajor(businessAdministrationMajor):
+    name: Business Administration
+
+InternMajor(businessandEngineeringMajor):
+    name: Business and Engineering
+
+InternMajor(chemicalEngineeringMajor):
+    name: Chemical Engineering
+
+InternMajor(chemistryMajor):
+    name: Chemistry
+
+InternMajor(civilEngineeringMajor):
+    name: Civil Engineering
+
+InternMajor(communicationMajor):
+    name: Communication
+
+InternMajor(communicationandAppliedTechnologyMajor):
+    name: Communication and Applied Technology
+
+InternMajor(computerEngineeringMajor):
+    name: Computer Engineering
+
+InternMajor(computerScienceMajor):
+    name: Computer Science
+
+InternMajor(computingandSecurityTechnologyMajor):
+    name: Computing and Security Technology
+
+InternMajor(constructionManagementMajor):
+    name: Construction Management
+
+InternMajor(criminalJusticeMajor):
+    name: Criminal Justice
+
+InternMajor(culinaryArtsMajor):
+    name: Culinary Arts
+
+InternMajor(culinaryScienceMajor):
+    name: Culinary Science
+
+InternMajor(customDesignedMajorMajor):
+    name: Custom-Designed Major
+
+InternMajor(danceMajor):
+    name: Dance
+
+InternMajor(designandMerchandisingMajor):
+    name: Design and Merchandising
+
+InternMajor(economicsMajor):
+    name: Economics
+
+InternMajor(electricalEngineeringMajor):
+    name: Electrical Engineering
+
+InternMajor(elementaryEducationMajor):
+    name: Elementary Education
+
+InternMajor(engineeringMajor):
+    name: Engineering
+
+InternMajor(engineeringTechnologyMajor):
+    name: Engineering Technology
+
+InternMajor(englishMajor):
+    name: English
+
+InternMajor(entertainmentandArtsManagementMajor):
+    name: Entertainment and Arts Management
+
+InternMajor(environmentalEngineeringMajor):
+    name: Environmental Engineering
+
+InternMajor(environmentalScienceMajor):
+    name: Environmental Science
+
+InternMajor(environmentalStudiesMajor):
+    name: Environmental Studies
+
+InternMajor(fashionDesignMajor):
+    name: Fashion Design
+
+InternMajor(filmandVideoMajor):
+    name: Film and Video
+
+InternMajor(gameArtandProductionMajor):
+    name: Game Art and Production
+
+InternMajor(generalStudiesMajor):
+    name: General Studies
+
+InternMajor(graphicDesignMajor):
+    name: Graphic Design
+
+InternMajor(healthSciencesMajor):
+    name: Health Sciences
+
+InternMajor(healthServicesAdministrationMajor):
+    name: Health-Services Administration
+
+InternMajor(historyMajor):
+    name: History
+
+InternMajor(hospitalityManagementMajor):
+    name: Hospitality Management
+
+InternMajor(informationSystemsMajor):
+    name: Information Systems
+
+InternMajor(informationTechnologyMajor):
+    name: Information Technology
+
+InternMajor(internationalAreaStudiesMajor):
+    name: International Area Studies
+
+InternMajor(interiorDesignMajor):
+    name: Interior Design
+
+InternMajor(invasiveCardiovascularTechnologyMajor):
+    name: Invasive Cardiovascular Technology
+
+InternMajor(materialsScienceandEngineeringMajor):
+    name: Materials Science and Engineering
+
+InternMajor(mathematicsMajor):
+    name: Mathematics
+
+InternMajor(mechanicalEngineeringandMechanicsMajor):
+    name: Mechanical Engineering and Mechanics
+
+InternMajor(musicIndustryMajor):
+    name: Music Industry
+
+InternMajor(nursingMajor):
+    name: Nursing
+
+InternMajor(nutritionandFoodsMajor):
+    name: Nutrition and Foods
+
+InternMajor(philosophyMajor):
+    name: Philosophy
+
+InternMajor(photographyMajor):
+    name: Photography
+
+InternMajor(physicsMajor):
+    name: Physics
+
+InternMajor(physicsTeachingCertificationMajor):
+    name: Physics Teaching Certification
+
+InternMajor(politicalScienceMajor):
+    name: Political Science
+
+InternMajor(productDesignMajor):
+    name: Product Design
+
+InternMajor(professionalStudiesMajor):
+    name: Professional Studies
+
+InternMajor(propertyManagementMajor):
+    name: Property Management
+
+InternMajor(psychologyMajor):
+    name: Psychology
+
+InternMajor(radiologicTechnologyMajor):
+    name: Radiologic Technology
+
+InternMajor(screenwritingandPlaywritingMajor):
+    name: Screenwriting and Playwriting
+
+InternMajor(sociologyMajor):
+    name: Sociology
+
+InternMajor(softwareEngineeringMajor):
+    name: Software Engineering
+
+InternMajor(sportManagementMajor):
+    name: Sport Management
+
+InternMajor(teacherEducationMajor):
+    name: Teacher Education
+
+InternMajor(televisionMajor):
+    name: Television
+
+InternMajor(webDevelopmentandInteractionDesignMajor):
+    name: Web Development and Interaction Design

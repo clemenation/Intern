@@ -1,0 +1,1219 @@
+# DUNG NGUYEN
+
+InternContactInfo(dungNguyenContactInfo):
+    contactEmail: nguyentuandung2991@gmail.com
+    address: dungNguyenAddress
+
+InternAddress(dungNguyenAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: dungNguyenContactInfo
+
+InternJobSeeker(dungnguyen):
+    email: nguyentuandung2991@gmail.com
+    password: dungnguyen
+    aboutMe: I'm Dung
+    fullName: Nguyen Tuan Dung
+    college: Hanoi University of Science and Technology
+    userType: Job Seeker
+    contactInfo: dungNguyenContactInfo
+    isAdmin: true
+    
+InternContactInfo(dungNguyenFirstResumeContactInfo):
+    contactEmail: me@dungnguyenphotography.com
+    address: dungNguyenFirstResumeAddress
+
+InternAddress(dungNguyenFirstResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: dungNguyenFirstResumeContactInfo
+
+InternEducation(dungNguyenFirstResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(dungNguyenFirstResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: dungnguyen
+    contactInfo: dungNguyenFirstResumeContactInfo
+    workExperience: 1
+    education: dungNguyenFirstResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+    
+InternContactInfo(dungNguyenSecondResumeContactInfo):
+    contactEmail: me@dungnguyenphotography.com
+    address: dungNguyenSecondResumeAddress
+
+InternAddress(dungNguyenSecondResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: dungNguyenSecondResumeContactInfo
+
+InternEducation(dungNguyenSecondResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(dungNguyenSecondResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: dungnguyen
+    contactInfo: dungNguyenSecondResumeContactInfo
+    workExperience: 1
+    education: dungNguyenSecondResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+
+# VAN DAM
+
+InternContactInfo(vanndContactInfo):
+    contactEmail: nguyenducvan@gmail.com
+    address: vanndAddress
+
+InternAddress(vanndAddress):
+    address: 13 Kim Hoa
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: vanndContactInfo
+
+InternJobSeeker(vannd):
+    email: vannd@gmail.com
+    password: vannd
+    aboutMe: I'm Van
+    fullName: Nguyen Duc Van
+    college: Hanoi University of Science and Technology
+    userType: Job Seeker
+    contactInfo: vanndContactInfo
+    isAdmin: false
+    
+InternContactInfo(vanndFirstResumeContactInfo):
+    contactEmail: me@vanndphotography.com
+    address: vanndFirstResumeAddress
+
+InternAddress(vanndFirstResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: vanndFirstResumeContactInfo
+
+InternEducation(vanndFirstResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(vanndFirstResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: vannd
+    contactInfo: vanndFirstResumeContactInfo
+    workExperience: 1
+    education: vanndFirstResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+
+# NGUYEN QUAC
+
+InternContactInfo(nguyenquacContactInfo):
+    contactEmail: nguyentuandung2991@gmail.com
+    address: nguyenquacAddress
+
+InternAddress(nguyenquacAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: nguyenquacContactInfo
+
+InternJobSeeker(nguyenquac):
+    email: nguyenquac@gmail.com
+    password: nguyenquac
+    aboutMe: I'm Quac
+    fullName: Nguyen Quang Anh
+    college: Hanoi University of Science and Technology
+    userType: Job Seeker
+    contactInfo: nguyenquacContactInfo
+    isAdmin: false
+    
+InternContactInfo(nguyenquacFirstResumeContactInfo):
+    contactEmail: me@nguyenquacphotography.com
+    address: nguyenquacFirstResumeAddress
+
+InternAddress(nguyenquacFirstResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: nguyenquacFirstResumeContactInfo
+
+InternEducation(nguyenquacFirstResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(nguyenquacFirstResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: nguyenquac
+    contactInfo: nguyenquacFirstResumeContactInfo
+    workExperience: 1
+    education: nguyenquacFirstResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+    
+InternContactInfo(nguyenquacSecondResumeContactInfo):
+    contactEmail: me@nguyenquacphotography.com
+    address: nguyenquacSecondResumeAddress
+
+InternAddress(nguyenquacSecondResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: nguyenquacSecondResumeContactInfo
+
+InternEducation(nguyenquacSecondResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(nguyenquacSecondResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: nguyenquac
+    contactInfo: nguyenquacSecondResumeContactInfo
+    workExperience: 1
+    education: nguyenquacSecondResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+
+# TRIEU LT
+
+InternContactInfo(trieultContactInfo):
+    contactEmail: nguyentuandung2991@gmail.com
+    address: trieultAddress
+
+InternAddress(trieultAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: trieultContactInfo
+
+InternJobSeeker(trieult):
+    email: trieult@gmail.com
+    password: trieult
+    aboutMe: I'm Trieu
+    fullName: Le Hai Trieu
+    college: Hanoi University of Science and Technology
+    userType: Job Seeker
+    contactInfo: trieultContactInfo
+    isAdmin: false
+    
+InternContactInfo(trieultFirstResumeContactInfo):
+    contactEmail: me@trieultphotography.com
+    address: trieultFirstResumeAddress
+
+InternAddress(trieultFirstResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: trieultFirstResumeContactInfo
+
+InternEducation(trieultFirstResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(trieultFirstResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: trieult
+    contactInfo: trieultFirstResumeContactInfo
+    workExperience: 1
+    education: trieultFirstResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+    
+InternContactInfo(trieultSecondResumeContactInfo):
+    contactEmail: me@trieultphotography.com
+    address: trieultSecondResumeAddress
+
+InternAddress(trieultSecondResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: trieultSecondResumeContactInfo
+
+InternEducation(trieultSecondResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(trieultSecondResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: trieult
+    contactInfo: trieultSecondResumeContactInfo
+    workExperience: 1
+    education: trieultSecondResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+
+# HOANG TN
+
+InternContactInfo(hoangtnContactInfo):
+    contactEmail: nguyentuandung2991@gmail.com
+    address: hoangtnAddress
+
+InternAddress(hoangtnAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: hoangtnContactInfo
+
+InternJobSeeker(hoangtn):
+    email: hoangtn@gmail.com
+    password: hoangtn
+    aboutMe: I'm Hoang
+    fullName: Tran Nhat Hoang
+    college: Hanoi University of Science and Technology
+    userType: Job Seeker
+    contactInfo: hoangtnContactInfo
+    isAdmin: false
+    
+InternContactInfo(hoangtnFirstResumeContactInfo):
+    contactEmail: me@hoangtnphotography.com
+    address: hoangtnFirstResumeAddress
+
+InternAddress(hoangtnFirstResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: hoangtnFirstResumeContactInfo
+
+InternEducation(hoangtnFirstResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(hoangtnFirstResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: hoangtn
+    contactInfo: hoangtnFirstResumeContactInfo
+    workExperience: 1
+    education: hoangtnFirstResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+    
+InternContactInfo(hoangtnSecondResumeContactInfo):
+    contactEmail: me@hoangtnphotography.com
+    address: hoangtnSecondResumeAddress
+
+InternAddress(hoangtnSecondResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: hoangtnSecondResumeContactInfo
+
+InternEducation(hoangtnSecondResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(hoangtnSecondResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: hoangtn
+    contactInfo: hoangtnSecondResumeContactInfo
+    workExperience: 1
+    education: hoangtnSecondResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+
+# KIEN BD
+
+InternContactInfo(kienbdContactInfo):
+    contactEmail: nguyentuandung2991@gmail.com
+    address: kienbdAddress
+
+InternAddress(kienbdAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: kienbdContactInfo
+
+InternJobSeeker(kienbd):
+    email: kienbd@gmail.com
+    password: kienbd
+    aboutMe: I'm Kien
+    fullName: Bui Doan Kien
+    college: Hanoi University of Science and Technology
+    userType: Job Seeker
+    contactInfo: kienbdContactInfo
+    isAdmin: false
+    
+InternContactInfo(kienbdFirstResumeContactInfo):
+    contactEmail: me@kienbdphotography.com
+    address: kienbdFirstResumeAddress
+
+InternAddress(kienbdFirstResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: kienbdFirstResumeContactInfo
+
+InternEducation(kienbdFirstResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(kienbdFirstResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: kienbd
+    contactInfo: kienbdFirstResumeContactInfo
+    workExperience: 1
+    education: kienbdFirstResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+    
+InternContactInfo(kienbdSecondResumeContactInfo):
+    contactEmail: me@kienbdphotography.com
+    address: kienbdSecondResumeAddress
+
+InternAddress(kienbdSecondResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: kienbdSecondResumeContactInfo
+
+InternEducation(kienbdSecondResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(kienbdSecondResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: kienbd
+    contactInfo: kienbdSecondResumeContactInfo
+    workExperience: 1
+    education: kienbdSecondResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+
+# DUC TM
+
+InternContactInfo(ductmContactInfo):
+    contactEmail: nguyentuandung2991@gmail.com
+    address: ductmAddress
+
+InternAddress(ductmAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: ductmContactInfo
+
+InternJobSeeker(ductm):
+    email: ductm@gmail.com
+    password: ductm
+    aboutMe: I'm Duc
+    fullName: Ta Minh Duc
+    college: Hanoi University of Science and Technology
+    userType: Job Seeker
+    contactInfo: ductmContactInfo
+    isAdmin: false
+    
+InternContactInfo(ductmFirstResumeContactInfo):
+    contactEmail: me@ductmphotography.com
+    address: ductmFirstResumeAddress
+
+InternAddress(ductmFirstResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: ductmFirstResumeContactInfo
+
+InternEducation(ductmFirstResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(ductmFirstResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: ductm
+    contactInfo: ductmFirstResumeContactInfo
+    workExperience: 1
+    education: ductmFirstResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+    
+InternContactInfo(ductmSecondResumeContactInfo):
+    contactEmail: me@ductmphotography.com
+    address: ductmSecondResumeAddress
+
+InternAddress(ductmSecondResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: ductmSecondResumeContactInfo
+
+InternEducation(ductmSecondResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(ductmSecondResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: ductm
+    contactInfo: ductmSecondResumeContactInfo
+    workExperience: 1
+    education: ductmSecondResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+
+# TUNG DD
+
+InternContactInfo(tungddContactInfo):
+    contactEmail: nguyentuandung2991@gmail.com
+    address: tungddAddress
+
+InternAddress(tungddAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: tungddContactInfo
+
+InternJobSeeker(tungdd):
+    email: tungdd@gmail.com
+    password: tungdd
+    aboutMe: I'm Tung
+    fullName: Dao Duc Tung
+    college: Hanoi University of Science and Technology
+    userType: Job Seeker
+    contactInfo: tungddContactInfo
+    isAdmin: false
+    
+InternContactInfo(tungddFirstResumeContactInfo):
+    contactEmail: me@tungddphotography.com
+    address: tungddFirstResumeAddress
+
+InternAddress(tungddFirstResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: tungddFirstResumeContactInfo
+
+InternEducation(tungddFirstResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(tungddFirstResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: tungdd
+    contactInfo: tungddFirstResumeContactInfo
+    workExperience: 1
+    education: tungddFirstResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+    
+InternContactInfo(tungddSecondResumeContactInfo):
+    contactEmail: me@tungddphotography.com
+    address: tungddSecondResumeAddress
+
+InternAddress(tungddSecondResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: tungddSecondResumeContactInfo
+
+InternEducation(tungddSecondResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(tungddSecondResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: tungdd
+    contactInfo: tungddSecondResumeContactInfo
+    workExperience: 1
+    education: tungddSecondResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+
+# THANH NC
+
+InternContactInfo(thanhncContactInfo):
+    contactEmail: nguyentuandung2991@gmail.com
+    address: thanhncAddress
+
+InternAddress(thanhncAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: thanhncContactInfo
+
+InternJobSeeker(thanhnc):
+    email: thanhnc@gmail.com
+    password: thanhnc
+    aboutMe: I'm Thanh
+    fullName: Nguyen Cong Thanh
+    college: Hanoi University of Science and Technology
+    userType: Job Seeker
+    contactInfo: thanhncContactInfo
+    isAdmin: false
+    
+InternContactInfo(thanhncFirstResumeContactInfo):
+    contactEmail: me@thanhncphotography.com
+    address: thanhncFirstResumeAddress
+
+InternAddress(thanhncFirstResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: thanhncFirstResumeContactInfo
+
+InternEducation(thanhncFirstResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(thanhncFirstResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: thanhnc
+    contactInfo: thanhncFirstResumeContactInfo
+    workExperience: 1
+    education: thanhncFirstResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+    
+InternContactInfo(thanhncSecondResumeContactInfo):
+    contactEmail: me@thanhncphotography.com
+    address: thanhncSecondResumeAddress
+
+InternAddress(thanhncSecondResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: thanhncSecondResumeContactInfo
+
+InternEducation(thanhncSecondResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(thanhncSecondResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: thanhnc
+    contactInfo: thanhncSecondResumeContactInfo
+    workExperience: 1
+    education: thanhncSecondResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+
+# QUAN NT
+
+InternContactInfo(quanntContactInfo):
+    contactEmail: nguyentuandung2991@gmail.com
+    address: quanntAddress
+
+InternAddress(quanntAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: quanntContactInfo
+
+InternJobSeeker(quannt):
+    email: quannt@gmail.com
+    password: quannt
+    aboutMe: I'm Quan
+    fullName: Nguyen Trung Quan
+    college: Hanoi University of Science and Technology
+    userType: Job Seeker
+    contactInfo: quanntContactInfo
+    isAdmin: false
+    
+InternContactInfo(quanntFirstResumeContactInfo):
+    contactEmail: me@quanntphotography.com
+    address: quanntFirstResumeAddress
+
+InternAddress(quanntFirstResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: quanntFirstResumeContactInfo
+
+InternEducation(quanntFirstResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(quanntFirstResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: quannt
+    contactInfo: quanntFirstResumeContactInfo
+    workExperience: 1
+    education: quanntFirstResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+    
+InternContactInfo(quanntSecondResumeContactInfo):
+    contactEmail: me@quanntphotography.com
+    address: quanntSecondResumeAddress
+
+InternAddress(quanntSecondResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: quanntSecondResumeContactInfo
+
+InternEducation(quanntSecondResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(quanntSecondResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: quannt
+    contactInfo: quanntSecondResumeContactInfo
+    workExperience: 1
+    education: quanntSecondResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+
+# QUAN LE
+
+InternContactInfo(quanleContactInfo):
+    contactEmail: nguyentuandung2991@gmail.com
+    address: quanleAddress
+
+InternAddress(quanleAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: quanleContactInfo
+
+InternJobSeeker(quanle):
+    email: quanle@gmail.com
+    password: quanle
+    aboutMe: I'm Quan
+    fullName: Le Quan
+    college: Hanoi University of Science and Technology
+    userType: Job Seeker
+    contactInfo: quanleContactInfo
+    isAdmin: false
+    
+InternContactInfo(quanleFirstResumeContactInfo):
+    contactEmail: me@quanlephotography.com
+    address: quanleFirstResumeAddress
+
+InternAddress(quanleFirstResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: quanleFirstResumeContactInfo
+
+InternEducation(quanleFirstResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(quanleFirstResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: quanle
+    contactInfo: quanleFirstResumeContactInfo
+    workExperience: 1
+    education: quanleFirstResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+    
+InternContactInfo(quanleSecondResumeContactInfo):
+    contactEmail: me@quanlephotography.com
+    address: quanleSecondResumeAddress
+
+InternAddress(quanleSecondResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: quanleSecondResumeContactInfo
+
+InternEducation(quanleSecondResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(quanleSecondResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: quanle
+    contactInfo: quanleSecondResumeContactInfo
+    workExperience: 1
+    education: quanntSecondResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+
+# TU DOAN
+
+InternContactInfo(tudoanContactInfo):
+    contactEmail: nguyentuandung2991@gmail.com
+    address: tudoanAddress
+
+InternAddress(tudoanAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: tudoanContactInfo
+
+InternJobSeeker(tudoan):
+    email: tudoan@gmail.com
+    password: tudoan
+    aboutMe: I'm Tu
+    fullName: Doan Minh Tu
+    college: Hanoi University of Science and Technology
+    userType: Job Seeker
+    contactInfo: tudoanContactInfo
+    isAdmin: false
+    
+InternContactInfo(tudoanFirstResumeContactInfo):
+    contactEmail: me@tudoanphotography.com
+    address: tudoanFirstResumeAddress
+
+InternAddress(tudoanFirstResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: tudoanFirstResumeContactInfo
+
+InternEducation(tudoanFirstResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(tudoanFirstResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: tudoan
+    contactInfo: tudoanFirstResumeContactInfo
+    workExperience: 1
+    education: tudoanFirstResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+    
+InternContactInfo(tudoanSecondResumeContactInfo):
+    contactEmail: me@tudoanphotography.com
+    address: tudoanSecondResumeAddress
+
+InternAddress(tudoanSecondResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: tudoanSecondResumeContactInfo
+
+InternEducation(tudoanSecondResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(tudoanSecondResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: tudoan
+    contactInfo: tudoanSecondResumeContactInfo
+    workExperience: 1
+    education: tudoanSecondResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+
+# TRUONG NM
+
+InternContactInfo(truongnmContactInfo):
+    contactEmail: nguyentuandung2991@gmail.com
+    address: truongnmAddress
+
+InternAddress(truongnmAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: truongnmContactInfo
+
+InternJobSeeker(truongnm):
+    email: truongnm@gmail.com
+    password: truongnm
+    aboutMe: I'm Truong
+    fullName: Nguyen Minh Truong
+    college: Hanoi University of Science and Technology
+    userType: Job Seeker
+    contactInfo: truongnmContactInfo
+    isAdmin: false
+    
+InternContactInfo(truongnmFirstResumeContactInfo):
+    contactEmail: me@truongnmphotography.com
+    address: truongnmFirstResumeAddress
+
+InternAddress(truongnmFirstResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: truongnmFirstResumeContactInfo
+
+InternEducation(truongnmFirstResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(truongnmFirstResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: truongnm
+    contactInfo: truongnmFirstResumeContactInfo
+    workExperience: 1
+    education: truongnmFirstResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+    
+InternContactInfo(truongnmSecondResumeContactInfo):
+    contactEmail: me@truongnmphotography.com
+    address: truongnmSecondResumeAddress
+
+InternAddress(truongnmSecondResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: truongnmSecondResumeContactInfo
+
+InternEducation(truongnmSecondResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(truongnmSecondResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: truongnm
+    contactInfo: truongnmSecondResumeContactInfo
+    workExperience: 1
+    education: truongnmSecondResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+
+# DIEN DQ
+
+InternContactInfo(diendqContactInfo):
+    contactEmail: nguyentuandung2991@gmail.com
+    address: diendqAddress
+
+InternAddress(diendqAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: diendqContactInfo
+
+InternJobSeeker(diendq):
+    email: diendq@gmail.com
+    password: diendq
+    aboutMe: I'm Dien
+    fullName: Doan Quang Dien
+    college: Hanoi University of Science and Technology
+    userType: Job Seeker
+    contactInfo: diendqContactInfo
+    isAdmin: false
+    
+InternContactInfo(diendqFirstResumeContactInfo):
+    contactEmail: me@diendqphotography.com
+    address: diendqFirstResumeAddress
+
+InternAddress(diendqFirstResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: diendqFirstResumeContactInfo
+
+InternEducation(diendqFirstResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(diendqFirstResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: diendq
+    contactInfo: diendqFirstResumeContactInfo
+    workExperience: 1
+    education: diendqFirstResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+    
+InternContactInfo(diendqSecondResumeContactInfo):
+    contactEmail: me@diendqphotography.com
+    address: diendqSecondResumeAddress
+
+InternAddress(diendqSecondResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: diendqSecondResumeContactInfo
+
+InternEducation(diendqSecondResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(diendqSecondResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: diendq
+    contactInfo: diendqSecondResumeContactInfo
+    workExperience: 1
+    education: diendqSecondResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+
+# MANH TRAN
+
+InternContactInfo(manhtranvanContactInfo):
+    contactEmail: nguyentuandung2991@gmail.com
+    address: manhtranvanAddress
+
+InternAddress(manhtranvanAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: manhtranvanContactInfo
+
+InternJobSeeker(manhtranvan):
+    email: manhtranvan@gmail.com
+    password: manhtranvan
+    aboutMe: I'm Manh
+    fullName: Tran Van Manh
+    college: Hanoi University of Science and Technology
+    userType: Job Seeker
+    contactInfo: manhtranvanContactInfo
+    isAdmin: false
+    
+InternContactInfo(manhtranvanFirstResumeContactInfo):
+    contactEmail: me@manhtranvanphotography.com
+    address: manhtranvanFirstResumeAddress
+
+InternAddress(manhtranvanFirstResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: manhtranvanFirstResumeContactInfo
+
+InternEducation(manhtranvanFirstResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(manhtranvanFirstResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: manhtranvan
+    contactInfo: manhtranvanFirstResumeContactInfo
+    workExperience: 1
+    education: manhtranvanFirstResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+    
+InternContactInfo(manhtranvanSecondResumeContactInfo):
+    contactEmail: me@manhtranvanphotography.com
+    address: manhtranvanSecondResumeAddress
+
+InternAddress(manhtranvanSecondResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: manhtranvanSecondResumeContactInfo
+
+InternEducation(manhtranvanSecondResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(manhtranvanSecondResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: manhtranvan
+    contactInfo: manhtranvanSecondResumeContactInfo
+    workExperience: 1
+    education: manhtranvanSecondResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+
+# THAO BUI
+
+InternContactInfo(thaobuiContactInfo):
+    contactEmail: nguyentuandung2991@gmail.com
+    address: thaobuiAddress
+
+InternAddress(thaobuiAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: thaobuiContactInfo
+
+InternJobSeeker(thaobui):
+    email: thaobui@gmail.com
+    password: thaobui
+    aboutMe: I'm Thao
+    fullName: Bui Thao
+    college: Hanoi University of Science and Technology
+    userType: Job Seeker
+    contactInfo: thaobuiContactInfo
+    isAdmin: false
+    
+InternContactInfo(thaobuiFirstResumeContactInfo):
+    contactEmail: me@thaobuiphotography.com
+    address: thaobuiFirstResumeAddress
+
+InternAddress(thaobuiFirstResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: thaobuiFirstResumeContactInfo
+
+InternEducation(thaobuiFirstResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(thaobuiFirstResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: thaobui
+    contactInfo: thaobuiFirstResumeContactInfo
+    workExperience: 1
+    education: thaobuiFirstResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+    
+InternContactInfo(thaobuiSecondResumeContactInfo):
+    contactEmail: me@thaobuiphotography.com
+    address: thaobuiSecondResumeAddress
+
+InternAddress(thaobuiSecondResumeAddress):
+    address: 37/157 Phao Dai Lang
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: thaobuiSecondResumeContactInfo
+
+InternEducation(thaobuiSecondResumeEducation):
+    studyYears: 3
+    gpa: 3.5
+    college: Hanoi University of Science and Technology
+    major: informationTechnologyMajor
+    
+InternResume(thaobuiSecondResume):
+    name: Dung Nguyen's 1st Resume
+    postedAt: 2012-04-01
+    owner: thaobui
+    contactInfo: thaobuiSecondResumeContactInfo
+    workExperience: 1
+    education: thaobuiSecondResumeEducation
+    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    languages:
+        - vietnamLanguage
+        - englishLanguage

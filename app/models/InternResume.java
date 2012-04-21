@@ -66,6 +66,7 @@ public class InternResume extends Model {
 		this.contactInfo.update(owner.contactInfo);
 	}
 	
+	/*
 	public InternResume(InternJobSeeker owner, 
 			String name, 
 			int workExperience, 
@@ -78,6 +79,7 @@ public class InternResume extends Model {
 		this.education.update(education);
 		this.contactInfo.update(owner.contactInfo);
 	}
+	*/
 	
 	
 	
@@ -168,12 +170,6 @@ public class InternResume extends Model {
 	}
 	
 	public boolean canDelete() {
-		// Check if any application is linking to this resume
-		InternApplication application = InternApplication.find("byResume", this).first();
-		if (application != null) {
-			// System.out.println("ERROR: There are still applications owned by resume " + resume + ", cannot delete yet");
-			return false;
-		}
 		
 		return true;
 	}
@@ -189,6 +185,16 @@ public class InternResume extends Model {
 		}
 		
 		if (resume.canDelete() == false) return false;
+		
+		// Remove all its applications
+		List<Long> applicationsId = new ArrayList<Long>();
+		for (InternApplication application : resume.applications) {
+			applicationsId.add(application.id);
+		}
+		for (Long applicationId : applicationsId) {
+			InternApplication application = InternApplication.findById(applicationId);
+			if (InternApplication.deleteApplication(application) == false) return false;
+		}
 		
 		// Remove languages from resume properly
 		for (InternLanguage language : resume.languages) {

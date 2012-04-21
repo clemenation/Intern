@@ -1,0 +1,51 @@
+# LANGUAGE
+
+InternLanguage(englishLanguage):
+    language: English
+
+InternLanguage(vietnamLanguage):
+    language: Vietnamese
+
+InternLanguage(frenchLanguage):
+    language: French
+
+InternLanguage(russianLanguage):
+    language: Russian
+
+InternLanguage(spainishLanguage):
+    language: Spanish
+
+InternLanguage(italianLanguage):
+    language: Italian
+
+InternLanguage(germanLanguage):
+    language: German
+
+InternLanguage(chineseLanguage):
+    language: Chinese
+
+InternLanguage(japaneseLanguage):
+    language: Japanese
+
+InternLanguage(koreanLanguage):
+    language: Korean
+
+# COMPANY SIZE
+
+InternCompanySize(tinySize):
+    size: < 10
+
+InternCompanySize(smallSize):
+    size: 10 - 50
+
+InternCompanySize(smallMediumSize):
+    size: 50 - 300
+
+InternCompanySize(mediumSize):
+    size: 300 - 1000
+
+InternCompanySize(mediumLargeSize):
+    size: 1000 - 5000
+
+InternCompanySize(largeSize):
+    size: 5000+
