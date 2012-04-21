@@ -1,39 +1,58 @@
-#{extends 'Secure/layout.html' /}
+<!-- #{extends 'Secure/layout.html' /} -->
 
-<div id="login">
+<div class="wrapper" align="center" style="width: 940px">
+	<div style="height: 125px;"> </div>
+	<div class="logo" align="center">
+		<a href="#">
+			<img border="0" src="/public/images/login-logo.jpg">
+		</a>
+	</div>
+	<br />
 	
-	<h1>&{'secure.title'}</h1>
+	<div class="login" align="center">
+		#{form @authenticate()}
 		
-	#{form @authenticate()}
-		
-		#{if flash.error}
-			<p class="error">
-				&{flash.error}
-			</p>
-		#{/if}
-		#{if flash.success}
-			<p class="success">
-				&{flash.success}
-			</p>
-		#{/if}
+			#{if flash.error}
+				<p class="error">
+					&{flash.error}
+				</p>
+			#{/if}
+			#{if flash.success}
+				<p class="success">
+					&{flash.success}
+				</p>
+			#{/if}
 	
-		<p id="username-field">
-			<label for="username">&{'secure.username'}</label>
-			<input type="text" name="username" id="username" value="${flash.username}" />
+			<p id="username-field">
+				<!-- <label for="username">&{'secure.username'}</label> -->
+				<input type="text" name="username" class="inputBox" id="username" value="${flash.username}" />
+			</p>
+			<p id="password-field">
+				<!-- <label for="password">&{'secure.password'}</label> -->
+				<input type="password" name="password" class="inputBox" id="password" value="" />
+			</p>
+			<p id="remember-field">
+				<input type="checkbox" name="remember" id="remember" value="true" ${flash.remember ? 'checked="true"' : ''} />
+				<label for="remember">&{'secure.remember'}</label>
+			</p>
+			<p id="register-field">
+				Or register as <a href="@{Application.registerJobSeekerForm()}">Job Seeker</a> & <a href="#">Employer</a>
+			</p>
+			<p id="signin-field">
+				<input type="submit" id="signin" value="&{'secure.signin'}" />
+			</p>
+		#{/form}
+	</div>
+</div>
+
+<div class="footer">
+	<div class="info" style="float: left">
+		<p>HUT SoICT ICT54 (C) 2012</p>
+	</div>
+	<div class="about" style="float: right">
+		<p>
+			<a href="#">About</a> - 
+			<a href="#">Home</a>
 		</p>
-		<p id="password-field">
-			<label for="password">&{'secure.password'}</label>
-			<input type="password" name="password" id="password" value="" />
-		</p>
-		<p id="remember-field">
-			<input type="checkbox" name="remember" id="remember" value="true" ${flash.remember ? 'checked="true"' : ''} />
-			<label for="remember">&{'secure.remember'}</label>
-		</p>
-		<p id="register-field">
-			Or register as <a href="@{Application.registerJobSeekerForm()}">Job Seeker</a> & <a href="@{Application.registerEmployerForm()}">Employer</a>
-		</p>
-		<p id="signin-field">
-			<input type="submit" id="signin" value="&{'secure.signin'}" />
-		</p>
-	#{/form}
+	</div>
 </div>

@@ -11,4 +11,8 @@
 		<a href="@{InternJobSeekerController.viewJob(point.job.id)}"><h3>${point.job} for ${point.resume}</h3></a>
 		<div>Point: +${point.strongPoint} -${point.weakPoint}</div>
 	#{/list}
+	<div>
+		<a href="@{InternJobSeekerController.index(page-1)}">Prev</a>
+		<a href="@{InternJobSeekerController.index(page+1)}">Next</a>
+	</div>
 #{/if}

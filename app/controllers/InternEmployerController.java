@@ -21,12 +21,27 @@ public class InternEmployerController extends Controller {
 		return employer;
 	}
 	
-	public static void index() {
+	public static void index(int page) {
 		InternEmployer employer = getEmployer();
 		
-		List<InternPoint> finalPoints = employer.findResume();
+		List<InternPoint> points = employer.findResumes();
+		List<InternPoint> finalPoints;
+		if (points.size() == 0) {
+			finalPoints = points;
+			render(finalPoints, page);
+		}
 		
-		render(finalPoints);
+		int begin = (page-1)*12;
+		int end = page*12;
+		if (begin < 0 || end < 0) index(1);
+		if (begin >= points.size()) {
+			index(points.size()/12 + 1);
+		} else if (end >= points.size()) {
+			end = points.size();
+		}
+				
+		finalPoints = points.subList(begin, end);
+		render(finalPoints, page);
 	}
 	
 	public static void profile() {
@@ -40,7 +55,7 @@ public class InternEmployerController extends Controller {
 			List<InternPoint> points = resume.findJobsOfEmployer(getEmployer(), false);
 			render(resume, points);
 		} else {
-			index();
+			index(1);
 		}
 	}
 	
@@ -63,7 +78,7 @@ public class InternEmployerController extends Controller {
 			List<InternPoint> jobPoints = job.findResumes();
 			render(job, jobPoints);
 		} else {
-			index();
+			index(1);
 		}
 	}
 	

@@ -93,7 +93,7 @@ public class InternEmployer extends InternUser {
 		return this;
 	}
 	
-	public List<InternPoint> findResume() {
+	public List<InternPoint> findResumes() {
 		// Find all resumes respectively to each job		
 		List<List<InternPoint>> pointLists = new ArrayList<List<InternPoint>>();
 		for (InternJob job : jobs) {

@@ -26,9 +26,9 @@ public class Application extends Controller {
     	String userType = session.get("userType");
     	if (userType != null) {
     		if (userType.equals("Job Seeker")) {
-    			InternJobSeekerController.index();
+    			InternJobSeekerController.index(1);
     		} else if (userType.equals("Employer")) {
-    			InternEmployerController.index();
+    			InternEmployerController.index(1);
     		}
     	}
     	
