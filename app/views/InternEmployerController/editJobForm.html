@@ -63,7 +63,7 @@
 		</div>
 		<div>
 			City: <select id="citySelect" name="job.contactInfo.address.city.id">
-				#{list items:cities, as:'city'}
+				#{list items:models.InternCity.all().fetch(), as:'city'}
 					<option value=${city.id} 
 						#{ifErrors}
 							#{if Long.parseLong(flash['job.contactInfo.address.city.id'])==city.id}

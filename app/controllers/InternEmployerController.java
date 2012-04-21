@@ -31,9 +31,7 @@ public class InternEmployerController extends Controller {
 	
 	public static void profile() {
 		InternEmployer employer = getEmployer();
-		List<InternJob> jobs = InternJob.find("owner = ? order by postedAt desc", employer).from(0).fetch(4);
-		List<InternApplication> applications = InternApplication.find("employer = ? order by postedAt desc", employer).from(0).fetch(4);
-		render(employer, jobs, applications);
+		render(employer);
 	}
 	
 	public static void viewResume(long resumeId) {
@@ -66,7 +64,7 @@ public class InternEmployerController extends Controller {
 		}
 		else if (employer.contactInfo.address.city != null) districts = employer.contactInfo.address.city.districts;
 		else districts = cities.get(0).districts;
-		render(employer, cities, districts);
+		render(employer, districts);
 	}
 	
 	public static void updateProfile() {
@@ -125,7 +123,7 @@ public class InternEmployerController extends Controller {
 		} else {
 			districts = cities.get(0).districts;
 		}
-		render(employer, cities, districts);
+		render(employer, districts);
 	}
 	
 	public static void addJob(InternJob job, InternAddress address) {
@@ -169,7 +167,7 @@ public class InternEmployerController extends Controller {
 		
 		InternEmployer employer = job.owner;
 		
-		render(job, employer, cities, districts);
+		render(job, employer, districts);
 	}
 	
 	public static void editJob(long jobId) {

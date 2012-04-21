@@ -132,6 +132,12 @@ InternJobSeeker(nguyenquac):
 InternContactInfo(hoangtranContactInfo):
     contactEmail: hoangtran@gmail.com
 
+InternAddress(hoangTranAddress):
+    address: 1 Chua Boc
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: hoangTranContactInfo
+
 InternAddress(hoangtranContactInfoAddress):
     contactInfo: hoangtranContactInfo
     
