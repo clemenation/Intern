@@ -1,0 +1,192 @@
+# initial city
+
+InternCity(anGiangCity):
+    name: An Giang
+
+InternCity(baRiaVungTauCity):
+    name: Ba Ria - Vung Tau
+
+InternCity(bacGiangCity):
+    name: Bac Giang
+
+InternCity(bacKanCity):
+    name: Bac Kan
+
+InternCity(bacLieuCity):
+    name: Bac Lieu
+
+InternCity(bacNinhCity):
+    name: Bac Ninh
+
+InternCity(benTreCity):
+    name: Ben Tre
+
+InternCity(binhDinhCity):
+    name: Binh Dinh
+
+InternCity(binhDuongCity):
+    name: Binh Duong
+
+InternCity(binhPhuocCity):
+    name: Binh Phuoc
+
+InternCity(binhThuanCity):
+    name: Binh Thuan
+
+InternCity(caMauCity):
+    name: Ca Mau
+
+InternCity(caoBangCity):
+    name: Cao Bang
+
+InternCity(dakLakCity):
+    name: Dak Lak
+
+InternCity(dakNongCity):
+    name: Dak Nong
+
+InternCity(dienBienCity):
+    name: Dien Bien
+
+InternCity(dongNaiCity):
+    name: Dong Nai
+
+InternCity(dongThapCity):
+    name: Dong Thap
+
+InternCity(giaLaiCity):
+    name: Gia Lai
+
+InternCity(haGiangCity):
+    name: Ha Giang
+
+InternCity(haNamCity):
+    name: Ha Nam
+
+InternCity(haTinhCity):
+    name: Ha Tinh
+
+InternCity(haiDuongCity):
+    name: Hai Duong
+
+InternCity(hauGiangCity):
+    name: Hau Giang
+
+InternCity(hoaBinhCity):
+    name: Hoa Binh
+
+InternCity(hungYenCity):
+    name: Hung Yen
+
+InternCity(khanhHoaCity):
+    name: Khanh Hoa
+
+InternCity(kienGiangCity):
+    name: Kien Giang
+
+InternCity(konTumCity):
+    name: Kon Tum
+
+InternCity(laiChauCity):
+    name: Lai Chau
+
+InternCity(lamDongCity):
+    name: Lam Dong
+
+InternCity(langSonCity):
+    name: Lang Son
+
+InternCity(laoCaiCity):
+    name: Lao Cai
+
+InternCity(longAnCity):
+    name: Long An
+
+InternCity(namDinhCity):
+    name: Nam Dinh
+
+InternCity(ngheAnCity):
+    name: Nghe An
+
+InternCity(ninhBinhCity):
+    name: Ninh Binh
+
+InternCity(ninhThuanCity):
+    name: Ninh Thuan
+
+InternCity(phuThoCity):
+    name: Phu Tho
+
+InternCity(quangBinhCity):
+    name: Quang Binh
+
+InternCity(quangNamCity):
+    name: Quang Nam
+
+InternCity(quangNgaiCity):
+    name: Quang Ngai
+
+InternCity(quangNinhCity):
+    name: Quang Ninh
+
+InternCity(quangTriCity):
+    name: Quang Tri
+
+InternCity(socTrangCity):
+    name: Soc Trang
+
+InternCity(sonLaCity):
+    name: Son La
+
+InternCity(tayNinhCity):
+    name: Tay Ninh
+
+InternCity(thaiBinhCity):
+    name: Thai Binh
+
+InternCity(thaiNguyenCity):
+    name: Thai Nguyen
+
+InternCity(thanhHoaCity):
+    name: Thanh Hoa
+
+InternCity(tienGiangCity):
+    name: Tien Giang
+
+InternCity(traVinhCity):
+    name: Tra Vinh
+
+InternCity(tuyenQuangCity):
+    name: Tuyen Quang
+
+InternCity(vinhLongCity):
+    name: Vinh Long
+
+InternCity(vinhPhucCity):
+    name: Vinh Phuc
+
+InternCity(yenBaiCity):
+    name: Yen Bai
+
+InternCity(phuYenCity):
+    name: Phu Yen
+
+InternCity(canThoCity):
+    name: Can Tho
+
+InternCity(daNangCity):
+    name: Da Nang
+
+InternCity(haNoiCity):
+    name: Ha Noi
+    
+InternCity(haiPhongCity):
+    name: Hai Phong
+
+InternCity(hoChiMinhCity):
+    name: Ho Chi Minh City
+
+InternCity(hueCity):
+    name: Thua Thien Hue
+
+# end initial city

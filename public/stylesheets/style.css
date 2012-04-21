@@ -1,0 +1,187 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body
+{
+	padding: 0px;
+    margin: 0px;
+    height: 100%;
+    font-family: "Myriad Pro";
+    color: #333333;
+    font-size: 11px;
+}
+	
+.wrapper
+{
+	min-height:100%;
+	height: auto;
+	height: 100%;
+	width: 940px;
+	margin: 0px auto -2em;
+	background-color: #FFF;
+}
+
+.toplogo
+{
+	float:left;
+	padding-left: 20px;
+}
+
+.footer
+{
+	width: 720px;
+	height: 2em;
+	float: none;
+	font-size: 11px;
+	margin: 0px auto;
+}
+
+.inputBox
+{
+	margin-bottom: 10px;
+	display: inline-block;
+	zoom: 1; /* ie7 hack for display:inline-block */
+	*display: inline;
+	border: solid 1px #d2d2d2;
+	padding: 4px 5px 5px;
+	width:204px;
+	-webkit-border-radius: 0.5em;
+	-moz-border-radius: 0.5em;
+	border-radius: 0.5em;
+	-webkit-box-shadow: 0 1px 0px rgba(0,0,0,.1);
+	-moz-box-shadow: 0 1px 0px rgba(0,0,0,.1);
+	box-shadow: 0 1px 0px rgba(0,0,0,.1);
+	
+	background: #f1f1f1;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+	background: -moz-linear-gradient(top,  #fff,  #ededed);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed'); /* ie7 */
+	-ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed'); /* ie8 */
+}
+
+.login
+{
+	float: left;
+	margin: 0px auto;
+	width: 100%;
+}
+
+.register
+{
+	float: left;
+	margin: 0px auto;
+	width: 100%;
+	font-family: tahoma, Arial, Verdana;
+    color: #333333;
+    font-size: 11px;
+}
+
+.middle
+{
+	margin: 0px auto;
+	width: 720px;
+}
+
+.job-link
+{
+	width: 160px;
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 40px;
+}
+
+.topbutton
+{	
+	padding-left: 20px;
+	padding-right:10px;
+}
+
+.topbuttongroup
+{
+	padding-top:15px;
+	float: right;
+}
+
+.about
+{
+	float: right;
+	font: smaller;
+}
+
+.hor-sep
+{
+	float: none;
+	width:100%;
+	padding-bottom: 60px;
+}
+
+.application-link
+{
+	float: left;
+	width:160px;
+	padding-right:20px;
+}
+
+.jobtitle
+{
+	padding-top: 10px;
+	padding-bottom: 20px;
+	float: left;
+	width: 100%;
+}
+
+.avatar
+{
+	float: left;
+	height: 240px;
+	width: 160px;
+	padding-right: 40px;
+}
+
+.employer-job
+{
+	float: left;
+	width: 160px;
+	padding-right: 20px;
+}
+
+.employer-application
+{
+	float: left;
+	width: 160px;
+	padding-right: 20px;
+}
+
+.jobseeker-resume
+{
+	float: left;
+	width: 160px;
+	padding-right: 20px;
+}
+
+.jobseeker-application
+{
+	float: left;
+	width: 160px;
+	padding-right: 20px;
+}
+
+.resume-link
+{
+	width: 160px;
+	padding-right:20px;
+	padding-bottom: 40px;
+	float: left;
+}
+
+.resume-title
+{
+	float: left;
+	padding-bottom:10px;
+}
+
+.resume-info
+{
+	float:left;
+	padding-bottom:10px;
+}
