@@ -44,6 +44,19 @@ public class InternEmployerController extends Controller {
 		}
 	}
 	
+	public static void viewApplication(long applicationId) {
+		InternApplication application = InternApplication.findById(applicationId);
+		InternEmployer employer = getEmployer();
+		
+		if ((application == null) || (!employer.applications.contains(application))) {
+			// If the application is null or not of current user
+			System.out.println("ERROR: Cannot view this application");
+			profile();
+		}
+		
+		render(application);
+	}
+	
 	public static void viewJob(long jobId) {
 		InternJob job = InternJob.findById(jobId);
 		if (job != null) {
