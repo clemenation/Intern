@@ -381,14 +381,4 @@ public class InternJobSeekerController extends Controller {
 		int max = jobSeeker.applications.size()/12 + 1;
 		render(applications, page, max);		
 	}
-	
-	public static void photo() {
-		InternJobSeeker jobSeeker = getJobSeeker();
-
-		response.setContentTypeIfNotSet(jobSeeker.photo.type());
-		java.io.InputStream binaryData = jobSeeker.photo.get();
-
-		if (binaryData != null) renderBinary(binaryData);
-	}
-	
 }
