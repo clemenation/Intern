@@ -1,38 +1,45 @@
 #{extends 'main.html' /}
 #{set title:'Resumes' /}
 
-#{navigationBar /}
+<div class="wrapper">
+	#{navigationBar /}
+	#{notification /}
 
-<h1>Intern/Job Seeker</h1>
-
-#{if flash.error}
-	<p class="error">
-		&{flash.error}
-	</p>
-#{/if}
-
-#{if flash.success}
-	<p class="success">
-		&{flash.success}
-	</p>
-#{/if}
-
-#{if resumes}
-	<h2>Resumes</h2>
-	#{list items:resumes, as:'resume'}
-		<a href="@{InternJobSeekerController.viewResume(resume.id)}"><h3>${resume}</h3></a>
-		#{if resume.description}
-			<div>				
-				${resume.description}				
+	<div class="middle">
+		#{if resumes}
+			<div style="width:100%; float: left;">
+	            <div style="float: left; padding-bottom: 20px; font-size:20px">
+	            	Resumes
+	            </div>
+			</div>
+			<div style="width:720px; float:left; margin: 0px auto;">
+				#{list items:resumes, as:'resume'}
+	            <div class="resume-link">
+	                <a href="@{InternJobSeekerController.viewResume(resume.id)}">${resume}</a>
+	                #{if resume.description}
+	                    <div>
+							#{if resume.description.length() > 250}
+								${resume.description.substring(0, 250) + "..."}
+							#{/if}
+							#{else}
+	                        	${resume.description}
+							#{/else}
+	                    </div>
+	                #{/if}
+	            </div>
+	            #{/list}
+			</div>
+			
+			<!--Page navigator-->
+			<div class="page-navigator">
+				<a href="@{InternJobSeekerController.resumes(1)}">First</a>
+				#{if page > 1}
+					<a href="@{InternJobSeekerController.resumes(page-1)}">Prev</a>
+				#{/if}
+				${page}/${max}
+				#{if page < max}
+					<a href="@{InternJobSeekerController.resumes(page+1)}">Next</a>
+				#{/if}
+				<a href="@{InternJobSeekerController.resumes(max)}">First</a>
 			</div>
 		#{/if}
-	#{/list}
-	<div>
-		#{if page > 1}
-			<a href="@{InternJobSeekerController.resumes(page-1)}">Prev</a>
-		#{/if}
-		#{if page < max}
-			<a href="@{InternJobSeekerController.resumes(page+1)}">Next</a>
-		#{/if}
-	</div>
-#{/if}

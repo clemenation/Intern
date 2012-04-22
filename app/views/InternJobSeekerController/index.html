@@ -29,21 +29,21 @@
 		        </div>
 			#{/list}
 			
+			</div>
+		    <!--Page navigator-->
+		    <div class="page-navigator">
+		    		<a href="@{InternJobSeekerController.index(1)}">First</a>
+				#{if page > 1}
+					<a href="@{InternJobSeekerController.index(page-1)}">Prev</a>
+				#{/if}
+		           	${page}/${max}
+				#{if page < max}
+					<a href="@{InternJobSeekerController.index(page+1)}">Next</a>
+				#{/if}
+		           	<a href="@{InternJobSeekerController.index(max)}">Last</a>
+			</div>
 		#{/if}
         
-	</div>
-    <!--Page navigator-->
-    <div class="page-navigator">
-    		<a href="@{InternJobSeekerController.index(1)}">First</a>
-		#{if page > 1}
-			<a href="@{InternJobSeekerController.index(page-1)}">Prev</a>
-		#{/if}
-           	${page}/${max}
-		#{if page < max}
-			<a href="@{InternJobSeekerController.index(page+1)}">Next</a>
-		#{/if}
-           	<a href="@{InternJobSeekerController.index(max)}">Last</a>
-	</div>
     <!--Seperator space-->
     <div style="height:50px; width:100%; float:left"> </div>
     <!--Footer-->
