@@ -1,9 +1,10 @@
 #{extends 'main.html' /}
 #{set title:'Update Profile' /}
 
+<div class="wrapper">
 #{navigationBar /}
 
-<h1>Intern/Job Seeker</h1>
+<div class="middle">
 
 #{ifErrors}
 	<h1>Oops...</h1>
@@ -12,67 +13,135 @@
 	#{/errors}
 #{/ifErrors}
 
-#{form @InternJobSeekerController.updateProfilePhoto(), enctype:'multipart/form-data'}
-	<div>
-		Profile photo: 
-		#{if jobSeeker?.photo && jobSeeker?.photo.exists()}
-			<img src="@{Application.jobSeekerPhoto(jobSeeker.id)}" />
-		#{/if}
-		#{else}
-			none
-		#{/else}
-		<input type="file" name="jobSeeker.photo" />
-		<span class="error">#{error 'jobSeeker.photo' /}</span>
-		<input type="submit" value="Upload" />
-	</div>
-#{/form}
-
-#{form @InternJobSeekerController.updateProfile(), enctype:'multipart/form-data'}
-	<div>
-		Email: <input type="text" name="jobSeeker.email" value="#{ifErrors}${flash['jobSeeker.email']}#{/ifErrors}#{else}${jobSeeker.email}#{/else}" />
-		<span class="error">#{error 'jobSeeker.email' /}</span>
-	</div>
-	<div>
-		Password: <input type="password" name="jobSeeker.password" value="#{ifErrors}${flash['jobSeeker.password']}#{/ifErrors}#{else}${jobSeeker.password}#{/else}" />
-		<span class="error">#{error 'jobSeeker.password' /}</span>
-	</div>
-	<div>
-		Full name: <input type="text" name="jobSeeker.fullName" value="#{ifErrors}${flash['jobSeeker.fullName']}#{/ifErrors}#{else}${jobSeeker.fullName}#{/else}" />
+<div style="width:100%">
+<table cellpadding="10px">
+	<tr>
+	#{form @InternJobSeekerController.updateProfilePhoto(), enctype:'multipart/form-data'}
+	
+    	<td width="100px">
+            Profile photo: 
+        </td>
+        <td>
+            #{if jobSeeker?.photo && jobSeeker?.photo.exists()}
+                <img src="@{Application.jobSeekerPhoto(jobSeeker.id)}" />
+            #{/if}
+            #{else}
+                none
+            #{/else}
+            <input type="file" name="jobSeeker.photo" />
+            <span class="error">#{error 'jobSeeker.photo' /}</span>
+            <input type="submit" value="Upload" />
+        </td>
+	
+	#{/form}
+	</tr>
+    
+    <tr>
+	#{form @InternJobSeekerController.updateProfile(), enctype:'multipart/form-data'}
+		<td>
+        	Email:
+        </td>
+        <td>
+            <input type="text" name="jobSeeker.email" value="#{ifErrors}${flash['jobSeeker.email']}#{/ifErrors}#{else}${jobSeeker.email}#{/else}" />
+			<span class="error">#{error 'jobSeeker.email' /}</span>
+        </td>
+    </tr>
+	
+	<tr>
+    	<td>
+			Password:
+        </td>
+        <td>
+        	 <input type="password" name="jobSeeker.password" value="#{ifErrors}${flash['jobSeeker.password']}#{/ifErrors}#{else}${jobSeeker.password}#{/else}" />
+			<span class="error">#{error 'jobSeeker.password' /}</span>
+		</td>
+	</tr>
+    <tr>
+    	<td>
+			Full name:
+        </td>
+        <td>
+        	<input type="text" name="jobSeeker.fullName" value="#{ifErrors}${flash['jobSeeker.fullName']}#{/ifErrors}#{else}${jobSeeker.fullName}#{/else}" />
 		<span class="error">#{error 'jobSeeker.fullName' /}</span>
-	</div>
-	<div>
-		Birthday (yyyy-mm-dd): <input type="text" name="jobSeeker.birthday" value="#{ifErrors}${flash['jobSeeker.birthday']}#{/ifErrors}#{else}${jobSeeker.birthday}#{/else}" />
+		</td>
+    </tr>
+	<tr>
+    	<td>
+			Birthday (yyyy-mm-dd):
+        </td>
+        <td>
+			<input type="text" name="jobSeeker.birthday" value="#{ifErrors}${flash['jobSeeker.birthday']}#{/ifErrors}#{else}${jobSeeker.birthday}#{/else}" />
 		<span class="error">#{error 'jobSeeker.birthday' /}</span>
-	</div>
-	<div>
-		About me: <textarea name="jobSeeker.aboutMe">#{ifErrors}${flash['jobSeeker.aboutMe']}#{/ifErrors}#{else}${jobSeeker.aboutMe}#{/else}</textarea>
+        </td>
+	</tr>
+	<tr>
+    	<td>
+			About me:
+        </td>
+        <td>
+        	<textarea name="jobSeeker.aboutMe">#{ifErrors}${flash['jobSeeker.aboutMe']}#{/ifErrors}#{else}${jobSeeker.aboutMe}#{/else}</textarea>
 		<span class="error">#{error 'jobSeeker.aboutMe' /}</span>
-	</div>
-	<div>
-		College: <input type="text" name="jobSeeker.college" value="#{ifErrors}${flash['jobSeeker.college']}#{/ifErrors}#{else}${jobSeeker.college}#{/else}" />
+		</td>
+	</tr>
+    <tr>
+    	<td>
+			College:
+        </td>
+        <td>
+        	<input type="text" name="jobSeeker.college" value="#{ifErrors}${flash['jobSeeker.college']}#{/ifErrors}#{else}${jobSeeker.college}#{/else}" />
 		<span class="error">#{error 'jobSeeker.college' /}</span>
-	</div>
-	<div>
-		Contact Info:
-		<span class="error">#{error 'contactInfo' /}</span>
-		<div>
-			Contact email: <input type="text" name="jobSeeker.contactInfo.contactEmail" value="#{ifErrors}${flash['jobSeeker.contactInfo.contactEmail']}#{/ifErrors}#{else}${jobSeeker.contactInfo.contactEmail}#{/else}" />
+		</td>
+	</tr>
+    <tr>
+    	<td>
+			<strong>Contact Info:</strong>
+        </td>
+        <td>
+			<span class="error">#{error 'contactInfo' /}</span>
+        </td>
+    </tr>
+	<tr>
+    	<td>
+			Contact email:
+        </td>
+        <td>
+        	<input type="text" name="jobSeeker.contactInfo.contactEmail" value="#{ifErrors}${flash['jobSeeker.contactInfo.contactEmail']}#{/ifErrors}#{else}${jobSeeker.contactInfo.contactEmail}#{/else}" />
 			<span class="error">#{error 'jobSeeker.contactInfo.contactEmail' /}</span>
-		</div>
-		<div>
-			Mobile: <input type="text" name="jobSeeker.contactInfo.mobile" value="#{ifErrors}${flash['jobSeeker.contactInfo.mobile']}#{/ifErrors}#{else}${jobSeeker.contactInfo.mobile}#{/else}" />
+		</td>
+    </tr>
+    <tr>
+		<td>
+			Mobile:
+        </td>
+        <td>
+       		<input type="text" name="jobSeeker.contactInfo.mobile" value="#{ifErrors}${flash['jobSeeker.contactInfo.mobile']}#{/ifErrors}#{else}${jobSeeker.contactInfo.mobile}#{/else}" />
 			<span class="error">#{error 'jobSeeker.contactInfo.mobile' /}</span>
-		</div>
-		<div>
-			Phone: <input type="text" name="jobSeeker.contactInfo.phone" value="#{ifErrors}${flash['jobSeeker.contactInfo.phone']}#{/ifErrors}#{else}${jobSeeker.contactInfo.phone}#{/else}" />
+		</td>
+    </tr>
+    <tr>
+		<td>
+			Phone:
+        </td>
+        <td>
+        	<input type="text" name="jobSeeker.contactInfo.phone" value="#{ifErrors}${flash['jobSeeker.contactInfo.phone']}#{/ifErrors}#{else}${jobSeeker.contactInfo.phone}#{/else}" />
 			<span class="error">#{error 'jobSeeker.contactInfo.phone' /}</span>
-		</div>
-		<div>
-			Address: <input type="text" name="jobSeeker.contactInfo.address.address" value="#{ifErrors}${flash['jobSeeker.contactInfo.address.address']}#{/ifErrors}#{elseif jobSeeker.contactInfo.address?.address}${jobSeeker.contactInfo.address.address}#{/elseif}" />
+		</td>
+    </tr>
+	<tr>
+    	<td>
+			Address:
+        </td>
+        <td>
+        <input type="text" name="jobSeeker.contactInfo.address.address" value="#{ifErrors}${flash['jobSeeker.contactInfo.address.address']}#{/ifErrors}#{elseif jobSeeker.contactInfo.address?.address}${jobSeeker.contactInfo.address.address}#{/elseif}" />
 			<span class="error">#{error 'jobSeeker.contactInfo.address.address' /}</span>
-		</div>
-		<div>
-			City: <select id="citySelect" name="jobSeeker.contactInfo.address.city.id">				
+		</td>
+    </tr>
+	<tr>
+    	<td>
+			City:
+        </td>
+        <td>
+        	<select id="citySelect" name="jobSeeker.contactInfo.address.city.id">				
 				#{list items:models.InternCity.all().fetch(), as:'city'}
 					<option value=${city.id} 
 						#{ifErrors}
@@ -86,9 +155,14 @@
 					>${city}</option>
 				#{/list}
 			</select>
-		</div>
-		<div>
-			District: <select id="districtSelect" name="jobSeeker.contactInfo.address.district.id">
+		</td>
+    </tr>
+    <tr>
+    	<td>
+			District:
+        </td>
+        <td>
+        	<select id="districtSelect" name="jobSeeker.contactInfo.address.district.id">
 				#{list items:districts, as:'district'}
 					<option value=${district.id}
 						#{ifErrors}
@@ -102,11 +176,9 @@
 					>${district.name}</option>
 				#{/list}
 			</select>
-		</div>
-	</div>
-	<div>
-		<input type="submit" value="Save" />
-	</div>
+		
+	<input type="submit" value="Save" />
+	
 
 	<script type="text/javascript">
 		var districtAction = #{jsAction @Application.districtsForCity(':cityId') /}
@@ -120,5 +192,12 @@
 				});
 		});
 	</script>
+    	</td>
+	</tr>
+
 
 #{/form}
+</table>
+</div>
+</div>
+</div>
