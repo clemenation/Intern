@@ -18,7 +18,14 @@
 						<a href="@{InternEmployerController.viewResume(point.resume.id)}">
 							<table class="square-avatar">
 	                            <tr>
-									<td><img src="/public/images/default-avatar.png" /></td>
+									<td>
+										#{if point.resume?.owner.photo && point.resume?.owner.photo.exists()}
+											<img src="@{Application.jobSeekerPhoto(point.resume.owner.id)}" />
+										#{/if}
+										#{else}
+											<img src="/public/images/default-avatar.png" />
+										#{/else}
+									</td>
 								</tr>
 							</table>
 							${point.resume}

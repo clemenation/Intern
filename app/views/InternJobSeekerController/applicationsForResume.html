@@ -18,7 +18,14 @@
                         <a href="@{InternJobSeekerController.viewApplication(application.id)}">
                             <table class="square-avatar">
 	                            <tr>
-									<td><img src="/public/images/default-avatar.png" /></td>
+									<td>
+										#{if application.employer?.logo && application.employer?.logo.exists()}
+											<img src="@{Application.employerPhoto(application.employer.id)}" />
+										#{/if}
+										#{else}
+											<img src="/public/images/default-avatar.png" />
+										#{/else}	
+									</td>
 								</tr>
 							</table>
                             ${application.job}
