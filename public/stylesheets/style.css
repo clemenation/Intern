@@ -1,4 +1,5 @@
 @import url(mp-webfont/mp-webfont.css);
+@import url(reset.css);
 
 @charset "utf-8";
 /* CSS Document */
@@ -45,7 +46,7 @@ strong
 .footer
 {
 	width: 700px;
-	height: 2em;
+	height: 2em
 	float: none;
 	font-size: 12px;
 	margin: 0px auto;
