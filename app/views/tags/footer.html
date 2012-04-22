@@ -16,11 +16,9 @@
 					<a href="@{InternJobSeekerController.profile()}">Me</a> - 
 				#{/if}
 				#{elseif session['userType'] == "Employer"}
-					*{
+					<a href="@{InternEmployerController.addJobForm()}">Add</a> - 
 					<a href="@{InternEmployerController.index()}">Home</a> - 
 					<a href="@{InternEmployerController.profile()}">Me</a> - 
-								
-					}*
 				#{/elseif}
 				
 				<a href="@{Secure.logout()}">Logout</a>	
