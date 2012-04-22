@@ -126,6 +126,7 @@ public class InternEmployer extends InternUser {
 	}
 	
 	public String toString() {
+		if (this.companyName != null && !this.companyName.equals("")) return this.companyName;
 		return this.email;
 	}
 	

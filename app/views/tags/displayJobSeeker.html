@@ -16,12 +16,6 @@
 	</div>
 #{/if}
 
-#{if _jobSeeker?.fullName}
-<div>
-	Full name: ${_jobSeeker?.fullName}
-</div>
-#{/if}
-
 #{if _jobSeeker?.birthday}
 <div>
 	Birthday: ${new StringBuilder(new java.text.SimpleDateFormat("dd/MM/yyyy").format(_jobSeeker.birthday))}

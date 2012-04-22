@@ -1,38 +1,109 @@
 #{extends 'main.html' /}
 #{set title:'Employer' /}
 
+<div class="wrapper">
 #{navigationBar /}
 
-<h1>Intern/Employer</h1>
 
-#{if flash.error}
-	<p class="error">
-		&{flash.error}
-	</p>
-#{/if}
-
-#{if flash.success}
-	<p class="success">
-		&{flash.success}
-	</p>
-#{/if}
-
-<h2>Profile</h2>
-<a href="@{InternEmployerController.updateProfileForm()}">edit</a>
-
-#{displayEmployer employer:employer /}
-
-#{if (jobs=models.InternJob.find("owner = ? order by postedAt desc", employer).from(0).fetch(4))}
-<h2>Jobs</h2>
-	<a href="@{InternEmployerController.jobs()}">view all</a>
-	#{list items:jobs, as:'job'}
-		<div>
-			<a href="@{InternEmployerController.viewJob(job.id)}"><h3>${job}</h3></a>
-			#{if job.description}
-				<div>
-					${job.description}
-				</div>
+	<div class="notification">
+       	#{notification /}
+    </div>
+	<div class="middle">
+    	
+    
+    	<div class="avatar">
+			#{if employer?.logo && employer?.logo.exists()}
+				<img src="@{Application.employerPhoto(employer.id)}" />
 			#{/if}
-		</div>
-	#{/list}
-#{/if}
+			#{else}
+        		<img src="/public/images/default-avatar.png">
+			#{/else}
+        </div>
+        <div style="width:520px;float:left">
+        	<div style="float: left; padding-bottom: 15px; font-size:20px">
+            	<h1>${employer}</h1>
+            </div>
+            <div style="float:right">
+				<a style="float:right" href="@{InternEmployerController.updateProfileForm()}" class="light-gray">edit</a>
+            </div>
+            <div style="float:left; width:520px">
+            	#{displayEmployer employer:employer /}
+            </div>
+        </div>
+
+
+
+		<!--Seperator space-->
+        <div style="height:40px; width:100%; float:left"> </div>
+    
+        #{if (jobs=models.InternJob.find("owner = ? order by postedAt desc", employer).from(0).fetch(4))}
+        <div style="width:100%; float: left;">
+            <div style="float: left; padding-bottom: 20px">
+            	<h1>Jobs<h1>
+            </div>
+            <div style="float:right">
+	            <a style="float:right" href="@{InternEmployerController.jobs()}" class="light-gray">view all</a>
+            </div>
+        </div>
+        <div style="width:720px; float:left; margin: 0px auto;">
+            #{list items:jobs, as:'job'}
+            <div class="info-box-no-img">
+                <a href="@{InternEmployerController.viewJob(job.id)}">${job}</a>
+                #{if job.description}
+                    <div>
+						#{if job.description.length() > 250}
+							${job.description.substring(0, 250) + "..."}
+						#{/if}
+						#{else}
+                        	${job.description}
+						#{/else}
+                    </div>
+                #{/if}
+            </div>
+            #{/list}
+        </div>
+		#{/if}
+        
+        
+
+		<div style="width:100%; float: none; padding-bottom: 50px">
+        #{if (applications=models.InternApplication.find("employer = ? order by postedAt desc", employer).from(0).fetch(4))}
+            <div style="float: left; padding-bottom: 20px">
+            	<h1>Applications</h1>
+            </div>
+            <div style="float:right">
+            	<a href="@{InternEmployerController.applications()}" class="light-gray">view all</a>
+            </div>
+            <div style="width:720px; float: left; margin: 0px auto; padding-bottom:20px">
+                #{list items:applications, as:'application'}
+                	<div class="info-box">
+                        <a href="@{InternEmployerController.viewApplication(application.id)}">
+							<table class="square-avatar">
+	                            <tr>
+									<td><img src="/public/images/default-avatar.png" /></td>
+								</tr>
+							</table>
+                            ${application.resume}
+                		</a>
+						<div>
+							#{if application.resume.description}
+								#{if application.resume.description.length() > 250}
+									${application.resume.description.substring(0, 250) + "..."}
+								#{/if}
+								#{else}
+									${application.resume.description}
+								#{/else}
+							#{/if}
+						</div>
+                    </div>
+                #{/list}
+                
+            </div>
+        #{/if}
+        </div>
+	</div>
+    
+    
+    <!--Footer-->
+    #{footer /}
+</div>
