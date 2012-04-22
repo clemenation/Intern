@@ -94,7 +94,7 @@ strong
 	width: 700px;
 }
 
-.job-link
+.info-box
 {
 	width: 160px;
 	height: 320px;
@@ -103,13 +103,33 @@ strong
 	margin-bottom: 40px;
 }
 
-.job-link-end
+.info-box img
+{
+	margin-bottom: 10px;
+}
+
+.info-box div
+{
+	margin-top: 10px;
+}
+
+.info-box-end
 {
 	width: 160px;
 	height: 320px;
 	float: left;
 	margin-right: 0px;
 	margin-bottom: 40px;
+}
+
+.info-box-end img
+{
+	margin-bottom: 10px;
+}
+
+.info-box-end div
+{
+	margin-top: 10px;
 }
 
 .topbuttongroup
@@ -178,14 +198,6 @@ strong
 {
 	float: left;
 	width: 160px;
-	padding-right: 20px;
-}
-
-.jobseeker-application
-{
-	float: left;
-	width: 160px;
-	height: 320px;
 	padding-right: 20px;
 }
 
