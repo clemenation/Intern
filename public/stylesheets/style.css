@@ -27,6 +27,10 @@ a.light-gray
 	color: #aeaeae;
 }
 
+a:hover{
+	color: black;
+}
+
 h1
 {
 	font-weight: normal;
@@ -82,21 +86,22 @@ h1
 {
 	margin: 0;
 	padding: 0;
-	border: 0;
+	border-style: solid;
+	border-color: #e2e2e2;
+	border-width: 1px;
 	width: 160px;
 	height: 160px;
-	background-color: #aeaeae;
+}
+
+.square-avatar:hover
+{
+	border-color: #555555;
 }
 
 .square-avatar td
 {
 	vertical-align: middle;
 	text-align: center;
-}
-
-.square-avatar img
-{
-	width: 100%;
 }
 
 .login

@@ -19,12 +19,14 @@
                             <table class="square-avatar">
 	                            <tr>
 									<td>
+										<img src="
 										#{if application.jobSeeker?.photo && application.jobSeeker?.photo.exists()}
-											<img src="@{Application.jobSeekerPhoto(application.jobSeeker.id)}" />
+											@{Application.jobSeekerPhoto(application.jobSeeker.id)}
 										#{/if}
 										#{else}
-											<img src="/public/images/default-avatar.png" />
+											/public/images/default-avatar.png
 										#{/else}
+										" class="square-avatar-img" />
 									</td>
 								</tr>
 							</table>
