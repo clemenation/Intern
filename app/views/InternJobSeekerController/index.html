@@ -1,34 +1,41 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-#{navigationBar /}
+<div class="wrapper" style="width: 940px">
 
-<h1>Intern/Job Seeker</h1>
+	#{navigationBar /}
+	
+	#{if flash.error}
+		<p class="error">
+			&{flash.error}
+		</p>
+	#{/if}
 
-#{if flash.error}
-	<p class="error">
-		&{flash.error}
-	</p>
-#{/if}
-
-#{if flash.success}
-	<p class="success">
-		&{flash.success}
-	</p>
-#{/if}
-
-#{if finalPoints}
-<h2>Suitable Jobs</h2>
-	#{list items:finalPoints, as:'point'}
-		<a href="@{InternJobSeekerController.viewJob(point.job.id)}"><h3>${point.job} for ${point.resume}</h3></a>
-		<div>Point: +${point.strongPoint} -${point.weakPoint}</div>
-	#{/list}
-	<div>
-		#{if page > 1}
-			<a href="@{InternJobSeekerController.index(page-1)}">Prev</a>
-		#{/if}
-		#{if page < max}
-			<a href="@{InternJobSeekerController.index(page+1)}">Next</a>
+	#{if flash.success}
+		<p class="success">
+			&{flash.success}
+		</p>
+	#{/if}
+	
+	<div class="middle">
+		#{if finalPoints}
+			#{list items:finalPoints, as:'point'}
+		    	<div class="job-link">
+					<a href="@{InternJobSeekerController.viewJob(point.job.id)}">
+		            	<img src="" style="height: 160px; width: 160px">
+		            	${point.job} for ${point.resume}
+		            </a>
+					<div>Point: +${point.strongPoint} -${point.weakPoint}</div>
+		        </div>
+			#{/list}
+			<div>
+				#{if page > 1}
+					<a href="@{InternJobSeekerController.index(page-1)}">Prev</a>
+				#{/if}
+				#{if page < max}
+					<a href="@{InternJobSeekerController.index(page+1)}">Next</a>
+				#{/if}
+			</div>
 		#{/if}
 	</div>
-#{/if}
+</div>
