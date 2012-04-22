@@ -1,34 +1,55 @@
 #{extends 'main.html' /}
 #{set title:'Suitable Jobs for ' + resume /}
 
-#{navigationBar /}
+<div class="wrapper">
+	#{navigationBar /}
+	#{notification /}
 
-<h1>Intern/Job Seeker</h1>
-
-#{if flash.error}
-	<p class="error">
-		&{flash.error}
-	</p>
-#{/if}
-
-#{if flash.success}
-	<p class="success">
-		&{flash.success}
-	</p>
-#{/if}
-
-#{if jobPoints}
-<h2>Suitable Jobs for ${resume}</h2>
-	#{list items:jobPoints, as:'point'}
-		<a href="@{InternJobSeekerController.viewJob(point.job.id)}"><h3>${point.job}</h3></a>
-		<div>Point: +${point.strongPoint} -${point.weakPoint}</div>
-	#{/list}
-	<div>
-		#{if page > 1}
-			<a href="@{InternJobSeekerController.jobsForResume(resume.id, page-1)}">Prev</a>
-		#{/if}
-		#{if page < max}
-			<a href="@{InternJobSeekerController.jobsForResume(resume.id, page+1)}">Next</a>
+	<div class="middle">
+		#{if jobPoints}
+			<div style="width:100%; float: left;">
+	            <div style="float: left; padding-bottom: 20px; font-size:20px">
+	            	Suitable Jobs for ${resume}
+	            </div>
+			</div>
+			<div style="width:720px; float:left; margin: 0px auto;">
+				#{list items:jobPoints, as:'point'}
+					<div class="info-box">
+						<a href="@{InternJobSeekerController.viewJob(point.job.id)}">
+							<img src="http://lorempixel.com/160/160/technics" style="height:160; width:160" />
+							${point.job}
+						</a>
+						<div>
+							#{if point.job.description}
+								#{if point.job.description.length() > 250}
+									${point.job.description.substring(0, 250) + "..."}
+								#{/if}
+								#{else}
+									${point.job.description}
+								#{/else}
+							#{/if}
+						</div>
+					</div>
+				#{/list}
+			</div>
+			
+			<!--Page navigator-->
+			<div class="page-navigator">
+				<a href="@{InternJobSeekerController.jobsForResume(resume.id, 1)}">First</a>
+				#{if page > 1}
+					<a href="@{InternJobSeekerController.jobsForResume(resume.id, page-1)}">Prev</a>
+				#{/if}
+				${page}/${max}
+				#{if page < max}
+					<a href="@{InternJobSeekerController.jobsForResume(resume.id, page+1)}">Next</a>
+				#{/if}
+				<a href="@{InternJobSeekerController.jobsForResume(resume.id, max)}">First</a>
+			</div>
 		#{/if}
 	</div>
-#{/if}
+	
+	<!--Seperator space-->
+    <div style="height:50px; width:100%; float:left"> </div>
+	<!--Footer-->
+    #{footer /}
+</div>
