@@ -1,34 +1,60 @@
 #{extends 'main.html' /}
 #{set title:'Suitable Resumes for ' + job /}
 
-#{navigationBar /}
+<div class="wrapper">
+	#{navigationBar /}
+	#{notification /}
 
-<h1>Intern/Employer</h1>
+	<div class="middle">
+		#{if resumePoints}
+			<div style="width:100%; float: left;">
+	            <div style="float: left; padding-bottom: 20px; font-size:20px">
+	            	Suitable Resumes for <a href="@{InternEmployerController.viewJob(job.id)}">${job}</a>
+	            </div>
+			</div>
+			<div style="width:720px; float:left; margin: 0px auto;">
+				#{list items:resumePoints, as:'point'}
+					<div class="info-box">
+						<a href="@{InternEmployerController.viewResume(point.resume.id)}">
+							<table class="square-avatar">
+	                            <tr>
+									<td><img src="/public/images/default-avatar.png" /></td>
+								</tr>
+							</table>
+							${point.resume}
+						</a>
+						<div>
+							#{if point.resume.description}
+								#{if point.resume.description.length() > 250}
+									${point.resume.description.substring(0, 250) + "..."}
+								#{/if}
+								#{else}
+									${point.resume.description}
+								#{/else}
+							#{/if}
+						</div>
+					</div>
+				#{/list}
+			</div>
+			
+			<!--Page navigator-->
+			<div class="page-navigator">
+				#{if page > 1}
+					<a href="@{InternEmployerController.resumesForJob(job.id, 1)}">First</a>
+					<a href="@{InternEmployerController.resumesForJob(job.id, page-1)}">Prev</a>
+				#{/if}
+				${page}/${max}
+				#{if page < max}
+					<a href="@{InternEmployerController.resumesForJob(job.id, page+1)}">Next</a>
+					<a href="@{InternEmployerController.resumesForJob(job.id, max)}">Last</a>
+				#{/if}
 
-#{if flash.error}
-	<p class="error">
-		&{flash.error}
-	</p>
-#{/if}
-
-#{if flash.success}
-	<p class="success">
-		&{flash.success}
-	</p>
-#{/if}
-
-#{if resumePoints}
-<h2>Suitable Resumes for ${job}</h2>
-	#{list items:resumePoints, as:'point'}
-		<a href="@{InternEmployerController.viewResume(point.resume.id)}"><h3>${point.resume}</h3></a>
-		<div>Point: +${point.strongPoint} -${point.weakPoint}</div>
-	#{/list}
-	<div>
-		#{if page > 1}
-			<a href="@{InternEmployerController.resumesForJob(job.id, page-1)}">Prev</a>
-		#{/if}
-		#{if page < max}
-			<a href="@{InternEmployerController.resumesForJob(job.id, page+1)}">Next</a>
+			</div>
 		#{/if}
 	</div>
-#{/if}
+	
+	<!--Seperator space-->
+    <div style="height:50px; width:100%; float:left"> </div>
+	<!--Footer-->
+    #{footer /}
+</div>
