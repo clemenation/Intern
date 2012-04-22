@@ -16,7 +16,11 @@
 				#{list items:applications, as:'application'}
                 	<div class="info-box">
                         <a href="@{InternJobSeekerController.viewApplication(application.id)}">
-                            <img src="http://lorempixel.com/160/160/technics" style="height:160; width:160" />
+                            <table class="square-avatar">
+	                            <tr>
+									<td><img src="/public/images/default-avatar.png" /></td>
+								</tr>
+							</table>
                             ${application.job}
                 		</a>
 						<div>

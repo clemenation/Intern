@@ -16,7 +16,11 @@
 				#{list items:finalPoints, as:'point'}
 					<div class="info-box">
 						<a href="@{InternJobSeekerController.viewJob(point.job.id)}">
-							<img src="http://lorempixel.com/160/160/technics" style="height:160; width:160" />
+							<table class="square-avatar">
+	                            <tr>
+									<td><img src="/public/images/default-avatar.png" /></td>
+								</tr>
+							</table>
 							${point.job}
 						</a>
 						<div>
