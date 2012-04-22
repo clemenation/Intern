@@ -1,38 +1,52 @@
 #{extends 'main.html' /}
 #{set title:'Jobs' /}
 
-#{navigationBar /}
+<div class="wrapper">
+	#{navigationBar /}
+	#{notification /}
 
-<h1>Intern/Employer</h1>
-
-#{if flash.error}
-	<p class="error">
-		&{flash.error}
-	</p>
-#{/if}
-
-#{if flash.success}
-	<p class="success">
-		&{flash.success}
-	</p>
-#{/if}
-
-#{if jobs}
-	<h2>Jobs</h2>
-	#{list items:jobs, as:'job'}
-		<a href="@{InternEmployerController.viewJob(job.id)}"><h3>${job}</h3></a>
-		#{if job.description}
-			<div>				
-				${job.description}				
+	<div class="middle">
+		#{if jobs}
+			<div style="width:100%; float: left;">
+	            <div style="float: left; padding-bottom: 20px; font-size:20px">
+	            	Jobs
+	            </div>
+			</div>
+			<div style="width:720px; float:left; margin: 0px auto;">
+				#{list items:jobs, as:'job'}
+	            <div class="info-box-no-img">
+	                <a href="@{InternEmployerController.viewJob(job.id)}">${job}</a>
+	                #{if job.description}
+	                    <div>
+							#{if job.description.length() > 250}
+								${job.description.substring(0, 250) + "..."}
+							#{/if}
+							#{else}
+	                        	${job.description}
+							#{/else}
+	                    </div>
+	                #{/if}
+	            </div>
+	            #{/list}
+			</div>
+			
+			<!--Page navigator-->
+			<div class="page-navigator">
+				#{if page > 1}
+					<a href="@{InternEmployerController.jobs(1)}">First</a>
+					<a href="@{InternEmployerController.jobs(page-1)}">Prev</a>
+				#{/if}
+				${page}/${max}
+				#{if page < max}
+					<a href="@{InternEmployerController.jobs(page+1)}">Next</a>
+					<a href="@{InternEmployerController.jobs(max)}">Last</a>
+				#{/if}				
 			</div>
 		#{/if}
-	#{/list}
-	<div>
-		#{if page > 1}
-			<a href="@{InternEmployerController.resumes(page-1)}">Prev</a>
-		#{/if}
-		#{if page < max}
-			<a href="@{InternEmployerController.resumes(page+1)}">Next</a>
-		#{/if}
 	</div>
-#{/if}
+	
+	<!--Seperator space-->
+    <div style="height:50px; width:100%; float:left"> </div>
+	<!--Footer-->
+    #{footer /}
+</div>
