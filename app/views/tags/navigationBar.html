@@ -11,21 +11,24 @@
 	</div>
 	<div class="topbuttongroup">
 		#{if session['isAdmin'] == "true"}
-		<a class="topbutton" href="@{CRUD.index()}">Admin</a>
+		<a class="topbutton" href="@{CRUD.index()}">Admin</a>&nbsp;&nbsp;&nbsp;
 		#{/if}
 
 		#{if session['userType'] == "Job Seeker"}
-		<a class="topbutton" href="@{InternJobSeekerController.addResumeForm()}">Add</a>
-		<a class="topbutton" href="@{InternJobSeekerController.index()}">Home</a>
-		<a class="topbutton" href="@{InternJobSeekerController.profile()}">Me</a>
+		<a class="topbutton" href="@{InternJobSeekerController.addResumeForm()}">Add</a>&nbsp;&nbsp;&nbsp;
+       
+		<a class="topbutton" href="@{InternJobSeekerController.index()}">Home</a>&nbsp;&nbsp;&nbsp;
+       
+		<a class="topbutton" href="@{InternJobSeekerController.profile()}">Me</a>&nbsp;&nbsp;&nbsp;
 		#{/if}
 		#{elseif session['userType'] == "Employer"}
 		*{
-		<a class="topbutton" href="@{InternEmployerController.index()}">Home</a>
-		<a class="topbutton" href="@{InternEmployerController.profile()}">Me</a>
+		<a class="topbutton" href="@{InternEmployerController.index()}">Home</a>&nbsp;&nbsp;&nbsp;
+       
+		<a class="topbutton" href="@{InternEmployerController.profile()}">Me</a>&nbsp;&nbsp;&nbsp;
 		}*
 		#{/elseif}
-		<a class="topbutton" href="@{Secure.logout()}">Logout</a>
+		<a class="topbutton" href="@{Secure.logout()}">Logout</a>&nbsp;&nbsp;&nbsp;
 	</div>
 	
 </div>
