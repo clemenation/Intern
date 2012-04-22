@@ -9,7 +9,7 @@ html, body
     margin: 0px;
     height: 100%;
     font-family: "MyriadProRegular";
-    color: #333333;
+    color: #555555;
     font-size: 12px;
 	font-height: 14px;
 }
@@ -20,13 +20,18 @@ a
 	color: #555555;
 	text-decoration:none;
 }
+
+strong
+{
+	font-size: 18px;
+}
 	
 .wrapper
 {
 	min-height:100%;
 	height: auto;
 	height: 100%;
-	width: 940px;
+	width: 860px;
 	margin: 0px auto -2em;
 	background-color: #FFF;
 }
@@ -39,7 +44,7 @@ a
 
 .footer
 {
-	width: 720px;
+	width: 700px;
 	height: 2em;
 	float: none;
 	font-size: 12px;
@@ -86,7 +91,7 @@ a
 .middle
 {
 	margin: 0px auto;
-	width: 720px;
+	width: 700px;
 }
 
 .job-link
@@ -94,6 +99,14 @@ a
 	width: 160px;
 	float: left;
 	margin-right: 20px;
+	margin-bottom: 40px;
+}
+
+.job-link-end
+{
+	width: 160px;
+	float: left;
+	margin-right: 0px;
 	margin-bottom: 40px;
 }
 
@@ -142,7 +155,7 @@ a
 	float: left;
 	height: 240px;
 	width: 160px;
-	padding-right: 40px;
+	padding-right: 20px;
 }
 
 .employer-job

@@ -1,28 +1,19 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-<div class="wrapper" style="width: 940px">
+<div class="wrapper" style="width: 860px">
 
 	#{navigationBar /}
 	
-	#{if flash.error}
-		<p class="error">
-			&{flash.error}
-		</p>
-	#{/if}
-
-	#{if flash.success}
-		<p class="success">
-			&{flash.success}
-		</p>
-	#{/if}
+	#{notification /}
 	
 	<div class="middle">
 		#{if finalPoints}
 			#{list items:finalPoints, as:'point'}
-		    	<div class="job-link">
+				#{if point_index % 4 == 0}<div class="job-link-end">#{/if}
+		    	#{else}<div class="job-link">#{/else}
 					<a href="@{InternJobSeekerController.viewJob(point.job.id)}">
-		            	<img src="http://lorempixel.com/g/160/160/" style="height: 160px; width: 160px">
+		            	<img src="http://lorempixel.com/160/160/" style="height: 160px; width: 160px">
 		            	${point.job} for ${point.resume}
 		            </a>
 					<div>Point: +${point.strongPoint} -${point.weakPoint}</div>
@@ -47,18 +38,5 @@
     <!--Seperator space-->
     <div style="height:50px; width:100%; float:left"> </div>
     <!--Footer-->
-    <div class="footer">
-		<div class="info" style="float: left">
-			<p>HUT SoICT ICT-54 (C) 2012</p>
-		</div>
-		<div class="about" style="float: right">
-			<p>
-				<a href="#">About</a> - 
-				<a href="#">Home</a> - 
-				<a href="#">Browse</a> - 
-				<a href="#">Me</a> - 
-				<a href="#">Logout</a>
-			</p>
-		</div>
-	</div>
+    #{footer /}
 </div>

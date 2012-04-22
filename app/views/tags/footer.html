@@ -1,0 +1,26 @@
+<div class="footer">
+	<div class="info" style="float: left">
+		<p>HUT SoICT ICT-54 (C) 2012</p>
+	</div>
+	<div class="about" style="float: right">
+		<p>
+			<a href="#">About</a> - 
+			#{if session['isAdmin'] == "true"}
+				<a href="@{CRUD.index()}">Admin</a> - 
+			#{/if}
+	
+			#{if session['userType'] == "Job Seeker"}
+				<a href="@{InternJobSeekerController.addResumeForm()}">Add</a> - 
+				<a href="@{InternJobSeekerController.index()}">Home</a> - 
+				<a href="@{InternJobSeekerController.profile()}">Me</a> - 
+			#{/if}
+			#{elseif session['userType'] == "Employer"}
+				*{
+				<a href="@{InternEmployerController.index()}">Home</a> - 
+				<a href="@{InternEmployerController.profile()}">Me</a> - 
+				}*
+			#{/elseif}
+			<a href="@{Secure.logout()}">Logout</a>
+		</p>
+	</div>
+</div>

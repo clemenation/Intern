@@ -4,25 +4,15 @@
 <div class="wrapper">
 #{navigationBar /}
 
-#{if flash.error}
-	<p class="error">
-		&{flash.error}
-	</p>
-#{/if}
-
-#{if flash.success}
-	<p class="success">
-		&{flash.success}
-	</p>
-#{/if}
+#{notification /}
 
 	<div class="middle">
     	<div class="avatar">
-        	<img src="http://lorempixel.com/g/160/240/people">
+        	<img src="http://lorempixel.com/160/240/people">
         </div>
         <div style="width:520px;float:left">
         	<div style="float: left; padding-bottom: 20px; font-size:20px">
-            	<strong>//jobSeekerName</strong>
+            	<strong>${jobSeeker}</strong>
             </div>
             <div style="float:right">
 				<a style="float:right" href="@{InternJobSeekerController.updateProfileForm()}">edit</a>
@@ -46,7 +36,7 @@
         <div style="width:720px; float:left; margin: 0px auto;">
             #{list items:resumes, as:'resume'}
             <div class="resume-link">
-                <a href="@{InternJobSeekerController.viewResume(resume.id)}"><h3>${resume}</h3></a>
+                <a href="@{InternJobSeekerController.viewResume(resume.id)}">${resume}</a>
                 #{if resume.description}
                     <div>				
                         ${resume.description}				
@@ -71,8 +61,8 @@
                 #{list items:applications, as:'application'}
                 	<div class="jobseeker-application">
                         <a href="@{InternJobSeekerController.viewApplication(application.id)}">
-                            <img src="http://lorempixel.com/g/160/160/technics" style="height:160; width:160" />
-                            <h3>${application}</h3>
+                            <img src="http://lorempixel.com/160/160/technics" style="height:160; width:160" />
+                            ${application}
                 		</a>
                     </div>
                 #{/list}
@@ -84,18 +74,5 @@
     
     
     <!--Footer-->
-    <div class="footer">
-		<div class="info" style="float: left">
-			<p>HUT SoICT ICT-54 (C) 2012</p>
-		</div>
-		<div class="about" style="float: right">
-			<p>
-				<a href="#">About</a> - 
-				<a href="#">Home</a> - 
-				<a href="#">Browse</a> - 
-				<a href="#">Me</a> - 
-				<a href="#">Logout</a>
-			</p>
-		</div>
-	</div>
+    #{footer /}
 </div>
