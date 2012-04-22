@@ -114,7 +114,7 @@ a
 
 .hor-sep
 {
-	float: none;
+	float: left;
 	width:100%;
 	padding-bottom: 60px;
 }
