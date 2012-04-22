@@ -18,6 +18,7 @@ GET     /favicon.ico                            404
 GET     /public/                                staticDir:public
 
 # Administration
+
 *		/admin									module:crud
 
 # Import Secure routes

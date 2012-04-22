@@ -1,0 +1,37 @@
+#{extends 'main.html' /}
+#{set title:'View Job' /}
+
+#{navigationBar /}
+
+<h1>Intern/Employer</h1>
+
+#{if flash.error}
+	<p class="error">
+		&{flash.error}
+	</p>
+#{/if}
+
+#{if flash.success}
+	<p class="success">
+		&{flash.success}
+	</p>
+#{/if}
+
+#{displayJob job:job, as:"employer" /}
+
+#{if jobPoints}
+<h2>Suitable Resumes</h2>
+	<a href ="@{InternEmployerController.resumesForJob(job.id, 1)}">view all</a>
+	#{list items:jobPoints, as:'point'}
+		<a href="@{InternEmployerController.viewResume(point.resume.id)}"><h3>${point.resume} for ${point.job}</h3></a>
+		<div>Point: +${point.strongPoint} -${point.weakPoint}</div>
+	#{/list}
+#{/if}
+
+#{if job?.applications}
+	<h2>Applications</h2>
+	<a href="@{InternEmployerController.applicationsForJob(job.id, 1)}">view all</a>
+	#{list items:models.InternApplication.find("job = ? order by postedAt desc", job).fetch(4), as:'application'}
+		<a href="@{InternEmployerController.viewApplication(application.id)}"><h3>${application.resume}</h3></a>
+	#{/list}
+#{/if}

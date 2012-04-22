@@ -10,6 +10,15 @@ InternMajor(computerScienceMajor):
 InternMajor(electronicEngineeringMajor):
     name: Electronic Engineering
 
+InternContactInfo(dungNguyenContactInfo):
+    contactEmail: nguyentuandung2991@gmail.com
+
+InternContactInfo(hoangTranContactInfo):
+    contactEmail: hoangtran@gmail.com
+
+InternContactInfo(hoangTranContactInfoForJob):
+    contactEmail: hoangtran@gmail.com
+
 InternCity(haNoiCity):
     name: Ha Noi
     
@@ -97,6 +106,14 @@ InternJobSeeker(vannd):
     fullName: Nguyen Duc Van
     college: Hanoi University of Science and Technology
     userType: Job Seeker
+
+InternJobSeeker(vannd1):
+    email: vannd1@gmail.com
+    password: vannd
+    aboutMe: I'm Van
+    fullName: Nguyen Duc Van
+    college: Hanoi University of Science and Technology
+    userType: Job Seeker
     
 InternContactInfo(nguyenquacContactInfo):
     contactEmail: nguyenquac@gmail.com
@@ -115,6 +132,12 @@ InternJobSeeker(nguyenquac):
 InternContactInfo(hoangtranContactInfo):
     contactEmail: hoangtran@gmail.com
 
+InternAddress(hoangTranAddress):
+    address: 1 Chua Boc
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: hoangTranContactInfo
+
 InternAddress(hoangtranContactInfoAddress):
     contactInfo: hoangtranContactInfo
     
@@ -123,6 +146,7 @@ InternEmployer(hoangtran):
     password: hoangtran
     companyName: Hoang Tran Software
     userType: Employer
+    contactInfo: hoangTranContactInfo
     
 InternContactInfo(hoangTranFirstJobContactInfo):
     contactEmail: hoangtran@gmail.com

@@ -16,7 +16,8 @@ public class InternEmployer extends InternUser {
 	
 	public String companyName;
 	public String industry;
-	
+	public Blob logo;
+		
 	@Lob
 	public String description;
 	
@@ -25,7 +26,7 @@ public class InternEmployer extends InternUser {
 	
 	@OneToMany(mappedBy="employer")
 	public List<InternApplication> applications;
-	
+
 	@ManyToOne
 	public InternCompanySize companySize;
 	
@@ -33,15 +34,16 @@ public class InternEmployer extends InternUser {
 	
 	// Constructors
 	
-	public InternEmployer(String email, String password) {
-		super(email, password, "Employer");
+	public InternEmployer() {
+		super("Employer");
 		this.jobs = new ArrayList<InternJob>();
 		this.applications = new ArrayList<InternApplication>();
 	}
 	
-	public InternEmployer(String email, String password, boolean isAdmin) {
-		this(email, password);
-		this.isAdmin = true;
+	public InternEmployer(String email, String password) {
+		super(email, password, "Employer");
+		this.jobs = new ArrayList<InternJob>();
+		this.applications = new ArrayList<InternApplication>();
 	}
 	
 	public InternEmployer(String email, 
@@ -62,6 +64,66 @@ public class InternEmployer extends InternUser {
 	
 	
 	// Methods
+	
+	public InternEmployer update(InternEmployer employer) {
+		this.email = employer.email;
+		this.password = employer.password;
+		this.description = employer.description;
+		this.companyName = employer.companyName;
+		this.companySize = employer.companySize;
+		System.out.println(this.companySize.size);
+		
+		this.industry = employer.industry;
+		//this.logo = employer.logo;
+		if (this.contactInfo == null) {
+			this.contactInfo = employer.contactInfo;
+		} else {
+			this.contactInfo.update(employer.contactInfo);
+		}
+		
+		return this;
+	}
+	
+	public InternEmployer updateLogo(InternEmployer employer) {
+		if (this.logo.exists()) {
+			this.logo.getFile().delete();
+		}
+		this.logo = employer.logo;
+		
+		return this;
+	}
+	
+	public List<InternPoint> findResumes() {
+		// Find all resumes respectively to each job		
+		List<List<InternPoint>> pointLists = new ArrayList<List<InternPoint>>();
+		for (InternJob job : jobs) {
+			pointLists.add(job.findResumes());
+		}
+		
+		// Find the longest resume list		
+		int max = 0;
+		for (List<InternPoint> points : pointLists) {
+			if (max < points.size()) max = points.size();
+		}
+		
+		// Extract distinct satisfied resumes from all resumes
+		List<InternResume> finalResumes = new ArrayList<InternResume>();
+		List<InternPoint> finalPoints = new ArrayList<InternPoint>();
+		for (int i=0; i<max; i++) {
+			for (List<InternPoint> points : pointLists) {
+				try {
+					if (!finalResumes.contains(points.get(i).resume)) {
+						finalResumes.add(points.get(i).resume);
+						finalPoints.add(points.get(i));
+					}
+				} catch (IndexOutOfBoundsException e) {
+					// Do nothing if go over this resume list size
+				}
+			}
+		}
+		
+		return finalPoints;
+	}
 	
 	public String toString() {
 		return this.email;
@@ -110,6 +172,5 @@ public class InternEmployer extends InternUser {
 	public static InternEmployer connect(String email, String password) {
 		return find("byEmailAndPassword", email, password).first();
 	}
-	
-	
+
 }

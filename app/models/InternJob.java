@@ -22,37 +22,50 @@ public class InternJob extends Model {
 	@ManyToOne
 	public InternEmployer owner;
 	
+	@Required
 	public Date postedAt;
 	
 	@Min(0)
 	@Max(200)
 	public int requiredWorkExperience;
 	
+	@OneToOne(cascade=CascadeType.ALL)
+	public InternEducation requiredEducation;
+	
 	@Lob
 	public String description;
+	
+	@OneToOne(cascade=CascadeType.ALL)
+	@Valid
+	@Required
+	public InternContactInfo contactInfo;
 	
 	@OneToMany(mappedBy="job")
 	public List<InternApplication> applications;
 	
-	@OneToOne(cascade=CascadeType.ALL)
-	public InternContactInfo contactInfo;
-	
 	@ManyToMany
 	public List<InternLanguage> requiredLanguages;
 	
-	@OneToOne(cascade=CascadeType.ALL)
-	public InternEducation requiredEducation;
+
 	
 	
 	
 	//Constructor
 	
-	public InternJob(InternEmployer owner, String name) {
-		this.owner = owner;
-		this.name = name;
+	public InternJob() {
 		this.postedAt = new Date();
 		this.applications = new ArrayList<InternApplication>();
 		this.requiredLanguages = new ArrayList<InternLanguage>();
+		this.requiredEducation = new InternEducation();
+		this.contactInfo = new InternContactInfo("");
+	}
+	
+	public InternJob(InternEmployer owner, String name) {
+		this();
+		
+		this.owner = owner;
+		this.name = name;
+		this.contactInfo.update(owner.contactInfo);
 	}
 	
 	public InternJob(InternEmployer owner, 
@@ -64,14 +77,25 @@ public class InternJob extends Model {
 		this(owner, name);
 		this.requiredWorkExperience = requiredWorkExperience;
 		this.description = description;
-		this.contactInfo = contactInfo;
-		this.requiredEducation = requiredEducation;
+		this.contactInfo.update(owner.contactInfo);
+		this.requiredEducation.update(requiredEducation);
 	}
 	
 	
 	
 	// Methods
 	
+	public InternJob update(InternJob job) {
+		this.name = job.name;
+		this.requiredWorkExperience = job.requiredWorkExperience;
+		this.requiredEducation.update(job.requiredEducation);
+		this.description = job.description;
+		this.contactInfo.update(job.contactInfo);
+		this.requiredLanguages = job.requiredLanguages;
+	
+		return this;
+	}
+
 	public List<InternApplication> applicationsByJobSeeker(InternJobSeeker jobSeeker) {
 		List<InternApplication> applications = new ArrayList<InternApplication>();
 		
@@ -96,7 +120,7 @@ public class InternJob extends Model {
 		
 		return pointsFromResumes(resumes);
 	}
-	
+
 	public List<InternPoint> findResumes() {
 		List<InternResume> resumes = InternResume.all().fetch();	// Getting all resumes from database
 		
@@ -112,7 +136,7 @@ public class InternJob extends Model {
 
 		Collections.sort(points, new InternPoint.InternPointComparator());
 		Collections.reverse(points);
-
+				
 		return points;
 	}
 	
@@ -156,7 +180,10 @@ public class InternJob extends Model {
 		return true;
 	}
 	
-	
+	public boolean canDelete() {
+		
+		return true;
+	}
 	
 	// Static methods
 	
@@ -166,22 +193,26 @@ public class InternJob extends Model {
 			return false;
 		}
 		
-		// Check if any application is linking to this job
-		InternApplication application = InternApplication.find("byJob", job).first();
-		if (application != null) {
-			System.out.println("ERROR: There are still applications owned by job " + job + ", cannot delete yet");
-			return false;
+		if (job.canDelete() == false) return false;
+		
+		List<Long> applicationsId = new ArrayList<Long>();
+		for (InternApplication application: job.applications) {
+			applicationsId.add(application.id);
 		}
-
+		for (Long applicationId : applicationsId) {
+			InternApplication application = InternApplication.findById(applicationId);
+			if (InternApplication.deleteApplication(application) == false) return false;
+		}
+		
 		// Remove languages from job properly
 		for (InternLanguage language : job.requiredLanguages) {
 			job.removeLanguage(language);
 		}
 		
-		// Removing job from its owner's job list
 		job.owner.jobs.remove(job);
 		
 		job.delete();
+		
 		return true;
 	}
 }

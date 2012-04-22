@@ -1,0 +1,34 @@
+#{extends 'main.html' /}
+#{set title:'Suitable Resumes for ' + job /}
+
+#{navigationBar /}
+
+<h1>Intern/Employer</h1>
+
+#{if flash.error}
+	<p class="error">
+		&{flash.error}
+	</p>
+#{/if}
+
+#{if flash.success}
+	<p class="success">
+		&{flash.success}
+	</p>
+#{/if}
+
+#{if resumePoints}
+<h2>Suitable Resumes for ${job}</h2>
+	#{list items:resumePoints, as:'point'}
+		<a href="@{InternEmployerController.viewResume(point.resume.id)}"><h3>${point.resume}</h3></a>
+		<div>Point: +${point.strongPoint} -${point.weakPoint}</div>
+	#{/list}
+	<div>
+		#{if page > 1}
+			<a href="@{InternEmployerController.resumesForJob(job.id, page-1)}">Prev</a>
+		#{/if}
+		#{if page < max}
+			<a href="@{InternEmployerController.resumesForJob(job.id, page+1)}">Next</a>
+		#{/if}
+	</div>
+#{/if}

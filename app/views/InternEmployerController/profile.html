@@ -1,0 +1,38 @@
+#{extends 'main.html' /}
+#{set title:'Employer' /}
+
+#{navigationBar /}
+
+<h1>Intern/Employer</h1>
+
+#{if flash.error}
+	<p class="error">
+		&{flash.error}
+	</p>
+#{/if}
+
+#{if flash.success}
+	<p class="success">
+		&{flash.success}
+	</p>
+#{/if}
+
+<h2>Profile</h2>
+<a href="@{InternEmployerController.updateProfileForm()}">edit</a>
+
+#{displayEmployer employer:employer /}
+
+#{if (jobs=models.InternJob.find("owner = ? order by postedAt desc", employer).from(0).fetch(4))}
+<h2>Jobs</h2>
+	<a href="@{InternEmployerController.jobs()}">view all</a>
+	#{list items:jobs, as:'job'}
+		<div>
+			<a href="@{InternEmployerController.viewJob(job.id)}"><h3>${job}</h3></a>
+			#{if job.description}
+				<div>
+					${job.description}
+				</div>
+			#{/if}
+		</div>
+	#{/list}
+#{/if}

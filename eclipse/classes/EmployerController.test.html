@@ -1,0 +1,185 @@
+*{ You can use plain selenium command using the selenium tag }*
+
+#{fixture delete:'all', load:'dungnguyendata.yml' /}
+
+#{selenium}
+	clearSession()
+	
+	// Open login page
+	open('/')
+	assertTextPresent('Or register as Job Seeker & Employer')
+	
+	// Login as employer
+	type('username', 'hoangtran@gmail.com')
+	type('password', 'hoangtran')
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('Logout')
+	assertTextPresent('Intern/Employer')
+	assertTextPresent('Suitable Resumes')
+#{/selenium}
+
+#{selenium 'Test Profile'}
+	clickAndWait('link=Me')
+	assertTitle('Employer')
+	assertTextPresent('Profile')
+	assertTextPresent('edit')
+	assertTextPresent('Email: hoangtran@gmail.com')
+	assertTextPresent('Jobs')
+	assertTextPresent('Hoang Tran's 1st Job')
+	assertTextPresent('Applications')
+	assertTextPresent('nguyentuandung2991@gmail.com's Dung Nguyen's 2nd Resume to hoangtran@gmail.com's Hoang Tran's 1st Job')
+#{/selenium}
+
+#{selenium 'Test View All Job'}
+	clickAndWait('link=view all')
+	assertTextPresent('Jobs')
+	assertTextPresent('Hoang Tran's 1st Job')
+#{/selenium}
+
+#{selenium 'Test View Job'}
+	clickAndWait('link=Hoang Tran's 1st Job')
+	assertTitle('View Job')
+	verifyTextPresent('Required work experience: 2')
+	verifyTextPresent('Suitable Resumes')
+	verifyTextPresent('Dung Nguyen's 1st Resume for Hoang Tran's 1st Job')
+	
+	// Open a null resume, should go back to resume's index
+	open('@{InternEmployerController.viewJob(0)}')
+	assertTextPresent('Suitable Resumes')
+#{/selenium}
+
+#{selenium 'Test View Resume'}
+	clickAndWait('link=Dung Nguyen's 1st Resume for Hoang Tran's 1st Job')
+	assertTitle('View Resume')
+	verifyTextPresent('Posted at: 2012-04-01 07:00:00.0')
+	verifyTextPresent('Work experience: 2')
+#{/selenium}
+
+#{selenium 'Test Add Job'}
+	// Open Add Job page
+	clickAndWait('link=Add Job')
+	assertTitle('Add Job')
+	
+	type('job.name', 'Photography')
+	type('job.requiredWorkExperience', '1')
+	type('job.description', 'Worked in photography business for several clients')
+	type('job.contactInfo.contactEmail', 'me@hoangtran.com')
+	
+	// Typing wrong phone format
+	type('job.contactInfo.phone', 'aaaa')
+	
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('Not a valid phone')
+	
+	// Typing right phone format
+	type('job.contactInfo.phone', '')
+	clickAndWait('css=input[type=submit]')
+	
+	// Should display job info page
+	assertTitle('View Job')
+	assertTextPresent('Worked in photography business for several clients')
+	assertTextPresent('me@hoangtran.com')
+#{/selenium}
+
+#{selenium 'Test Update Profile'}
+	// Open profile page
+	open('@{InternEmployerController.profile()}')
+	assertTitle('Employer')
+	
+	clickAndWait('link=edit')
+	assertTitle('Update Employer Profile')
+	assertTextPresent('Email:')	
+	
+	// Entering wrong password format
+	type('employer.password', 'abc')
+	clickAndWait('css=input[type=Save]')
+	assertTextPresent('Minimum size is 6')
+	
+	// Entering right password
+	type('employer.password', 'hoangtran')
+	
+	// Entering more information
+	type('employer.companyName', 'Hoang Tran company')
+	type('employer.contactInfo.mobile', '090-432-9991')
+	type('employer.contactInfo.phone', '043-775-3126')
+	
+	// Changing contact email
+	type('employer.contactInfo.contactEmail', 'hoanglong@gmail.com')
+	
+	// Changing description
+	type('employer.description', 'Hoang Tran description')
+	
+	// Submit
+	clickAndWait('css=input[type=Save]')
+	
+	// Should return to profile page with success message
+	assertTitle('Employer')
+	assertTextPresent('Update profile successful!')
+	
+	// Checking if modified and added fields
+	verifyTextPresent('Company name: Hoang Tran company')
+	verifyTextPresent('Mobile: 090-432-9991')
+	verifyTextPresent('Phone: 043-775-3126')
+	verifyTextPresent('Contact Email: hoanglong@gmail.com')
+	verifyTextPresent('Description: Hoang Tran description')
+	
+	// Edit email this time, will have to login again
+	clickAndWait('link=edit')
+	type('employer.email', 'hoanglong@gmail.com')
+	type('employer.contactInfo.contactEmail', '')
+	clickAndWait('css=input[type=Save]')
+	assertTitle('Login')
+	
+	// Should not logged in
+	type('username', 'hoangtran@gmail.com')
+	type('password', 'hoangtran')
+	clickAndWait('css=input[type=submit]')
+	assertTitle('Login')
+	
+	// Using newly changed email
+	type('username', 'hoanglong@gmail.com')
+	type('password', 'hoangtran')
+	clickAndWait('css=input[type=submit]')
+	assertTitle('Home')
+	
+	// Go to profile to check info
+	open('@{InternEmployerController.profile()}')
+	assertTitle('Employer')
+	verifyTextPresent('Email: hoanglong@gmail.com')
+	verifyTextPresent('Contact Email: hoanglong@gmail.com')
+#{/selenium}
+
+#{selenium 'Test Edit Job'}
+	// Editing a resume not on database, should display resumes list page
+	open('@{InternEmployerController.editJobForm(-1)}')
+	assertTitle('Jobs')
+	
+	// Submit a resume not on database, should display resumes list page
+	open('@{InternEmployerController.editJob(-1)}')
+	assertTitle('Jobs')
+
+	// Select 'Photography' Job
+	clickAndWait('link=Photography')
+	assertTitle('View Job')
+	
+	// Click edit button, should show edit page
+	clickAndWait('link=edit')
+	assertTitle('Edit Job')
+	
+	// Change some info
+	type('job.description', 'Worked hard')
+	
+	// Entering wrong phone format
+	type('job.contactInfo.phone', 'aaaaa')
+	clickAndWait('css=input[type=submit]')
+	assertTextPresent('Not a valid phone')
+	
+	// Correcting phone field
+	type('job.contactInfo.phone', '043-775-3126')
+	
+	// Submit, should display job page
+	clickAndWait('css=input[type=submit]')
+	assertTitle('View Job')
+	verifyTextPresent('Worked hard')
+	verifyTextPresent('043-775-3126')
+#{/selenium}

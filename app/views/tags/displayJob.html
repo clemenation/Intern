@@ -1,9 +1,12 @@
 <h2>${_job}</h2>
+#{if _as=="employer"}
+	<a href="@{InternEmployerController.editJobForm(_job.id)}">edit</a>
+#{/if}
 
 #{if _as=="full"}
-<div>
-	Owner: ${_job?.owner}
-</div>
+	<div>
+		Owner: ${_job?.owner}
+	</div>
 #{/if}
 
 <div>
@@ -11,28 +14,28 @@
 </div>
 
 #{if _job?.requiredWorkExperience > 0}
-<div>
-	Required work experience: ${_job?.requiredWorkExperience}
-</div>
+	<div>
+		Required work experience: ${_job?.requiredWorkExperience}
+	</div>
 #{/if}
 
 #{if _job?.description}
-<div>
-	Description: ${_job?.description}
-</div>
+	<div>
+		Description: ${_job?.description}
+	</div>
 #{/if}
 
 #{displayContactInfo contactInfo:_job?.contactInfo /}
 
 #{if _job?.requiredLanguages}
-<div>
-	Required languages: #{list items:_job?.requiredLanguages, as:'language'}${language} #{/list}
-</div>
+	<div>
+		Required languages: #{list items:_job?.requiredLanguages, as:'language'}${language} #{/list}
+	</div>
 #{/if}
 
-#{if _job?.requiredEducation}
-<div>
-	Required education:
-		#{displayEducation education:_job?.requiredEducation /}
-</div> 
+#{if _job?.requiredEducation && !_job?.requiredEducation.isEmpty()}
+	<div>
+		Required education:
+			#{displayEducation education:_job?.requiredEducation /}
+	</div> 
 #{/if}
