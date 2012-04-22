@@ -1,5 +1,5 @@
-<div class="top" style="width:100%; float:left">
-	<div class="toplogo" style="float: left">
+<div style="width:100%; float:left">
+	<div class="toplogo">
 		<a href="#">
 			#{if session['userType'] == "Job Seeker"}
 				<img class="toplogo" src="/public/images/me-jobseeker-logo.jpg">
@@ -9,23 +9,23 @@
 			#{/elseif}
 		</a>
 	</div>
-	<div class="topbuttongroup" style="float: right">
+	<div class="topbuttongroup">
 		#{if session['isAdmin'] == "true"}
-			<a href="@{CRUD.index()}">Admin</a> -
+		<a class="topbutton" href="@{CRUD.index()}">Admin</a>
 		#{/if}
 
 		#{if session['userType'] == "Job Seeker"}
-		<a href="@{InternJobSeekerController.addResumeForm()}">Add</a> -
-		<a href="@{InternJobSeekerController.index()}">Home</a> -
-		<a href="@{InternJobSeekerController.profile()}">Me</a> -
+		<a class="topbutton" href="@{InternJobSeekerController.addResumeForm()}">Add</a>
+		<a class="topbutton" href="@{InternJobSeekerController.index()}">Home</a>
+		<a class="topbutton" href="@{InternJobSeekerController.profile()}">Me</a>
 		#{/if}
 		#{elseif session['userType'] == "Employer"}
 		*{
-		<a href="@{InternEmployerController.index()}">Home</a> -
-		<a href="@{InternEmployerController.profile()}">Me</a> -
+		<a class="topbutton" href="@{InternEmployerController.index()}">Home</a>
+		<a class="topbutton" href="@{InternEmployerController.profile()}">Me</a>
 		}*
 		#{/elseif}
-		<a href="@{Secure.logout()}">Logout</a>
+		<a class="topbutton" href="@{Secure.logout()}">Logout</a>
 	</div>
 	
 </div>
