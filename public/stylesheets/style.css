@@ -201,13 +201,18 @@ strong
 	padding-right: 20px;
 }
 
-.resume-link
+.info-box-no-img
 {
 	width: 160px;
 	height: 160px;
 	padding-right:20px;
 	padding-bottom: 40px;
 	float: left;
+}
+
+.info-box-no-img div
+{
+	margin-top: 10px;
 }
 
 .resume-title

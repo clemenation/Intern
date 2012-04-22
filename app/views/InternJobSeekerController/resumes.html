@@ -14,7 +14,7 @@
 			</div>
 			<div style="width:720px; float:left; margin: 0px auto;">
 				#{list items:resumes, as:'resume'}
-	            <div class="resume-link">
+	            <div class="info-box-no-img">
 	                <a href="@{InternJobSeekerController.viewResume(resume.id)}">${resume}</a>
 	                #{if resume.description}
 	                    <div>
@@ -40,7 +40,7 @@
 				#{if page < max}
 					<a href="@{InternJobSeekerController.resumes(page+1)}">Next</a>
 				#{/if}
-				<a href="@{InternJobSeekerController.resumes(max)}">First</a>
+				<a href="@{InternJobSeekerController.resumes(max)}">Last</a>
 			</div>
 		#{/if}
 	</div>

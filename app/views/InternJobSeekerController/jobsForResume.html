@@ -43,7 +43,7 @@
 				#{if page < max}
 					<a href="@{InternJobSeekerController.jobsForResume(resume.id, page+1)}">Next</a>
 				#{/if}
-				<a href="@{InternJobSeekerController.jobsForResume(resume.id, max)}">First</a>
+				<a href="@{InternJobSeekerController.jobsForResume(resume.id, max)}">Last</a>
 			</div>
 		#{/if}
 	</div>
