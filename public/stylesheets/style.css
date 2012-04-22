@@ -190,3 +190,10 @@ a
 	float:left;
 	padding-bottom:10px;
 }
+
+.page-navigator
+{
+	width:100%;
+	float:left;
+	text-align:center;
+}

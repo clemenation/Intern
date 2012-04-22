@@ -28,14 +28,37 @@
 					<div>Point: +${point.strongPoint} -${point.weakPoint}</div>
 		        </div>
 			#{/list}
-			<div>
-				#{if page > 1}
-					<a href="@{InternJobSeekerController.index(page-1)}">Prev</a>
-				#{/if}
-				#{if page < max}
-					<a href="@{InternJobSeekerController.index(page+1)}">Next</a>
-				#{/if}
-			</div>
+			
 		#{/if}
+        
+	</div>
+    <!--Page navigator-->
+    <div class="page-navigator">
+    		<a href="@{InternJobSeekerController.index(1)}">First</a>
+		#{if page > 1}
+			<a href="@{InternJobSeekerController.index(page-1)}">Prev</a>
+		#{/if}
+           	${page}/${max}
+		#{if page < max}
+			<a href="@{InternJobSeekerController.index(page+1)}">Next</a>
+		#{/if}
+           	<a href="@{InternJobSeekerController.index(max)}">Last</a>
+	</div>
+    <!--Seperator space-->
+    <div style="height:50px; width:100%; float:left"> </div>
+    <!--Footer-->
+    <div class="footer">
+		<div class="info" style="float: left">
+			<p>HUT SoICT ICT-54 (C) 2012</p>
+		</div>
+		<div class="about" style="float: right">
+			<p>
+				<a href="#">About</a> - 
+				<a href="#">Home</a> - 
+				<a href="#">Browse</a> - 
+				<a href="#">Me</a> - 
+				<a href="#">Logout</a>
+			</p>
+		</div>
 	</div>
 </div>
