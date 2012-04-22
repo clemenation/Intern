@@ -75,7 +75,14 @@
                             ${application.job}
                 		</a>
 						<div>
-							${application.resume}
+							#{if application.job.description}
+								#{if application.job.description.length() > 250}
+									${application.job.description.substring(0, 250) + "..."}
+								#{/if}
+								#{else}
+									${application.job.description}
+								#{/else}
+							#{/if}
 						</div>
                     </div>
                 #{/list}
