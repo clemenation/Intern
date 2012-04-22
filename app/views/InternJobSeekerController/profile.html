@@ -38,8 +38,13 @@
             <div class="resume-link">
                 <a href="@{InternJobSeekerController.viewResume(resume.id)}">${resume}</a>
                 #{if resume.description}
-                    <div>				
-                        ${resume.description}				
+                    <div>
+						#{if resume.description.length() > 250}
+							${resume.description.substring(0, 250) + "..."}
+						#{/if}
+						#{else}
+                        	${resume.description}
+						#{/else}
                     </div>
                 #{/if}
             </div>
@@ -62,8 +67,11 @@
                 	<div class="jobseeker-application">
                         <a href="@{InternJobSeekerController.viewApplication(application.id)}">
                             <img src="http://lorempixel.com/160/160/technics" style="height:160; width:160" />
-                            ${application}
+                            ${application.job}
                 		</a>
+						<div>
+							${application.resume}
+						</div>
                     </div>
                 #{/list}
                 

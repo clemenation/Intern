@@ -14,9 +14,18 @@
 		    	#{else}<div class="job-link">#{/else}
 					<a href="@{InternJobSeekerController.viewJob(point.job.id)}">
 		            	<img src="http://lorempixel.com/160/160/" style="height: 160px; width: 160px">
-		            	${point.job} for ${point.resume}
+		            	${point.job}
 		            </a>
-					<div>Point: +${point.strongPoint} -${point.weakPoint}</div>
+					<div>
+						#{if point.job.description}
+							#{if point.job.description.length() > 250}
+								${point.job.description.substring(0, 250) + "..."}
+							#{/if}
+							#{else}
+								${point.job.description}
+							#{/else}
+						#{/if}
+					</div>
 		        </div>
 			#{/list}
 			
