@@ -1,9 +1,8 @@
 #{extends 'main.html' /}
-#{set title:jobSeeker /}
+#{set title:Me /}
 
+<div class="wrapper">
 #{navigationBar /}
-
-<h1>Intern/Job Seeker</h1>
 
 #{if flash.error}
 	<p class="error">
@@ -17,30 +16,86 @@
 	</p>
 #{/if}
 
-<h2>Profile</h2>
-<a href="@{InternJobSeekerController.updateProfileForm()}">edit</a>
+	<div class="middle">
+    	<div class="avatar">
+        	<img src="http://lorempixel.com/g/160/240/people">
+        </div>
+        <div style="width:520px;float:left">
+        	<div style="float: left; padding-bottom: 20px; font-size:20px">
+            	<strong>//jobSeekerName</strong>
+            </div>
+            <div style="float:right">
+				<a style="float:right" href="@{InternJobSeekerController.updateProfileForm()}">edit</a>
+            </div>
+        </div>
 
-#{displayJobSeeker jobSeeker:jobSeeker /}
+		#{displayJobSeeker jobSeeker:jobSeeker /}
 
-#{if (resumes=models.InternResume.find("owner = ? order by postedAt desc", jobSeeker).from(0).fetch(4))}
-	<h2>Resumes</h2>
-	<a href="@{InternJobSeekerController.resumes()}">view all</a>
-	#{list items:resumes, as:'resume'}
-		<div>
-			<a href="@{InternJobSeekerController.viewResume(resume.id)}"><h3>${resume}</h3></a>
-			#{if resume.description}
-				<div>				
-					${resume.description}				
-				</div>
-			#{/if}
+        <!--Seperator space-->
+        <div style="height:40px; width:100%; float:left"> </div>
+    
+        #{if (resumes=models.InternResume.find("owner = ? order by postedAt desc", jobSeeker).from(0).fetch(4))}
+        <div style="width:100%; float: left;">
+            <div style="float: left; padding-bottom: 20px; font-size:20px">
+            	Resumes
+            </div>
+            <div style="float:right">
+	            <a style="float:right" href="@{InternJobSeekerController.resumes()}">view all</a>
+            </div>
+        </div>
+        <div style="width:720px; float:left; margin: 0px auto;">
+            #{list items:resumes, as:'resume'}
+            <div class="resume-link">
+                <a href="@{InternJobSeekerController.viewResume(resume.id)}"><h3>${resume}</h3></a>
+                #{if resume.description}
+                    <div>				
+                        ${resume.description}				
+                    </div>
+                #{/if}
+            </div>
+            #{/list}
+        </div>
+		#{/if}
+        
+        
+
+		<div style="width:100%; float: none; padding-bottom: 50px">
+        #{if (applications=models.InternApplication.find("jobSeeker = ? order by postedAt desc", jobSeeker).from(0).fetch(4))}
+            <div style="float: left; padding-bottom: 20px; font-size:20px">
+            	Applications
+            </div>
+            <div style="float:right">
+            	<a href="@{InternJobSeekerController.applications()}">view all</a>
+            </div>
+            <div style="width:720px; float: left; margin: 0px auto; padding-bottom:60px">
+                #{list items:applications, as:'application'}
+                	<div class="jobseeker-application">
+                        <a href="@{InternJobSeekerController.viewApplication(application.id)}">
+                            <img src="http://lorempixel.com/g/160/160/technics" style="height:160; width:160" />
+                            <h3>${application}</h3>
+                		</a>
+                    </div>
+                #{/list}
+                
+            </div>
+        #{/if}
+        </div>
+	</div>
+    
+    
+    <!--Footer-->
+    <div class="footer">
+		<div class="info" style="float: left">
+			<p>HUT SoICT ICT-54 (C) 2012</p>
 		</div>
-	#{/list}
-#{/if}
-
-#{if (applications=models.InternApplication.find("jobSeeker = ? order by postedAt desc", jobSeeker).from(0).fetch(4))}
-	<h2>Applications</h2>
-	<a href="@{InternJobSeekerController.applications()}">view all</a>
-	#{list items:applications, as:'application'}
-		<a href="@{InternJobSeekerController.viewApplication(application.id)}"><h3>${application}</h3></a>
-	#{/list}
-#{/if}
+		<div class="about" style="float: right">
+			<p>
+				<a href="#">About</a> - 
+				<a href="#">Home</a> - 
+				<a href="#">Browse</a> - 
+				<a href="#">Me</a> - 
+				<a href="#">Logout</a>
+			</p>
+		</div>
+	</div>
+</div>
