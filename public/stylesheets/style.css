@@ -1,3 +1,5 @@
+@import url(mp-webfont/mp-webfont.css);
+
 @charset "utf-8";
 /* CSS Document */
 
@@ -97,9 +99,9 @@ a
 
 .topbuttongroup
 {
-	padding-right:20px
+	float:right;
 	padding-top:15px;
-	float: right;
+	padding-right:20px
 }
 
 .topbutton
