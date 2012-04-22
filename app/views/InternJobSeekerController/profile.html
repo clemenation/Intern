@@ -78,9 +78,11 @@
                 #{list items:applications, as:'application'}
                 	<div class="info-box">
                         <a href="@{InternJobSeekerController.viewApplication(application.id)}">
-							<div class="square-avatar">
-	                            <img src="/public/images/default-avatar.png" />
-							</div>
+							<table class="square-avatar">
+	                            <tr>
+									<td><img src="/public/images/default-avatar.png" /></td>
+								</tr>
+							</table>
                             ${application.job}
                 		</a>
 						<div>

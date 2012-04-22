@@ -80,17 +80,23 @@ h1
 
 .square-avatar
 {
-	display: table-cell;
-	text-align: center;
-	vertical-align: middle;
+	margin: 0;
+	padding: 0;
+	border: 0;
 	width: 160px;
 	height: 160px;
 	background-color: #aeaeae;
 }
 
-.square-avatar img
+.square-avatar td
 {
 	vertical-align: middle;
+	text-align: center;
+}
+
+.square-avatar img
+{
+	width: 100%;
 }
 
 .login
