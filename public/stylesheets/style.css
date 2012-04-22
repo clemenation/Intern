@@ -78,6 +78,21 @@ h1
 	-ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed'); /* ie8 */
 }
 
+.square-avatar
+{
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	width: 160px;
+	height: 160px;
+	background-color: #aeaeae;
+}
+
+.square-avatar img
+{
+	vertical-align: middle;
+}
+
 .login
 {
 	float: left;
@@ -110,7 +125,7 @@ h1
 	margin-bottom: 40px;
 }
 
-.info-box img
+.info-box .square-avatar
 {
 	margin-bottom: 10px;
 }

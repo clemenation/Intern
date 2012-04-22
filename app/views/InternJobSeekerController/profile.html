@@ -16,7 +16,7 @@
 				<img src="@{Application.jobSeekerPhoto(jobSeeker.id)}" />
 			#{/if}
 			#{else}
-        		<img src="http://lorempixel.com/160/240/people">
+        		<img src="/public/images/default-avatar.png">
 			#{/else}
         </div>
         <div style="width:520px;float:left">
@@ -74,11 +74,13 @@
             <div style="float:right">
             	<a href="@{InternJobSeekerController.applications()}" class="light-gray">view all</a>
             </div>
-            <div style="width:720px; float: left; margin: 0px auto; padding-bottom:60px">
+            <div style="width:720px; float: left; margin: 0px auto; padding-bottom:20px">
                 #{list items:applications, as:'application'}
                 	<div class="info-box">
                         <a href="@{InternJobSeekerController.viewApplication(application.id)}">
-                            <img src="http://lorempixel.com/160/160/technics" style="height:160; width:160" />
+							<div class="square-avatar">
+	                            <img src="/public/images/default-avatar.png" />
+							</div>
                             ${application.job}
                 		</a>
 						<div>
