@@ -5,6 +5,18 @@
 
 <h1>Intern/Employer</h1>
 
+#{if flash.error}
+	<p class="error">
+		&{flash.error}
+	</p>
+#{/if}
+
+#{if flash.success}
+	<p class="success">
+		&{flash.success}
+	</p>
+#{/if}
+
 #{if finalPoints}
 <h2>Suitable Resumes</h2>
 	#{list items:finalPoints, as:'point'}
@@ -12,7 +24,11 @@
 		<div>Point: +${point.strongPoint} -${point.weakPoint}</div>
 	#{/list}
 	<div>
-		<a href="@{InternEmployerController.index(page-1)}">Prev</a>
-		<a href="@{InternEmployerController.index(page+1)}">Next</a>
+		#{if page > 1}
+			<a href="@{InternEmployerController.index(page-1)}">Prev</a>
+		#{/if}
+		#{if page < max}
+			<a href="@{InternEmployerController.index(page+1)}">Next</a>
+		#{/if}
 	</div>
 #{/if}

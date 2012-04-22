@@ -112,7 +112,8 @@ public class InternJob extends Model {
 		List<InternResume> resumes = new ArrayList<InternResume>(jobSeeker.resumes);
 		
 		if (notApplied == true) {
-			for (InternApplication application : jobSeeker.applications) {
+			// If getting only resumes that were not applied to this job before
+			for (InternApplication application : this.applications) {
 				resumes.remove(application.resume);
 			}
 		}

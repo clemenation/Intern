@@ -39,6 +39,7 @@
 
 #{if (applications=models.InternApplication.find("jobSeeker = ? order by postedAt desc", jobSeeker).from(0).fetch(4))}
 	<h2>Applications</h2>
+	<a href="@{InternJobSeekerController.applications()}">view all</a>
 	#{list items:applications, as:'application'}
 		<a href="@{InternJobSeekerController.viewApplication(application.id)}"><h3>${application}</h3></a>
 	#{/list}

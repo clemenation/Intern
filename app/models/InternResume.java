@@ -100,7 +100,7 @@ public class InternResume extends Model {
 		List<InternJob> jobs = new ArrayList<InternJob>(employer.jobs);
 		
 		if (notApplied == true) {
-			for (InternApplication application : employer.applications) {
+			for (InternApplication application : this.applications) {
 				jobs.remove(application.job);
 			}
 		}

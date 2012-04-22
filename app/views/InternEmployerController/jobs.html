@@ -18,7 +18,7 @@
 #{/if}
 
 #{if jobs}
-<h2>Jobs</h2>
+	<h2>Jobs</h2>
 	#{list items:jobs, as:'job'}
 		<a href="@{InternEmployerController.viewJob(job.id)}"><h3>${job}</h3></a>
 		#{if job.description}
@@ -27,4 +27,12 @@
 			</div>
 		#{/if}
 	#{/list}
+	<div>
+		#{if page > 1}
+			<a href="@{InternEmployerController.resumes(page-1)}">Prev</a>
+		#{/if}
+		#{if page < max}
+			<a href="@{InternEmployerController.resumes(page+1)}">Next</a>
+		#{/if}
+	</div>
 #{/if}

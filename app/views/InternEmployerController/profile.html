@@ -36,10 +36,3 @@
 		</div>
 	#{/list}
 #{/if}
-
-#{if (applications=models.InternApplication.find("employer = ? order by postedAt desc", employer).from(0).fetch(4))}
-	<h2>Applications</h2>
-	#{list items:applications, as:'application'}
-		<a href="@{InternEmployerController.viewApplication(application.id)}"><h3>${application}</h3></a>
-	#{/list}
-#{/if}
