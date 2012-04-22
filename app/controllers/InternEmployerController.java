@@ -322,9 +322,9 @@ public class InternEmployerController extends Controller {
 	public static void applications(int page) {
 		InternEmployer employer = getEmployer();
 		
-		if (employer.jobs.size() != 0) {
-			if (page > (employer.jobs.size()/12+1)) jobs((int) (employer.jobs.size()/12 + 1));
-			if (page < 1) jobs(1);
+		if (employer.applications.size() != 0) {
+			if (page > (employer.applications.size()/12+1)) applications((int) (employer.jobs.size()/12 + 1));
+			if (page < 1) applications(1);
 		}
 		
 		List<InternApplication> applications = InternApplication.find("employer = ? order by postedAt desc", employer).fetch(page, 12);

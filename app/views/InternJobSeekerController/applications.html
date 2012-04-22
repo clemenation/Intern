@@ -38,16 +38,16 @@
 			</div>
 			
 			<!--Page navigator-->
-			<div class="page-navigator">
-				<a href="@{InternJobSeekerController.applications(1)}">First</a>
+			<div class="page-navigator">				
 				#{if page > 1}
+					<a href="@{InternJobSeekerController.applications(1)}">First</a>
 					<a href="@{InternJobSeekerController.applications(page-1)}">Prev</a>
 				#{/if}
 				${page}/${max}
 				#{if page < max}
 					<a href="@{InternJobSeekerController.applications(page+1)}">Next</a>
-				#{/if}
-				<a href="@{InternJobSeekerController.applications(max)}">Last</a>
+					<a href="@{InternJobSeekerController.applications(max)}">Last</a>
+				#{/if}				
 			</div>
 		#{/if}
 	</div>

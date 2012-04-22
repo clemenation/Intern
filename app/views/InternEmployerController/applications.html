@@ -1,33 +1,59 @@
 #{extends 'main.html' /}
 #{set title:'Applications' /}
 
-#{navigationBar /}
+<div class="wrapper">
+	#{navigationBar /}
+	#{notification /}
 
-<h1>Intern/Employer</h1>
-
-#{if flash.error}
-	<p class="error">
-		&{flash.error}
-	</p>
-#{/if}
-
-#{if flash.success}
-	<p class="success">
-		&{flash.success}
-	</p>
-#{/if}
-
-#{if applications}
-	<h2>Applications</h2>
-	#{list items:applications, as:'application'}
-		<a href="@{InternEmployerController.viewApplication(application.id)}"><h3>${application}</h3></a>
-	#{/list}
-	<div>
-		#{if page > 1}
-			<a href="@{InternEmployerController.applications(page-1)}">Prev</a>
-		#{/if}
-		#{if page < max}
-			<a href="@{InternEmployerController.applications(page+1)}">Next</a>
+	<div class="middle">
+		#{if applications}
+			<div style="width:100%; float: left;">
+	            <div style="float: left; padding-bottom: 20px; font-size:20px">
+	            	Applications
+	            </div>
+			</div>
+			<div style="width:720px; float:left; margin: 0px auto;">
+				#{list items:applications, as:'application'}
+                	<div class="info-box">
+                        <a href="@{InternEmployerController.viewApplication(application.id)}">
+                            <table class="square-avatar">
+	                            <tr>
+									<td><img src="/public/images/default-avatar.png" /></td>
+								</tr>
+							</table>
+                            ${application.resume}
+                		</a>
+						<div>
+							#{if application.resume.description}
+								#{if application.resume.description.length() > 250}
+									${application.resume.description.substring(0, 250) + "..."}
+								#{/if}
+								#{else}
+									${application.resume.description}
+								#{/else}
+							#{/if}
+						</div>
+                    </div>
+                #{/list}
+			</div>
+			
+			<!--Page navigator-->
+			<div class="page-navigator">				
+				#{if page > 1}
+					<a href="@{InternEmployerController.applications(1)}">First</a>
+					<a href="@{InternEmployerController.applications(page-1)}">Prev</a>
+				#{/if}
+				${page}/${max}
+				#{if page < max}
+					<a href="@{InternEmployerController.applications(page+1)}">Next</a>
+					<a href="@{InternEmployerController.applications(max)}">Last</a>
+				#{/if}				
+			</div>
 		#{/if}
 	</div>
-#{/if}
+	
+	<!--Seperator space-->
+    <div style="height:50px; width:100%; float:left"> </div>
+	<!--Footer-->
+    #{footer /}
+</div>
