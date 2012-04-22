@@ -16,7 +16,7 @@
 	<div>
 		Company Logo or Profile Photo: 
 		#{if employer?.logo && employer?.logo.exists()}
-			<img src="@{InternEmployerController.logo()}" />
+			<img src="@{Application.employerPhoto(employer.id)}" />
 		#{/if}
 		#{else}
 			none

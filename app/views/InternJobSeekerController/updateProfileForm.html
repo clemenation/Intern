@@ -16,7 +16,7 @@
 	<div>
 		Profile photo: 
 		#{if jobSeeker?.photo && jobSeeker?.photo.exists()}
-			<img src="@{InternJobSeekerController.photo()}" />
+			<img src="@{Application.jobSeekerPhoto(jobSeeker.id)}" />
 		#{/if}
 		#{else}
 			none

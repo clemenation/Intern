@@ -181,10 +181,6 @@ public class InternJob extends Model {
 	}
 	
 	public boolean canDelete() {
-		InternApplication application = InternApplication.find("byJob", this).first();
-		if (application != null) {
-			return false;
-		}
 		
 		return true;
 	}
@@ -197,19 +193,22 @@ public class InternJob extends Model {
 			return false;
 		}
 		
-		// Check if any application is linking to this job
-		InternApplication application = InternApplication.find("byJob", job).first();
-		if (application != null) {
-			System.out.println("ERROR: There are still applications owned by job " + job + ", cannot delete yet");
-			return false;
+		if (job.canDelete() == false) return false;
+		
+		List<Long> applicationsId = new ArrayList<Long>();
+		for (InternApplication application: job.applications) {
+			applicationsId.add(application.id);
 		}
-
+		for (Long applicationId : applicationsId) {
+			InternApplication application = InternApplication.findById(applicationId);
+			if (InternApplication.deleteApplication(application) == false) return false;
+		}
+		
 		// Remove languages from job properly
 		for (InternLanguage language : job.requiredLanguages) {
 			job.removeLanguage(language);
 		}
 		
-		// Removing job from its owner's job list
 		job.owner.jobs.remove(job);
 		
 		job.delete();

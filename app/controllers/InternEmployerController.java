@@ -332,14 +332,5 @@ public class InternEmployerController extends Controller {
 		int max = employer.applications.size()/12 + 1;
 		render(applications, page, max);
 	}
-	
-	public static void logo() {
-		InternEmployer employer = getEmployer();
-		
-		response.setContentTypeIfNotSet(employer.logo.type());
-		java.io.InputStream binaryData = employer.logo.get();
-		
-		if (binaryData != null) renderBinary(binaryData);
-	}
 }
 	
