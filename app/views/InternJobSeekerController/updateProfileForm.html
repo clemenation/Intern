@@ -18,19 +18,23 @@
 	<tr>
 	#{form @InternJobSeekerController.updateProfilePhoto(), enctype:'multipart/form-data'}
 	
-    	<td width="100px">
+    	<td width="120px">
             Profile photo: 
         </td>
         <td>
-            #{if jobSeeker?.photo && jobSeeker?.photo.exists()}
-                <img src="@{Application.jobSeekerPhoto(jobSeeker.id)}" />
-            #{/if}
-            #{else}
-                none
-            #{/else}
-            <input type="file" name="jobSeeker.photo" />
-            <span class="error">#{error 'jobSeeker.photo' /}</span>
-            <input type="submit" value="Upload" />
+        	<div style="width:100%; padding-bottom:10px">
+                #{if jobSeeker?.photo && jobSeeker?.photo.exists()}
+                    <img src="@{Application.jobSeekerPhoto(jobSeeker.id)}" />
+                #{/if}
+                #{else}
+                    none
+                #{/else}
+            </div>
+            <div style="width: 100%">
+                <input type="file" name="jobSeeker.photo" />
+                <span class="error">#{error 'jobSeeker.photo' /}</span>
+                <input type="submit" value="Upload" />
+            </div>
         </td>
 	
 	#{/form}
@@ -80,7 +84,7 @@
         </td>
         <td>
         	<textarea name="jobSeeker.aboutMe">#{ifErrors}${flash['jobSeeker.aboutMe']}#{/ifErrors}#{else}${jobSeeker.aboutMe}#{/else}</textarea>
-		<span class="error">#{error 'jobSeeker.aboutMe' /}</span>
+			<span class="error">#{error 'jobSeeker.aboutMe' /}</span>
 		</td>
 	</tr>
     <tr>
@@ -176,9 +180,10 @@
 					>${district.name}</option>
 				#{/list}
 			</select>
-		
+        </td>
+	</tr>
+
 	<input type="submit" value="Save" />
-	
 
 	<script type="text/javascript">
 		var districtAction = #{jsAction @Application.districtsForCity(':cityId') /}
@@ -192,12 +197,15 @@
 				});
 		});
 	</script>
-    	</td>
-	</tr>
-
-
+    
 #{/form}
+	
+    
 </table>
 </div>
+
+<div style="width:100%">
+	
+</div>	
 </div>
 </div>

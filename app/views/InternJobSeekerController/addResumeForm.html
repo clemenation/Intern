@@ -1,9 +1,8 @@
 #{extends 'main.html' /}
 #{set title:'Add Resume' /}
 
+<div class="wrapper">
 #{navigationBar /}
-
-<h1>Intern/Job Seeker</h1>
 
 #{ifErrors}
 	<h1>Oops...</h1>
@@ -12,6 +11,7 @@
 	#{/errors}
 #{/ifErrors}
 
+<div class="middle">
 #{form @InternJobSeekerController.addResume()}
 	<div>
 		Name: <input type="text" name="resume.name" value="${flash['resume.name']}" />
@@ -34,13 +34,13 @@
 		</div>
 		<div>
 			GPA: <input type="text" name="resume.education.gpa"
-				value="${flash['resume.education.gpa']}" /> <span class="error">#{error
-				'resume.education.gpa' /}</span>
+				value="${flash['resume.education.gpa']}" />
+                <span class="error">#{error 'resume.education.gpa' /}</span>
 		</div>
 		<div>
 			College: <input type="text" name="resume.education.college"
-				value="${flash['resume.education.college']}" /> <span class="error">#{error
-				'resume.education.college' /}</span>
+				value="${flash['resume.education.college']}" />
+                <span class="error">#{error 'resume.education.college' /}</span>
 		</div>
 		<div>
 			Major:
@@ -126,3 +126,5 @@
 	</script>
 
 #{/form}
+</div>
+</div>
