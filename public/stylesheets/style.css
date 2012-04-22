@@ -113,25 +113,6 @@ strong
 	margin-top: 10px;
 }
 
-.info-box-end
-{
-	width: 160px;
-	height: 320px;
-	float: left;
-	margin-right: 0px;
-	margin-bottom: 40px;
-}
-
-.info-box-end img
-{
-	margin-bottom: 10px;
-}
-
-.info-box-end div
-{
-	margin-top: 10px;
-}
-
 .topbuttongroup
 {
 	float:right;

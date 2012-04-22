@@ -1,52 +1,55 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-<div class="wrapper" style="width: 860px">
-
+<div class="wrapper">
 	#{navigationBar /}
-	
 	#{notification /}
-	
+
 	<div class="middle">
 		#{if finalPoints}
-			#{list items:finalPoints, as:'point'}
-				#{if point_index % 4 == 0}<div class="info-box-end">#{/if}
-		    	#{else}<div class="info-box">#{/else}
-					<a href="@{InternJobSeekerController.viewJob(point.job.id)}">
-		            	<img src="http://lorempixel.com/160/160/" style="height: 160px; width: 160px">
-		            	${point.job}
-		            </a>
-					<div>
-						#{if point.job.description}
-							#{if point.job.description.length() > 250}
-								${point.job.description.substring(0, 250) + "..."}
-							#{/if}
-							#{else}
-								${point.job.description}
-							#{/else}
-						#{/if}
-					</div>
-		        </div>
-			#{/list}
-			
+			<div style="width:100%; float: left;">
+	            <div style="float: left; padding-bottom: 20px; font-size:20px">
+	            	Suitable Jobs
+	            </div>
 			</div>
-		    <!--Page navigator-->
-		    <div class="page-navigator">
-		    		<a href="@{InternJobSeekerController.index(1)}">First</a>
+			<div style="width:720px; float:left; margin: 0px auto;">
+				#{list items:finalPoints, as:'point'}
+					<div class="info-box">
+						<a href="@{InternJobSeekerController.viewJob(point.job.id)}">
+							<img src="http://lorempixel.com/160/160/technics" style="height:160; width:160" />
+							${point.job}
+						</a>
+						<div>
+							#{if point.job.description}
+								#{if point.job.description.length() > 250}
+									${point.job.description.substring(0, 250) + "..."}
+								#{/if}
+								#{else}
+									${point.job.description}
+								#{/else}
+							#{/if}
+						</div>
+					</div>
+				#{/list}
+			</div>
+			
+			<!--Page navigator-->
+			<div class="page-navigator">
+				<a href="@{InternJobSeekerController.index(1)}">First</a>
 				#{if page > 1}
 					<a href="@{InternJobSeekerController.index(page-1)}">Prev</a>
 				#{/if}
-		           	${page}/${max}
+				${page}/${max}
 				#{if page < max}
 					<a href="@{InternJobSeekerController.index(page+1)}">Next</a>
 				#{/if}
-		           	<a href="@{InternJobSeekerController.index(max)}">Last</a>
+				<a href="@{InternJobSeekerController.index(max)}">Last</a>
 			</div>
 		#{/if}
 	</div>
-        
-    <!--Seperator space-->
+	
+	<!--Seperator space-->
     <div style="height:50px; width:100%; float:left"> </div>
-    <!--Footer-->
+	<!--Footer-->
     #{footer /}
 </div>
