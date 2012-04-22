@@ -3,36 +3,39 @@
 
 <div class="wrapper" style="width: 940px">
 
-	<div class="top" style="width:100%; float:left">
-		<div class="toplogo" style="float: left">
-			<a href="#">
-				<img class="toplogo" src="/public/images/me-jobseeker-logo.jpg">
-			</a>
-		</div>
-		<div class="topbuttongroup" style="float: right">
-			<a class="topbutton" href="#">Add</a> - 
-			<a class="topbutton" href="#">Browse</a> -  
-			<a class="topbutton" href="#">Me</a> - 
-			<a class="topbutton" href="#">Logout</a>
-		</div>
-		
-	</div>
-    <div class="hor-sep">
-   		<hr style="color: #333; width: 100%"/>
-    </div>
+	#{navigationBar /}
+	
+	#{if flash.error}
+		<p class="error">
+			&{flash.error}
+		</p>
+	#{/if}
 
+	#{if flash.success}
+		<p class="success">
+			&{flash.success}
+		</p>
+	#{/if}
+	
 	<div class="middle">
-#{if finalPoints}
-
-	#{list items:finalPoints, as:'point'}
-    	<div class="job-link">
-			<a href="@{InternJobSeekerController.viewJob(point.job.id)}">
-            	<img src="" style="height: 160px; width: 160px">
-            	<h3>${point.job} for ${point.resume}</h3>
-            </a>
-			<div>Point: +${point.strongPoint} -${point.weakPoint}</div>
-        </div>
-	#{/list}
-#{/if}
+		#{if finalPoints}
+			#{list items:finalPoints, as:'point'}
+		    	<div class="job-link">
+					<a href="@{InternJobSeekerController.viewJob(point.job.id)}">
+		            	<img src="http://lorempixel.com/g/160/160/" style="height: 160px; width: 160px">
+		            	${point.job} for ${point.resume}
+		            </a>
+					<div>Point: +${point.strongPoint} -${point.weakPoint}</div>
+		        </div>
+			#{/list}
+			<div>
+				#{if page > 1}
+					<a href="@{InternJobSeekerController.index(page-1)}">Prev</a>
+				#{/if}
+				#{if page < max}
+					<a href="@{InternJobSeekerController.index(page+1)}">Next</a>
+				#{/if}
+			</div>
+		#{/if}
 	</div>
 </div>
