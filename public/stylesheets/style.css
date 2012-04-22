@@ -116,12 +116,13 @@ strong
 {
 	float:right;
 	padding-top:15px;
-	padding-right:20px
+	padding-right:10px
 }
 
 .topbutton
-{	
-	padding-left: 30px;
+{
+	padding-left: 5px;
+	padding-right:5px;
 }
 
 .about
@@ -213,4 +214,11 @@ strong
 	width:100%;
 	float:left;
 	text-align:center;
+}
+
+.notification
+{
+	width:100%;
+	text-align:center;
+	padding-bottom:20px;
 }

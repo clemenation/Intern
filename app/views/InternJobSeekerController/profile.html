@@ -4,9 +4,13 @@
 <div class="wrapper">
 #{navigationBar /}
 
-#{notification /}
 
+	<div class="notification">
+       	#{notification /}
+    </div>
 	<div class="middle">
+    	
+    
     	<div class="avatar">
 			#{if jobSeeker?.photo && jobSeeker?.photo.exists()}
 				<img src="@{Application.jobSeekerPhoto(jobSeeker.id)}" />
@@ -22,9 +26,12 @@
             <div style="float:right">
 				<a style="float:right" href="@{InternJobSeekerController.updateProfileForm()}">edit</a>
             </div>
+            <div style="float:left;">
+            	#{displayJobSeeker jobSeeker:jobSeeker /}
+            </div>
         </div>
 
-		#{displayJobSeeker jobSeeker:jobSeeker /}
+		
 
         <!--Seperator space-->
         <div style="height:40px; width:100%; float:left"> </div>
