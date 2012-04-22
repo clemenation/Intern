@@ -21,10 +21,10 @@
         </div>
         <div style="width:520px;float:left">
         	<div style="float: left; padding-bottom: 15px; font-size:20px">
-            	<strong>${jobSeeker}</strong>
+            	<h1>${jobSeeker}</h1>
             </div>
             <div style="float:right">
-				<a style="float:right" href="@{InternJobSeekerController.updateProfileForm()}">edit</a>
+				<a style="float:right" href="@{InternJobSeekerController.updateProfileForm()}" class="light-gray">edit</a>
             </div>
             <div style="float:left; width:520px">
             	#{displayJobSeeker jobSeeker:jobSeeker /}
@@ -38,11 +38,11 @@
     
         #{if (resumes=models.InternResume.find("owner = ? order by postedAt desc", jobSeeker).from(0).fetch(4))}
         <div style="width:100%; float: left;">
-            <div style="float: left; padding-bottom: 20px; font-size:20px">
-            	Resumes
+            <div style="float: left; padding-bottom: 20px">
+            	<h1>Resumes<h1>
             </div>
             <div style="float:right">
-	            <a style="float:right" href="@{InternJobSeekerController.resumes()}">view all</a>
+	            <a style="float:right" href="@{InternJobSeekerController.resumes()}" class="light-gray">view all</a>
             </div>
         </div>
         <div style="width:720px; float:left; margin: 0px auto;">
@@ -68,11 +68,11 @@
 
 		<div style="width:100%; float: none; padding-bottom: 50px">
         #{if (applications=models.InternApplication.find("jobSeeker = ? order by postedAt desc", jobSeeker).from(0).fetch(4))}
-            <div style="float: left; padding-bottom: 20px; font-size:20px">
-            	Applications
+            <div style="float: left; padding-bottom: 20px">
+            	<h1>Applications</h1>
             </div>
             <div style="float:right">
-            	<a href="@{InternJobSeekerController.applications()}">view all</a>
+            	<a href="@{InternJobSeekerController.applications()}" class="light-gray">view all</a>
             </div>
             <div style="width:720px; float: left; margin: 0px auto; padding-bottom:60px">
                 #{list items:applications, as:'application'}

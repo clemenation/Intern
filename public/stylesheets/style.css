@@ -22,8 +22,14 @@ a
 	text-decoration:none;
 }
 
-strong
+a.light-gray
 {
+	color: #aeaeae;
+}
+
+h1
+{
+	font-weight: normal;
 	font-size: 18px;
 }
 	
