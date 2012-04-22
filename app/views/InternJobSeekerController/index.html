@@ -3,24 +3,8 @@
 
 <div class="wrapper" style="width: 940px">
 
-	<div class="top" style="width:100%; float:left">
-		<div class="toplogo" style="float: left">
-			<a href="#">
-				<img class="toplogo" src="/public/images/me-jobseeker-logo.jpg">
-			</a>
-		</div>
-		<div class="topbuttongroup" style="float: right">
-			<a class="topbutton" href="#">Add</a> - 
-			<a class="topbutton" href="#">Browse</a> -  
-			<a class="topbutton" href="#">Me</a> - 
-			<a class="topbutton" href="#">Logout</a>
-		</div>
-		
-	</div>
-    <div class="hor-sep">
-   		<hr style="color: #333; width: 100%"/>
-    </div>
-
+	#{navigationBar /}
+	
 	<div class="middle">
 #{if finalPoints}
 
@@ -28,7 +12,7 @@
     	<div class="job-link">
 			<a href="@{InternJobSeekerController.viewJob(point.job.id)}">
             	<img src="" style="height: 160px; width: 160px">
-            	<h3>${point.job} for ${point.resume}</h3>
+            	${point.job} for ${point.resume}
             </a>
 			<div>Point: +${point.strongPoint} -${point.weakPoint}</div>
         </div>

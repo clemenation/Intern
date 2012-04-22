@@ -6,15 +6,16 @@ html, body
 	padding: 0px;
     margin: 0px;
     height: 100%;
-    font-family: "Myriad Pro";
+    font-family: "MyriadProRegular";
     color: #333333;
-    font-size: 11px;
+    font-size: 12px;
+	font-height: 14px;
 }
 
 a
 {
-	font-weight: bold;
-	color: #999;
+	font-family: "MyriadProSemibold";
+	color: #555555;
 	text-decoration:none;
 }
 	
@@ -39,7 +40,7 @@ a
 	width: 720px;
 	height: 2em;
 	float: none;
-	font-size: 11px;
+	font-size: 12px;
 	margin: 0px auto;
 }
 
@@ -77,7 +78,7 @@ a
 	width: 100%;
 	font-family: tahoma, Arial, Verdana;
     color: #333333;
-    font-size: 11px;
+    font-size: 12px;
 }
 
 .middle
