@@ -9,18 +9,25 @@
 				<a href="@{CRUD.index()}">Admin</a> - 
 			#{/if}
 	
-			#{if session['userType'] == "Job Seeker"}
-				<a href="@{InternJobSeekerController.addResumeForm()}">Add</a> - 
-				<a href="@{InternJobSeekerController.index()}">Home</a> - 
-				<a href="@{InternJobSeekerController.profile()}">Me</a> - 
+			#{if session['userType']}
+				#{if session['userType'] == "Job Seeker"}
+					<a href="@{InternJobSeekerController.addResumeForm()}">Add</a> - 
+					<a href="@{InternJobSeekerController.index()}">Home</a> - 
+					<a href="@{InternJobSeekerController.profile()}">Me</a> - 
+				#{/if}
+				#{elseif session['userType'] == "Employer"}
+					*{
+					<a href="@{InternEmployerController.index()}">Home</a> - 
+					<a href="@{InternEmployerController.profile()}">Me</a> - 
+								
+					}*
+				#{/elseif}
+				
+				<a href="@{Secure.logout()}">Logout</a>	
 			#{/if}
-			#{elseif session['userType'] == "Employer"}
-				*{
-				<a href="@{InternEmployerController.index()}">Home</a> - 
-				<a href="@{InternEmployerController.profile()}">Me</a> - 
-				}*
-			#{/elseif}
-			<a href="@{Secure.logout()}">Logout</a>
+			#{else}
+				<a href="@{Secure.login()}">Login</a>
+			#{/else}
 		</p>
 	</div>
 </div>
