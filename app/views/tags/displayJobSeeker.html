@@ -1,9 +1,3 @@
-#{if _jobSeeker?.photo && _jobSeeker?.photo.exists()}
-<div>
-	Profile picture: <img src="@{Application.jobSeekerPhoto(_jobSeeker.id)}" />
-</div>
-#{/if}
-
 <div>
 	Email: ${_jobSeeker?.email}
 </div>
@@ -30,7 +24,7 @@
 
 #{if _jobSeeker?.birthday}
 <div>
-	Birthday: ${_jobSeeker?.birthday}
+	Birthday: ${new StringBuilder(new java.text.SimpleDateFormat("dd/MM/yyyy").format(_jobSeeker.birthday))}
 </div>
 #{/if}
 

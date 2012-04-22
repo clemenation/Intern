@@ -8,7 +8,12 @@
 
 	<div class="middle">
     	<div class="avatar">
-        	<img src="http://lorempixel.com/160/240/people">
+			#{if jobSeeker?.photo && jobSeeker?.photo.exists()}
+				<img src="@{Application.jobSeekerPhoto(jobSeeker.id)}" />
+			#{/if}
+			#{else}
+        		<img src="http://lorempixel.com/160/240/people">
+			#{/else}
         </div>
         <div style="width:520px;float:left">
         	<div style="float: left; padding-bottom: 20px; font-size:20px">
