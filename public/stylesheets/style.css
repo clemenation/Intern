@@ -22,7 +22,18 @@ a
 	text-decoration:none;
 }
 
-a.light-gray
+b
+{
+	font-family: "MyriadProSemibold";
+	font-weight: normal;
+}
+
+tr > td
+{
+	padding-bottom: 15px;
+}
+
+.light-gray
 {
 	color: #aeaeae;
 }
@@ -60,6 +71,11 @@ h1
 	float: none;
 	font-size: 12px;
 	margin: 0px auto;
+}
+
+textarea
+{
+	resize: none;
 }
 
 .textarea
@@ -174,7 +190,7 @@ h1
 {
 	float: left;
 	width:100%;
-	padding-bottom: 60px;
+	padding-bottom: 40px;
 }
 
 .application-link

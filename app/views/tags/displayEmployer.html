@@ -1,37 +1,81 @@
-<div>
-	Email: ${_employer?.email}
-</div>
+<table>
+	<tr>
+		<td width="100px">
+			<b><p class="light-gray">Email</p></b>
+		</td>
+		<td>
+			${_employer?.email}
+		</td>
+	</tr>
 
-#{if _as == "full"}
-	<div>
-		User type: ${_employer?.userType}
-	</div>
+	#{if _as == "full"}
+		<tr>
+			<td width="100px">
+				<b><p class="light-gray">User type</p></b>
+			</td>
+			<td>
+				${_employer?.userType}
+			</td>
+		</tr>
 	
-	<div>
-		Is Admin: ${_employer?.isAdmin}
-	</div>
+		<tr>
+			<td width="100px">
+				<b><p class="light-gray">Is Admin</p></b>
+			</td>
+			<td>
+				${_employer?.isAdmin}
+			</td>
+		</tr>
 	
-	<div>
-		Password: ${_employer?.password}
-	</div>
-#{/if}
+		<tr>
+			<td width="100px">
+				<b><p class="light-gray">Password</p></b>
+			</td>
+			<td>
+				${_employer?.password}
+			</td>
+		</tr>
+	#{/if}
 
-#{if _employer?.industry}
-<div>
-	Industry: ${_employer?.industry}
-</div>
-#{/if}
+	#{if _employer?.industry}
+		<tr>
+			<td width="100px">
+				<b><p class="light-gray">Industry</p></b>
+			</td>
+			<td>
+				<p class="textarea">${_employer?.industry}</p>
+			</td>
+		</tr>
+	#{/if}
 
-#{if _employer?.description}
-<div>
-	Description: <p class="textarea">${_employer?.description}</p>
-</div>
-#{/if}
+	#{if _employer?.description}
+		<tr>
+			<td width="100px">
+				<b><p class="light-gray">Description</p></b>
+			</td>
+			<td>
+				<p class="textarea">${_employer?.description}</p>
+			</td>
+		</tr>
+	#{/if}
 
-#{if _employer?.companySize}
-<div>
-	Company size: ${_employer?.companySize.size}
-</div>
-#{/if}
+	#{if _employer?.companySize}
+		<tr>
+			<td width="100px">
+				<b><p class="light-gray">Company Size</p></b>
+			</td>
+			<td>
+				<p class="textarea">${_employer?.companySize}</p>
+			</td>
+		</tr>
+	#{/if}
 
-#{displayContactInfo contactInfo:_employer?.contactInfo /}
+	<tr>
+		<td width="100px">
+			<b><p class="light-gray">Contact Info</p></b>
+		</td>
+		<td>
+			#{displayContactInfo contactInfo:_employer?.contactInfo /}
+		</td>
+	</tr>
+</table>
