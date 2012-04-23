@@ -337,7 +337,7 @@ InternEducation(hoangtnFirstResumeEducation):
     major: informationTechnologyMajor
     
 InternResume(hoangtnFirstResume):
-    name: 1st Resume
+    name: Graphic Design
     postedAt: 2012-04-01
     owner: hoangtn
     contactInfo: hoangtnFirstResumeContactInfo
@@ -407,7 +407,7 @@ InternEducation(kienbdFirstResumeEducation):
     major: informationTechnologyMajor
     
 InternResume(kienbdFirstResume):
-    name: My Resume
+    name: Food Science Technology
     postedAt: 2012-04-01
     owner: kienbd
     contactInfo: kienbdFirstResumeContactInfo
@@ -472,13 +472,20 @@ InternEducation(ductmFirstResumeEducation):
     major: informationTechnologyMajor
     
 InternResume(ductmFirstResume):
-    name: My Resume
+    name: Network Support/Network Admin
     postedAt: 2012-04-02
     owner: ductm
     contactInfo: ductmFirstResumeContactInfo
     workExperience: 1
     education: ductmFirstResumeEducation
-    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    description: "BACKGROUND SUMMARY
+    - Extensive experience working in all facets of networks, hardware/software troubleshooting, web development, systems analysis, and telecommunications field.
+    - Strong technical writing skills include operating procedures, briefings, reports, charts, and graphs.
+    - Received telecommunications training from NORTEL Networks on optical, data, wireless, and access technologies.
+    - Exceptional teacher/trainer; patient and effective when working with a wide range of personalities.
+    - Proven effectiveness in teamwork; considered a people person.
+    - Committed to outstanding service and customer satisfaction.
+    - Received numerous technical performance awards throughout military career."
     languages:
         - vietnamLanguage
         - englishLanguage
@@ -525,13 +532,25 @@ InternEducation(tungddFirstResumeEducation):
     major: informationTechnologyMajor
     
 InternResume(tungddFirstResume):
-    name: My Resume
+    name: Network Administrator
     postedAt: 2012-04-04
     owner: tungdd
     contactInfo: tungddFirstResumeContactInfo
     workExperience: 2
     education: tungddFirstResumeEducation
-    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    description: "Summary
+
+    Six years experience as a Network Administrator for wholesale/retail business environment. Seeking career growth in the fast pace commerce industry where advancement opportunities exist based on contributions to company profit and growth. Self-motivated and will work well with all levels of
+    management and fellow employees.
+
+    Functional summary
+    -Built and maintain Local Area Network and systems integration for office working environment.
+    -Setup data communication for multiple office sites (Worked closely with ISP).
+    -Design client server and relational database for Line List and Mailing publications.
+    -Working OS knowledge: Win95/98, NT3.51, NT4.0 (Both Workstation and Server), HP-UX 10.x.
+    -Administrator of NT Server (TCP/IP Only), Proxy Server, Exchange Server, SNA Server, Remote Access Server and various BackOffice components.
+    -Desktop Software: Microsoft Office (Excel, Word, Access and Outlook).
+    -Application Software: Informix, Lawson, Garpac wholesale distribution, RetailPro retail distribution.Experiences"
     languages:
         - vietnamLanguage
         - englishLanguage
@@ -578,13 +597,17 @@ InternEducation(thanhncFirstResumeEducation):
     major: informationTechnologyMajor
     
 InternResume(thanhncFirstResume):
-    name: 1st Resume
+    name: IT
     postedAt: 2012-04-06
     owner: thanhnc
     contactInfo: thanhncFirstResumeContactInfo
     workExperience: 1
     education: thanhncFirstResumeEducation
-    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    description: "B.A. in English - Wayne State University - Detroit, MI - 1985
+CONTINUING EDUCATION:
+Introduction to Computer Information Science - San Francisco City College - 1993
+Programming in Visual Basic - Oakland Community College - 1997
+HTML - currently studying"
     languages:
         - vietnamLanguage
         - englishLanguage
@@ -631,13 +654,17 @@ InternEducation(quanntFirstResumeEducation):
     major: informationTechnologyMajor
     
 InternResume(quanntFirstResume):
-    name: First Resume
+    name: Sales
     postedAt: 2012-04-13
     owner: quannt
     contactInfo: quanntFirstResumeContactInfo
     workExperience: 1
     education: quanntFirstResumeEducation
-    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    description: "ROBERT H. BORNSTEIN
+    7057 N. Range Line Road ~ Glendale, Wisconsin 53209 ~ (414) 736-9988 ~ rbornstein@wi.rr.com
+
+    SALES ~ MARKETING ~ BUSINESS DEVELOPMENT
+    Award-winning and tech-savvy sales and marketing professional with nearly two decades of experience penetrating new markets, building partnerships and boosting profits. Rich knowledge of information technology and a natural ability to develop new, profitable business relationships."
     languages:
         - vietnamLanguage
         - englishLanguage
@@ -684,13 +711,21 @@ InternEducation(quanleFirstResumeEducation):
     major: informationTechnologyMajor
     
 InternResume(quanleFirstResume):
-    name: Le Quan's 1st Resume
+    name: Trainer
     postedAt: 2012-04-01
     owner: quanle
     contactInfo: quanleFirstResumeContactInfo
     workExperience: 0
     education: quanleFirstResumeEducation
-    description: I am a freshman studying at Hanoi University of Science and Technology.
+    description: "PROFESSIONAL OBJECTIVE
+
+    To find a position in an environment suited to my teaching abilities and computer education.
+
+    EDUCATION
+
+    PURDUE UNIVERSITY, West Lafayette, Indiana. Course in C Programming, May 1994.. GPA 4.0/4.0.
+
+    MARTIN UNIVERSITY, Indianapolis, Indiana. Baccalaureate Degree in Computer Technology, May 1990. GPA 4.0/4.0."
     languages:
         - vietnamLanguage
         - englishLanguage
@@ -737,13 +772,25 @@ InternEducation(tudoanFirstResumeEducation):
     major: informationTechnologyMajor
     
 InternResume(tudoanFirstResume):
-    name: Dung Nguyen's 1st Resume
+    name: Any
     postedAt: 2012-04-01
     owner: tudoan
     contactInfo: tudoanFirstResumeContactInfo
     workExperience: 2
     education: tudoanFirstResumeEducation
-    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    description: "OBJECTIVE: A creative and self-motivated individual who seeks an opportunity to grow within progressive organization.
+
+    EDUCATION:
+    BS in Management Information System, The University of Texas at Dallas. Richardson, TX August 2003
+
+    AA in Computer Networking. Richland College. Dallas, TX May1999. President Honor Roll. December 98/May 99.
+
+    SKILLS:
+    Accounting C++ Programming
+    Economics Novell NetWare 4.1x/3.1x
+    Marketing Microsoft Windows 3.1/95/98/NT
+    MIS Microsoft Office 2000/97
+    Unix OS"
     languages:
         - vietnamLanguage
         - englishLanguage
