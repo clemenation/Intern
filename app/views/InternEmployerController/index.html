@@ -15,10 +15,19 @@
 			<div style="width:720px; float:left; margin: 0px auto;">
 				#{list items:finalPoints, as:'point'}
 					<div class="info-box">
-						<a href="@{InternEmployerController.viewJob(point.job.id)}">
+						<a href="@{InternEmployerController.viewResume(point.resume.id)}">
 							<table class="square-avatar">
 	                            <tr>
-									<td><img src="/public/images/default-avatar.png" /></td>
+									<td>
+										<img src="
+										#{if point.resume?.owner.photo && point.resume?.owner.photo.exists()}
+											@{Application.jobSeekerPhoto(point.resume.owner.id)}
+										#{/if}
+										#{else}
+											/public/images/default-avatar.png
+										#{/else}
+										" class="square-avatar-img" />
+									</td>
 								</tr>
 							</table>
 							${point.resume}

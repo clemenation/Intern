@@ -16,10 +16,6 @@
 </div>
 
 <div style="width:90%; float:none; margin:0px auto">
-    <div>
-        Posted at: ${_job?.postedAt}
-    </div>
-    
     #{if _job?.requiredWorkExperience > 0}
         <div>
             Required work experience: ${_job?.requiredWorkExperience}
@@ -28,7 +24,7 @@
     
     #{if _job?.description}
         <div>
-            Description: ${_job?.description}
+            Description: <p class="textarea">${_job?.description}</p>
         </div>
     #{/if}
     

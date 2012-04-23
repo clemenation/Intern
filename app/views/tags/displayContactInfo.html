@@ -19,14 +19,16 @@
 		Address: ${_contactInfo.address.address}
 	#{/if}
 		<div>
-			#{if _contactInfo.address.city}
-				City: ${_contactInfo.address.city}
-			#{/if}
-        </div>
-        <div>
-			#{if _contactInfo.address.district}
-				District: ${_contactInfo.address.district}
-			#{/if}
+			<div>
+				#{if _contactInfo.address.city}
+					City: ${_contactInfo.address.city}
+				#{/if}
+			</div>
+			<div>
+				#{if _contactInfo.address.district}
+					District: ${_contactInfo.address.district.name}
+				#{/if}
+			</div>
 		</div>
 </div>
 #{/if}

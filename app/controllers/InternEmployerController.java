@@ -35,14 +35,14 @@ public class InternEmployerController extends Controller {
 		int end = page*12;
 		if (begin < 0 || end < 0) index(1);
 		if (begin >= points.size()) {
-			index(points.size()/12 + 1);
+			index((points.size()-1)/12 + 1);
 		} else if (end >= points.size()) {
 			end = points.size();
 		}
 				
 		finalPoints = points.subList(begin, end);
 		
-		int max = points.size()/12 + 1;
+		int max = (points.size()-1)/12 + 1;
 		render(finalPoints, page, max);
 	}
 	
@@ -98,14 +98,14 @@ public class InternEmployerController extends Controller {
 				int end = page * 12;
 				if (begin < 0 || end < 0) resumesForJob(jobId, 1);
 				if (begin >= points.size()) {
-					resumesForJob(jobId, points.size() / 12 + 1);
+					resumesForJob(jobId, (points.size()-1)/ 12 + 1);
 				} else if (end >= points.size()) {
 					end = points.size();
 				}
 				resumePoints = points.subList(begin, end);
 			}
 			
-			int max = points.size() / 12 + 1;
+			int max = (points.size()-1)/ 12 + 1;
 			render(job, resumePoints, page, max);
 		} else {
 			index(1);
@@ -115,7 +115,7 @@ public class InternEmployerController extends Controller {
 	public static void applicationsForJob(long jobId, int page) {
 		InternJob job = InternJob.findById(jobId);
 		if (job != null) {
-			int max = job.applications.size()/12 + 1;
+			int max = (job.applications.size()-1)/12 + 1;
 			if (page < 0) applicationsForJob(jobId, 1);
 			if (page > max) applicationsForJob(jobId, max);
 			
@@ -251,6 +251,8 @@ public class InternEmployerController extends Controller {
 			long cityId = ((Long)Cache.get("cityId")).longValue();
 			districts = ((InternCity)InternCity.findById(cityId)).districts;
 			Cache.delete("cityId");
+		} else if (job.contactInfo.address.city != null){
+			districts = job.contactInfo.address.city.districts;
 		} else {
 			districts = cities.get(0).districts;
 		}
@@ -309,27 +311,27 @@ public class InternEmployerController extends Controller {
 		InternEmployer employer = getEmployer();
 		
 		if (employer.jobs.size() != 0) {
-			if (page > (employer.jobs.size()/12+1)) jobs((int) (employer.jobs.size()/12 + 1));
+			if (page > ((employer.jobs.size()-1)/12+1)) jobs((int) ((employer.jobs.size()-1)/12 + 1));
 			if (page < 1) jobs(1);
 		}
 		
 		List<InternJob> jobs = InternJob.find("owner = ? order by postedAt desc", employer).fetch();
 		
-		int max = employer.jobs.size()/12+1;
+		int max = (employer.jobs.size()-1)/12+1;
 		render(jobs, page, max);
 	}
 	
 	public static void applications(int page) {
 		InternEmployer employer = getEmployer();
 		
-		if (employer.jobs.size() != 0) {
-			if (page > (employer.jobs.size()/12+1)) jobs((int) (employer.jobs.size()/12 + 1));
-			if (page < 1) jobs(1);
+		if (employer.applications.size() != 0) {
+			if (page > ((employer.applications.size()-1)/12+1)) applications((int) ((employer.jobs.size()-1)/12 + 1));
+			if (page < 1) applications(1);
 		}
 		
 		List<InternApplication> applications = InternApplication.find("employer = ? order by postedAt desc", employer).fetch(page, 12);
 		
-		int max = employer.applications.size()/12 + 1;
+		int max = (employer.applications.size()-1)/12 + 1;
 		render(applications, page, max);
 	}
 }
