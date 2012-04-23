@@ -1,9 +1,8 @@
 #{extends 'main.html' /}
 #{set title: job /}
 
+<div class="wrapper">
 #{navigationBar /}
-
-<h1>Intern/Job Seeker</h1>
 
 #{if flash.error}
 	<p class="error">
@@ -17,19 +16,35 @@
 	</p>
 #{/if}
 
-#{displayJob job:job /}
-#{if points}
-	<a href="@{InternJobSeekerController.applyJobForm(job.id)}"><h3>Apply</h3></a>
-	<h2>Your resume's points</h2>
-	#{list items: points, as:'point'}
-		<a href="@{InternJobSeekerController.viewResume(point.resume.id)}"><h3>${point.resume}</h3></a>
-		<div>Point: +${point.strongPoint} -${point.weakPoint}</div>
-	#{/list}
-#{/if}
+<div class="middle">
+    #{displayJob job:job /}
+    <br />
+    
+    #{if points}
+    	<div style="width:100%; padding-left:10px; padding-bottom: 20px">
+	        <a href="@{InternJobSeekerController.applyJobForm(job.id)}"><h3>Apply</h3></a>
+        </div>
+        <h2>Your resume's points</h2>
+        <br />
+        #{list items: points, as:'point'}
+        	<div style="width:160px; float: left; padding-right:10px">
+                <a href="@{InternJobSeekerController.viewResume(point.resume.id)}"><h3>${point.resume}</h3></a>
+                <div>Point: +${point.strongPoint} -${point.weakPoint}</div>
+            </div>
+        #{/list}
+    #{/if}
+    
+    #{if applications}
+        <h2>Your resumes that applied to this job</h2>
+        #{list items: applications, as:'application'}
+       	<div style="width:160px; float: left; padding-right:10px">
+            <a href="@{InternJobSeekerController.viewApplication(application.id)}"><h3>${application.resume}</h3></a>
+        </div>
+        #{/list}
+    #{/if}
 
-#{if applications}
-	<h2>Your resumes that applied to this job</h2>
-	#{list items: applications, as:'application'}
-		<a href="@{InternJobSeekerController.viewApplication(application.id)}"><h3>${application.resume}</h3></a>
-	#{/list}
-#{/if}
+</div>
+</div>
+
+    <!--Footer-->
+    #{footer /}
