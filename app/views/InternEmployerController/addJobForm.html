@@ -1,10 +1,10 @@
 #{extends 'main.html' /}
 #{set title: 'Add Job' /}
 
+<div class="wrapper">
 #{navigationBar /}
 
-<h1>Intern/Employer</h1>
-
+<div class="middle">
 #{ifErrors}
 	<h1>Oops...</h1>
 	#{errors}
@@ -12,39 +12,76 @@
 	#{/errors}
 #{/ifErrors}
 
+<div style="width:100%; float:left">
+<table cellpadding="10px">
 #{form @InternEmployerController.addJob()}
-	<div>
-		Name: <input type="text" name="job.name" value="${flash['job.name']}" />
-		<span class="error">#{error 'job.name' /}</span>
-	</div>
-	<div>
-		Required Work Experience: <input type="text" name="job.requiredWorkExperience" value="${flash['job.requiredWorkExperience']}" />
-		<span class="error">#{error 'job.requiredWorkExperience' /}</span>
-	</div>
-	<div>
-		Description: <textarea type="text" name="job.description">${flash['job.description']}</textarea>
+	<tr>
+    	<td width="120px">
+		Name: 
+        </td>
+        <td>
+        	<input type="text" name="job.name" value="${flash['job.name']}" />
+			<span class="error">#{error 'job.name' /}</span>
+        </td>
+    </tr>    
+	
+	<tr>
+    	<td>
+		Required Work Experience: 
+        </td>
+        <td>
+        	<input type="text" name="job.requiredWorkExperience" value="${flash['job.requiredWorkExperience']}" />
+			<span class="error">#{error 'job.requiredWorkExperience' /}</span>
+        </td>
+	</tr>
+	<tr>
+    	<td>
+		Description: 
+        </td>
+        <td>
+        <textarea type="text" name="job.description">${flash['job.description']}</textarea>
 		<span class="error">#{error 'job.description' /}</span>
-	</div>
-	<div>
-		Required Education:
-		<div>
-			Study Years: <input type="text" name="job.requiredEducation.studyYears"
+        </td>
+	</tr>
+	<tr>
+    	<td>
+		<strong>Required Education:</strong>
+        </td>
+    </tr>
+    <tr>
+		<td>
+			Study Years: 
+        </td>
+        <td>
+        	<input type="text" name="job.requiredEducation.studyYears"
 				value="${flash['job.requiredEducation.studyYears']}" /> 
 				<span class="error">#{error 'job.requiredEducation.studyYears' /}</span>
-		</div>
-		<div>
-			GPA: <input type="text" name="job.requiredEducation.gpa"
-				value="${flash['job.requiredEducation.gpa']}" /> <span class="error">#{error
-				'job.requiredEducation.gpa' /}</span>
-		</div>
-		<div>
-			College: <input type="text" name="job.requiredEducation.college"
-				value="${flash['job.requiredEducation.college']}" /> <span class="error">#{error
-				'job.requiredEducation.college' /}</span>
-		</div>
-		<div>
+		</td>
+    </tr>
+    <tr>
+		<td>
+			GPA: 
+        </td>
+        <td>
+        <input type="text" name="job.requiredEducation.gpa" value="${flash['job.requiredEducation.gpa']}" /> 
+            	<span class="error">#{error 'job.requiredEducation.gpa' /}</span>
+		</td>
+    </tr>
+    <tr>
+		<td>
+			College: 
+        </td>
+        <td>
+        <input type="text" name="job.requiredEducation.college" value="${flash['job.requiredEducation.college']}" /> 
+        		<span class="error">#{error 'job.requiredEducation.college' /}</span>
+		</td>
+    </tr>
+    <tr>
+		<td>
 			Major:
-				<select name="job.education.major.id">
+        </td>
+        <td>
+			<select name="job.education.major.id">
 					#{list items:models.InternMajor.all().fetch(), as:'major'}
 						<option value=${major.id}
 							#{ifErrors}
@@ -55,25 +92,47 @@
 						>${major}</option>
 					#{/list}
 				</select>
-		</div>
-	</div>
-	<div>
+		</td>
+	</tr>
+	<tr>
+    	<td>
 		Contact Info:
 		<span class="error">#{error 'contactInfo' /}</span>
-		<div>
-			Contact email: <input type="text" name="job.contactInfo.contactEmail" value="#{ifErrors}${flash['job.contactInfo.contactEmail']}#{/ifErrors}#{else}${employer.contactInfo.contactEmail}#{/else}" />
-			<span class="error">#{error 'job.contactInfo.contactEmail' /}</span>
-		</div>
-		<div>
-			Mobile: <input type="text" name="job.contactInfo.mobile" value="#{ifErrors}${flash['job.contactInfo.mobile']}#{/ifErrors}#{else}${employer.contactInfo.mobile}#{/else}" />
+        </td>
+    </tr>
+    <tr>
+		<td>
+			Contact email: 
+        </td>
+        <td>
+        <input type="text" name="job.contactInfo.contactEmail" value="#{ifErrors}${flash['job.contactInfo.contactEmail']}#{/ifErrors}#{else}${employer.contactInfo.contactEmail}#{/else}" />
+		<span class="error">#{error 'job.contactInfo.contactEmail' /}</span>
+		</td>
+    </tr>
+    <tr>
+		<td>
+			Mobile: 
+        </td>
+        <td>
+        <input type="text" name="job.contactInfo.mobile" value="#{ifErrors}${flash['job.contactInfo.mobile']}#{/ifErrors}#{else}${employer.contactInfo.mobile}#{/else}" />
 			<span class="error">#{error 'job.contactInfo.mobile' /}</span>
-		</div>
-		<div>
-			Phone: <input type="text" name="job.contactInfo.phone" value="#{ifErrors}${flash['job.contactInfo.phone']}#{/ifErrors}#{else}${employer.contactInfo.phone}#{/else}" />
+		</td>
+    </tr>
+    <tr>
+		<td>
+			Phone: 
+        </td>
+        <td>
+        <input type="text" name="job.contactInfo.phone" value="#{ifErrors}${flash['job.contactInfo.phone']}#{/ifErrors}#{else}${employer.contactInfo.phone}#{/else}" />
 			<span class="error">#{error 'job.contactInfo.phone' /}</span>
-		</div>
-		<div>
-			City: <select id="citySelect" name="address.city.id">
+		</td>
+    </tr>
+    <tr>
+		<td>
+			City: 
+        </td>
+        <td>
+        <select id="citySelect" name="address.city.id">
 				#{list items:models.InternCity.all().fetch(), as:'city'}
 					<option value=${city.id} 
 						#{ifErrors}
@@ -84,9 +143,14 @@
 					>${city}</option>
 				#{/list}
 			</select>
-		</div>
-		<div>
-			District: <select id="districtSelect" name="address.district.id">
+		</td>
+    </tr>
+    <tr>
+		<td>
+			District: 
+        </td>
+        <td>
+        	<select id="districtSelect" name="address.district.id">
 				#{list items:districts, as:'district'}
 					<option value=${district.id}
 						#{ifErrors}
@@ -97,18 +161,25 @@
 					>${district.name}</option>
 				#{/list}
 			</select>
-		</div>
-	</div>
-	<div>
+		</td>
+    </tr>
+	
+	<tr>
+    	<td>
 		Required Languages: 
+        </td>
+        <td>
 			<select multiple="yes" name="job.requiredLanguages.id">
 				#{list items:models.InternLanguage.all().fetch(), as:'language'}
 					<option value=${language.id}
 					>${language}</option>
 				#{/list}
 			</select>
-	</div>
-	<div>
+        </td>
+	</tr>
+</table>
+</div>
+	<div style="width:100%; float:left; text-align:justify; padding-top:20px; padding-bottom:20px; padding-left:10px">
 		<input type="submit" value="Add" />
 	</div>
 
@@ -126,3 +197,9 @@
 	</script>
 	
 #{/form}
+
+</div>
+</div>
+
+	<!--Footer-->
+    #{footer /}

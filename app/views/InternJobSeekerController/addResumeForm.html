@@ -4,6 +4,7 @@
 <div class="wrapper">
 #{navigationBar /}
 
+<div class="middle">
 #{ifErrors}
 	<h1>Oops...</h1>
 	#{errors}
@@ -11,7 +12,6 @@
 	#{/errors}
 #{/ifErrors}
 
-<div class="middle">
 <div style="width:100%; float:left">
 <table cellpadding="10px">
 #{form @InternJobSeekerController.addResume()}
