@@ -9,3 +9,11 @@
 		&{flash.success}
 	</p>
 #{/if}
+
+#{ifErrors}
+	<p class="error">
+		#{errors}
+			<li>${error}</li>
+		#{/errors}
+	</p>
+#{/ifErrors}

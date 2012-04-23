@@ -2,202 +2,205 @@
 #{set title:'Add Resume' /}
 
 <div class="wrapper">
-#{navigationBar /}
+	#{navigationBar /}
 
-<div class="middle">
-#{ifErrors}
-	<h1>Oops...</h1>
-	#{errors}
-		<li>${error}</li>
-	#{/errors}
-#{/ifErrors}
-
-<div style="width:100%; float:left">
-<table cellpadding="10px">
-#{form @InternJobSeekerController.addResume()}
-	<tr>
-    	<td width="220px">
-			Name:
-        </td>
-        <td>
-        	<input style="width: 250px" type="text" name="resume.name" value="${flash['resume.name']}" />
-			<span class="error">#{error 'resume.name' /}</span>
-		</td>
-    </tr>
-	<tr>
-		<td>
-        	Work Experience:
-        </td>
-        <td>
-        	<input style="width: 250px" type="text" name="resume.workExperience" value="${flash['resume.workExperience']}" />
-			<span class="error">#{error 'resume.workExperience' /}</span>
-		</td>
-    </tr>
-	<tr>
-    	<td>
-			Description:
-        </td>
-        <td>
-        	<textarea style="width:400px; height:200px" name="resume.description">${flash['resume.description']}</textarea>
-			<span class="error">#{error 'resume.description' /}</span>
-		</td>
-    </tr>    
-	<tr>
-    	<td>
-			<strong>Education:</strong>
-        </td>
-	<tr>
-    	<td>
-			Study Years:
-        </td>
-        <td>
-        	<input style="width: 250px" type="text" name="resume.education.studyYears" value="${flash['resume.education.studyYears']}" /> 
-			<span class="error">#{error 'resume.education.studyYears' /}</span>
-		</td>
-    </tr>
-    <tr>
-		<td>
-			GPA:
-        </td>
-        <td>
-        	<input style="width: 250px" type="text" name="resume.education.gpa" value="${flash['resume.education.gpa']}" />
-            <span class="error">#{error 'resume.education.gpa' /}</span>
-		</td>
-    </tr>
-    <tr>
-		<td>
-			College: 
-        </td>
-        <td>
-        	<input style="width: 250px" type="text" name="resume.education.college" value="${flash['resume.education.college']}" />
-            <span class="error">#{error 'resume.education.college' /}</span>
-		</td>
-    </tr>
-    <tr>
-		<td>
-			Major:
-        </td>
-		<td>
-        	<select name="resume.education.major.id">
-					#{list items:models.InternMajor.all().fetch(), as:'major'}
-						<option value=${major.id}
-							#{ifErrors}
-								#{if Long.parseLong(flash['resume.education.major.id']) == major.id}
-									selected=true
-								#{/if}
-							#{/ifErrors}
-						>${major}</option>
-					#{/list}
-				</select>
-		</td>
-    </tr>
-	
-	<tr>
-    	<td>
-            <strong>Contact Info:</strong>
-            <span class="error">#{error 'contactInfo' /}</span>
-        </td>
-    </tr>
-	<tr>
-    	<td>
-			Contact email: 
-        </td>
-        <td>
-        	<input style="width: 250px" type="text" name="resume.contactInfo.contactEmail" value="#{ifErrors}${flash['resume.contactInfo.contactEmail']}#{/ifErrors}#{else}${jobSeeker.contactInfo.contactEmail}#{/else}" />
-			<span class="error">#{error 'resume.contactInfo.contactEmail' /}</span>
-		</td>
-    </tr>
-    <tr>
-		<td>
-			Mobile: 
-        </td>
-        <td>
-        	<input style="width: 250px" type="text" name="resume.contactInfo.mobile" value="#{ifErrors}${flash['resume.contactInfo.mobile']}#{/ifErrors}#{else}${jobSeeker.contactInfo.mobile}#{/else}" />
-			<span class="error">#{error 'resume.contactInfo.mobile' /}</span>
-		</td>
-    </tr>
-    <tr>
-		<td>
-			Phone: 
-        </td>
-        <td>
-        	<input style="width: 250px" type="text" name="resume.contactInfo.phone" value="#{ifErrors}${flash['resume.contactInfo.phone']}#{/ifErrors}#{else}${jobSeeker.contactInfo.phone}#{/else}" />
-			<span class="error">#{error 'resume.contactInfo.phone' /}</span>
-		</td>
-    </tr>
-    <tr>
-		<td>
-			City: 
-        </td>
-        <td>
-        	<select id="citySelect" name="address.city.id">
-				#{list items:models.InternCity.all().fetch(), as:'city'}
-					<option value=${city.id} 
-						#{ifErrors}
-							#{if Long.parseLong(flash['address.city.id']) == city.id}
-								selected=true
-							#{/if}
-						#{/ifErrors}
-					>${city}</option>
-				#{/list}
-			</select>
-		</td>
-    </tr>
-    <tr>
-		<td>
-			District: 
-        </td>
-        <td>
-        	<select id="districtSelect" name="address.district.id">
-				#{list items:districts, as:'district'}
-					<option value=${district.id}
-						#{ifErrors}
-							#{if Long.parseLong(flash['address.district.id']) == district.id}
-								selected=true
-							#{/if}
-						#{/ifErrors}
-					>${district.name}</option>
-				#{/list}
-			</select>
-		</td>
-	</tr>
-	<tr>
-    	<td>
-			Languages:
-        </td>
-        <td>
-			<select multiple="yes" name="resume.languages.id">
-				#{list items:models.InternLanguage.all().fetch(), as:'language'}
-					<option value=${language.id}
-					>${language}</option>
-				#{/list}
-			</select>
-        </td>
-	</tr>
-</table>
-	<div style="width:100%; float:left; text-align:justify; padding-top:20px; padding-bottom:20px; padding-left:10px">
-		<input style="width: 60px" type="submit" value="Add" />
-	</div>
-	
-	<script type="text/javascript">
-		var districtAction = #{jsAction @Application.districtsForCity(':cityId') /}
+	<div class="middle">		
+		<div style="width: 100%; float:left; padding-bottom:10px">
+			<div style="float:left">
+				<h1>Add Resume</h1>
+		    </div>
+		</div>
 		
-		$('#citySelect').change(function() {
-			$.get(districtAction({cityId: $('#citySelect').val()}), function(districts) {	
-				$('#districtSelect option').remove();
-				$.each(districts, function(index, district) {
-					$("#districtSelect").append('<option value="' + district.id + '">' + district.name + "</option>");
-					});
+		<div class="notification">
+			#{notification /}
+		</div>
+
+		<div style="width:100%; float:left">
+			<table>
+			#{form @InternJobSeekerController.addResume()}
+				<tr>
+			    	<td width="100px">
+						<b class="light-gray">Name</b>
+			        </td>
+			        <td>
+			        	<input style="width: 250px" type="text" name="resume.name" value="${flash['resume.name']}" />
+						<span class="error">#{error 'resume.name' /}</span>
+					</td>
+			    </tr>
+				<tr>
+					<td>
+			        	<b class="light-gray">Work Experience</b>
+			        </td>
+			        <td>
+			        	<input style="width: 250px" type="text" name="resume.workExperience" value="${flash['resume.workExperience']}" />
+						<span class="error">#{error 'resume.workExperience' /}</span>
+					</td>
+			    </tr>
+				<tr>
+					<td>
+			        	<b class="light-gray">Description</b>
+			        </td>
+			        <td>
+			        	<textarea style="width:596px; height:200px" name="resume.description">${flash['resume.description']}</textarea>
+						<span class="error">#{error 'resume.description' /}</span>
+					</td>
+			    </tr>    
+				<tr>
+					<td>
+			        	<b class="light-gray">Education</b>
+			        </td>
+				<tr>
+					<td>
+			        	<b class="light-gray">Study Years</b>
+			        </td>
+			        <td>
+			        	<input style="width: 250px" type="text" name="resume.education.studyYears" value="${flash['resume.education.studyYears']}" /> 
+						<span class="error">#{error 'resume.education.studyYears' /}</span>
+					</td>
+			    </tr>
+			    <tr>
+					<td>
+						<b class="light-gray">GPA</b>
+			        </td>
+			        <td>
+			        	<input style="width: 250px" type="text" name="resume.education.gpa" value="${flash['resume.education.gpa']}" />
+			            <span class="error">#{error 'resume.education.gpa' /}</span>
+					</td>
+			    </tr>
+			    <tr>
+					<td>
+						<b class="light-gray">College</b>
+			        </td>
+			        <td>
+			        	<input style="width: 250px" type="text" name="resume.education.college" value="${flash['resume.education.college']}" />
+			            <span class="error">#{error 'resume.education.college' /}</span>
+					</td>
+			    </tr>
+			    <tr>
+					<td>
+						<b class="light-gray">Major</b>
+			        </td>
+					<td>
+			        	<select name="resume.education.major.id">
+								#{list items:models.InternMajor.all().fetch(), as:'major'}
+									<option value=${major.id}
+										#{ifErrors}
+											#{if Long.parseLong(flash['resume.education.major.id']) == major.id}
+												selected=true
+											#{/if}
+										#{/ifErrors}
+									>${major}</option>
+								#{/list}
+							</select>
+					</td>
+			    </tr>
+	
+				<tr>
+			    	<td>
+			            <b class="light-gray">Contact Info</b>
+			            <span class="error">#{error 'contactInfo' /}</span>
+			        </td>
+			    </tr>
+				<tr>
+					<td>
+			        	<b class="light-gray">Contact email</b>
+			        </td>
+			        <td>
+			        	<input style="width: 250px" type="text" name="resume.contactInfo.contactEmail" value="#{ifErrors}${flash['resume.contactInfo.contactEmail']}#{/ifErrors}#{else}${jobSeeker.contactInfo.contactEmail}#{/else}" />
+						<span class="error">#{error 'resume.contactInfo.contactEmail' /}</span>
+					</td>
+			    </tr>
+			    <tr>
+					<td>
+						<b class="light-gray">Mobile</b>
+			        </td>
+			        <td>
+			        	<input style="width: 250px" type="text" name="resume.contactInfo.mobile" value="#{ifErrors}${flash['resume.contactInfo.mobile']}#{/ifErrors}#{else}${jobSeeker.contactInfo.mobile}#{/else}" />
+						<span class="error">#{error 'resume.contactInfo.mobile' /}</span>
+					</td>
+			    </tr>
+			    <tr>
+					<td>
+						<b class="light-gray">Phone</b>
+			        </td>
+			        <td>
+			        	<input style="width: 250px" type="text" name="resume.contactInfo.phone" value="#{ifErrors}${flash['resume.contactInfo.phone']}#{/ifErrors}#{else}${jobSeeker.contactInfo.phone}#{/else}" />
+						<span class="error">#{error 'resume.contactInfo.phone' /}</span>
+					</td>
+			    </tr>
+			    <tr>
+					<td>
+						<b class="light-gray">City</b>
+			        </td>
+			        <td>
+			        	<select id="citySelect" name="address.city.id">
+							#{list items:models.InternCity.all().fetch(), as:'city'}
+								<option value=${city.id} 
+									#{ifErrors}
+										#{if Long.parseLong(flash['address.city.id']) == city.id}
+											selected=true
+										#{/if}
+									#{/ifErrors}
+								>${city}</option>
+							#{/list}
+						</select>
+					</td>
+			    </tr>
+			    <tr>
+					<td>
+						<b class="light-gray">District</b>
+			        </td>
+			        <td>
+			        	<select id="districtSelect" name="address.district.id">
+							#{list items:districts, as:'district'}
+								<option value=${district.id}
+									#{ifErrors}
+										#{if Long.parseLong(flash['address.district.id']) == district.id}
+											selected=true
+										#{/if}
+									#{/ifErrors}
+								>${district.name}</option>
+							#{/list}
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+			        	<b class="light-gray">Languages</b>
+			        </td>
+			        <td>
+						<select multiple="yes" name="resume.languages.id">
+							#{list items:models.InternLanguage.all().fetch(), as:'language'}
+								<option value=${language.id}
+								>${language}</option>
+							#{/list}
+						</select>
+			        </td>
+				</tr>
+			</table>
+			<div style="width:100%; float:left; text-align:center; padding-top:20px; padding-bottom:20px; padding-left:10px">
+				<input style="width: 160px" type="submit" value="Add" />
+			</div>
+	
+			<script type="text/javascript">
+				var districtAction = #{jsAction @Application.districtsForCity(':cityId') /}
+		
+				$('#citySelect').change(function() {
+					$.get(districtAction({cityId: $('#citySelect').val()}), function(districts) {	
+						$('#districtSelect option').remove();
+						$.each(districts, function(index, district) {
+							$("#districtSelect").append('<option value="' + district.id + '">' + district.name + "</option>");
+							});
+						});
 				});
-		});
-	</script>
+			</script>
 
-#{/form}
+		#{/form}
 
-</div>
-</div>
+		</div>
+	</div>
 </div>
 
-	<div style="height: 40px; width:100%; float: left"> </div>
-	<!--Footer-->
-    #{footer /}
+<div style="height: 40px; width:100%; float: left"> </div>
+<!--Footer-->
+#{footer /}
