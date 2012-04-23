@@ -1,37 +1,81 @@
-<div>
-	Email: ${_jobSeeker?.email}
-</div>
+<table>
+	<tr>
+		<td width="100px">
+			<b><p class="light-gray">Email</p></b>
+		</td>
+		<td>
+			${_jobSeeker?.email}
+		</td>
+	</tr>
 
-#{if _as == "full"}
-	<div>
-		User type: ${_jobSeeker?.userType}
-	</div>
+	#{if _as == "full"}
+		<tr>
+			<td width="100px">
+				<b><p class="light-gray">User type</p></b>
+			</td>
+			<td>
+				${_jobSeeker?.userType}
+			</td>
+		</tr>
 	
-	<div>
-		Is Admin: ${_jobSeeker?.isAdmin}
-	</div>
+		<tr>
+			<td width="100px">
+				<b><p class="light-gray">Is Admin</p></b>
+			</td>
+			<td>
+				${_jobSeeker?.isAdmin}
+			</td>
+		</tr>
 	
-	<div>
-		Password: ${_jobSeeker?.password}
-	</div>
-#{/if}
+		<tr>
+			<td width="100px">
+				<b><p class="light-gray">Password</p></b>
+			</td>
+			<td>
+				${_jobSeeker?.password}
+			</td>
+		</tr>
+	#{/if}
 
-#{if _jobSeeker?.birthday}
-<div>
-	Birthday: ${new StringBuilder(new java.text.SimpleDateFormat("dd/MM/yyyy").format(_jobSeeker.birthday))}
-</div>
-#{/if}
+	#{if _jobSeeker?.birthday}
+		<tr>
+			<td width="100px">
+				<b><p class="light-gray">Birthday</p></b>
+			</td>
+			<td>
+				${new StringBuilder(new java.text.SimpleDateFormat("dd/MM/yyyy").format(_jobSeeker.birthday))}
+			</td>
+		</tr>
+	#{/if}
 
-#{if _jobSeeker?.aboutMe}
-<div>
-	About me: <p class="textarea">${_jobSeeker?.aboutMe}</p>
-</div>
-#{/if}
+	#{if _jobSeeker?.aboutMe}
+		<tr>
+			<td width="100px">
+				<b><p class="light-gray">About me</p></b>
+			</td>
+			<td>
+				<p class="textarea">${_jobSeeker?.aboutMe}</p>
+			</td>
+		</tr>
+	#{/if}
 
-#{if _jobSeeker?.college}
-<div>
-	College: ${_jobSeeker?.college}
-</div>
-#{/if}
+	#{if _jobSeeker?.college}
+		<tr>
+			<td width="100px">
+				<b><p class="light-gray">College</p></b>
+			</td>
+			<td>
+				${_jobSeeker?.college}
+			</td>
+		</tr>
+	#{/if}
 
-#{displayContactInfo contactInfo:_jobSeeker?.contactInfo /}
+	<tr>
+		<td width="100px">
+			<b><p class="light-gray">Contact Info</p></b>
+		</td>
+		<td>
+			#{displayContactInfo contactInfo:_jobSeeker?.contactInfo /}
+		</td>
+	</tr>
+</table>
