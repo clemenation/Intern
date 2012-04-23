@@ -13,7 +13,7 @@
 	#{/errors}
 #{/ifErrors}
 
-<div style="width:100%">
+<div style="width:100%; float: left">
 <table cellpadding="10px">
 	<tr>
 	#{form @InternJobSeekerController.updateProfilePhoto(), enctype:'multipart/form-data'}
@@ -83,7 +83,7 @@
 			About me:
         </td>
         <td>
-        	<textarea name="jobSeeker.aboutMe">#{ifErrors}${flash['jobSeeker.aboutMe']}#{/ifErrors}#{else}${jobSeeker.aboutMe}#{/else}</textarea>
+        	<textarea style="width: 400px; height: 200px" name="jobSeeker.aboutMe">#{ifErrors}${flash['jobSeeker.aboutMe']}#{/ifErrors}#{else}${jobSeeker.aboutMe}#{/else}</textarea>
 			<span class="error">#{error 'jobSeeker.aboutMe' /}</span>
 		</td>
 	</tr>
@@ -182,8 +182,12 @@
 			</select>
         </td>
 	</tr>
+</table>
+</div>
 
-	<input type="submit" value="Save" />
+	<div style="width:100%; float: left; text-align:justify; padding-top:20px; padding-bottom:20px; padding-left:10px">
+        <input type="submit" value="Save" />
+    </div>	
 
 	<script type="text/javascript">
 		var districtAction = #{jsAction @Application.districtsForCity(':cityId') /}
@@ -199,13 +203,10 @@
 	</script>
     
 #{/form}
-	
-    
-</table>
+
+</div>
 </div>
 
-<div style="width:100%">
-	
-</div>	
-</div>
-</div>
+	<div style="height: 40px; width:100%; float: left"> </div>
+	<!--Footer-->
+    #{footer /}
