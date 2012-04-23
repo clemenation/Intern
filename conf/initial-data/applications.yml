@@ -168,7 +168,7 @@ InternApplication(20_Application):
 
 InternApplication(21_Application):
     job: sunnetFirstJob
-    resume: dungNguyenFirstResume
+    resume: dungnguyenFirstResume
     postedAt: 2012-04-18
     jobSeeker: dungnguyen
     employer: sunnet

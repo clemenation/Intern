@@ -2,7 +2,7 @@
 
 InternContactInfo(fptContactInfo):
     contactEmail: contact@fpt.com
-    phone: 7300 2222
+    phone: (84-4) 7300 2222
     address: fptAddress
 
 InternAddress(fptAddress):
@@ -14,7 +14,7 @@ InternAddress(fptAddress):
 InternEmployer(fpt):
     email: internfpt@fpt.com
     password: internfpt
-    isAdmin: true
+    isAdmin: false
     userType: Employer
     contactInfo: fptContactInfo
     companyName: FPT TELECOM
@@ -24,12 +24,12 @@ InternEmployer(fpt):
 
 InternContactInfo(fptFirstJobContactInfo):
     contactEmail: contact@fpt.com
-    phone: 7300 2222
+    phone: (84-4) 7300 2222
     address: fptFirstJobAddress
 
 InternAddress(fptFirstJobAddress):
     address: 2B Pham Hung
-    district: cauGiayDistrict
+    district: cauGiayDistricts
     city: haNoiCity
     contactInfo: fptFirstJobContactInfo
 
@@ -52,12 +52,12 @@ InternJob(fptFirstJob):
 
 InternContactInfo(fptSecondJobContactInfo):
     contactEmail: contact@fpt.com
-    phone: 7300 2222
+    phone: (84-4) 7300 2222
     address: fptSecondJobAddress
 
 InternAddress(fptSecondJobAddress):
     address: 2B Pham Hung
-    district: cauGiayDistrict
+    district: cauGiayDistricts
     city: haNoiCity
     contactInfo: fptSecondJobContactInfo
 
@@ -80,12 +80,12 @@ InternJob(fptSecondJob):
 
 InternContactInfo(fptThirdJobContactInfo):
     contactEmail: contact@fpt.com
-    phone: 7300 2222
+    phone: (84-4) 7300 2222
     address: fptThirdJobAddress
 
 InternAddress(fptThirdJobAddress):
     address: 2B Pham Hung
-    district: cauGiayDistrict
+    district: cauGiayDistricts
     city: haNoiCity
     contactInfo: fptThirdJobContactInfo
 
