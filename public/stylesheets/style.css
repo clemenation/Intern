@@ -235,6 +235,14 @@ h1
 	margin-top: 10px;
 }
 
+.resume-link
+{
+	width:160px;
+	float:left;
+	padding-right:10px;
+}
+
+
 .resume-title
 {
 	float: left;

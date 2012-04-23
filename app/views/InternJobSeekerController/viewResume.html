@@ -4,6 +4,7 @@
 <div class="wrapper">
 #{navigationBar /}
 
+<div class="middle">
 #{if flash.error}
 	<p class="error">
 		&{flash.error}
@@ -16,7 +17,7 @@
 	</p>
 #{/if}
 
-<div class="middle">
+
 #{displayResume resume:resume, as:"jobSeeker" /}
 <br />
 
