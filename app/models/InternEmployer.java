@@ -74,7 +74,6 @@ public class InternEmployer extends InternUser {
 		System.out.println(this.companySize.size);
 		
 		this.industry = employer.industry;
-		//this.logo = employer.logo;
 		if (this.contactInfo == null) {
 			this.contactInfo = employer.contactInfo;
 		} else {

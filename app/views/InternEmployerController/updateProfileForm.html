@@ -78,7 +78,16 @@
                 <td>
                     <select name="employer.companySize.id">
                             #{list items:models.InternCompanySize.all().fetch(), as:'comSize'}
-                                <option value=${comSize.id}>${comSize}</option>
+                                <option value=${comSize.id}
+									#{ifErrors}
+                                        #{if Long.parseLong(flash['employer.companySize.id']) == (comSize.id)}
+                                            selected=true
+                                        #{/if}
+                                    #{/ifErrors}
+                                    #{elseif employer.companySize?.id==comSize.id}
+                                        selected=true
+                                    #{/elseif}
+								>${comSize}</option>
                             #{/list}
                         </select>
                 </td>

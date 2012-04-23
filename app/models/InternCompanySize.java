@@ -26,12 +26,7 @@ public class InternCompanySize extends Model {
 	
 	
 	
-	// Methods
-	
-	public InternCompanySize update(InternCompanySize companySize) {
-		this.size = companySize.size;
-		return this;
-	}
+	// Methods	
 	
 	public String toString() {
 		return this.size;
