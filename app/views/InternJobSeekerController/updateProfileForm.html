@@ -4,17 +4,17 @@
 <div class="wrapper">
 	#{navigationBar /}
 
-	<div class="notification">
-		#{notification /}
-	</div>
 	<div class="middle">
 			<div style="padding-bottom: 15px">
-				<h1>Update Profile
+				<h1>Update Profile</h1>
 			</div>
+			
+			<div class="notification">
+				#{notification /}
+			</div>
+			
 			<div class="avatar">
 		        #{form @InternJobSeekerController.updateProfilePhoto(), enctype:'multipart/form-data'}
-        
-            
 		                <b class="light-gray">Profile photo</b>
                     
 		                <div style="width:100%; padding-bottom:10px">
@@ -181,7 +181,7 @@
 			</div>
 
 			<div style="width:100%; float: left; text-align: center; padding-top:20px; padding-bottom:20px; padding-left:10px">
-		        <input style="width: 150px" type="submit" value="Save" /><br /><br />
+		        <input style="width: 150px" type="submit" value="Save" /><br />
 		        <a href="@{InternJobSeekerController.profile()}">Cancel</a>
 		    </div>	
 
@@ -203,6 +203,6 @@
 	</div>
 </div>
 
-	<div style="height: 40px; width:100%; float: left"> </div>
-	<!--Footer-->
-    #{footer /}
+<div style="height: 40px; width:100%; float: left"> </div>
+<!--Footer-->
+#{footer /}

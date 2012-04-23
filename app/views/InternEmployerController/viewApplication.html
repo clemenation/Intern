@@ -2,38 +2,29 @@
 #{set title: 'View Application' /}
 
 <div class="wrapper">
-#{navigationBar /}
+	#{navigationBar /}
 
-<div class="middle">
-#{if flash.error}
-	<p class="error">
-		&{flash.error}
-	</p>
-#{/if}
+	<div class="middle">
+		#{notification /}
 
-#{if flash.success}
-	<p class="success">
-		&{flash.success}
-	</p>
-#{/if}
-
-<div>
-	Posted at: ${application.postedAt}
-</div>
-<br />
-#{if application.message}
-	<div>
-		<h2>Message</h2> ${application.message}
+		#{if application.message}
+			<div style="margin-bottom: 40px">
+				<div style="padding-bottom: 10px"><h1>Message</h1></div>
+				<p class="textarea">${application.message}</p>
+			</div>
+		#{/if}
+		#{displayResume resume:application.resume /}
+		
+		<!--Seperator space-->
+	    <div style="height:25px; width:100%; float:left"> </div>
+		
+		#{displayJob job:application.job /}
 	</div>
-#{/if}
-<br />
-#{displayResume resume:application.resume /}
-<br />
-#{displayJob job:application.job /}
-
+	
 </div>
 
-	<div style="height: 40px; width:100%"> </div>
-    <!--Footer-->
-    #{footer /}
-</div>
+<!--Seperator space-->
+<div style="height:25px; width:100%; float:left"> </div>
+
+<!--Footer-->
+#{footer /}
