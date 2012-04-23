@@ -1,9 +1,8 @@
 #{extends 'main.html' /}
 #{set title: 'View Application' /}
 
+<div class="wrapper">
 #{navigationBar /}
-
-<h1>Intern/Job Seeker</h1>
 
 #{if flash.error}
 	<p class="error">
@@ -17,16 +16,26 @@
 	</p>
 #{/if}
 
+<div class="middle">
 <div>
 	Posted at: ${application.postedAt}
 </div>
-
+<br />
 #{if application.message}
 	<div>
 		<h2>Message</h2> ${application.message}
 	</div>
 #{/if}
-
+<br />
 #{displayJob job:application.job /}
-
+<br />
 #{displayResume resume:application.resume /}
+
+</div>
+
+	<div style="height: 40px; width:100%"> </div>
+    <!--Footer-->
+    #{footer /}
+</div>
+
+	
