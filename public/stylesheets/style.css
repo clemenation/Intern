@@ -181,7 +181,7 @@ h1
 {
 	float: left;
 	width:160px;
-	padding-right:20px;
+	padding-right:10px;
 }
 
 .jobtitle
@@ -259,4 +259,11 @@ h1
 	width:100%;
 	text-align:center;
 	padding-bottom:20px;
+}
+
+.job-link
+{
+	width:160px;
+	float:left;
+	padding-right:10px;
 }

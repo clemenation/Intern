@@ -1,41 +1,46 @@
-<h2>${_resume}</h2>
-#{if _as=="jobSeeker"}
-	<a href="@{InternJobSeekerController.editResumeForm(_resume.id)}">edit</a>
-#{/if}
-
-#{if _as=="full"}
-	<div>
-		Owner: ${_resume?.owner}
+<div style="width: 100%; float:left; padding-bottom:10px">
+	<div style="float:left">
+		<h2>${_resume}</h2>
+    </div>
+    <div style="float:right">
+        #{if _as=="jobSeeker"}
+            <a href="@{InternJobSeekerController.editResumeForm(_resume.id)}">edit</a>
+        #{/if}
+        
+        #{if _as=="full"}
+            <div>
+                Owner: ${_resume?.owner}
+            </div>
+        #{/if}
 	</div>
-#{/if}
-
-<div>
-	Posted at: ${_resume?.postedAt}
 </div>
 
-#{if _resume?.workExperience > 0}
-	<div>
-		Work experience: ${_resume?.workExperience}
-	</div>
-#{/if}
-
-#{if _resume?.description}
-	<div>
-		Description: <p class="textarea">${_resume?.description}</p>
-	</div>
-#{/if}
-
-#{displayContactInfo contactInfo:_resume?.contactInfo /}
-
-#{if _resume?.languages}
-	<div>
-		Languages: #{list items:_resume?.languages, as:'language'}${language} #{/list}
-	</div>
-#{/if}
-
-#{if _resume?.education && !_resume?.education.isEmpty()}
-	<div>
-		Education:
-			#{displayEducation education:_resume?.education /}
-	</div> 
-#{/if}
+<div style="width:90%; float:none; margin:0px auto">
+    
+    #{if _resume?.workExperience > 0}
+        <div>
+            Work experience: ${_resume?.workExperience}
+        </div>
+    #{/if}
+    
+    #{if _resume?.description}
+        <div>
+            Description: <p class="textarea">${_resume?.description}</p>
+        </div>
+    #{/if}
+    
+    #{displayContactInfo contactInfo:_resume?.contactInfo /}
+    
+    #{if _resume?.languages}
+        <div>
+            Languages: #{list items:_resume?.languages, as:'language'}${language} #{/list}
+        </div>
+    #{/if}
+    
+    #{if _resume?.education && !_resume?.education.isEmpty()}
+        <div>
+            Education:
+                #{displayEducation education:_resume?.education /}
+        </div> 
+    #{/if}
+</div>
