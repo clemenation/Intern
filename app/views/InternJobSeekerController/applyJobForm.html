@@ -1,9 +1,8 @@
 #{extends 'main.html' /}
 #{set title:'Apply ' + job /}
 
+<div class="wrapper">
 #{navigationBar /}
-
-<h1>Intern/Job Seeker</h1>
 
 #{ifErrors}
 	<h1>Oops...</h1>
@@ -12,23 +11,36 @@
 	#{/errors}
 #{/ifErrors}
 
+<div class="middle">
 #{if points}
+<div style="width: 100%; float:left; padding-bottom:20px; padding-left:50px">
+<table cellpadding="10px">
 #{form @InternJobSeekerController.applyJob(job.id) }
-		<div>
-			Resume to apply: 
+	<tr>
+		<td width="180px">
+			Resume to apply:
+        </td>
+        <td>
 			<select name="application.resume.id">			
 				#{list items: points, as:'point'}
 					<option value="${point.resume.id}" #{ifErrors}#{if flash['application.resume?.id']==point.resume.id}selected="true"#{/if}#{/ifErrors}>${point.resume} +${point.strongPoint} -${point.weakPoint}</option>
 				#{/list}			
 			</select>
-		</div>
-		
-		<div>
-			Message: <textarea name="application.message">#{ifErrors}${flash['application.message']}#{/ifErrors}</textarea>
+		</td>
+    </tr>
+        
+	<tr>	
+		<td>
+			Message:
+        </td>
+        <td>
+        	<textarea style="width:300px; height:100px" name="application.message">#{ifErrors}${flash['application.message']}#{/ifErrors}</textarea>
 			<span class="error">#{error 'application.message' /}</span>
-		</div>
-		
-		<div>
+		</td>
+    </tr>
+</table>
+</div>
+		<div style="width: 80%; float:left; margin: 0px auto; text-align:center">
 			<input type="submit" value="Apply" />
 		</div>
 	#{/form}
@@ -36,3 +48,5 @@
 #{else}
 	No more resume to apply.
 #{/else}
+</div>
+</div>
