@@ -1,12 +1,13 @@
 # FPT
 
 InternContactInfo(fptContactInfo):
-    contactEmail: info@fpt.com
+    contactEmail: contact@fpt.com
+    phone: 7300 2222
     address: fptAddress
 
 InternAddress(fptAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
+    address: 2B Pham Hung
+    district: cauGiayDistrict
     city: haNoiCity
     contactInfo: fptContactInfo
 
@@ -16,31 +17,32 @@ InternEmployer(fpt):
     isAdmin: false
     userType: Employer
     contactInfo: fptContactInfo
-    companyName: FPT
+    companyName: FPT TELECOM
     industry: Information and Communication Technology
     description: Leading ICT Company in Vietnam
     companySize: mediumLargeSize
 
 InternContactInfo(fptFirstJobContactInfo):
-    contactEmail: info@fpt.com
+    contactEmail: contact@fpt.com
+    phone: 7300 2222
     address: fptFirstJobAddress
 
 InternAddress(fptFirstJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
+    address: 2B Pham Hung
+    district: cauGiayDistrict
     city: haNoiCity
     contactInfo: fptFirstJobContactInfo
 
 InternEducation(fptFirstJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
+    studyYears: 3
+    gpa: 2.7
     major: informationTechnologyMajor
 
 InternJob(fptFirstJob):
-    name: iOS Developer
+    name: Mobile and Web apps Developer Internship
     owner: fpt
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
+    postedAt: 2012-04-10
+    description: Learn how to build web and mobile apps. FPT Telecom is looking for a student to work alongside our CTO on innovative apps as a work placement for a period of 6-12 months.
     contactInfo: fptFirstJobContactInfo
     requiredWorkExperience: 1
     requiredLanguages:
@@ -49,25 +51,26 @@ InternJob(fptFirstJob):
     requiredEducation: fptFirstJobRequiredEducation
 
 InternContactInfo(fptSecondJobContactInfo):
-    contactEmail: info@fpt.com
+    contactEmail: contact@fpt.com
+    phone: 7300 2222
     address: fptSecondJobAddress
 
 InternAddress(fptSecondJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
+    address: 2B Pham Hung
+    district: cauGiayDistrict
     city: haNoiCity
     contactInfo: fptSecondJobContactInfo
 
 InternEducation(fptSecondJobRequiredEducation):
-    studyYears: 2
+    studyYears: 4
     gpa: 2.5
     major: informationTechnologyMajor
 
 InternJob(fptSecondJob):
-    name: iOS Developer
+    name: iOS Mobile Developer
     owner: fpt
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
+    postedAt: 2012-04-15
+    description: Looking for fabulously talented mobile app developer to join small, close knit team to work on our own internal app projects. We're not an agency or web design company - so there are no horrific clients to answer to! Join us in our city centre studio with 180 degree views of hustle and bustle of city life! Your role will include building mobile apps, both from scratch and to fit in with our existing product portfolio (which mainly includes web apps right now). We're seeking someone who wants to learn and be given a great opportunity to excel in their role.
     contactInfo: fptSecondJobContactInfo
     requiredWorkExperience: 1
     requiredLanguages:
@@ -75,14 +78,43 @@ InternJob(fptSecondJob):
       - englishLanguage
     requiredEducation: fptSecondJobRequiredEducation
 
+InternContactInfo(fptThirdJobContactInfo):
+    contactEmail: contact@fpt.com
+    phone: 7300 2222
+    address: fptThirdJobAddress
+
+InternAddress(fptThirdJobAddress):
+    address: 2B Pham Hung
+    district: cauGiayDistrict
+    city: haNoiCity
+    contactInfo: fptThirdJobContactInfo
+
+InternEducation(fptThirdJobRequiredEducation):
+    studyYears: 5
+    gpa: 3.0
+    major: informationTechnologyMajor
+
+InternJob(fptThirdJob):
+    name: Project Management Internship / Data Analyst Internship
+    owner: fpt
+    postedAt: 2012-04-17
+    description: As a rapidly expanding business we can offer excellent opportunities for career progression as well as on-going training and development for all of our staff; we will encourage you to get fully involved and to share our passion for the business.
+    contactInfo: fptThirdJobContactInfo
+    requiredWorkExperience: 2
+    requiredLanguages:
+      - vietnamLanguage
+      - englishLanguage
+    requiredEducation: fptThirdJobRequiredEducation
+
 # SUNNET
 
 InternContactInfo(sunnetContactInfo):
     contactEmail: info@sunnet.com
+    phone: (04)3.533.6256
     address: sunnetAddress
 
 InternAddress(sunnetAddress):
-    address: 37/157 Phao Dai Lang
+    address: 134 Thai Ha
     district: dongDaDistrict
     city: haNoiCity
     contactInfo: sunnetContactInfo
@@ -93,17 +125,18 @@ InternEmployer(sunnet):
     isAdmin: false
     userType: Employer
     contactInfo: sunnetContactInfo
-    companyName: Sunnet
-    industry: Information and Communication Technology
-    description: Leading ICT Company in Vietnam
+    companyName: Sunnet ITC Solution
+    industry: Information and Communication Solution
+    description: Sunnet provides ICT and Internet Solutions to individual, small and corporate businesses in the area of VSAT equipment sales, installation and support, wireless networking, VOIP (Net2phone) sales, installation and support, web hosting, domain name registration, web design, web directory and ICT training in Vietnam
     companySize: mediumLargeSize
 
 InternContactInfo(sunnetFirstJobContactInfo):
     contactEmail: info@sunnet.com
+    phone: (04)3.533.6256
     address: sunnetFirstJobAddress
 
 InternAddress(sunnetFirstJobAddress):
-    address: 37/157 Phao Dai Lang
+    address: 134 Thai Ha
     district: dongDaDistrict
     city: haNoiCity
     contactInfo: sunnetFirstJobContactInfo
@@ -114,26 +147,80 @@ InternEducation(sunnetFirstJobRequiredEducation):
     major: informationTechnologyMajor
 
 InternJob(sunnetFirstJob):
-    name: iOS Developer
+    name: Java Intern Developer
     owner: sunnet
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
+    postedAt: 2012-04-18
+    description: Sunnet is looking for a software development intern(s) for prototyping initiatives involving Java and related JVM languages, web and database development and/or C/C++ development projects.
     contactInfo: sunnetFirstJobContactInfo
     requiredWorkExperience: 1
     requiredLanguages:
       - vietnamLanguage
-      - englishLanguage
     requiredEducation: sunnetFirstJobRequiredEducation
+
+InternContactInfo(sunnetSecondJobContactInfo):
+    contactEmail: info@sunnet.com
+    phone: (04)3.533.6256
+    address: sunnetSecondJobAddress
+
+InternAddress(sunnetSecondJobAddress):
+    address: 134 Thai Ha
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: sunnetSecondJobContactInfo
+
+InternEducation(sunnetSecondJobRequiredEducation):
+    studyYears: 2
+    gpa: 2.0
+    major: informationTechnologyMajor
+
+InternJob(sunnetSecondJob):
+    name: Mobile Application Developer
+    owner: sunnet
+    postedAt: 2012-04-16
+    description: We are recruiting great students for our summer 2012 internships. As a Mobile Development intern with Sunnet you will work closely with a team of creative designers, developers, and industry strategists to develop demonstration apps built upon an innovative mobile and cloud platform. Projects also working on innovative solutions in bringing cloud based connectivity to design data. You will have the opportunity to work on both the IOS and Android platforms.
+    contactInfo: sunnetSecondJobContactInfo
+    requiredWorkExperience: 0
+    requiredLanguages:
+      - vietnamLanguage
+    requiredEducation: sunnetSecondJobRequiredEducation
+
+InternContactInfo(sunnetThirdJobContactInfo):
+    contactEmail: info@sunnet.com
+    phone: (04)3.533.6256
+    address: sunnetThirdJobAddress
+
+InternAddress(sunnetThirdJobAddress):
+    address: 134 Thai Ha
+    district: dongDaDistrict
+    city: haNoiCity
+    contactInfo: sunnetThirdJobContactInfo
+
+InternEducation(sunnetThirdJobRequiredEducation):
+    studyYears: 4
+    gpa: 2.0
+    major: informationTechnologyMajor
+
+InternJob(sunnetThirdJob):
+    name: Graphic Design Intern
+    owner: sunnet
+    postedAt: 2012-04-22
+    description: We are looking for a bright and hard-working intern to provide support to our team, where duties will include producing exceptional designs for new products that come in stock. You will be required to take photo's and edit by ensuring the images only have white background and are airbrushed to ensure it looks very attractive. We will also expect a development on aspects of product designs to keep ahead of competitors and attract customers.
+    contactInfo: sunnetThirdJobContactInfo
+    requiredWorkExperience: 2
+    requiredLanguages:
+      - vietnamLanguage
+    requiredEducation: sunnetThirdJobRequiredEducation
 
 # VTC Mobile
 
 InternContactInfo(vtcmobileContactInfo):
     contactEmail: info@vtcmobile.com
+    phone: 043 734 9320
     address: vtcmobileAddress
 
 InternAddress(vtcmobileAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
+    address: 13 Tam Trinh
+    district: haiBaTrungDistrict
     city: haNoiCity
     contactInfo: vtcmobileContactInfo
 
@@ -144,32 +231,33 @@ InternEmployer(vtcmobile):
     userType: Employer
     contactInfo: vtcmobileContactInfo
     companyName: VTC Mobile
-    industry: Information and Communication Technology
+    industry: Mobile Solution Development
     description: Leading ICT Company in Vietnam
     companySize: mediumLargeSize
 
 InternContactInfo(vtcmobileFirstJobContactInfo):
     contactEmail: info@vtcmobile.com
+    phone: 043 734 9320
     address: vtcmobileFirstJobAddress
 
 InternAddress(vtcmobileFirstJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
+    address: 13 Tam Trinh
+    district: haiBaTrungDistrict
     city: haNoiCity
     contactInfo: vtcmobileFirstJobContactInfo
 
 InternEducation(vtcmobileFirstJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
+    studyYears: 4
+    gpa: 3.0
     major: informationTechnologyMajor
 
 InternJob(vtcmobileFirstJob):
     name: iOS Developer
     owner: vtcmobile
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
+    postedAt: 2012-04-11
+    description: We are looking for a proficient CMS developer to manage the IT department of our rapidly expanding Entertainment Group. This is an exciting opportunity to gain hands on experience with IT Management. The successful candidate will work on our various Fashion and Music Events Brands supervising Content management Systems and Development. If you’re looking to own your own business or gain management experience this is a unique opportunity to challenge yourself.
     contactInfo: vtcmobileFirstJobContactInfo
-    requiredWorkExperience: 1
+    requiredWorkExperience: 2
     requiredLanguages:
       - vietnamLanguage
       - englishLanguage
@@ -177,24 +265,25 @@ InternJob(vtcmobileFirstJob):
 
 InternContactInfo(vtcmobileSecondJobContactInfo):
     contactEmail: info@vtcmobile.com
+    phone: 043 734 9320
     address: vtcmobileSecondJobAddress
 
 InternAddress(vtcmobileSecondJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
+    address: 13 Tam Trinh
+    district: haiBaTrungDistrict
     city: haNoiCity
     contactInfo: vtcmobileSecondJobContactInfo
 
 InternEducation(vtcmobileSecondJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
+    studyYears: 3
+    gpa: 2.8
     major: informationTechnologyMajor
 
 InternJob(vtcmobileSecondJob):
-    name: iOS Developer
+    name: Web Designer and PHP Programmers
     owner: vtcmobile
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
+    postedAt: 2012-04-10
+    description: We are looking for a website designer and a php programmer. This is a very exciting prospect to work on a niche social networking site startup. If you can impress us we will develop you within our company with impressive growth potential.
     contactInfo: vtcmobileSecondJobContactInfo
     requiredWorkExperience: 1
     requiredLanguages:
@@ -202,1003 +291,194 @@ InternJob(vtcmobileSecondJob):
       - englishLanguage
     requiredEducation: vtcmobileSecondJobRequiredEducation
 
-# VNPT
+InternContactInfo(vtcmobileThirdJobContactInfo):
+    contactEmail: info@vtcmobile.com
+    phone: 043 734 9320
+    address: vtcmobileThirdJobAddress
 
-InternContactInfo(vnptContactInfo):
-    contactEmail: info@vnpt.com
-    address: vnptAddress
-
-InternAddress(vnptAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
+InternAddress(vtcmobileThirdJobAddress):
+    address: 13 Tam Trinh
+    district: haiBaTrungDistrict
     city: haNoiCity
-    contactInfo: vnptContactInfo
+    contactInfo: vtcmobileThirdJobContactInfo
 
-InternEmployer(vnpt):
-    email: internvnpt@vnpt.com
-    password: internvnpt
+InternEducation(vtcmobileThirdJobRequiredEducation):
+    studyYears: 4
+    gpa: 2.7
+    major: informationTechnologyMajor
+
+InternJob(vtcmobileThirdJob):
+    name: Intern Games Programmer
+    owner: vtcmobile
+    postedAt: 2012-04-13
+    description: VTC Mobile is looking for part-time intern game programmers for 6 months contract with possibility of a full time permanent position. This role would be ideal for a student or graduate or someone looking for experience within games industry. 
+    contactInfo: vtcmobileThirdJobContactInfo
+    requiredWorkExperience: 2
+    requiredLanguages:
+      - vietnamLanguage
+      - englishLanguage
+    requiredEducation: vtcmobileThirdJobRequiredEducation
+
+InternContactInfo(vtcmobileFourthJobContactInfo):
+    contactEmail: info@vtcmobile.com
+    phone: 043 734 9320
+    address: vtcmobileFourthJobAddress
+
+InternAddress(vtcmobileFourthJobAddress):
+    address: 13 Tam Trinh
+    district: haiBaTrungDistrict
+    city: haNoiCity
+    contactInfo: vtcmobileFourthJobContactInfo
+
+InternEducation(vtcmobileFourthJobRequiredEducation):
+    studyYears: 4
+    gpa: 2.5
+    major: informationTechnologyMajor
+
+InternJob(vtcmobileFourthJob):
+    name: Digital Animators
+    owner: vtcmobile
+    postedAt: 2012-04-10
+    description: We are looking for experienced Flash and 3d Digital Animators able to design for clients. Do you have experience in creating digital animations for showreels, Flash banners, ads or presentations? We are looking for experienced individuals to join our Web & Graphic Design team. This is a great opportunity to join a quickly expanding nationally-spread, Marketing start up Company!
+    contactInfo: vtcmobileFourthJobContactInfo
+    requiredWorkExperience: 2
+    requiredLanguages:
+      - vietnamLanguage
+      - englishLanguage
+    requiredEducation: vtcmobileFourthJobRequiredEducation
+
+# MISA
+
+InternContactInfo(misaContactInfo):
+    contactEmail: info@misa.com
+    phone: 043 734 9320
+    address: misaAddress
+
+InternAddress(misaAddress):
+    address: 13 Tam Trinh
+    district: haiBaTrungDistrict
+    city: haNoiCity
+    contactInfo: misaContactInfo
+
+InternEmployer(misa):
+    email: internmisa@misa.com
+    password: internmisa
     isAdmin: false
     userType: Employer
-    contactInfo: vnptContactInfo
-    companyName: VNPT
-    industry: Information and Communication Technology
+    contactInfo: misaContactInfo
+    companyName: MISA JSC
+    industry: Mobile Solution Development
     description: Leading ICT Company in Vietnam
     companySize: mediumLargeSize
 
-InternContactInfo(vnptFirstJobContactInfo):
-    contactEmail: info@vnpt.com
-    address: vnptFirstJobAddress
+InternContactInfo(misaFirstJobContactInfo):
+    contactEmail: info@misa.com
+    phone: 043 734 9320
+    address: misaFirstJobAddress
 
-InternAddress(vnptFirstJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
+InternAddress(misaFirstJobAddress):
+    address: 13 Tam Trinh
+    district: haiBaTrungDistrict
     city: haNoiCity
-    contactInfo: vnptFirstJobContactInfo
+    contactInfo: misaFirstJobContactInfo
 
-InternEducation(vnptFirstJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
+InternEducation(misaFirstJobRequiredEducation):
+    studyYears: 4
+    gpa: 3.0
     major: informationTechnologyMajor
 
-InternJob(vnptFirstJob):
-    name: iOS Developer
-    owner: vnpt
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
-    contactInfo: vnptFirstJobContactInfo
+InternJob(misaFirstJob):
+    name: Junior iOS Developer
+    owner: misa
+    postedAt: 2012-04-11
+    description: We are looking for a proficient CMS developer to manage the IT department of our rapidly expanding Entertainment Group. This is an exciting opportunity to gain hands on experience with IT Management. The successful candidate will work on our various Fashion and Music Events Brands supervising Content management Systems and Development. If you’re looking to own your own business or gain management experience this is a unique opportunity to challenge yourself.
+    contactInfo: misaFirstJobContactInfo
+    requiredWorkExperience: 2
+    requiredLanguages:
+      - vietnamLanguage
+      - englishLanguage
+    requiredEducation: misaFirstJobRequiredEducation
+
+InternContactInfo(misaSecondJobContactInfo):
+    contactEmail: info@misa.com
+    phone: 043 734 9320
+    address: misaSecondJobAddress
+
+InternAddress(misaSecondJobAddress):
+    address: 13 Tam Trinh
+    district: haiBaTrungDistrict
+    city: haNoiCity
+    contactInfo: misaSecondJobContactInfo
+
+InternEducation(misaSecondJobRequiredEducation):
+    studyYears: 3
+    gpa: 2.8
+    major: informationTechnologyMajor
+
+InternJob(misaSecondJob):
+    name: JSP Programmers
+    owner: misa
+    postedAt: 2012-04-10
+    description: We are looking for a JSP programmer. This is a very exciting prospect to work on a niche social networking site startup. If you can impress us we will develop you within our company with impressive growth potential.
+    contactInfo: misaSecondJobContactInfo
     requiredWorkExperience: 1
     requiredLanguages:
       - vietnamLanguage
       - englishLanguage
-    requiredEducation: vnptFirstJobRequiredEducation
+    requiredEducation: misaSecondJobRequiredEducation
 
-InternContactInfo(vnptSecondJobContactInfo):
-    contactEmail: info@vnpt.com
-    address: vnptSecondJobAddress
+InternContactInfo(misaThirdJobContactInfo):
+    contactEmail: info@misa.com
+    phone: 043 734 9320
+    address: misaThirdJobAddress
 
-InternAddress(vnptSecondJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
+InternAddress(misaThirdJobAddress):
+    address: 13 Tam Trinh
+    district: haiBaTrungDistrict
     city: haNoiCity
-    contactInfo: vnptSecondJobContactInfo
+    contactInfo: misaThirdJobContactInfo
 
-InternEducation(vnptSecondJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
+InternEducation(misaThirdJobRequiredEducation):
+    studyYears: 4
+    gpa: 2.7
     major: informationTechnologyMajor
 
-InternJob(vnptSecondJob):
-    name: iOS Developer
-    owner: vnpt
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
-    contactInfo: vnptSecondJobContactInfo
-    requiredWorkExperience: 1
+InternJob(misaThirdJob):
+    name: Intern Mobile Games Programmer
+    owner: misa
+    postedAt: 2012-04-13
+    description: Misa is looking for part-time intern game programmers for 6 months contract with possibility of a full time permanent position. This role would be ideal for a student or graduate or someone looking for experience within games industry. 
+    contactInfo: misaThirdJobContactInfo
+    requiredWorkExperience: 2
     requiredLanguages:
       - vietnamLanguage
       - englishLanguage
-    requiredEducation: vnptSecondJobRequiredEducation
+    requiredEducation: misaThirdJobRequiredEducation
 
-# VIETTEL
+InternContactInfo(misaFourthJobContactInfo):
+    contactEmail: info@misa.com
+    phone: 043 734 9320
+    address: misaFourthJobAddress
 
-InternContactInfo(viettelContactInfo):
-    contactEmail: info@viettel.com
-    address: viettelAddress
-
-InternAddress(viettelAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
+InternAddress(misaFourthJobAddress):
+    address: 13 Tam Trinh
+    district: haiBaTrungDistrict
     city: haNoiCity
-    contactInfo: viettelContactInfo
+    contactInfo: misaFourthJobContactInfo
 
-InternEmployer(viettel):
-    email: internviettel@viettel.com
-    password: internviettel
-    isAdmin: false
-    userType: Employer
-    contactInfo: viettelContactInfo
-    companyName: Viettel
-    industry: Information and Communication Technology
-    description: Leading ICT Company in Vietnam
-    companySize: mediumLargeSize
-
-InternContactInfo(viettelFirstJobContactInfo):
-    contactEmail: info@viettel.com
-    address: viettelFirstJobAddress
-
-InternAddress(viettelFirstJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: viettelFirstJobContactInfo
-
-InternEducation(viettelFirstJobRequiredEducation):
-    studyYears: 2
+InternEducation(misaFourthJobRequiredEducation):
+    studyYears: 4
     gpa: 2.5
     major: informationTechnologyMajor
 
-InternJob(viettelFirstJob):
-    name: iOS Developer
-    owner: viettel
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
-    contactInfo: viettelFirstJobContactInfo
-    requiredWorkExperience: 1
+InternJob(misaFourthJob):
+    name: 3D Designer
+    owner: misa
+    postedAt: 2012-04-10
+    description: We are looking for experienced Flash and 3d Digital Animators able to design for clients. Do you have experience in creating digital animations for showreels, Flash banners, ads or presentations? We are looking for experienced individuals to join our Web & Graphic Design team. This is a great opportunity to join a quickly expanding nationally-spread, Marketing start up Company!
+    contactInfo: misaFourthJobContactInfo
+    requiredWorkExperience: 2
     requiredLanguages:
       - vietnamLanguage
       - englishLanguage
-    requiredEducation: viettelFirstJobRequiredEducation
-
-InternContactInfo(viettelSecondJobContactInfo):
-    contactEmail: info@viettel.com
-    address: viettelSecondJobAddress
-
-InternAddress(viettelSecondJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: viettelSecondJobContactInfo
-
-InternEducation(viettelSecondJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
-    major: informationTechnologyMajor
-
-InternJob(viettelSecondJob):
-    name: iOS Developer
-    owner: viettel
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
-    contactInfo: viettelSecondJobContactInfo
-    requiredWorkExperience: 1
-    requiredLanguages:
-      - vietnamLanguage
-      - englishLanguage
-    requiredEducation: viettelSecondJobRequiredEducation
-
-# KPMG
-
-InternContactInfo(kpmgContactInfo):
-    contactEmail: info@kpmg.com
-    address: kpmgAddress
-
-InternAddress(kpmgAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: kpmgContactInfo
-
-InternEmployer(kpmg):
-    email: internkpmg@kpmg.com
-    password: internkpmg
-    isAdmin: false
-    userType: Employer
-    contactInfo: kpmgContactInfo
-    companyName: KPMGkpmg
-    industry: Information and Communication Technology
-    description: Leading ICT Company in Vietnam
-    companySize: mediumLargeSize
-
-InternContactInfo(kpmgFirstJobContactInfo):
-    contactEmail: info@kpmg.com
-    address: kpmgFirstJobAddress
-
-InternAddress(kpmgFirstJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: kpmgFirstJobContactInfo
-
-InternEducation(kpmgFirstJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
-    major: informationTechnologyMajor
-
-InternJob(kpmgFirstJob):
-    name: iOS Developer
-    owner: kpmg
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
-    contactInfo: kpmgFirstJobContactInfo
-    requiredWorkExperience: 1
-    requiredLanguages:
-      - vietnamLanguage
-      - englishLanguage
-    requiredEducation: kpmgFirstJobRequiredEducation
-
-InternContactInfo(kpmgSecondJobContactInfo):
-    contactEmail: info@kpmg.com
-    address: kpmgSecondJobAddress
-
-InternAddress(kpmgSecondJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: kpmgSecondJobContactInfo
-
-InternEducation(kpmgSecondJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
-    major: informationTechnologyMajor
-
-InternJob(kpmgSecondJob):
-    name: iOS Developer
-    owner: kpmg
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
-    contactInfo: kpmgSecondJobContactInfo
-    requiredWorkExperience: 1
-    requiredLanguages:
-      - vietnamLanguage
-      - englishLanguage
-    requiredEducation: kpmgSecondJobRequiredEducation
-
-# SUNGROUP
-
-InternContactInfo(sungroupContactInfo):
-    contactEmail: info@sungroup.com
-    address: sungroupAddress
-
-InternAddress(sungroupAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: sungroupContactInfo
-
-InternEmployer(sungroup):
-    email: internsungroup@sungroup.com
-    password: internsungroup
-    isAdmin: false
-    userType: Employer
-    contactInfo: sungroupContactInfo
-    companyName: Sun Group Corporation
-    industry: Information and Communication Technology
-    description: Leading ICT Company in Vietnam
-    companySize: mediumLargeSize
-
-InternContactInfo(sungroupFirstJobContactInfo):
-    contactEmail: info@sungroup.com
-    address: sungroupFirstJobAddress
-
-InternAddress(sungroupFirstJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: sungroupFirstJobContactInfo
-
-InternEducation(sungroupFirstJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
-    major: informationTechnologyMajor
-
-InternJob(sungroupFirstJob):
-    name: iOS Developer
-    owner: sungroup
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
-    contactInfo: sungroupFirstJobContactInfo
-    requiredWorkExperience: 1
-    requiredLanguages:
-      - vietnamLanguage
-      - englishLanguage
-    requiredEducation: sungroupFirstJobRequiredEducation
-
-InternContactInfo(sungroupSecondJobContactInfo):
-    contactEmail: info@sungroup.com
-    address: sungroupSecondJobAddress
-
-InternAddress(sungroupSecondJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: sungroupSecondJobContactInfo
-
-InternEducation(sungroupSecondJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
-    major: informationTechnologyMajor
-
-InternJob(sungroupSecondJob):
-    name: iOS Developer
-    owner: sungroup
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
-    contactInfo: sungroupSecondJobContactInfo
-    requiredWorkExperience: 1
-    requiredLanguages:
-      - vietnamLanguage
-      - englishLanguage
-    requiredEducation: sungroupSecondJobRequiredEducation
-
-# HTD
-
-InternContactInfo(htdContactInfo):
-    contactEmail: info@htd.com
-    address: htdAddress
-
-InternAddress(htdAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: htdContactInfo
-
-InternEmployer(htd):
-    email: internhtd@htd.com
-    password: internhtd
-    isAdmin: false
-    userType: Employer
-    contactInfo: htdContactInfo
-    companyName: HTD Telecom
-    industry: Information and Communication Technology
-    description: Leading ICT Company in Vietnam
-    companySize: mediumLargeSize
-
-InternContactInfo(htdFirstJobContactInfo):
-    contactEmail: info@htd.com
-    address: htdFirstJobAddress
-
-InternAddress(htdFirstJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: htdFirstJobContactInfo
-
-InternEducation(htdFirstJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
-    major: informationTechnologyMajor
-
-InternJob(htdFirstJob):
-    name: iOS Developer
-    owner: htd
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
-    contactInfo: htdFirstJobContactInfo
-    requiredWorkExperience: 1
-    requiredLanguages:
-      - vietnamLanguage
-      - englishLanguage
-    requiredEducation: htdFirstJobRequiredEducation
-
-InternContactInfo(htdSecondJobContactInfo):
-    contactEmail: info@htd.com
-    address: htdSecondJobAddress
-
-InternAddress(htdSecondJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: htdSecondJobContactInfo
-
-InternEducation(htdSecondJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
-    major: informationTechnologyMajor
-
-InternJob(htdSecondJob):
-    name: iOS Developer
-    owner: htd
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
-    contactInfo: htdSecondJobContactInfo
-    requiredWorkExperience: 1
-    requiredLanguages:
-      - vietnamLanguage
-      - englishLanguage
-    requiredEducation: htdSecondJobRequiredEducation
-
-# Lac Hong Media
-
-InternContactInfo(lachongContactInfo):
-    contactEmail: info@lachong.com
-    address: lachongAddress
-
-InternAddress(lachongAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: lachongContactInfo
-
-InternEmployer(lachong):
-    email: internlachong@lachong.com
-    password: internlachong
-    isAdmin: false
-    userType: Employer
-    contactInfo: lachongContactInfo
-    companyName: Lac Hong Media
-    industry: Information and Communication Technology
-    description: Leading ICT Company in Vietnam
-    companySize: mediumLargeSize
-
-InternContactInfo(lachongFirstJobContactInfo):
-    contactEmail: info@lachong.com
-    address: lachongFirstJobAddress
-
-InternAddress(lachongFirstJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: lachongFirstJobContactInfo
-
-InternEducation(lachongFirstJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
-    major: informationTechnologyMajor
-
-InternJob(lachongFirstJob):
-    name: iOS Developer
-    owner: lachong
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
-    contactInfo: lachongFirstJobContactInfo
-    requiredWorkExperience: 1
-    requiredLanguages:
-      - vietnamLanguage
-      - englishLanguage
-    requiredEducation: lachongFirstJobRequiredEducation
-
-InternContactInfo(lachongSecondJobContactInfo):
-    contactEmail: info@lachong.com
-    address: lachongSecondJobAddress
-
-InternAddress(lachongSecondJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: lachongSecondJobContactInfo
-
-InternEducation(lachongSecondJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
-    major: informationTechnologyMajor
-
-InternJob(lachongSecondJob):
-    name: iOS Developer
-    owner: lachong
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
-    contactInfo: lachongSecondJobContactInfo
-    requiredWorkExperience: 1
-    requiredLanguages:
-      - vietnamLanguage
-      - englishLanguage
-    requiredEducation: lachongSecondJobRequiredEducation
-
-# APTECH
-
-InternContactInfo(aptechContactInfo):
-    contactEmail: info@aptech.com
-    address: aptechAddress
-
-InternAddress(aptechAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: aptechContactInfo
-
-InternEmployer(aptech):
-    email: internaptech@aptech.com
-    password: internaptech
-    isAdmin: false
-    userType: Employer
-    contactInfo: aptechContactInfo
-    companyName: Aptech
-    industry: Information and Communication Technology
-    description: Leading ICT Company in Vietnam
-    companySize: mediumLargeSize
-
-InternContactInfo(aptechFirstJobContactInfo):
-    contactEmail: info@aptech.com
-    address: aptechFirstJobAddress
-
-InternAddress(aptechFirstJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: aptechFirstJobContactInfo
-
-InternEducation(aptechFirstJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
-    major: informationTechnologyMajor
-
-InternJob(aptechFirstJob):
-    name: iOS Developer
-    owner: aptech
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
-    contactInfo: aptechFirstJobContactInfo
-    requiredWorkExperience: 1
-    requiredLanguages:
-      - vietnamLanguage
-      - englishLanguage
-    requiredEducation: aptechFirstJobRequiredEducation
-
-InternContactInfo(aptechSecondJobContactInfo):
-    contactEmail: info@aptech.com
-    address: aptechSecondJobAddress
-
-InternAddress(aptechSecondJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: aptechSecondJobContactInfo
-
-InternEducation(aptechSecondJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
-    major: informationTechnologyMajor
-
-InternJob(aptechSecondJob):
-    name: iOS Developer
-    owner: aptech
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
-    contactInfo: aptechSecondJobContactInfo
-    requiredWorkExperience: 1
-    requiredLanguages:
-      - vietnamLanguage
-      - englishLanguage
-    requiredEducation: aptechSecondJobRequiredEducation
-
-# BKAV
-
-InternContactInfo(bkavContactInfo):
-    contactEmail: info@bkav.com
-    address: bkavAddress
-
-InternAddress(bkavAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: bkavContactInfo
-
-InternEmployer(bkav):
-    email: internbkav@bkav.com
-    password: internbkav
-    isAdmin: false
-    userType: Employer
-    contactInfo: bkavContactInfo
-    companyName: BKAV
-    industry: Information and Communication Technology
-    description: Leading ICT Company in Vietnam
-    companySize: mediumLargeSize
-
-InternContactInfo(bkavFirstJobContactInfo):
-    contactEmail: info@bkav.com
-    address: bkavFirstJobAddress
-
-InternAddress(bkavFirstJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: bkavFirstJobContactInfo
-
-InternEducation(bkavFirstJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
-    major: informationTechnologyMajor
-
-InternJob(bkavFirstJob):
-    name: iOS Developer
-    owner: bkav
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
-    contactInfo: bkavFirstJobContactInfo
-    requiredWorkExperience: 1
-    requiredLanguages:
-      - vietnamLanguage
-      - englishLanguage
-    requiredEducation: bkavFirstJobRequiredEducation
-
-InternContactInfo(bkavSecondJobContactInfo):
-    contactEmail: info@bkav.com
-    address: bkavSecondJobAddress
-
-InternAddress(bkavSecondJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: bkavSecondJobContactInfo
-
-InternEducation(bkavSecondJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
-    major: informationTechnologyMajor
-
-InternJob(bkavSecondJob):
-    name: iOS Developer
-    owner: bkav
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
-    contactInfo: bkavSecondJobContactInfo
-    requiredWorkExperience: 1
-    requiredLanguages:
-      - vietnamLanguage
-      - englishLanguage
-    requiredEducation: bkavSecondJobRequiredEducation
-
-# IBM VN
-
-InternContactInfo(ibmvnContactInfo):
-    contactEmail: info@ibmvn.com
-    address: ibmvnAddress
-
-InternAddress(ibmvnAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: ibmvnContactInfo
-
-InternEmployer(ibmvn):
-    email: internibmvn@ibmvn.com
-    password: internibmvn
-    isAdmin: false
-    userType: Employer
-    contactInfo: ibmvnContactInfo
-    companyName: IBM Viet Nam
-    industry: Information and Communication Technology
-    description: Leading ICT Company in Vietnam
-    companySize: mediumLargeSize
-
-InternContactInfo(ibmvnFirstJobContactInfo):
-    contactEmail: info@ibmvn.com
-    address: ibmvnFirstJobAddress
-
-InternAddress(ibmvnFirstJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: ibmvnFirstJobContactInfo
-
-InternEducation(ibmvnFirstJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
-    major: informationTechnologyMajor
-
-InternJob(ibmvnFirstJob):
-    name: iOS Developer
-    owner: ibmvn
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
-    contactInfo: ibmvnFirstJobContactInfo
-    requiredWorkExperience: 1
-    requiredLanguages:
-      - vietnamLanguage
-      - englishLanguage
-    requiredEducation: ibmvnFirstJobRequiredEducation
-
-InternContactInfo(ibmvnSecondJobContactInfo):
-    contactEmail: info@ibmvn.com
-    address: ibmvnSecondJobAddress
-
-InternAddress(ibmvnSecondJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: ibmvnSecondJobContactInfo
-
-InternEducation(ibmvnSecondJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
-    major: informationTechnologyMajor
-
-InternJob(ibmvnSecondJob):
-    name: iOS Developer
-    owner: ibmvn
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
-    contactInfo: ibmvnSecondJobContactInfo
-    requiredWorkExperience: 1
-    requiredLanguages:
-      - vietnamLanguage
-      - englishLanguage
-    requiredEducation: ibmvnSecondJobRequiredEducation
-
-# DANTRI
-
-InternContactInfo(dantriContactInfo):
-    contactEmail: info@dantri.com
-    address: dantriAddress
-
-InternAddress(dantriAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: dantriContactInfo
-
-InternEmployer(dantri):
-    email: interndantri@dantri.com
-    password: interndantri
-    isAdmin: false
-    userType: Employer
-    contactInfo: dantriContactInfo
-    companyName: Dan Tri
-    industry: Information and Communication Technology
-    description: Leading ICT Company in Vietnam
-    companySize: mediumLargeSize
-
-InternContactInfo(dantriFirstJobContactInfo):
-    contactEmail: info@dantri.com
-    address: dantriFirstJobAddress
-
-InternAddress(dantriFirstJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: dantriFirstJobContactInfo
-
-InternEducation(dantriFirstJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
-    major: informationTechnologyMajor
-
-InternJob(dantriFirstJob):
-    name: iOS Developer
-    owner: dantri
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
-    contactInfo: dantriFirstJobContactInfo
-    requiredWorkExperience: 1
-    requiredLanguages:
-      - vietnamLanguage
-      - englishLanguage
-    requiredEducation: dantriFirstJobRequiredEducation
-
-InternContactInfo(dantriSecondJobContactInfo):
-    contactEmail: info@dantri.com
-    address: dantriSecondJobAddress
-
-InternAddress(dantriSecondJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: dantriSecondJobContactInfo
-
-InternEducation(dantriSecondJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
-    major: informationTechnologyMajor
-
-InternJob(dantriSecondJob):
-    name: iOS Developer
-    owner: dantri
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
-    contactInfo: dantriSecondJobContactInfo
-    requiredWorkExperience: 1
-    requiredLanguages:
-      - vietnamLanguage
-      - englishLanguage
-    requiredEducation: dantriSecondJobRequiredEducation
-
-# Toyota VN
-
-InternContactInfo(toyotavnContactInfo):
-    contactEmail: info@toyotavn.com
-    address: toyotavnAddress
-
-InternAddress(toyotavnAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: toyotavnContactInfo
-
-InternEmployer(toyotavn):
-    email: interntoyotavn@toyotavn.com
-    password: interntoyotavn
-    isAdmin: false
-    userType: Employer
-    contactInfo: toyotavnContactInfo
-    companyName: Toyota Vietnam
-    industry: Information and Communication Technology
-    description: Leading ICT Company in Vietnam
-    companySize: mediumLargeSize
-
-InternContactInfo(toyotavnFirstJobContactInfo):
-    contactEmail: info@toyotavn.com
-    address: toyotavnFirstJobAddress
-
-InternAddress(toyotavnFirstJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: toyotavnFirstJobContactInfo
-
-InternEducation(toyotavnFirstJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
-    major: informationTechnologyMajor
-
-InternJob(toyotavnFirstJob):
-    name: iOS Developer
-    owner: toyotavn
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
-    contactInfo: toyotavnFirstJobContactInfo
-    requiredWorkExperience: 1
-    requiredLanguages:
-      - vietnamLanguage
-      - englishLanguage
-    requiredEducation: toyotavnFirstJobRequiredEducation
-
-InternContactInfo(toyotavnSecondJobContactInfo):
-    contactEmail: info@toyotavn.com
-    address: toyotavnSecondJobAddress
-
-InternAddress(toyotavnSecondJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: toyotavnSecondJobContactInfo
-
-InternEducation(toyotavnSecondJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
-    major: informationTechnologyMajor
-
-InternJob(toyotavnSecondJob):
-    name: iOS Developer
-    owner: toyotavn
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
-    contactInfo: toyotavnSecondJobContactInfo
-    requiredWorkExperience: 1
-    requiredLanguages:
-      - vietnamLanguage
-      - englishLanguage
-    requiredEducation: toyotavnSecondJobRequiredEducation
-
-# Honda VN
-
-InternContactInfo(hondavnContactInfo):
-    contactEmail: info@hondavn.com
-    address: hondavnAddress
-
-InternAddress(hondavnAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: hondavnContactInfo
-
-InternEmployer(hondavn):
-    email: internhondavn@hondavn.com
-    password: internhondavn
-    isAdmin: false
-    userType: Employer
-    contactInfo: hondavnContactInfo
-    companyName: Honda Vietnam
-    industry: Information and Communication Technology
-    description: Leading ICT Company in Vietnam
-    companySize: mediumLargeSize
-
-InternContactInfo(hondavnFirstJobContactInfo):
-    contactEmail: info@hondavn.com
-    address: hondavnFirstJobAddress
-
-InternAddress(hondavnFirstJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: hondavnFirstJobContactInfo
-
-InternEducation(hondavnFirstJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
-    major: informationTechnologyMajor
-
-InternJob(hondavnFirstJob):
-    name: iOS Developer
-    owner: hondavn
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
-    contactInfo: hondavnFirstJobContactInfo
-    requiredWorkExperience: 1
-    requiredLanguages:
-      - vietnamLanguage
-      - englishLanguage
-    requiredEducation: hondavnFirstJobRequiredEducation
-
-InternContactInfo(hondavnSecondJobContactInfo):
-    contactEmail: info@hondavn.com
-    address: hondavnSecondJobAddress
-
-InternAddress(hondavnSecondJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: hondavnSecondJobContactInfo
-
-InternEducation(hondavnSecondJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
-    major: informationTechnologyMajor
-
-InternJob(hondavnSecondJob):
-    name: iOS Developer
-    owner: hondavn
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
-    contactInfo: hondavnSecondJobContactInfo
-    requiredWorkExperience: 1
-    requiredLanguages:
-      - vietnamLanguage
-      - englishLanguage
-    requiredEducation: hondavnSecondJobRequiredEducation
-
-# Trung Nguyen
-
-InternContactInfo(trungnguyencafeContactInfo):
-    contactEmail: info@trungnguyencafe.com
-    address: trungnguyencafeAddress
-
-InternAddress(trungnguyencafeAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: trungnguyencafeContactInfo
-
-InternEmployer(trungnguyencafe):
-    email: interntrungnguyencafe@trungnguyencafe.com
-    password: interntrungnguyencafe
-    isAdmin: false
-    userType: Employer
-    contactInfo: trungnguyencafeContactInfo
-    companyName: Trung Nguyen Cafe
-    industry: Information and Communication Technology
-    description: Leading ICT Company in Vietnam
-    companySize: mediumLargeSize
-
-InternContactInfo(trungnguyencafeFirstJobContactInfo):
-    contactEmail: info@trungnguyencafe.com
-    address: trungnguyencafeFirstJobAddress
-
-InternAddress(trungnguyencafeFirstJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: trungnguyencafeFirstJobContactInfo
-
-InternEducation(trungnguyencafeFirstJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
-    major: informationTechnologyMajor
-
-InternJob(trungnguyencafeFirstJob):
-    name: iOS Developer
-    owner: trungnguyencafe
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
-    contactInfo: trungnguyencafeFirstJobContactInfo
-    requiredWorkExperience: 1
-    requiredLanguages:
-      - vietnamLanguage
-      - englishLanguage
-    requiredEducation: trungnguyencafeFirstJobRequiredEducation
-
-InternContactInfo(trungnguyencafeSecondJobContactInfo):
-    contactEmail: info@trungnguyencafe.com
-    address: trungnguyencafeSecondJobAddress
-
-InternAddress(trungnguyencafeSecondJobAddress):
-    address: 37/157 Phao Dai Lang
-    district: dongDaDistrict
-    city: haNoiCity
-    contactInfo: trungnguyencafeSecondJobContactInfo
-
-InternEducation(trungnguyencafeSecondJobRequiredEducation):
-    studyYears: 2
-    gpa: 2.5
-    major: informationTechnologyMajor
-
-InternJob(trungnguyencafeSecondJob):
-    name: iOS Developer
-    owner: trungnguyencafe
-    postedAt: 2012-04-21
-    description: iOS Developer with at least 1 year experience and good study record
-    contactInfo: trungnguyencafeSecondJobContactInfo
-    requiredWorkExperience: 1
-    requiredLanguages:
-      - vietnamLanguage
-      - englishLanguage
-    requiredEducation: trungnguyencafeSecondJobRequiredEducation
+    requiredEducation: misaFourthJobRequiredEducation

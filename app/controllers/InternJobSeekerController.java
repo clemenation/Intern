@@ -302,6 +302,8 @@ public class InternJobSeekerController extends Controller {
 			long cityId = ((Long)Cache.get("cityId")).longValue();
 			districts = ((InternCity)InternCity.findById(cityId)).districts;
 			Cache.delete("cityId");
+		} else if (resume.contactInfo.address.city != null) {
+			districts = resume.contactInfo.address.city.districts;
 		} else {
 			districts = cities.get(0).districts;
 		}
