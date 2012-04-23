@@ -2,48 +2,75 @@
 #{set title: job /}
 
 <div class="wrapper">
-#{navigationBar /}
+	#{navigationBar /}
 
-#{if flash.error}
-	<p class="error">
-		&{flash.error}
-	</p>
-#{/if}
 
-#{if flash.success}
-	<p class="success">
-		&{flash.success}
-	</p>
-#{/if}
 
-<div class="middle">
-    #{displayJob job:job /}
-    <br />
+	<div class="middle">
+		#{notification /}
+	
+	    #{displayJob job:job /}
+	    <br />
     
-    #{if points}
-    	<div style="width:100%; padding-left:10px; padding-bottom: 20px">
-	        <a href="@{InternJobSeekerController.applyJobForm(job.id)}"><h3>Apply</h3></a>
-        </div>
-        <h2>Your resume's points</h2>
-        <br />
-        #{list items: points, as:'point'}
-        	<div style="width:160px; float: left; padding-right:10px">
-                <a href="@{InternJobSeekerController.viewResume(point.resume.id)}"><h3>${point.resume}</h3></a>
-                <div>Point: +${point.strongPoint} -${point.weakPoint}</div>
-            </div>
-        #{/list}
-    #{/if}
+	    #{if points}
+			<div style="width:100%; float: left; text-align: center; padding-top:20px; padding-bottom:20px;">
+				<a href="@{InternJobSeekerController.applyJobForm(job.id)}" class="button">Apply</a>
+			</div>
+		
+			<!--Seperator space-->
+	        <div style="height:40px; width:100%; float:left"> </div>
+		
+	    	<div style="width:100%; float: left;">	        
+				<div style="float: left; padding-bottom: 20px">
+					<h1>Your Suitable Resumes</h1>
+				</div>
+	        </div>
+        
+	        <div style="width:720px; float:left; margin: 0px auto;">
+		       	 #{list items: points, as:'point'}
+		        	<div class="info-box-no-img">
+		                <a href="@{InternJobSeekerController.viewResume(point.resume.id)}">${point.resume}</a>
+		                <div>
+							#{if point.resume.description}
+								#{if point.resume.description.length() > 200}
+									${point.resume.description.substring(0, 200) + "..."}
+								#{/if}
+								#{else}
+									${point.resume.description}
+								#{/else}
+							#{/if}
+						</div>
+		            </div>
+		        #{/list}
+			</div>
+	    #{/if}
     
-    #{if applications}
-        <h2>Your resumes that applied to this job</h2>
-        #{list items: applications, as:'application'}
-       	<div style="width:160px; float: left; padding-right:10px">
-            <a href="@{InternJobSeekerController.viewApplication(application.id)}"><h3>${application.resume}</h3></a>
-        </div>
-        #{/list}
-    #{/if}
+		<div style="width:100%; float: none; padding-bottom: 50px">
+	    	#{if applications}
+		        <div style="float: left; padding-bottom: 20px">
+		        	<h1>Your Applications to this Job</h1>
+		        </div>
+				<div style="width:720px; float: left; margin: 0px auto; padding-bottom:20px">
+			        #{list items: applications, as:'application'}
+		       			<div class="info-box-no-img">
+		            		<a href="@{InternJobSeekerController.viewApplication(application.id)}">${application.resume}</a>
+							<div>
+								#{if application.resume.description}
+									#{if application.resume.description.length() > 200}
+										${application.resume.description.substring(0, 200) + "..."}
+									#{/if}
+									#{else}
+										${application.resume.description}
+									#{/else}
+								#{/if}
+							</div>
+		        		</div>
+			        #{/list}
+				</div>
+		    #{/if}
+		</div>
 
-</div>
+	</div>
 </div>
 
     <!--Footer-->

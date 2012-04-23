@@ -37,78 +37,78 @@
         <div style="height:40px; width:100%; float:left"> </div>
     
         #{if (resumes=models.InternResume.find("owner = ? order by postedAt desc", jobSeeker).from(0).fetch(4))}
-        <div style="width:100%; float: left;">
-            <div style="float: left; padding-bottom: 20px">
-            	<h1>Resumes<h1>
-            </div>
-            <div style="float:right">
-	            <a style="float:right" href="@{InternJobSeekerController.resumes()}" class="light-gray">view all</a>
-            </div>
-        </div>
-        <div style="width:720px; float:left; margin: 0px auto;">
-            #{list items:resumes, as:'resume'}
-            <div class="info-box-no-img">
-                <a href="@{InternJobSeekerController.viewResume(resume.id)}">${resume}</a>
-                #{if resume.description}
-                    <div>
-						#{if resume.description.length() > 250}
-							${resume.description.substring(0, 250) + "..."}
-						#{/if}
-						#{else}
-                        	${resume.description}
-						#{/else}
-                    </div>
-                #{/if}
-            </div>
-            #{/list}
-        </div>
+        	<div style="width:100%; float: left;">
+	            <div style="float: left; padding-bottom: 20px">
+	            	<h1>Resumes<h1>
+	            </div>
+	            <div style="float:right">
+		            <a style="float:right" href="@{InternJobSeekerController.resumes()}" class="light-gray">view all</a>
+	            </div>
+	        </div>
+	        <div style="width:720px; float:left; margin: 0px auto;">
+	            #{list items:resumes, as:'resume'}
+	            	<div class="info-box-no-img">
+		                <a href="@{InternJobSeekerController.viewResume(resume.id)}">${resume}</a>
+		                #{if resume.description}
+		                    <div>
+								#{if resume.description.length() > 250}
+									${resume.description.substring(0, 250) + "..."}
+								#{/if}
+								#{else}
+		                        	${resume.description}
+								#{/else}
+		                    </div>
+		                #{/if}
+		            </div>
+	            #{/list}
+	        </div>
 		#{/if}
         
         
 
 		<div style="width:100%; float: none; padding-bottom: 50px">
-        #{if (applications=models.InternApplication.find("jobSeeker = ? order by postedAt desc", jobSeeker).from(0).fetch(4))}
-            <div style="float: left; padding-bottom: 20px">
-            	<h1>Applications</h1>
-            </div>
-            <div style="float:right">
-            	<a href="@{InternJobSeekerController.applications()}" class="light-gray">view all</a>
-            </div>
-            <div style="width:720px; float: left; margin: 0px auto; padding-bottom:20px">
-                #{list items:applications, as:'application'}
-                	<div class="info-box">
-                        <a href="@{InternJobSeekerController.viewApplication(application.id)}">
-							<table class="square-avatar">
-	                            <tr>
-									<td>
-										<img src="
-										#{if application.employer?.logo && application.employer?.logo.exists()}
-											@{Application.employerPhoto(application.employer.id)}
-										#{/if}
-										#{else}
-											/public/images/default-avatar.png
-										#{/else}
-										" class="square-avatar-img" />	
-									</td>
-								</tr>
-							</table>
-                            ${application.job}
-                		</a>
-						<div>
-							#{if application.job.description}
-								#{if application.job.description.length() > 250}
-									${application.job.description.substring(0, 250) + "..."}
+        	#{if (applications=models.InternApplication.find("jobSeeker = ? order by postedAt desc", jobSeeker).from(0).fetch(4))}
+	            <div style="float: left; padding-bottom: 20px">
+	            	<h1>Applications</h1>
+	            </div>
+	            <div style="float:right">
+	            	<a href="@{InternJobSeekerController.applications()}" class="light-gray">view all</a>
+	            </div>
+	            <div style="width:720px; float: left; margin: 0px auto; padding-bottom:20px">
+	                #{list items:applications, as:'application'}
+	                	<div class="info-box">
+	                        <a href="@{InternJobSeekerController.viewApplication(application.id)}">
+								<table class="square-avatar">
+		                            <tr>
+										<td>
+											<img src="
+											#{if application.employer?.logo && application.employer?.logo.exists()}
+												@{Application.employerPhoto(application.employer.id)}
+											#{/if}
+											#{else}
+												/public/images/default-avatar.png
+											#{/else}
+											" class="square-avatar-img" />	
+										</td>
+									</tr>
+								</table>
+	                            ${application.job}
+	                		</a>
+							<div>
+								#{if application.job.description}
+									#{if application.job.description.length() > 250}
+										${application.job.description.substring(0, 250) + "..."}
+									#{/if}
+									#{else}
+										${application.job.description}
+									#{/else}
 								#{/if}
-								#{else}
-									${application.job.description}
-								#{/else}
-							#{/if}
-						</div>
-                    </div>
-                #{/list}
+							</div>
+	                    </div>
+	                #{/list}
                 
-            </div>
-        #{/if}
+	            </div>
+	        #{/if}
         </div>
 	</div>
 </div>
