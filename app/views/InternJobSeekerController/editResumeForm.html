@@ -1,9 +1,9 @@
 #{extends 'main.html' /}
 #{set title:'Edit Resume' /}
 
+<div class="wrapper">
 #{navigationBar /}
 
-<h1>Intern/Job Seeker</h1>
 
 #{ifErrors}
 	<h1>Oops...</h1>
@@ -12,39 +12,76 @@
 	#{/errors}
 #{/ifErrors}
 
+<div class="middle">
+<div style="width:100%; float:left">
+<table cellpadding="10px">
 #{form @InternJobSeekerController.editResume(resume.id)}
-	<div>
-		Name: <input type="text" name="resume.name" value="#{ifErrors}${flash['resume.name']}#{/ifErrors}#{else}${resume.name}#{/else}" />
-		<span class="error">#{error 'resume.name' /}</span>
-	</div>
-	<div>
-		Work Experience: <input type="text" name="resume.workExperience" value="#{ifErrors}${flash['resume.workExperience']}#{/ifErrors}#{else}${resume.workExperience}#{/else}" />
-		<span class="error">#{error 'resume.workExperience' /}</span>
-	</div>
-	<div>
-		Description: <textarea type="text" name="resume.description">#{ifErrors}${flash['resume.description']}#{/ifErrors}#{else}${resume.description}#{/else}</textarea>
+	<tr>
+    	<td width="120px">
+			Name:
+        </td>
+        <td>
+        	<input type="text" name="resume.name" value="#{ifErrors}${flash['resume.name']}#{/ifErrors}#{else}${resume.name}#{/else}" />
+			<span class="error">#{error 'resume.name' /}</span>
+        </td>
+	</tr>
+	<tr>
+    	<td>
+			Work Experience: 
+        </td>
+        <td>
+        	<input type="text" name="resume.workExperience" value="#{ifErrors}${flash['resume.workExperience']}#{/ifErrors}#{else}${resume.workExperience}#{/else}" />
+			<span class="error">#{error 'resume.workExperience' /}</span>
+        </td>
+	</tr>
+	<tr>
+    	<td>
+			Description:
+        </td>
+        <td>
+         <textarea style="width:400px; height:200px" type="text" name="resume.description">#{ifErrors}${flash['resume.description']}#{/ifErrors}#{else}${resume.description}#{/else}</textarea>
 		<span class="error">#{error 'resume.description' /}</span>
-	</div>
-	<div>
-		Education:
-		<div>
-			Study Years: <input type="text" name="resume.education.studyYears"
-				value="#{ifErrors}${flash['resume.education.studyYears']}#{/ifErrors}#{else}${resume.education.studyYears}#{/else}" /> 
+        </td>
+	</tr>
+	<tr>
+    	<td>
+		<strong>Education:</strong>
+        </td>
+    <tr>    
+		<td>
+			Study Years: 
+        </td>
+        <td>
+        	<input type="text" name="resume.education.studyYears" value="#{ifErrors}${flash['resume.education.studyYears']}#{/ifErrors}#{else}${resume.education.studyYears}#{/else}" /> 
 				<span class="error">#{error 'resume.education.studyYears' /}</span>
-		</div>
-		<div>
-			GPA: <input type="text" name="resume.education.gpa"
+		</td>
+	</tr>
+    <tr>
+		<td>
+			GPA:
+        </td>
+        <td>
+        	<input type="text" name="resume.education.gpa"
 				value="#{ifErrors}${flash['resume.education.gpa']}#{/ifErrors}#{else}${resume.education.gpa}#{/else}" /> 
 				<span class="error">#{error 'resume.education.gpa' /}</span>
-		</div>
-		<div>
-			College: <input type="text" name="resume.education.college"
-				value="#{ifErrors}${flash['resume.education.college']}#{/ifErrors}#{else}${resume.education.college}#{/else}" /> <span class="error">#{error
-				'resume.education.college' /}</span>
-		</div>
-		<div>
-			Major: 
-				<select name="resume.education.major.id">
+		</td>
+    </tr>
+    <tr>
+		<td>
+			College:
+        </td>
+        <td>
+        	 <input type="text" name="resume.education.college"
+				value="#{ifErrors}${flash['resume.education.college']}#{/ifErrors}#{else}${resume.education.college}#{/else}" /> 
+                <span class="error">#{error 'resume.education.college' /}</span>
+		</td>
+    </tr>
+    <tr>
+    	<td>
+			Major:
+        </td>
+        <td> 
+			<select name="resume.education.major.id">
 					#{list items:models.InternMajor.all().fetch(), as:'major'}
 						<option value=${major.id}
 							#{ifErrors}
@@ -58,25 +95,47 @@
 						>${major}</option>
 					#{/list}
 				</select>
-		</div>
-	</div>
-	<div>
+		</td>
+	</tr>
+	<tr>
+    	<td>
 		Contact Info:
 		<span class="error">#{error 'contactInfo' /}</span>
-		<div>
-			Contact email: <input type="text" name="resume.contactInfo.contactEmail" value="#{ifErrors}${flash['resume.contactInfo.contactEmail']}#{/ifErrors}#{else}${resume.contactInfo.contactEmail}#{/else}" />
+		</td>
+    </tr>
+    <tr>
+		<td>
+        	Contact email:
+        </td>
+        <td>
+        	<input type="text" name="resume.contactInfo.contactEmail" value="#{ifErrors}${flash['resume.contactInfo.contactEmail']}#{/ifErrors}#{else}${resume.contactInfo.contactEmail}#{/else}" />
 			<span class="error">#{error 'resume.contactInfo.contactEmail' /}</span>
-		</div>
-		<div>
-			Mobile: <input type="text" name="resume.contactInfo.mobile" value="#{ifErrors}${flash['resume.contactInfo.mobile']}#{/ifErrors}#{else}${resume.contactInfo.mobile}#{/else}" />
+		</td>
+    </tr>
+    <tr>
+		<td>
+			Mobile: 
+        </td>
+        <td>
+        	<input type="text" name="resume.contactInfo.mobile" value="#{ifErrors}${flash['resume.contactInfo.mobile']}#{/ifErrors}#{else}${resume.contactInfo.mobile}#{/else}" />
 			<span class="error">#{error 'resume.contactInfo.mobile' /}</span>
-		</div>
-		<div>
-			Phone: <input type="text" name="resume.contactInfo.phone" value="#{ifErrors}${flash['resume.contactInfo.phone']}#{/ifErrors}#{else}${resume.contactInfo.phone}#{/else}" />
+		</td>
+    </tr>
+    <tr>
+		<td>
+			Phone:
+        </td>
+        <td>
+        	<input type="text" name="resume.contactInfo.phone" value="#{ifErrors}${flash['resume.contactInfo.phone']}#{/ifErrors}#{else}${resume.contactInfo.phone}#{/else}" />
 			<span class="error">#{error 'resume.contactInfo.phone' /}</span>
-		</div>
-		<div>
-			City: <select id="citySelect" name="resume.contactInfo.address.city.id">
+		</td>
+    </tr>
+    <tr>
+		<td>
+			City: 
+        </td>
+        <td>
+        	<select id="citySelect" name="resume.contactInfo.address.city.id">
 				#{list items:models.InternCity.all().fetch(), as:'city'}
 					<option value=${city.id} 
 						#{ifErrors}
@@ -90,9 +149,14 @@
 					>${city}</option>
 				#{/list}
 			</select>
-		</div>
-		<div>
-			District: <select id="districtSelect" name="resume.contactInfo.address.district.id">
+		</td>
+    </tr>
+    <tr>
+		<td>
+			District: 
+        </td>
+        <td>
+        	<select id="districtSelect" name="resume.contactInfo.address.district.id">
 				#{list items:districts, as:'district'}
 					<option value=${district.id}
 						#{ifErrors}
@@ -106,10 +170,14 @@
 						>${district.name}</option>			
 				#{/list}
 			</select>
-		</div>
-	</div>
-	<div>
-		Languages:
+		</td>
+    </tr>
+	
+	<tr>
+    	<td>
+			Languages:
+        </td>
+        <td>
 			<select multiple="yes" name="resume.languages.id">
 				#{list items:models.InternLanguage.all().fetch(), as:'language'}
 					<option value=${language.id}
@@ -119,8 +187,11 @@
 					>${language}</option>
 				#{/list}
 			</select>
-	</div>
-	<div>
+        </td>
+	</tr>
+</table>
+
+	<div style="width:100%; float:left; padding-left:10px; padding-top:20px; padding-bottom:10px">
 		<input type="submit" value="Save" />
 	</div>
 	
@@ -138,7 +209,14 @@
 	</script>
 
 #{/form}
+	<div style="width:100%; float:left; padding-left:10px; padding-bottom:20px">
+        #{if resume.canDelete()}
+        <a href="@{InternJobSeekerController.deleteResume(resume.id)}"><h3>Delete Resume</h3></a>
+        #{/if}
+	</div>
+</div>
+</div>
 
-#{if resume.canDelete()}
-<a href="@{InternJobSeekerController.deleteResume(resume.id)}"><h3>Delete Resume</h3></a>
-#{/if}
+	<div style="height: 40px; width:100%; float: left"> </div>
+	<!--Footer-->
+    #{footer /}
