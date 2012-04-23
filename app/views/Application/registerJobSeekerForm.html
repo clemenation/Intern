@@ -1,54 +1,111 @@
 #{extends 'main.html' /}
 #{set title:'Register Job Seeker' /}
 
-<h1>Intern/Job Seeker</h1>
+<div class="wrapper">
+	#{navigationBar /}
 
-#{ifErrors}
-	<h1>Oops...</h1>
-	#{errors}
-		<li>${error}</li>
-	#{/errors}
-#{/ifErrors}
-
-#{form @Application.registerJobSeeker()}
-	<div>
-		Email: <input type="text" name="jobSeeker.email" value="${flash['jobSeeker.email']}" />
-		<span class="error">#{error 'jobSeeker.email' /}</span>
-	</div>
-	<div>
-		Password: <input type="password" name="jobSeeker.password" value="${flash['jobSeeker.password']}" />
-		<span class="error">#{error 'jobSeeker.password' /}</span>
-	</div>
-	<div>
-		Full name: <input type="text" name="jobSeeker.fullName" value="${flash['jobSeeker.fullName']}" />
-		<span class="error">#{error 'jobSeeker.fullName' /}</span>
-	</div>
-	<div>
-		Birthday (yyyy-mm-dd): <input type="text" name="jobSeeker.birthday" value="${flash['jobSeeker.birthday']}" />
-		<span class="error">#{error 'jobSeeker.birthday' /}</span>
-	</div>
-	<div>
-		About me: <textarea name="jobSeeker.aboutMe">${flash['jobSeeker.aboutMe']}</textarea>
-		<span class="error">#{error 'jobSeeker.aboutMe' /}</span>
-	</div>
-	<div>
-		College: <input type="text" name="jobSeeker.college" value="${flash['jobSeeker.college']}" />
-		<span class="error">#{error 'jobSeeker.college' /}</span>
-	</div>
-	<div>
-		Contact Info:
-		<span class="error">#{error 'contactInfo' /}</span>
-		<div>
-			Mobile: <input type="text" name="jobSeeker.contactInfo.mobile" value="${flash['jobSeeker.contactInfo.mobile']}" />
-			<span class="error">#{error 'jobSeeker.contactInfo.mobile' /}</span>
+	<div class="middle">
+		<div style="width: 100%; float:left; padding-bottom:10px">
+			<div style="float:left">
+				<h1>Register as Job Seeker</h1>
+		    </div>
 		</div>
-		<div>
-			Phone: <input type="text" name="jobSeeker.contactInfo.phone" value="${flash['jobSeeker.contactInfo.phone']}" />
-			<span class="error">#{error 'jobSeeker.contactInfo.phone' /}</span>
+		
+		<div class="notification">
+			#{notification /}
+		</div>
+		
+		<div style="width:100%; float:left">
+			#{form @Application.registerJobSeeker()}
+				<table>
+					<tr>
+						<td width:"100px">
+							<b class="light-gray">Email</b>
+						</td>
+						<td>
+							<input style="width:250px"type="text" name="jobSeeker.email" value="${flash['jobSeeker.email']}" />
+							<span class="error">#{error 'jobSeeker.email' /}</span>
+						</td>					
+					</tr>
+					<tr>
+						<td width:"100px">
+							<b class="light-gray">Password</b>
+						</td>
+						<td>
+							<input style="width:250px"type="password" name="jobSeeker.password" value="${flash['jobSeeker.password']}" />
+						<span class="error">#{error 'jobSeeker.password' /}</span>
+						</td>					
+					</tr>
+					<tr>
+						<td width:"100px">
+							<b class="light-gray">Full name</b>
+						</td>
+						<td>
+							<input style="width:250px"type="text" name="jobSeeker.fullName" value="${flash['jobSeeker.fullName']}" />
+						<span class="error">#{error 'jobSeeker.fullName' /}</span>
+						</td>					
+					</tr>
+					<tr>
+						<td width:"100px">
+							<b class="light-gray">Birthday (yyyy-mm-dd)</b>
+						</td>
+						<td>
+							<input style="width:250px"type="text" name="jobSeeker.birthday" value="${flash['jobSeeker.birthday']}" />
+						<span class="error">#{error 'jobSeeker.birthday' /}</span>
+						</td>					
+					</tr>
+					<tr>
+						<td width:"100px">
+							<b class="light-gray">About me</b>
+						</td>
+						<td>
+							<textarea style="width:596px; height:200px" name="jobSeeker.aboutMe">${flash['jobSeeker.aboutMe']}</textarea>
+						<span class="error">#{error 'jobSeeker.aboutMe' /}</span>
+						</td>					
+					</tr>
+					<tr>
+						<td width:"100px">
+							<b class="light-gray">College</b>
+						</td>
+						<td>
+							<input style="width:250px"type="text" name="jobSeeker.college" value="${flash['jobSeeker.college']}" />
+						<span class="error">#{error 'jobSeeker.college' /}</span>
+						</td>					
+					</tr>
+					<tr>
+						<td width:"100px">
+							<b class="light-gray">Contact Info:
+						<span class="error">#{error 'contactInfo' /}</span>
+						<tr>
+						<td width:"100px">
+							<b class="light-gray">	Mobile</b>
+						</td>
+						<td>
+							<input style="width:250px"type="text" name="jobSeeker.contactInfo.mobile" value="${flash['jobSeeker.contactInfo.mobile']}" />
+							<span class="error">#{error 'jobSeeker.contactInfo.mobile' /}</span>
+						</td>
+					</tr>
+					<tr>
+						<td width:"100px">
+							<b class="light-gray">	Phone</b>
+						</td>
+						<td>
+							<input style="width:250px"type="text" name="jobSeeker.contactInfo.phone" value="${flash['jobSeeker.contactInfo.phone']}" />
+							<span class="error">#{error 'jobSeeker.contactInfo.phone' /}</span>
+						</td>					
+					</tr>					
+				</table>
+				
+				<div style="width:100%; float:left; text-align:center; padding-top:20px; padding-bottom:20px; padding-left:10px">
+					<input style="width:250px"type="submit" value="Register" />
+				</div>
+			#{/form}
 		</div>
 	</div>
-	<div>
-		<input type="submit" value="Register" />
-	</div>
+</div>
+			
+<!--Seperator space-->
+<div style="height:25px; width:100%; float:left"> </div>
 
-#{/form}
+<!--Footer-->
+#{footer /}
