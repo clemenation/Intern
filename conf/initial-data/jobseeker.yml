@@ -299,11 +299,11 @@ InternResume(trieultFirstResume):
 
 InternContactInfo(hoangtnContactInfo):
     contactEmail: hoangtn@gmail.com
-    mobile: 0917343298
+    mobile: 01649601150
     address: hoangtnAddress
 
 InternAddress(hoangtnAddress):
-    address: 42/12 An Duong
+    address: 106 An Duong
     district: tayHoDistrict
     city: haNoiCity
     contactInfo: hoangtnContactInfo
@@ -313,26 +313,26 @@ InternJobSeeker(hoangtn):
     password: hoangtn
     aboutMe: I'm Hoang
     fullName: Tran Nhat Hoang
-    birthday: 1991-12-31
+    birthday: 1991-11-24
     college: Hanoi University of Science and Technology
     userType: Job Seeker
     contactInfo: hoangtnContactInfo
-    isAdmin: false
+    isAdmin: true
     
 InternContactInfo(hoangtnFirstResumeContactInfo):
     contactEmail: hoangtn@gmail.com
-    mobile: 0917343298
+    mobile: 01649601150
     address: hoangtnFirstResumeAddress
 
 InternAddress(hoangtnFirstResumeAddress):
-    address: 42/12 An Duong
+    address: 106 An Duong
     district: tayHoDistrict
     city: haNoiCity
     contactInfo: hoangtnFirstResumeContactInfo
 
 InternEducation(hoangtnFirstResumeEducation):
     studyYears: 3
-    gpa: 3.0
+    gpa: 3.2
     college: Hanoi University of Science and Technology
     major: informationTechnologyMajor
     
@@ -343,7 +343,24 @@ InternResume(hoangtnFirstResume):
     contactInfo: hoangtnFirstResumeContactInfo
     workExperience: 1
     education: hoangtnFirstResumeEducation
-    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    description: "Nhat Hoang Tran
+106 An Duong
+Tay Ho, Ha Noi
+hoangtn@gmail.com
+Objective: To obtain a position in a graphic design firm or advertising agency in which further education and growth are valued.
+Education: 
+- Hanoi University of Science and Technology
+- Hanoi Arena Multimedia Center	
+Work Experience:
+- Design Advertisements according to information given by client 
+- Graphic Designer, ABC Enterprises Inc., Ba Dinh, HN
+- Design Logo as well as advise on layouts
+Computer Skill:
+- Quark X-Press (Mac)
+- Adobe Photoshop (Mac)
+- Adobe Illustrator (Mac)
+- Microsoft Office (Mac & PC)
+- HTML, CSS, Javascript"
     languages:
         - vietnamLanguage
         - englishLanguage
@@ -366,7 +383,7 @@ InternJobSeeker(kienbd):
     password: kienbd
     aboutMe: I'm Kien
     fullName: Bui Doan Kien
-    birthday: 1991-09-15
+    birthday: 1991-09-06
     college: Hanoi University of Science and Technology
     userType: Job Seeker
     contactInfo: kienbdContactInfo
@@ -385,7 +402,7 @@ InternAddress(kienbdFirstResumeAddress):
 
 InternEducation(kienbdFirstResumeEducation):
     studyYears: 5
-    gpa: 3.3
+    gpa: 3.4
     college: Hanoi University of Science and Technology
     major: informationTechnologyMajor
     
@@ -396,7 +413,20 @@ InternResume(kienbdFirstResume):
     contactInfo: kienbdFirstResumeContactInfo
     workExperience: 3
     education: kienbdFirstResumeEducation
-    description: I am a fifth year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    description: "Bui Doan Kien
+95 Xuan Thuy
+Cau Giay, Ha Noi
+kienbd@gmail.com
+Objective: To obtain a position in a food science technology agency in which further education and growth are valued.
+Education: 
+- Hanoi University of Science and Technology, Hanoi, Vietnam
+- Food & Agriculture Institute, Phnom Penh, Cambodia
+Work Experience:
+- 4 years in food science technology 
+- Experienced with food industry in many cities of Vietnam
+Computer Skill:
+- Microsoft Office (Mac & PC)
+- PowerPoint presentation"
     languages:
         - vietnamLanguage
 
