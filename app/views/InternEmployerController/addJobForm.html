@@ -16,11 +16,11 @@
 <table cellpadding="10px">
 #{form @InternEmployerController.addJob()}
 	<tr>
-    	<td width="120px">
+    	<td width="220px">
 		Name: 
         </td>
         <td>
-        	<input type="text" name="job.name" value="${flash['job.name']}" />
+        	<input style="width: 250px" type="text" name="job.name" value="${flash['job.name']}" />
 			<span class="error">#{error 'job.name' /}</span>
         </td>
     </tr>    
@@ -30,7 +30,7 @@
 		Required Work Experience: 
         </td>
         <td>
-        	<input type="text" name="job.requiredWorkExperience" value="${flash['job.requiredWorkExperience']}" />
+        	<input style="width: 250px"  type="text" name="job.requiredWorkExperience" value="${flash['job.requiredWorkExperience']}" />
 			<span class="error">#{error 'job.requiredWorkExperience' /}</span>
         </td>
 	</tr>
@@ -39,7 +39,7 @@
 		Description: 
         </td>
         <td>
-        <textarea type="text" name="job.description">${flash['job.description']}</textarea>
+        <textarea style="width:400px; height:200px" type="text" name="job.description">${flash['job.description']}</textarea>
 		<span class="error">#{error 'job.description' /}</span>
         </td>
 	</tr>
@@ -53,7 +53,7 @@
 			Study Years: 
         </td>
         <td>
-        	<input type="text" name="job.requiredEducation.studyYears"
+        	<input style="width: 250px" type="text" name="job.requiredEducation.studyYears"
 				value="${flash['job.requiredEducation.studyYears']}" /> 
 				<span class="error">#{error 'job.requiredEducation.studyYears' /}</span>
 		</td>
@@ -63,7 +63,7 @@
 			GPA: 
         </td>
         <td>
-        <input type="text" name="job.requiredEducation.gpa" value="${flash['job.requiredEducation.gpa']}" /> 
+        <input style="width: 250px" type="text" name="job.requiredEducation.gpa" value="${flash['job.requiredEducation.gpa']}" /> 
             	<span class="error">#{error 'job.requiredEducation.gpa' /}</span>
 		</td>
     </tr>
@@ -72,7 +72,7 @@
 			College: 
         </td>
         <td>
-        <input type="text" name="job.requiredEducation.college" value="${flash['job.requiredEducation.college']}" /> 
+        <input style="width: 250px" type="text" name="job.requiredEducation.college" value="${flash['job.requiredEducation.college']}" /> 
         		<span class="error">#{error 'job.requiredEducation.college' /}</span>
 		</td>
     </tr>
@@ -105,7 +105,7 @@
 			Contact email: 
         </td>
         <td>
-        <input type="text" name="job.contactInfo.contactEmail" value="#{ifErrors}${flash['job.contactInfo.contactEmail']}#{/ifErrors}#{else}${employer.contactInfo.contactEmail}#{/else}" />
+        <input style="width: 250px" type="text" name="job.contactInfo.contactEmail" value="#{ifErrors}${flash['job.contactInfo.contactEmail']}#{/ifErrors}#{else}${employer.contactInfo.contactEmail}#{/else}" />
 		<span class="error">#{error 'job.contactInfo.contactEmail' /}</span>
 		</td>
     </tr>
@@ -114,7 +114,7 @@
 			Mobile: 
         </td>
         <td>
-        <input type="text" name="job.contactInfo.mobile" value="#{ifErrors}${flash['job.contactInfo.mobile']}#{/ifErrors}#{else}${employer.contactInfo.mobile}#{/else}" />
+        <input style="width: 250px" type="text" name="job.contactInfo.mobile" value="#{ifErrors}${flash['job.contactInfo.mobile']}#{/ifErrors}#{else}${employer.contactInfo.mobile}#{/else}" />
 			<span class="error">#{error 'job.contactInfo.mobile' /}</span>
 		</td>
     </tr>
@@ -123,7 +123,7 @@
 			Phone: 
         </td>
         <td>
-        <input type="text" name="job.contactInfo.phone" value="#{ifErrors}${flash['job.contactInfo.phone']}#{/ifErrors}#{else}${employer.contactInfo.phone}#{/else}" />
+        <input style="width: 250px" type="text" name="job.contactInfo.phone" value="#{ifErrors}${flash['job.contactInfo.phone']}#{/ifErrors}#{else}${employer.contactInfo.phone}#{/else}" />
 			<span class="error">#{error 'job.contactInfo.phone' /}</span>
 		</td>
     </tr>
@@ -180,7 +180,7 @@
 </table>
 </div>
 	<div style="width:100%; float:left; text-align:justify; padding-top:20px; padding-bottom:20px; padding-left:10px">
-		<input type="submit" value="Add" />
+		<input style="width: 60px" type="submit" value="Add" />
 	</div>
 
 	<script type="text/javascript">

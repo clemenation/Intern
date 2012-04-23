@@ -16,11 +16,11 @@
 <table cellpadding="10px">
 #{form @InternJobSeekerController.addResume()}
 	<tr>
-    	<td width="120px">
+    	<td width="220px">
 			Name:
         </td>
         <td>
-        	<input type="text" name="resume.name" value="${flash['resume.name']}" />
+        	<input style="width: 250px" type="text" name="resume.name" value="${flash['resume.name']}" />
 			<span class="error">#{error 'resume.name' /}</span>
 		</td>
     </tr>
@@ -29,7 +29,7 @@
         	Work Experience:
         </td>
         <td>
-        	<input type="text" name="resume.workExperience" value="${flash['resume.workExperience']}" />
+        	<input style="width: 250px" type="text" name="resume.workExperience" value="${flash['resume.workExperience']}" />
 			<span class="error">#{error 'resume.workExperience' /}</span>
 		</td>
     </tr>
@@ -51,7 +51,7 @@
 			Study Years:
         </td>
         <td>
-        	<input type="text" name="resume.education.studyYears" value="${flash['resume.education.studyYears']}" /> 
+        	<input style="width: 250px" type="text" name="resume.education.studyYears" value="${flash['resume.education.studyYears']}" /> 
 			<span class="error">#{error 'resume.education.studyYears' /}</span>
 		</td>
     </tr>
@@ -60,7 +60,7 @@
 			GPA:
         </td>
         <td>
-        	<input type="text" name="resume.education.gpa" value="${flash['resume.education.gpa']}" />
+        	<input style="width: 250px" type="text" name="resume.education.gpa" value="${flash['resume.education.gpa']}" />
             <span class="error">#{error 'resume.education.gpa' /}</span>
 		</td>
     </tr>
@@ -69,7 +69,7 @@
 			College: 
         </td>
         <td>
-        	<input type="text" name="resume.education.college" value="${flash['resume.education.college']}" />
+        	<input style="width: 250px" type="text" name="resume.education.college" value="${flash['resume.education.college']}" />
             <span class="error">#{error 'resume.education.college' /}</span>
 		</td>
     </tr>
@@ -103,7 +103,7 @@
 			Contact email: 
         </td>
         <td>
-        	<input type="text" name="resume.contactInfo.contactEmail" value="#{ifErrors}${flash['resume.contactInfo.contactEmail']}#{/ifErrors}#{else}${jobSeeker.contactInfo.contactEmail}#{/else}" />
+        	<input style="width: 250px" type="text" name="resume.contactInfo.contactEmail" value="#{ifErrors}${flash['resume.contactInfo.contactEmail']}#{/ifErrors}#{else}${jobSeeker.contactInfo.contactEmail}#{/else}" />
 			<span class="error">#{error 'resume.contactInfo.contactEmail' /}</span>
 		</td>
     </tr>
@@ -112,7 +112,7 @@
 			Mobile: 
         </td>
         <td>
-        	<input type="text" name="resume.contactInfo.mobile" value="#{ifErrors}${flash['resume.contactInfo.mobile']}#{/ifErrors}#{else}${jobSeeker.contactInfo.mobile}#{/else}" />
+        	<input style="width: 250px" type="text" name="resume.contactInfo.mobile" value="#{ifErrors}${flash['resume.contactInfo.mobile']}#{/ifErrors}#{else}${jobSeeker.contactInfo.mobile}#{/else}" />
 			<span class="error">#{error 'resume.contactInfo.mobile' /}</span>
 		</td>
     </tr>
@@ -121,7 +121,7 @@
 			Phone: 
         </td>
         <td>
-        	<input type="text" name="resume.contactInfo.phone" value="#{ifErrors}${flash['resume.contactInfo.phone']}#{/ifErrors}#{else}${jobSeeker.contactInfo.phone}#{/else}" />
+        	<input style="width: 250px" type="text" name="resume.contactInfo.phone" value="#{ifErrors}${flash['resume.contactInfo.phone']}#{/ifErrors}#{else}${jobSeeker.contactInfo.phone}#{/else}" />
 			<span class="error">#{error 'resume.contactInfo.phone' /}</span>
 		</td>
     </tr>
@@ -176,7 +176,7 @@
 	</tr>
 </table>
 	<div style="width:100%; float:left; text-align:justify; padding-top:20px; padding-bottom:20px; padding-left:10px">
-		<input type="submit" value="Add" />
+		<input style="width: 60px" type="submit" value="Add" />
 	</div>
 	
 	<script type="text/javascript">
