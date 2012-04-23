@@ -16,13 +16,13 @@
 	<div class="avatar">
 		#{form @InternEmployerController.updateProfilePhoto(), enctype:'multipart/form-data'}
 		
-		Company Logo or Profile Photo: 
+		Company Logo:
         <div style="width:100%; padding-bottom:10px">
             #{if employer?.logo && employer?.logo.exists()}
                 <img src="@{Application.employerPhoto(employer.id)}" />
             #{/if}
             #{else}
-                none
+                <img src="/public/images/default-avatar.png" />
             #{/else}
         </div>
         <div style="width:160px">
@@ -190,7 +190,7 @@
 	
     <div style="width:100%; float: left; text-align: center; padding-top:20px; padding-bottom:20px; padding-left:10px">
         <input style="width: 150px" type="submit" value="Save" /><br /><br />
-        <a href="#">Cancel</a>
+        <a href="@{InternEmployerController.profile()}">Cancel</a>
     </div>	
 	
 	<script type="text/javascript">

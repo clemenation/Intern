@@ -62,6 +62,11 @@ h1
 	margin: 0px auto;
 }
 
+textarea
+{
+	resize: none;
+}
+
 .textarea
 {
 	white-space:pre-wrap;
