@@ -14,7 +14,7 @@ InternAddress(fptAddress):
 InternEmployer(fpt):
     email: internfpt@fpt.com
     password: internfpt
-    isAdmin: false
+    isAdmin: true
     userType: Employer
     contactInfo: fptContactInfo
     companyName: FPT TELECOM

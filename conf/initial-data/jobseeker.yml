@@ -40,13 +40,44 @@ InternEducation(dungNguyenFirstResumeEducation):
     major: informationTechnologyMajor
     
 InternResume(dungNguyenFirstResume):
-    name: Dung Nguyen's 1st Resume
+    name: Arts
     postedAt: 2012-04-01
     owner: dungnguyen
     contactInfo: dungNguyenFirstResumeContactInfo
     workExperience: 2
     education: dungNguyenFirstResumeEducation
-    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    description: "Personal Skills
+
+    -Reliable, hard-working, quick learner,
+    motivated, organized.
+
+
+    Work Experience
+
+    -McDonald's, Saint Laurent (Qc)
+    Cook
+
+    . Grilled meat for hamburgers
+    . Prepared and cooked fries
+    . Prepared hamburgers
+    . Cleaned kitchen
+
+
+    Education
+
+    -Dawson College, Montreal (Qc)
+    Arts and Letters 2000-...
+
+    -M.I.N.D High School, Montreal (Qc)
+    High School Diploma 1998-1999
+
+    -LaurenHill Academy, St.Laurent (Qc)
+    Completed Grade 10 1994-1998
+
+
+    Interests and Hobbies
+
+    Photography, writing, guitar, computers, film, reading, art."
     languages:
         - vietnamLanguage
         - englishLanguage
@@ -93,13 +124,13 @@ InternEducation(vanndFirstResumeEducation):
     major: informationTechnologyMajor
     
 InternResume(vanndFirstResume):
-    name: My First Resume
+    name: Food Service Management
     postedAt: 2012-04-01
     owner: vannd
     contactInfo: vanndFirstResumeContactInfo
     workExperience: 1
     education: vanndFirstResumeEducation
-    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    description: "Seeking progressive position which will alow me to use my skills and knowledge to grow with your company. Stron Organizational skills. Excellent people skills. National Certified Food Handler. Red Lobster 1996-Present Beverage & Hospitality Manager 1996 - present Oversee operation of restaurant as manager. Direct supervisor of host and bar staff including hiring, training and scheduling.. Calculate profit and loss statments for monthly operations. Responsible for inventory control and order in of all bar supplies, restaurant smallwares, Insure guest asatisfaction. Acting culinary manager in 1998. Best Western East Mountain Inn, Wilkes Barre, PA 18702 Asst. Food & Beverage Mgr, Banquet Operations Dir. Oversee operation of full service hotel. Directly responsible for banquet operations. Hiring, training and scheduling of personnel. Inventory controls on bar and restaurant supplies. Program MICROS register system. Train personnel. Work side by side with sales dept on event planning for corporate and social events. Manager on Duty in absence of hotel division GM."
     languages:
         - vietnamLanguage
         - englishLanguage
@@ -146,13 +177,33 @@ InternEducation(nguyenquacFirstResumeEducation):
     major: informationTechnologyMajor
     
 InternResume(nguyenquacFirstResume):
-    name: My Resume
+    name: Director or Manager
     postedAt: 2012-04-01
     owner: nguyenquac
     contactInfo: nguyenquacFirstResumeContactInfo
     workExperience: 2
     education: nguyenquacFirstResumeEducation
-    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    description: "Dennis B. Kinter
+    27237 Cabrera Ave
+    Saugus, CA. 91350
+    Phone: 661 296-1505
+    Email: dbk9394@aol.com
+
+    OBJECTIVE
+
+    Employment as Manager or Director of IT/Telephony, MIS, Technical Mgt. or Disaster Recovery
+
+    SUMMARY OF QUALIFICATIONS
+
+    ** Twelve years of successful experience in Operations Management/Technical Management directing multiple complex projects to successful fruition over multiple sites including resource time planning for hardware/software installation and development, hardware/software solution costing analysis, risk analysis, vendor negotiations, vendor management, product management, disaster recovery, Q/A inclusive of SLA negotiation, implementation and management, full life cycle vendor relationship development, technical scope development, bid (RFP) facilitation, development of MSA's and VSA's, and contract negotiations and maintenance.
+    ** Fourteen years experience each in TIS, Desktop Services, Asset Management, and Network Management.
+    ** Eight years hands-on experience with NT, Win 2000, UNIX, HP-UNIX, Win XP, DOS, Linux.
+    ** Sixteen years hands-on experience with various PBX, IVR, CDR, ICM, Davox, Dialers, and ACD systems
+    ** Eight years hands-on experience managing various CRM platforms including Siebel 7, Oracle, and Clarify.
+    ** Twelve years hands-on experience File Server, Database, and File System Maintenance
+    ** Strong leadership skills, analytical, interpersonal communication, writing, problem solving, decision making, organizational, and superior documentation skills. I have the flexibility to fit into any business/technology environment including a startup environment, and have demonstrated business acumen skills.
+    ** Proficient with project management tools/techniques and methodologies including such tools as MS Project, Excel, Visio, Crystal Reports.
+    ** Ability to lead and motivate cross-functional teams and interact with all levels of staff and management. Eleven years experience with Change Management and a demonstrated ability with structured project management disciplines, techniques, formal methodologies and the ability to apply principals in a practical manner depending on complexity and scope of project."
     languages:
         - vietnamLanguage
         - englishLanguage
@@ -199,13 +250,47 @@ InternEducation(trieultFirstResumeEducation):
     major: informationTechnologyMajor
     
 InternResume(trieultFirstResume):
-    name: First Resume
+    name: Web Design, DBA
     postedAt: 2012-04-01
     owner: trieult
     contactInfo: trieultFirstResumeContactInfo
     workExperience: 1
     education: trieultFirstResumeEducation
-    description: I am a third year student currently studying at Hanoi University of Science and Technology. I had done some projects in C, Java and Objective-C.
+    description: "EDUCATION
+
+    MS, Electronic Commerce, National University, (2000 candidate)
+    BS, Information Technology, National University, 1999 (Cum Laude)
+
+
+    EXPERIENCE SUMMARY
+
+    Experienced in the full gamut of web design tools found in HTML 4.0 such as DHTML, XML, JAVA Scripts, CGI Scripts. Performed Database design and implementation of medical facility patient tracking program for top-level management's strategic planning and resource allocation, utilizing MS Access DB engine. Design and maintain maintenance system database in support of fifty Naval Beach Group afloat units providing analysis and statistical data for senior management. Supervised ten full time staff personnel. Proficient in desktop and portable Intel-base PC's assembly and configuration. Currently enrolled in Graduate studies majoring in Electronic Commerce. Transitioning from U.S. Navy.
+
+    PROFESSIONAL EXPERIENCE
+
+    1996 - 2000: Aftercare Program Database Administrator, Naval Medical Center, Substance Abuse Rehabilitation Department, San Diego.
+    Developed Microsoft Access database for the facilities aftercare program at Substance Abuse Rehabilitation Department. Created customer service user interface for use by the facilities support personnel permitting data entry capability for all designated personnel - these enhancements resulted in a thirty- percent reduction in administrative tasking and reduced meeting times for senior management by twenty percent. Performed upkeep of database tables, maintaining database integrity and validity. Supervised eight full time staff personnel. Presented workshop lectures to management and staff with audiences as large as several dozen, using a myriad of presentation media. Other duties include database training of subordinates, computer telephony support, and assistance.
+
+    1991 - 1996: Maintenance Database Coordinator, Naval Beach Group One
+    Created and maintained extensive maintenance database in support of fifty afloat units with 3500 line items of scheduled maintenance. Planned, coordinated and directed routine inspections of all maintenance activities. Performed system backups and transfers of database updates. Provided database support for the organizations career counseling and personnel counseling programs resulting in a forty- percent reduction in administrative labor. Provided maintenance record training to 300 junior and senior personnel.
+
+    1988 - 1991: Vessel Captain, (Craftmaster) Naval Space and Warfare Command, NOSC, San Diego
+    Responsible for 110 ocean going vessel used for underwater recovery vehicle platform in support of Cable controlled Underwater Recovery Vehicle 2(CURV-2). Independently responsible for crew and the vessels equipment valued in excess of twenty million dollars. Conducted training of all GPS/SATNAV navigation systems, hydrographic search equipment, and guidance systems. Supervised ten-person crew, providing training, counseling, and mentoring to all assigned personnel.
+
+
+    SKILLS
+
+    Hardware Experience:
+    Intel-based PC's.
+
+    Software Experience:
+    HTML 4.0, DHTML, XML, JAVA, JAVA Script, CGI Script, MS-DOS, MS Windows 95, NT, 3.x, Visual Basic 5.0, MS Office, MS FrontPage, MS Excel, MS Access, SQL, Word Perfect, WordStar, Formtool, Netscape Navigator.
+
+    Software Methodologies:
+    Object Oriented Design, Data Modeling,
+
+    Communications Experience:
+    TCP/IP, Ethernet, 10BaseT, Modems."
     languages:
         - vietnamLanguage
         - englishLanguage
