@@ -1,9 +1,8 @@
 #{extends 'main.html' /}
 #{set title:resume /}
 
+<div class="wrapper">
 #{navigationBar /}
-
-<h1>Intern/Job Seeker</h1>
 
 #{if flash.error}
 	<p class="error">
@@ -17,21 +16,48 @@
 	</p>
 #{/if}
 
+<div class="middle">
 #{displayResume resume:resume, as:"jobSeeker" /}
+<br />
 
 #{if jobPoints}
-<h2>Suitable Jobs</h2>
-	<a href ="@{InternJobSeekerController.jobsForResume(resume.id, 1)}">view all</a>
+<div style="width:100%; float:left; padding-bottom:10px">
+	<div style="float:left">
+		<h2>Suitable Jobs</h2>
+    </div>
+    <div style="float:right">
+		<a href ="@{InternJobSeekerController.jobsForResume(resume.id, 1)}">view all</a>
+    </div>
+</div>
+
 	#{list items:jobPoints, as:'point'}
+    <div style="padding-bottom: 30px" class="job-link">
 		<a href="@{InternJobSeekerController.viewJob(point.job.id)}"><h3>${point.job} for ${point.resume}</h3></a>
 		<div>Point: +${point.strongPoint} -${point.weakPoint}</div>
+    </div>
 	#{/list}
 #{/if}
 
-#{if resume?.applications}	
-	<h2>Applications</h2>
-	<a href="@{InternJobSeekerController.applicationsForResume(resume.id, 1)}">view all</a>
+<br />
+#{if resume?.applications}
+	<div style="width:100%; float:left; padding-bottom:10px">
+    	<div style="float:left">
+			<h2>Applications</h2>
+        </div>
+        <div style="float:right">
+			<a href="@{InternJobSeekerController.applicationsForResume(resume.id, 1)}">view all</a>
+        </div>
+    </div>
 	#{list items:models.InternApplication.find("resume = ? order by postedAt desc", resume).fetch(4), as:'application'}
+    <div style="padding-bottom:10px" class="application-link">
 		<a href="@{InternJobSeekerController.viewApplication(application.id)}"><h3>${application.job}</h3></a>
+    </div>
 	#{/list}
 #{/if}
+
+</div>
+</div>
+
+	
+    <!--Footer-->
+    #{footer /}
