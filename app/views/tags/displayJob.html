@@ -1,45 +1,69 @@
 <div style="width: 100%; float:left; padding-bottom:10px">
 	<div style="float:left">
-		<h2>${_job}</h2>
+		<h1>${_job}</h1>
     </div>
     <div style="float:right">
         #{if _as=="employer"}
             <a href="@{InternEmployerController.editJobForm(_job.id)}">edit</a>
         #{/if}
-        
-        #{if _as=="full"}
-            <div>
-                Owner: ${_job?.owner}
-            </div>
-        #{/if}
     </div>
 </div>
 
-<div style="width:90%; float:none; margin:0px auto">
-    #{if _job?.requiredWorkExperience > 0}
-        <div>
-            Required work experience: ${_job?.requiredWorkExperience}
-        </div>
-    #{/if}
+<div style="width:100%; float:left">
+	<table>
+		
+    	#{if _job?.requiredWorkExperience > 0}
+	        <tr>
+				<td width="100px">
+					<b><p class="light-gray">Required work experience</p></b>
+				</td>
+				<td>
+					${_job?.requiredWorkExperience}
+				</td>
+	        </tr>
+	    #{/if}
     
-    #{if _job?.description}
-        <div>
-            Description: <p class="textarea">${_job?.description}</p>
-        </div>
-    #{/if}
+	    #{if _job?.description}
+	        <tr>
+				<td width="100px">
+					<b><p class="light-gray">Description</p></b>
+				</td>
+				<td>
+					<p class="textarea">${_job?.description}</p>
+				</td>
+	        </tr>
+	    #{/if}
     
-    #{displayContactInfo contactInfo:_job?.contactInfo /}
+		<tr>
+			<td width="100px">
+				<b><p class="light-gray">Contact Info</p></b>
+			</td>
+			<td>
+	    		#{displayContactInfo contactInfo:_job?.contactInfo /}
+			</td>
+		</tr>
     
-    #{if _job?.requiredLanguages}
-        <div>
-            Required languages: #{list items:_job?.requiredLanguages, as:'language'}${language} #{/list}
-        </div>
-    #{/if}
+	    #{if _job?.requiredLanguages}
+	        <tr>
+				<td width="100px">
+					<b><p class="light-gray">Required languages</p></b>
+				</td>
+				<td>
+					#{list items:_job?.requiredLanguages, as:'language'}${language} #{/list}
+				</td>
+	        </tr>
+	    #{/if}
     
-    #{if _job?.requiredEducation && !_job?.requiredEducation.isEmpty()}
-        <div>
-            Required education:
-                #{displayEducation education:_job?.requiredEducation /}
-        </div> 
-    #{/if}
+	    #{if _job?.requiredEducation && !_job?.requiredEducation.isEmpty()}
+	        <tr>
+				<td width="100px">
+					<b><p class="light-gray">Required education</p></b>
+				</td>
+				<td>
+					#{displayEducation education:_job?.requiredEducation /}
+				</td>
+	        </tr> 
+	    #{/if}
+
+	</table>
 </div>

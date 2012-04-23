@@ -2,10 +2,10 @@
 	<div class="toplogo">
 		<a href="@{Application.index()}">
 			#{if session['userType'] == "Job Seeker"}
-				<img class="toplogo" src="/public/images/me-jobseeker-logo.jpg">
+				<img src="/public/images/me-jobseeker-logo.jpg">
 			#{/if}
 			#{elseif session['userType'] == "Employer"}
-				<img class="toplogo" src="/public/images/me-employer-logo.jpg">
+				<img src="/public/images/me-employer-logo.jpg">
 			#{/elseif}
 		</a>
 	</div>

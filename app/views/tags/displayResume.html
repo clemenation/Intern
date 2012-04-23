@@ -1,46 +1,67 @@
 <div style="width: 100%; float:left; padding-bottom:10px">
 	<div style="float:left">
-		<h2>${_resume}</h2>
+		<h1>${_resume}</h1>
     </div>
     <div style="float:right">
         #{if _as=="jobSeeker"}
             <a href="@{InternJobSeekerController.editResumeForm(_resume.id)}">edit</a>
         #{/if}
-        
-        #{if _as=="full"}
-            <div>
-                Owner: ${_resume?.owner}
-            </div>
-        #{/if}
 	</div>
 </div>
 
-<div style="width:90%; float:none; margin:0px auto">
+<div style="width:100%; float:left">
+	<table>
     
-    #{if _resume?.workExperience > 0}
-        <div>
-            Work experience: ${_resume?.workExperience}
-        </div>
-    #{/if}
+	    #{if _resume?.workExperience > 0}
+			<tr>
+				<td width="100px">
+					<b><p class="light-gray">Work experience</p></b>
+				</td>
+	        	<td>
+		            ${_resume?.workExperience}
+		        </td>
+			</tr>
+	    #{/if}
     
-    #{if _resume?.description}
-        <div>
-            Description: <p class="textarea">${_resume?.description}</p>
-        </div>
-    #{/if}
+	    #{if _resume?.description}
+	        <tr>
+				<td width="100px">
+					<b><p class="light-gray">Description</p></b>
+				</td>
+	        	<td>
+					<p class="textarea">${_resume?.description}</p>
+				</td>
+	        </tr>
+	    #{/if}
     
-    #{displayContactInfo contactInfo:_resume?.contactInfo /}
+		<tr>
+			<td width="100px">
+				<b><p class="light-gray">Contact Info</p></b>
+			</td>
+			<td>
+	    		#{displayContactInfo contactInfo:_resume?.contactInfo /}
+			</td>
+		</tr>
     
-    #{if _resume?.languages}
-        <div>
-            Languages: #{list items:_resume?.languages, as:'language'}${language} #{/list}
-        </div>
-    #{/if}
+	    #{if _resume?.languages}
+	        <tr>
+				<td width="100px">
+					<b><p class="light-gray">Languages</p></b>
+				</td>
+	        	<td>
+					#{list items:_resume?.languages, as:'language'}${language} #{/list}		</td>
+	        </tr>
+	    #{/if}
     
-    #{if _resume?.education && !_resume?.education.isEmpty()}
-        <div>
-            Education:
-                #{displayEducation education:_resume?.education /}
-        </div> 
-    #{/if}
+	    #{if _resume?.education && !_resume?.education.isEmpty()}
+	        <tr>
+				<td width="100px">
+					<b><p class="light-gray">Education</p></b>
+				</td>
+				<td>
+	                #{displayEducation education:_resume?.education /}
+				</td>
+	        </tr> 
+	    #{/if}
+	</table>
 </div>
