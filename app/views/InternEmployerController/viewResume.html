@@ -1,8 +1,11 @@
 #{extends 'main.html' /}
 #{set title:'View Resume' /}
-
+<div class="wrapper">
 #{navigationBar /}
-
-<h1>Intern/Employer</h1>
-
+<div class="middle">
 #{displayResume resume:resume /}
+</div>
+</div>
+
+<!--Footer-->
+#{footer /}
