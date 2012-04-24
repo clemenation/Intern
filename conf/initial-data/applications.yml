@@ -641,3 +641,12 @@ InternApplication(77_Application):
     jobSeeker: tungdd
     employer: misa
     message: I would like to apply for this job
+
+# Application for DuckDuckGo first job
+InternApplication(78_Application):
+    job: duckduckgoFirstJob
+    resume: hoanglongFirstResume
+    postedAt: 2012-04-18
+    jobSeeker: hoanglong
+    employer: duckduckgo
+    message: I think I'm suitable guy for the job

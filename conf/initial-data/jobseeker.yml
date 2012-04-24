@@ -341,7 +341,7 @@ InternResume(hoangtnFirstResume):
     postedAt: 2012-04-01
     owner: hoangtn
     contactInfo: hoangtnFirstResumeContactInfo
-    workExperience: 1
+    workExperience: 2
     education: hoangtnFirstResumeEducation
     description: "Nhat Hoang Tran
 106 An Duong
@@ -404,7 +404,7 @@ InternEducation(kienbdFirstResumeEducation):
     studyYears: 5
     gpa: 3.4
     college: Hanoi University of Science and Technology
-    major: informationTechnologyMajor
+    major: nutritionandFoodsMajor
     
 InternResume(kienbdFirstResume):
     name: Food Science Technology
@@ -469,7 +469,7 @@ InternEducation(ductmFirstResumeEducation):
     studyYears: 3
     gpa: 2.7
     college: Hanoi University of Science and Technology
-    major: informationTechnologyMajor
+    major: healthSciencesMajor
     
 InternResume(ductmFirstResume):
     name: Network Support/Network Admin
@@ -594,7 +594,7 @@ InternEducation(thanhncFirstResumeEducation):
     studyYears: 3
     gpa: 3.0
     college: Hanoi University of Science and Technology
-    major: informationTechnologyMajor
+    major: civilEngineeringMajor
     
 InternResume(thanhncFirstResume):
     name: IT
@@ -651,7 +651,7 @@ InternEducation(quanntFirstResumeEducation):
     studyYears: 3
     gpa: 2.8
     college: Hanoi University of Science and Technology
-    major: informationTechnologyMajor
+    major: civilEngineeringMajor
     
 InternResume(quanntFirstResume):
     name: Sales
@@ -708,7 +708,7 @@ InternEducation(quanleFirstResumeEducation):
     studyYears: 1
     gpa: 3.5
     college: Hanoi University of Science and Technology
-    major: informationTechnologyMajor
+    major: criminalJusticeMajor
     
 InternResume(quanleFirstResume):
     name: Trainer
@@ -769,7 +769,7 @@ InternEducation(tudoanFirstResumeEducation):
     studyYears: 4
     gpa: 2.6
     college: Hanoi University of Science and Technology
-    major: informationTechnologyMajor
+    major: civilEngineeringMajor
     
 InternResume(tudoanFirstResume):
     name: Any
@@ -791,6 +791,90 @@ InternResume(tudoanFirstResume):
     Marketing Microsoft Windows 3.1/95/98/NT
     MIS Microsoft Office 2000/97
     Unix OS"
+    languages:
+        - vietnamLanguage
+        - englishLanguage
+
+# HOANG LONG
+
+InternContactInfo(hoangLongContactInfo):
+    contactEmail: hoanglong@gmail.com
+    mobile: 093.245.3463
+    address: hoangLongAddress
+
+InternAddress(hoangLongAddress):
+    address: 12 Giai Phong
+    district: haiBaTrungDistrict
+    city: haNoiCity
+    contactInfo: hoangLongContactInfo
+
+InternJobSeeker(hoanglong):
+    email: hoanglong@gmail.com
+    password: hoanglong
+    aboutMe: I'm Long
+    fullName: Pham Hoang Long
+    birthday: 1991-01-13
+    college: Hanoi University of Science and Technology
+    userType: Job Seeker
+    contactInfo: hoangLongContactInfo
+    isAdmin: false
+    
+InternContactInfo(hoanglongFirstResumeContactInfo):
+    contactEmail: hoanglong@gmail.com
+    mobile: 093.245.3439
+    address: hoanglongFirstResumeAddress
+
+InternAddress(hoanglongFirstResumeAddress):
+    address: 12 Giai Phong
+    district: haiBaTrungDistrict
+    city: haNoiCity
+    contactInfo: hoanglongFirstResumeContactInfo
+
+InternEducation(hoanglongFirstResumeEducation):
+    studyYears: 3
+    gpa: 2.6
+    college: Hanoi University of Science and Technology
+    major: webDevelopmentandInteractionDesignMajor
+    
+InternResume(hoanglongFirstResume):
+    name: Arts
+    postedAt: 2012-04-01
+    owner: hoanglong
+    contactInfo: hoanglongFirstResumeContactInfo
+    workExperience: 2
+    education: hoanglongFirstResumeEducation
+    description: "Personal Skills
+
+    -Reliable, hard-working, quick learner,
+    motivated, organized.
+
+
+    Work Experience
+
+    -McDonald's, Saint Laurent (Qc)
+    Cook
+
+    . Grilled meat for hamburgers
+    . Prepared and cooked fries
+    . Prepared hamburgers
+    . Cleaned kitchen
+
+
+    Education
+
+    -Dawson College, Montreal (Qc)
+    Arts and Letters 2000-...
+
+    -M.I.N.D High School, Montreal (Qc)
+    High School Diploma 1998-1999
+
+    -LaurenHill Academy, St.Laurent (Qc)
+    Completed Grade 10 1994-1998
+
+
+    Interests and Hobbies
+
+    Photography, writing, guitar, computers, film, reading, art."
     languages:
         - vietnamLanguage
         - englishLanguage

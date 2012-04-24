@@ -482,3 +482,190 @@ InternJob(misaFourthJob):
       - vietnamLanguage
       - englishLanguage
     requiredEducation: misaFourthJobRequiredEducation
+
+# VINACONEX
+
+InternContactInfo(vinaconexContactInfo):
+    contactEmail: info@vinaconex.com
+    phone: 043 734 9320
+    address: vinaconexAddress
+
+InternAddress(vinaconexAddress):
+    address: 13 Nguyen Khac Nhu
+    district: baDinhDistrict
+    city: haNoiCity
+    contactInfo: vinaconexContactInfo
+
+InternEmployer(vinaconex):
+    email: internvinaconex@vinaconex.com
+    password: internvinaconex
+    isAdmin: false
+    userType: Employer
+    contactInfo: vinaconexContactInfo
+    companyName: vinaconex JSC
+    industry: Construction Solution Development
+    description: Leading Construction Company in Vietnam
+    companySize: mediumLargeSize
+
+InternContactInfo(vinaconexFirstJobContactInfo):
+    contactEmail: info@vinaconex.com
+    phone: 043 734 9320
+    address: vinaconexFirstJobAddress
+
+InternAddress(vinaconexFirstJobAddress):
+    address: 13 Nguyen Khac Nhu
+    district: baDinhDistrict
+    city: haNoiCity
+    contactInfo: vinaconexFirstJobContactInfo
+
+InternEducation(vinaconexFirstJobRequiredEducation):
+    studyYears: 4
+    gpa: 2.5
+    major: constructionManagementMajor
+
+InternJob(vinaconexFirstJob):
+    name: Construction Manager
+    owner: vinaconex
+    postedAt: 2012-04-11
+    description: We are looking for a proficient construction manager to manage the construction department of our rapidly expanding Entertainment Group. This is an exciting opportunity to gain hands on experience with construction Management. The successful candidate will work on our various Fashion and Music Events Brands supervising Content management Systems and Development. If you’re looking to own your own business or gain management experience this is a unique opportunity to challenge yourself.
+    contactInfo: vinaconexFirstJobContactInfo
+    requiredWorkExperience: 2
+    requiredLanguages:
+      - vietnamLanguage
+      - englishLanguage
+    requiredEducation: vinaconexFirstJobRequiredEducation
+
+InternContactInfo(vinaconexSecondJobContactInfo):
+    contactEmail: info@vinaconex.com
+    phone: 043 734 9320
+    address: vinaconexSecondJobAddress
+
+InternAddress(vinaconexSecondJobAddress):
+    address: 13 Nguyen Khac Nhu
+    district: baDinhDistrict
+    city: haNoiCity
+    contactInfo: vinaconexSecondJobContactInfo
+
+InternEducation(vinaconexSecondJobRequiredEducation):
+    studyYears: 3
+    gpa: 2.8
+    major: constructionManagementMajor
+
+InternJob(vinaconexSecondJob):
+    name: Construction Programmers
+    owner: vinaconex
+    postedAt: 2012-04-10
+    description: We are looking for a construction programmer. This is a very exciting prospect to work on a startup. If you can impress us we will develop you within our company with impressive growth potential.
+    contactInfo: vinaconexSecondJobContactInfo
+    requiredWorkExperience: 1
+    requiredLanguages:
+      - vietnamLanguage
+      - englishLanguage
+    requiredEducation: vinaconexSecondJobRequiredEducation
+
+InternContactInfo(vinaconexThirdJobContactInfo):
+    contactEmail: info@vinaconex.com
+    phone: 043 734 9320
+    address: vinaconexThirdJobAddress
+
+InternAddress(vinaconexThirdJobAddress):
+    address: 13 Nguyen Khac Nhu
+    district: baDinhDistrict
+    city: haNoiCity
+    contactInfo: vinaconexThirdJobContactInfo
+
+InternEducation(vinaconexThirdJobRequiredEducation):
+    studyYears: 4
+    gpa: 2.9
+    major: constructionManagementMajor
+
+InternJob(vinaconexThirdJob):
+    name: Constructor Engineer
+    owner: vinaconex
+    postedAt: 2012-04-13
+    description: vinaconex is looking for part-time intern constructor engineer for 6 months contract with possibility of a full time permanent position. This role would be ideal for a student or graduate or someone looking for experience within games industry. 
+    contactInfo: vinaconexThirdJobContactInfo
+    requiredWorkExperience: 2
+    requiredLanguages:
+      - vietnamLanguage
+      - englishLanguage
+    requiredEducation: vinaconexThirdJobRequiredEducation
+
+InternContactInfo(vinaconexFourthJobContactInfo):
+    contactEmail: info@vinaconex.com
+    phone: 043 734 9320
+    address: vinaconexFourthJobAddress
+
+InternAddress(vinaconexFourthJobAddress):
+    address: 13 Nguyen Khac Nhu
+    district: baDinhDistrict
+    city: haNoiCity
+    contactInfo: vinaconexFourthJobContactInfo
+
+InternEducation(vinaconexFourthJobRequiredEducation):
+    studyYears: 3
+    gpa: 2.5
+    major: constructionManagementMajor
+
+InternJob(vinaconexFourthJob):
+    name: Construction Designer
+    owner: vinaconex
+    postedAt: 2012-04-10
+    description: We are looking for experienced Construction Designer able to design for clients. Do you have experience in creating digital animations for showreels, Flash banners, ads or presentations? We are looking for experienced individuals to join our Web & Graphic Design team. This is a great opportunity to join a quickly expanding nationally-spread, Marketing start up Company!
+    contactInfo: vinaconexFourthJobContactInfo
+    requiredWorkExperience: 2
+    requiredLanguages:
+      - vietnamLanguage
+      - englishLanguage
+    requiredEducation: vinaconexFourthJobRequiredEducation
+
+# Duck Duck Go
+InternContactInfo(duckduckgoContactInfo):
+    contactEmail: info@duckduckgo.com
+    phone: 043 734 5624
+    address: duckduckgoAddress
+
+InternAddress(duckduckgoAddress):
+    address: 15 Cua Bac
+    district: baDinhDistrict
+    city: haNoiCity
+    contactInfo: duckduckgoContactInfo
+
+InternEmployer(duckduckgo):
+    email: internduckduckgo@duckduckgo.com
+    password: internduckduckgo
+    isAdmin: false
+    userType: Employer
+    contactInfo: duckduckgoContactInfo
+    companyName: Duck Duck Go JSC
+    industry: Web Solution Development
+    description: Leading Web Company in Vietnam
+    companySize: smallMediumSize
+
+InternContactInfo(duckduckgoFirstJobContactInfo):
+    contactEmail: info@duckduckgo.com
+    phone: 043 734 5624
+    address: duckduckgoFirstJobAddress
+
+InternAddress(duckduckgoFirstJobAddress):
+    address: 15 Cua Bac
+    district: baDinhDistrict
+    city: haNoiCity
+    contactInfo: duckduckgoFirstJobContactInfo
+
+InternEducation(duckduckgoFirstJobRequiredEducation):
+    studyYears: 3
+    gpa: 2.5
+    major: webDevelopmentandInteractionDesignMajor
+
+InternJob(duckduckgoFirstJob):
+    name: Web Development Manager
+    owner: duckduckgo
+    postedAt: 2012-04-11
+    description: We are looking for a proficient Web Development manager to manage the construction department of our rapidly expanding Entertainment Group. This is an exciting opportunity to gain hands on experience with construction Management. The successful candidate will work on our various Fashion and Music Events Brands supervising Content management Systems and Development. If you’re looking to own your own business or gain management experience this is a unique opportunity to challenge yourself.
+    contactInfo: duckduckgoFirstJobContactInfo
+    requiredWorkExperience: 2
+    requiredLanguages:
+      - vietnamLanguage
+      - englishLanguage
+    requiredEducation: duckduckgoFirstJobRequiredEducation
