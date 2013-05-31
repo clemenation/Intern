@@ -9,9 +9,6 @@
     open('/')
 
 	// Check that the login page is present
-	assertTextPresent('Email')
-	assertTextPresent('Password')
-	assertTextPresent('Remember me')
 	assertTextPresent('Or register as Job Seeker & Employer')
 #{/selenium}
 
@@ -33,11 +30,9 @@
 	type('password', 'dungnguyen')
 	clickAndWait('css=input[type=submit]')
 	
-	// Check if displayed Job Seeker index page
-	assertTextPresent('Intern/Job Seeker')
+	// Check if displayed Employer index page
 	assertTextPresent('Suitable Jobs')
-	assertTextPresent('Hoang Tran's 1st Job for Dung Nguyen's 1st Resume')
-	assertTextPresent('Point: +2.0 -0.0')
+	assertTextPresent('Hoang Tran's 1st Job')
 	
 	// Logout
 	clickAndWait('link=Logout')
@@ -111,7 +106,7 @@
 	clickAndWait('css=input[type=submit]')
 	
 	// Check if displayed Job Seeker index page
-	assertTextPresent('Intern/Job Seeker')
+	assertTextPresent('Suitable Jobs')
 	
 	// Go to admin CRUD page
 	clickAndWait('link=Admin')
@@ -133,11 +128,9 @@
 	type('password', 'hoangtran')
 	clickAndWait('css=input[type=submit]')
 	
-	// Check if displayed Job Seeker index page
-	assertTextPresent('Intern/Employer')
+	// Check if displayed Employer index page
 	assertTextPresent('Suitable Resumes')
-	assertTextPresent('Dung Nguyen's 3rd Resume for Hoang Tran's 1st Job')
-	assertTextPresent('Point: +10.0 -0.0')
+	assertTextPresent('Dung Nguyen's 3rd Resume')
 	
 	// Logout
 	clickAndWait('link=Logout')
@@ -160,13 +153,13 @@
 	
 	// Go to register as JobSeeker page
 	clickAndWait('link=Job Seeker')
-	assertTextPresent('Intern/Job Seeker')
-	assertTextPresent('Email:')
-	assertTextPresent('Password:')
+	assertTextPresent('Register as Job Seeker')
+	assertTextPresent('Email')
+	assertTextPresent('Password')
 	
 	// Register without entering, should get errors
 	clickAndWait('css=input[type=submit]')
-	assertTextPresent('Required')
+	assertTextPresent('Validation failed')
 	
 	// Using registered jobseeker email, should get errors
 	type('jobSeeker.email', 'nguyentuandung2991@gmail.com')
@@ -235,7 +228,7 @@
 	type('username', 'clemenation@yahoo.com')
 	type('password', 'dungnguyen')
 	clickAndWait('css=input[type=submit]')
-	assertTextPresent('Intern/Job Seeker')
+	assertTextPresent('Home')
 	
 	// Go to register page while logged in, should go back to job seeker index page
 	open('@{Application.registerJobSeekerForm}')
@@ -243,15 +236,14 @@
 	
 	// Go to profile page to check profile info
 	open('@{InternJobSeekerController.profile}')
-	assertTextPresent('Profile')
-	assertTextPresent('Email: clemenation@yahoo.com')
-	assertTextPresent('Full name: Nguyen Tuan Dung')
-	assertTextPresent('Birthday: 1991-09-29 00:00:00.0')
-	assertTextPresent('About me: Photographer based in Hanoi')
-	assertTextPresent('College: Hanoi University of Science and Technology')
-	assertTextPresent('Contact Email: clemenation@yahoo.com')
-	assertTextPresent('Mobile: 090-432-9991')
-	assertTextPresent('Phone: 043-775-3126')
+	assertTextPresent('clemenation@yahoo.com')
+	assertTextPresent('Nguyen Tuan Dung')
+	assertTextPresent('29/09/1991')
+	assertTextPresent('Photographer based in Hanoi')
+	assertTextPresent('Hanoi University of Science and Technology')
+	assertTextPresent('clemenation@yahoo.com')
+	assertTextPresent('090-432-9991')
+	assertTextPresent('043-775-3126')
 	
 #{/selenium}
 
@@ -264,13 +256,13 @@
 	
 	// Go to register as Employer page
 	clickAndWait('link=Employer')
-	assertTextPresent('Intern/Employer')
-	assertTextPresent('Email:')
-	assertTextPresent('Password:')
+	assertTextPresent('Register as Employer')
+	assertTextPresent('Email')
+	assertTextPresent('Password')
 	
 	// Register without entering, should get errors
 	clickAndWait('css=input[type=submit]')
-	assertTextPresent('Required')
+	assertTextPresent('Validation failed')
 	
 	// Using registered employer email, should get errors
 	type('employer.email', 'hoangtran@gmail.com')
@@ -287,7 +279,7 @@
 	
 	// Register without entering password, should get errors
 	clickAndWait('css=input[type=submit]')
-	assertTextPresent('Required')
+	assertTextPresent('Register as Employer')
 	
 	// Using too short password
 	type('employer.password', 'hoang')
@@ -317,7 +309,6 @@
 	type('employer.companyName', 'Nhat Hoang muon nam')
 	type('employer.description', 'Nhat Hoang o Viet Nam')
 	type('employer.industry', 'eating')
-	type('employer.companySize', 'small')
 	
 	// Check if registered successfully
 	clickAndWait('css=input[type=submit]')
@@ -327,7 +318,6 @@
 	type('username', 'hoanglong@gmail.com')
 	type('password', 'hoanglong')
 	clickAndWait('css=input[type=submit]')
-	assertTextPresent('Intern/Employer')
 	
 	// Go to register page while logged in, should go back to employer index page
 	open('@{Application.registerEmployerForm}')
@@ -335,14 +325,11 @@
 	
 	// Go to profile page to check profile info
 	open('@{InternEmployerController.profile}')
-	assertTextPresent('Profile')
-	assertTextPresent('Email: hoanglong@gmail.com')
-	assertTextPresent('Company name: Nhat Hoang muon nam')
-	assertTextPresent('Company size: small')
-	assertTextPresent('Description: Nhat Hoang o Viet Nam')
-	assertTextPresent('Industry: eating')
-	assertTextPresent('Contact Email: hoanglong@gmail.com')
-	assertTextPresent('Mobile: 090-432-9991')
-	assertTextPresent('Phone: 043-775-3126')
+	assertTextPresent('hoanglong@gmail.com')
+	assertTextPresent('Nhat Hoang muon nam')	
+	assertTextPresent('Nhat Hoang o Viet Nam')
+	assertTextPresent('hoanglong@gmail.com')
+	assertTextPresent('090-432-9991')
+	assertTextPresent('043-775-3126')
 	
 #{/selenium}

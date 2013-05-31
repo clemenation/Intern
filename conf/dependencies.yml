@@ -4,3 +4,4 @@ require:
     - play 1.2.4
     - play -> crud
     - play -> secure
+    - play -> modules.cobertura
